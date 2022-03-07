@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  7 MAR 2022 00:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  7 MAR 2022 01:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -312,18 +312,6 @@ File: logo_black.png Graphic file (type png)
 Package pdftex.def Info: logo_black.png  used on input line 2.
 (pdftex.def)             Requested size: 154.17326pt x 43.96346pt.
 
-! Misplaced alignment tab character &.
-\degreeTitle ->Computer Science (Digital &
-                                           Technology Solutions) BSc
-l.2 \frontcover
-               
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
 [1
 
 
@@ -377,9 +365,9 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
  (chapters/chapter1.tex
 Chapter 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 15.
+(Font)              <9> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 15.
+(Font)              <5> on input line 14.
 [2
 
 
@@ -436,10 +424,10 @@ Appendix B.
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
 (appendices.aux)) ) 
 Here is how much of TeX's memory you used:
- 4520 strings out of 478584
- 84081 string characters out of 2844402
- 458396 words of memory out of 3000000
- 22577 multiletter control sequences out of 15000+600000
+ 4521 strings out of 478584
+ 83852 string characters out of 2844402
+ 458399 words of memory out of 3000000
+ 22578 multiletter control sequences out of 15000+600000
  487056 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,10n,93p,1144b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -460,9 +448,9 @@ ecbx2074.pk>{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/
 8r.enc} <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
 \ecbx1440.pk><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
 s/utmr8a.pfb>
-Output written on finalReport.pdf (13 pages, 164305 bytes).
+Output written on finalReport.pdf (13 pages, 167167 bytes).
 PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
+ 464 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
