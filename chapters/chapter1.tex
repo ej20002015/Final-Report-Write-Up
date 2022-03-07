@@ -1,0 +1,32 @@
+\chapter{Introduction and Background Research}
+
+% You can cite chapters by using '\ref{chapter1}', where the label must
+% match that given in the 'label' command, as on the next line.
+\label{chapter1}
+
+% Sections and sub-sections can be declared using \section and \subsection.
+% There is also a \subsubsection, but consider carefully if you really need
+% so many layers of section structure.
+
+\section{Introduction}
+
+Rendering is the process of generating images, or \textit{frames}, of a virtual world. Real-time rendering requires that the generation of these frames is done at a fast enough rate, so that the viewer feels they are taking part in an immersive, dynamic experience. Typically, this rate needs to be at least 30 FPS (Frames Per Second), with 60 FPS and beyond being desirable [\textit{potentially http://web.cs.wpi.edu/~claypool/papers/fr-rez/paper.pdf}]. This imposes a maximum time budget of 33 to 16 milliseconds in which each frame must be generated, the \textit{frame time}. Real-time rendering presents a compelling problem: how can the visual fidelity of a rendered scene be maximised, whilst adhering to this strict computational budget.
+
+\paragraph{}Rendering can be performed using one of two techniques, ray tracing or rasterization. Ray tracing is based on a model that is analogous to how humans perceive light and colour in the real-world. In the real-world, rays of light are produced from many sources, bounce from one object to the next, and eventually reach the viewers eyes. Ray tracing models this same process, but in reverse, with the rays emanating from the views eyes, and being traced back to their sources. Although ray tracing is the standard in the realm of movie production, its expensive computational requirements lead to frame times in the region of hours [citation] instead of milliseconds. Aside from so notable exceptions\footnote{With the introduction of hardware accelerated ray tracing on consumer GPUs [citation], the use of ray tracing to render specific visual phenomena, such as shadows and reflections, has seen use in modern games [citation].}, this prohibits its use in real-time applications. As a result, real-time rendering employs another technique, rasterization.
+
+\paragraph{}With rasterization, each object in the world is composed of an arrangement of primitive shapes, most commonly, triangles, and their material is described through a number of parameters. When rendering, the objects are transformed and projected onto the 2D screen. Each triangle that lies on the screen is then split into granular pieces, called \textit{fragments}. A colour is calculated for each fragment by evaluating the amount of light that shines on that fragment in the world, and then how that light interacts with the material of the object. Performing this calculation is called \textit{shading}, and how it is done is defined by a \textit{shading model}. After resolving which fragments lie on top of which others, the final image is presented to the user.
+
+\paragraph{}The appearance of the final rendered frames is largely determined by the choice of shading model. In the pursuit of photorealism, one such approach that has seen widespread adoption is the use of physically based shading models. Such models work by evaluating equations that simulate the real world physical interaction of light and objects. Using these models for shading is known as \textit{Physically Based Shading} (PBS), and their use in the wider rendering pipeline is called \textit{Physically Based Rendering} (PBR). PBR represented a seismic shift in the real-time rendering industry, with major game engines migrating to a PBR pipeline (Karis, 2013) (Lagarde, 2014). Prior to PBR, the standard shading model used for photo-realistic real-time rendering was Blinn-Phong [citation]. Blinn-Phong bears little relation to how light interacts with objects in the real-world, rather it’s based on empirical observations [citation].
+
+\paragraph{}The aim of this project is to investigate the benefits of using physically based shading models in real time rendering – what are these benefits, and how do they come about? Specifically, I will seek to highlight these benefits by comparing PBS to the technology is superseded, Blinn-Phong shading.
+
+\paragraph{}The advantages of using PBS over Blinn-Phong shading can be broadly categorised into two groups: the improvements to artist workflow; and the improved photorealism. Examples of the former are numerous. [someone] talks about the portability of lighting rigs, [someone] talks about the reuse of assets… etc [references]. However, due to practical issues that arise from investigating such advantages (I don’t have access to a team of artists), the focus of this project will solely be on exploring those advantages in the latter category – how does PBS render frames that are more photorealistic than Blinn-Phong?
+
+\paragraph{}Answering this question by simply commenting on the general perceived realism of a frame when compared to another, is a largely subjective exercise. Instead, in a concerted effort to be as objective as possible, I will examine the benefits of PBS by identifying physical phenomena that it models in its rendered frames, but that are [conspicuously] absent when using Blinn-Phong shading.
+
+
+% Must provide evidence of a literature review. Use sections
+% and subsections as they make sense for your project.
+\section{Literature review}
+<This section heading is purely a suggestion -- you should subdivide this chapter in whatever manner you think makes most sense for your project. It may also make sense to spread the `Background Research' over more than one chapter, in which case they should be named sensibly.>
+
