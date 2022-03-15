@@ -1,55 +1,443 @@
-\begin{thebibliography}{1}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{EffectsOfFrameRate}
-Mark Claypool, Kajal Claypool, and Feissal Damaa.
-\newblock {The effects of frame rate and resolution on users playing first
-  person shooter games}.
-\newblock In Surendar Chandra and Carsten Griwodz, editors, {\em Multimedia
-  Computing and Networking 2006}, volume 6071, page~8. International Society
-  for Optics and Photonics, SPIE, 2006.
+\datalist[entry]{none/global//global/global}
+  \entry{EffectsOfFrameRate}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=CM}{%
+         family={Claypool},
+         familyi={C\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Claypool},
+         familyi={C\bibinitperiod},
+         given={Kajal},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=DF}{%
+         family={Damaa},
+         familyi={D\bibinitperiod},
+         given={Feissal},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=CS}{%
+         family={Chandra},
+         familyi={C\bibinitperiod},
+         given={Surendar},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Griwodz},
+         familyi={G\bibinitperiod},
+         given={Carsten},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{organization}{2}{%
+      {International Society for Optics}%
+      {Photonics}%
+    }
+    \list{publisher}{1}{%
+      {SPIE}%
+    }
+    \keyw{First Person Shooter, Computer Games, Frame Rate, Frame Resolution}
+    \strng{namehash}{CMCKDF1}
+    \strng{fullhash}{CMCKDF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Multimedia Computing and Networking 2006}
+    \verb{doi}
+    \verb 10.1117/12.648609
+    \endverb
+    \field{pages}{8}
+    \field{title}{{The effects of frame rate and resolution on users playing
+  first person shooter games}}
+    \verb{url}
+    \verb https://doi.org/10.1117/12.648609
+    \endverb
+    \field{volume}{6071}
+    \field{year}{2006}
+  \endentry
 
-\bibitem{PixarCars}
-Per~H. Christensen, Julian Fong, David~M. Laur, and Dana Batali.
-\newblock Ray tracing for the movie `cars'.
-\newblock In {\em 2006 IEEE Symposium on Interactive Ray Tracing}, page~5,
-  2006.
+  \entry{PixarCars}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=CPH}{%
+         family={Christensen},
+         familyi={C\bibinitperiod},
+         given={Per\bibnamedelima H.},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Fong},
+         familyi={F\bibinitperiod},
+         given={Julian},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LDM}{%
+         family={Laur},
+         familyi={L\bibinitperiod},
+         given={David\bibnamedelima M.},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Batali},
+         familyi={B\bibinitperiod},
+         given={Dana},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CPH+1}
+    \strng{fullhash}{CPHFJLDMBD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2006 IEEE Symposium on Interactive Ray Tracing}
+    \verb{doi}
+    \verb 10.1109/RT.2006.280208
+    \endverb
+    \field{pages}{5}
+    \field{title}{Ray Tracing for the Movie `Cars'}
+    \field{year}{2006}
+  \endentry
 
-\bibitem{NvidiaTuringArchitecture}
-NVIDIA.
-\newblock Nvidia turing gpu architecture.
-\newblock Technical report, 2018.
+  \entry{NvidiaTuringArchitecture}{report}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={NVIDIA},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{31}
+    \field{title}{NVIDIA Turing GPU Architecture}
+    \field{type}{techreport}
+    \field{year}{2018}
+  \endentry
 
-\bibitem{Battlefield5RayTracing}
-Johannes Deligiannis and Jan Schmid.
-\newblock It just works: Ray-traced reflections in 'battlefield v'.
+  \entry{Battlefield5RayTracing}{online}{}
+    \name{author}{2}{}{%
+      {{hash=DJ}{%
+         family={Deligiannis},
+         familyi={D\bibinitperiod},
+         given={Johannes},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schmid},
+         familyi={S\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{organization}{2}{%
+      {EA DICE}%
+      {GDC}%
+    }
+    \strng{namehash}{DJSJ1}
+    \strng{fullhash}{DJSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{It Just Works: Ray-Traced Reflections in 'Battlefield V'}
+    \verb{url}
+    \verb https://www.gdcvault.com/play/1026282/It-Just-Works-Ray-Traced
+    \endverb
+    \field{day}{18}
+    \field{month}{03}
+    \field{year}{2018}
+    \field{urlday}{13}
+    \field{urlmonth}{03}
+    \field{urlyear}{2022}
+  \endentry
 
-\bibitem{BlinnShading}
-Bui~Tuong Phong.
-\newblock Illumination for computer generated pictures.
-\newblock {\em Commun. ACM}, 18(6):311–317, jun 1975.
+  \entry{UnityBlinnPhong}{online}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Specular}
+    \verb{url}
+    \verb https://docs.unity3d.com/560/Documentation/Manual/shader-NormalSpecul
+    \verb ar.html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{03}
+    \field{urlyear}{2022}
+  \endentry
 
-\bibitem{RealShadingInUnreal}
-B~Karis.
-\newblock Real shading in unreal engine 4.
-\newblock In {\em SIGGRAPH 2013 Course: Physically Based Shading in Theory and
-  Practice}, page~2, Anaheim, California, July 2013.
+  \entry{UnrealBlinnPhong}{online}{}
+    \name{author}{1}{}{%
+      {{hash=EU}{%
+         family={Engine},
+         familyi={E\bibinitperiod},
+         given={Unreal},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EU1}
+    \strng{fullhash}{EU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Materials Overview}
+    \verb{url}
+    \verb https://docs.unrealengine.com/udk/Three/MaterialsOverview.html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{03}
+    \field{urlyear}{2022}
+  \endentry
 
-\bibitem{movingFrostbitetoPBR}
-S~Lagarde and C~Rousiers.
-\newblock Moving frostbite to physically based rendering 3.0.
-\newblock In {\em SIGGRAPH 2014 Course: Physically Based Shading in Theory and
-  Practice}, Vancouver, 2014.
+  \entry{OpenGLBlinnPhongFixedFunction}{online}{}
+    \name{author}{1}{}{%
+      {{hash=K}{%
+         family={Khronos},
+         familyi={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{K1}
+    \strng{fullhash}{K1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Fixed Function Pipeline}
+    \verb{url}
+    \verb https://www.khronos.org/opengl/wiki/Fixed_Function_Pipeline
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{03}
+    \field{urlyear}{2022}
+  \endentry
 
-\bibitem{SIGGRAPH2020Course}
-Stephen Hill, Stephen McAuley, Laurent Belcour, Will Earl, Niklas Harrysson,
-  S{\'e}bastien Hillaire, Naty Hoffman, Lee Kerley, Jasmin Patry, Rob
-  Piek{\'e}, et~al.
-\newblock Physically based shading in theory and practice.
-\newblock In {\em ACM SIGGRAPH 2020 Courses}, page~2. 2020.
+  \entry{BlinnShading}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PBT}{%
+         family={Phong},
+         familyi={P\bibinitperiod},
+         given={Bui\bibnamedelima Tuong},
+         giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{hidden surface removal, shading, computer graphics, graphic display}
+    \strng{namehash}{PBT1}
+    \strng{fullhash}{PBT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The quality of computer generated images of three-dimensional scenes
+  depends on the shading technique used to paint the objects on the cathode-ray
+  tube screen. The shading algorithm itself depends in part on the method for
+  modeling the object, which also determines the hidden surface algorithm. The
+  various methods of object modeling, shading, and hidden surface removal are
+  thus strongly interconnected. Several shading techniques corresponding to
+  different methods of object modeling and the related hidden surface
+  algorithms are presented here. Human visual perception and the fundamental
+  laws of optics are considered in the development of a shading rule that
+  provides better quality and increased realism in generated images.%
+    }
+    \verb{doi}
+    \verb 10.1145/360825.360839
+    \endverb
+    \field{issn}{0001-0782}
+    \field{number}{6}
+    \field{pages}{311–317}
+    \field{title}{Illumination for Computer Generated Pictures}
+    \verb{url}
+    \verb https://doi.org/10.1145/360825.360839
+    \endverb
+    \field{volume}{18}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{Commun. ACM}
+    \field{year}{1975}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 
-\bibitem{Burley2012Physically}
-Brent Burley and Walt Disney~Animation Studios.
-\newblock Physically-based shading at disney.
-\newblock In {\em ACM SIGGRAPH}, volume 2012, page~18. vol. 2012, 2012.
+  \entry{RealShadingInUnreal}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=KB}{%
+         family={Karis},
+         familyi={K\bibinitperiod},
+         given={B},
+         giveni={B},
+      }}%
+    }
+    \strng{namehash}{KB1}
+    \strng{fullhash}{KB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{SIGGRAPH 2013 Course: Physically Based Shading in Theory
+  and Practice}
+    \field{pages}{2}
+    \field{title}{Real Shading in Unreal Engine 4}
+    \list{location}{1}{%
+      {Anaheim, California}%
+    }
+    \field{year}{2013}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 
-\end{thebibliography}
+  \entry{movingFrostbitetoPBR}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=LS}{%
+         family={Lagarde},
+         familyi={L\bibinitperiod},
+         given={S},
+         giveni={S},
+      }}%
+      {{hash=RC}{%
+         family={Rousiers},
+         familyi={R\bibinitperiod},
+         given={C},
+         giveni={C},
+      }}%
+    }
+    \strng{namehash}{LSRC1}
+    \strng{fullhash}{LSRC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{SIGGRAPH 2014 Course: Physically Based Shading in Theory
+  and Practice}
+    \field{title}{Moving Frostbite to Physically Based Rendering 3.0}
+    \list{location}{1}{%
+      {Vancouver}%
+    }
+    \field{year}{2014}
+  \endentry
+
+  \entry{SIGGRAPH2020Course}{incollection}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{10}{}{%
+      {{hash=HS}{%
+         family={Hill},
+         familyi={H\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={McAuley},
+         familyi={M\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BL}{%
+         family={Belcour},
+         familyi={B\bibinitperiod},
+         given={Laurent},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=EW}{%
+         family={Earl},
+         familyi={E\bibinitperiod},
+         given={Will},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=HN}{%
+         family={Harrysson},
+         familyi={H\bibinitperiod},
+         given={Niklas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hillaire},
+         familyi={H\bibinitperiod},
+         given={S{\'e}bastien},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HN}{%
+         family={Hoffman},
+         familyi={H\bibinitperiod},
+         given={Naty},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=KL}{%
+         family={Kerley},
+         familyi={K\bibinitperiod},
+         given={Lee},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Patry},
+         familyi={P\bibinitperiod},
+         given={Jasmin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Piek{\'e}},
+         familyi={P\bibinitperiod},
+         given={Rob},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HS+1}
+    \strng{fullhash}{HSMSBLEWHNHSHNKLPJPR+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{ACM SIGGRAPH 2020 Courses}
+    \field{pages}{2}
+    \field{title}{Physically based shading in theory and practice}
+    \field{year}{2020}
+  \endentry
+
+  \entry{Burley2012Physically}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BB}{%
+         family={Burley},
+         familyi={B\bibinitperiod},
+         given={Brent},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SWDA}{%
+         family={Studios},
+         familyi={S\bibinitperiod},
+         given={Walt Disney\bibnamedelima Animation},
+         giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {vol. 2012}%
+    }
+    \strng{namehash}{BBSWDA1}
+    \strng{fullhash}{BBSWDA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{ACM SIGGRAPH}
+    \field{pages}{18}
+    \field{title}{Physically-based shading at disney}
+    \field{volume}{2012}
+    \field{year}{2012}
+  \endentry
+\enddatalist
+\endinput

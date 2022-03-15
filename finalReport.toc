@@ -1,32 +1,25 @@
 \contentsline {chapter}{\numberline {1}Introduction and Background Research}{2}{}%
 \contentsline {section}{\numberline {1.1}Introduction}{2}{}%
-\contentsline {paragraph}{}{2}{}%
-\contentsline {paragraph}{}{2}{}%
-\contentsline {paragraph}{}{2}{}%
-\contentsline {paragraph}{}{3}{}%
-\contentsline {paragraph}{}{3}{}%
-\contentsline {paragraph}{}{3}{}%
-\contentsline {paragraph}{}{3}{}%
-\contentsline {section}{\numberline {1.2}Literature review}{4}{}%
-\contentsline {chapter}{\numberline {2}Methods}{5}{}%
-\contentsline {section}{\numberline {2.1}A section}{5}{}%
-\contentsline {subsection}{\numberline {2.1.1}A sub-section}{5}{}%
-\contentsline {section}{\numberline {2.2}Another section}{5}{}%
-\contentsline {chapter}{\numberline {3}Results}{6}{}%
-\contentsline {section}{\numberline {3.1}A section}{6}{}%
-\contentsline {subsection}{\numberline {3.1.1}A sub-section}{6}{}%
-\contentsline {section}{\numberline {3.2}Another section}{6}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{7}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{7}{}%
-\contentsline {section}{\numberline {4.2}Ideas for future work}{7}{}%
-\contentsline {chapter}{References}{8}{}%
-\contentsline {chapter}{Appendices}{9}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{9}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{9}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{9}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{9}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{9}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{9}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{9}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{9}{}%
-\contentsline {chapter}{\numberline {B}External Material}{10}{}%
+\contentsline {section}{\numberline {1.2}Literature review}{3}{}%
+\contentsline {chapter}{\numberline {2}Methods}{4}{}%
+\contentsline {section}{\numberline {2.1}A section}{4}{}%
+\contentsline {subsection}{\numberline {2.1.1}A sub-section}{4}{}%
+\contentsline {section}{\numberline {2.2}Another section}{4}{}%
+\contentsline {chapter}{\numberline {3}Results}{5}{}%
+\contentsline {section}{\numberline {3.1}A section}{5}{}%
+\contentsline {subsection}{\numberline {3.1.1}A sub-section}{5}{}%
+\contentsline {section}{\numberline {3.2}Another section}{5}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{6}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{6}{}%
+\contentsline {section}{\numberline {4.2}Ideas for future work}{6}{}%
+\contentsline {chapter}{References}{7}{}%
+\contentsline {chapter}{Appendices}{8}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{8}{}%
+\contentsline {section}{\numberline {A.1}Critical self-evaluation}{8}{}%
+\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{8}{}%
+\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{8}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal issues}{8}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social issues}{8}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{8}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional issues}{8}{}%
+\contentsline {chapter}{\numberline {B}External Material}{9}{}%
