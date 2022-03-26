@@ -19,7 +19,7 @@ Rendering can be performed using one of two techniques, ray tracing or rasteriza
 
 With rasterization, each object in the world is composed of an arrangement of primitive shapes, most commonly, triangles, and their material is described through a number of parameters. When rendering, the world is transformed and projected onto a 2D plane. Within this plane, a fixed region maps to the space of the output image; all triangles that lie outside this region are clipped. The remaining triangles are then split into granular pieces, called \textit{fragments}. A colour is calculated for each fragment by evaluating the amount of light that shines on that fragment in the world, and then how that light interacts with the material of the object that fragment belongs to. Performing this calculation is called \textit{shading}, and how it is done is defined by a \textit{shading model}. After resolving which fragments lie on top of which others, the final image is presented to the user. This whole rasterization process is referred to as the graphics rendering pipeline, and dedicated hardware has been developed to carry it out, the \textit{Graphics Processing Unit} (GPU).
 
-The appearance of the final rendered frames is largely determined by the shading model, and therefore the choice of such a model is crucial. For a long time, the standard shading model used for photo-realistic real-time rendering was Blinn-Phong; it was utilised in popular game engines, and was the default model used in OpenGL's fixed function pipeline~\cite{UnityBlinnPhong}~\cite{UnrealBlinnPhong}~\cite{OpenGLBlinnPhongFixedFunction}. Blinn-Phong is an empirical model: it is based on human observations of how light interacts with materials, rather than the underlying real-world physical rules that govern those interactions~\cite{BlinnShading}. Blinn-Phong can produce reasonably realistic images, and is computationally inexpensive - a very desirable trait for real-time rendering. However, due to its non-physically based nature, Blinn-Phong has many issues. Paramount amongst which is its inability to render certain physical phenomena, which limits the realism of rendered frames. Furthermore, the parameters of Blinn-Phong that are used to specify material properties, bear little relation to the characteristics of physical materials. This problem manifests itself in a tight coupling between material parameters and lighting conditions. In order to accurately depict the same physical material under different lighting conditions, it may be necessary to specify differing values for these parameters. This reduces the reusability of assets, making artist workflow more difficult.
+The appearance of the final rendered frames is largely determined by the shading model, and therefore the choice of such a model is crucial. For a long time, the standard shading model used for photo-realistic real-time rendering was Blinn-Phong; it was utilised in popular game engines, and was the default model used in OpenGL's fixed function pipeline~\cite{UnityBlinnPhong}~\cite{UnrealBlinnPhong}~\cite{OpenGLBlinnPhongFixedFunction}. Blinn-Phong is an empirical model: it is based on human observations of how light interacts with materials, rather than the underlying real-world physical rules that govern those interactions~\cite{PhongShading}. Blinn-Phong can produce reasonably realistic images, and is computationally inexpensive - a very desirable trait for real-time rendering. However, due to its non-physically based nature, Blinn-Phong has many issues. Paramount amongst which is its inability to render certain physical phenomena, which limits the realism of rendered frames. Furthermore, the parameters of Blinn-Phong that are used to specify material properties, bear little relation to the characteristics of physical materials. This problem manifests itself in a tight coupling between material parameters and lighting conditions. In order to accurately depict the same physical material under different lighting conditions, it may be necessary to specify differing values for these parameters. This reduces the reusability of assets, making artist workflow more difficult.
 
 In an effort to alleviate these issues, the replacement of Blinn-Phong in favour of physically based shading models has seen widespread adoption. Such models work by evaluating equations that simulate the real world physical interaction of light and objects. Using these models for shading is known as \textit{Physically Based Shading} (PBS), and their use in the wider rendering pipeline is called \textit{Physically Based Rendering} (PBR). PBS represented a seismic shift in the real-time rendering industry, with major game engines migrating to a PBR pipeline~\cite{RealShadingInUnreal}~\cite{movingFrostbitetoPBR}.
 
@@ -29,9 +29,90 @@ The advantages of using PBS over Blinn-Phong shading can be broadly categorised 
 
 Answering this question by simply commenting on the general perceived realism of a frame when compared to another, is a largely subjective exercise. Instead, in a concerted effort to be as objective as possible, I will examine the benefits of PBS by identifying physical phenomena that it models in its rendered frames, but that are absent when using Blinn-Phong shading. To this end, I will be developing a piece of software that can render scenes using both Blinn-Phong shading, and PBS.
 
+\section{Mathematical Notation}
+
+When reasoning about different mathematical expressions and models, it's of vital importance that a standard, coherent notation is used throughout.
+
+\begin{center}
+	\begin{tabular}{ c c }
+		\hline
+		\begin{math}\vect{n}\end{math} & Normal vector \\
+		\begin{math}\vect{l}\end{math} & Light direction \\
+		\begin{math}\vect{v}\end{math} & View vector \\
+		\begin{math}\vect{c}_{x}\end{math} & The RGB triplet vector representing the colour of \begin{math}x\end{math}\\
+		\begin{math}\vect{a}\cdot\vect{b}\end{math} & The dot product of vectors \begin{math}\vect{a}\end{math} and \begin{math}\vect{b}\end{math} \\
+		\begin{math}x^+\end{math} & Clamp \begin{math}x\end{math} to \begin{math}0\end{math} if \begin{math}x<0\end{math} \\
+		\hline
+	\end{tabular}
+\end{center}
 
 % Must provide evidence of a literature review. Use sections
 % and subsections as they make sense for your project.
 \section{Literature review}
-<This section heading is purely a suggestion -- you should subdivide this chapter in whatever manner you think makes most sense for your project. It may also make sense to spread the `Background Research' over more than one chapter, in which case they should be named sensibly.>
+
+The review begins with a brief discussion of the Blinn-Phong shading model; this provides the necessary background knowledge for the later comparison with physically based shading models to be performed. We then delve into the physics of how light interacts with matter, and how this pertains to shading. An exploration of the theory underpinning physically based shading models follows, and then we present several such models. After, we consider how lights can be represented in a physical manner. Finally, we finish by focusing on the wider PBR aspect with a discussion on how we store pixel colours, and the transformations that need to be applied before passing those colours to the display.
+
+\subsection{Blinn-Phong Shading}
+
+In 1975, Phong introduced a simple shading model for rendering realistic images~\cite{PhongShading}. The original model is parametrised as the sum of two terms, \textit{diffuse} and \textit{specular}, but in practice it is commonly supplemented with a third term, \textit{ambient} [citation]. Each one describes the contribution of a different lighting component.
+
+The diffuse term encodes the lighting effects of parity between a primitive's surface orientation and the direction of the light, with surfaces facing the light being illuminated more intensely than those facing away from it. This behaviour is formulated as:
+
+\begin{center}
+	\begin{math}\vect{c}_{shaded_{diff}} = \vect{c}_{surface_{diff}}\vect{c}_{light_{diff}}(\vect{n}\cdot\vect{l})^+\end{math}
+\end{center}
+
+\begin{math}\vect{c}_{shaded_{diff}}\end{math}, \begin{math}\vect{c}_{surface_{diff}}\end{math}, and \begin{math}\vect{c}_{light_{diff}}\end{math} are the RGB triplets that represent the diffuse colour of the shaded fragment, the diffuse colour of the surface, and the diffuse colour of the incident light respectively. This separation of the light and surface colours into separate components was not present in Phong's original model. However, many implementations have increased the flexibility of the model by exposing these additional parameters~\cite{LightingModelForComputerAnimators}. The \textit{normal}, \begin{math}\vect{n}\end{math}, is the unit vector pointing away from the surface at the shaded point, giving the orientation of the surface.  The \textit{light direction}, \begin{math}\vect{v}\end{math}, is the unit vector pointing in the direction of the incident light. See [Figure] for an illustration. The dot product of two unit vectors is equivalent to taking the cosine of the angle between them. Therefore, \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} will increase from 0 to 1 as the angle between the incident light direction and the surface normal decreases. Thus, the more aligned the surface orientation and light direction are, the greater the intensity of the diffuse term. Negative values of the dot product indicate that the light direction is underneath the surface. In these cases the light is not incident upon the surface at all, dot product is clamped to 0.
+
+The specular term of the model captures the ability for surfaces to exhibit highlights due to surface reflections. When light is incident upon a surface, it will experience some reflection, and when the reflected light is aligned with the direction of the viewer, this is perceived as small region of high intensity colour, a \textit{specular highlight}. The formula for the specular term is:
+
+\begin{center}
+	\begin{math}\vect{c}_{shaded_{spec}} = \vect{c}_{surface_{spec}}\vect{c}_{light_{spec}}((\vect{r}\cdot\vect{v})^+)^{shininess}\end{math} \\
+\end{center}
+
+Where \begin{math}\vect{r}\end{math} is the reflection of the incident light about the surface normal, and is defined as:
+
+\begin{center}
+	\begin{math}\vect{r} = 2(\vect{n}\cdot\vect{l})\vect{n} - \vect{l}\end{math}	
+\end{center}
+
+[Explain how the formula works]
+
+[the shininess variable controls the concentration/focus of the reflection]
+
+[Ambient term - crude simulation of GI; can get much more complex]
+
+[Blinn improved with the half vector]
+
+
+The area of this highlighted region is variable, and depends on the material of the surface.
+
+
+
+An illustration of this specular behavior can be seen in [Figure].
+
+
+[Variables would be defined by the material of the surface.]
+
+Splitting shading into the evaluation of a diffuse and specular term is common practice, and the physical basis for such a practice is explained in section \ref{PhysicsOfLightMatterInteraction}.
+
+\sout{seminal paper in which he proposed a simple shading model. He also introduced the idea of computing this model per pixel rather than per vertex. As explained before, an object in the scene is made up of a collection of primitive shapes, this is called the mesh. Before we just calculated lighting per vertex of those primitives, in what is known as goroud shading, and inteprolated those colours across the mesh. Phong proposed that we interpolate the necessary data over the vertices but compute the colour for each pixel.}
+
+\subsection{Physics of Light-Matter Interaction} \label{PhysicsOfLightMatterInteraction}
+
+\begin{itemize}
+	\item Blinn-Phong Shading
+	\item Physics of light?
+	\item Reflectance equation
+	\item BRDFs
+	\begin{itemize}
+		\item What makes a good BRDF (energy conservation and the reihtsz... reciprocity)
+		\item Fresnel Reflectance
+		\item Microfacet theory
+		\item Surface reflection
+		\item Subsurface reflection
+	\end{itemize}
+	\item Lights
+	\item HDR, tonemapping and gamma correction (display encoding)
+\end{itemize}
 

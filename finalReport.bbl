@@ -235,7 +235,7 @@
     \field{urlyear}{2022}
   \endentry
 
-  \entry{BlinnShading}{article}{}
+  \entry{PhongShading}{article}{}
     \name{author}{1}{}{%
       {{hash=PBT}{%
          family={Phong},
@@ -438,6 +438,30 @@
     \field{title}{Physically-based shading at disney}
     \field{volume}{2012}
     \field{year}{2012}
+  \endentry
+
+  \entry{LightingModelForComputerAnimators}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SP}{%
+         family={Strauss},
+         familyi={S\bibinitperiod},
+         given={P.S.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SP1}
+    \strng{fullhash}{SP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/38.62696
+    \endverb
+    \field{number}{6}
+    \field{pages}{56\bibrangedash 64}
+    \field{title}{A realistic lighting model for computer animators}
+    \field{volume}{10}
+    \field{journaltitle}{IEEE Computer Graphics and Applications}
+    \field{year}{1990}
   \endentry
 \enddatalist
 \endinput

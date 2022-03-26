@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  15 MAR 2022 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  26 MAR 2022 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,7 +472,18 @@ e.sty
 Package: xparse 2022-01-12 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
-))
+)) (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+\UL@box=\box54
+\UL@hyphenbox=\box55
+\UL@skip=\skip87
+\UL@hook=\toks21
+\UL@height=\dimen170
+\UL@pe=\count399
+\UL@pixel=\dimen171
+\ULC@box=\box56
+Package: ulem 2019/11/18
+\ULdepth=\dimen172
+)
 
 Package geometry Warning: Over-specification in `h'-direction.
     `width' (597.50787pt) is ignored.
@@ -482,8 +493,8 @@ Package geometry Warning: Over-specification in `v'-direction.
     `height' (845.04684pt) is ignored.
 
 )
-\@quotelevel=\count399
-\@quotereset=\count400
+\@quotelevel=\count400
+\@quotereset=\count401
  (finalReport.aux (prelude.aux) (chapters/chapter1.aux) (chapters/chapter2.aux)
  (chapters/chapter3.aux) (chapters/chapter4.aux) (appendices.aux))
 \openout1 = `finalReport.aux'.
@@ -541,23 +552,35 @@ LaTeX Font Info:    ... okay on input line 6.
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count401
-\scratchdimen=\dimen170
-\scratchbox=\box54
-\nofMPsegments=\count402
-\nofMParguments=\count403
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count404
-\MPscratchDim=\dimen171
-\MPnumerator=\count405
-\makeMPintoPDFobject=\count406
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count402
+\scratchdimen=\dimen173
+\scratchbox=\box57
+\nofMPsegments=\count403
+\nofMParguments=\count404
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count405
+\MPscratchDim=\dimen174
+\MPnumerator=\count406
+\makeMPintoPDFobject=\count407
+\everyMPtoPDFconversion=\toks23
 )
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
@@ -583,7 +606,7 @@ Package biblatex Info: ... file 'finalReport.bbl' found.
  (finalReport.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'BlinnShading':
+(biblatex)                with 'PhongShading':
 (biblatex)                - Invalid format of field 'month'.
 
 
@@ -702,12 +725,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 
-]) [3]
+] [3] [4]) [5]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [4
+) [6
 
 
 
@@ -717,7 +740,7 @@ Chapter 2.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [5
+) [7
 
 
 
@@ -727,12 +750,12 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [6
+) [8
 
 
 
 
-] [7
+] [9
 
 
 
@@ -741,13 +764,13 @@ Chapter 4.
 
  (appendices.tex
 Appendix A.
-[8
+[10
 
 
 
 ]
 Appendix B.
-) [9
+) [11
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -765,13 +788,13 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12686 strings out of 478584
- 247403 string characters out of 2844402
- 1005515 words of memory out of 3000000
- 30654 multiletter control sequences out of 15000+600000
- 487732 words of font info for 59 fonts, out of 8000000 for 9000
+ 12861 strings out of 478584
+ 251043 string characters out of 2844402
+ 1019985 words of memory out of 3000000
+ 30813 multiletter control sequences out of 15000+600000
+ 488767 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,10n,93p,1846b,1318s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,10n,93p,1873b,1320s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc
 1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecsl1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -788,11 +811,18 @@ ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\
 Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk
 >{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <C:
 \Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.p
-k><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pf
-b>
-Output written on finalReport.pdf (13 pages, 189655 bytes).
+k><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ej200/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ej200/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ej200/App
+Data/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
+Output written on finalReport.pdf (15 pages, 269862 bytes).
 PDF statistics:
- 518 PDF objects out of 1000 (max. 8388607)
+ 569 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
