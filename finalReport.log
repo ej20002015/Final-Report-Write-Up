@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  26 MAR 2022 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  27 MAR 2022 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,7 +483,90 @@ Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
 \ULC@box=\box56
 Package: ulem 2019/11/18
 \ULdepth=\dimen172
+) (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.st
+y
+Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2022/02/28 v3.6a Customizing captions (AR)
+
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2022/02/28 v2.3a caption3 kernel (AR)
+\caption@tempdima=\dimen173
+\captionmargin=\dimen174
+\caption@leftmargin=\dimen175
+\caption@rightmargin=\dimen176
+\caption@width=\dimen177
+\caption@indent=\dimen178
+\caption@parindent=\dimen179
+\caption@hangindent=\dimen180
+Package caption Info: Standard document class detected.
 )
+\c@caption@flags=\count400
+\c@continuedfloat=\count401
+)
+\c@subfigure=\count402
+\c@subtable=\count403
+) (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
+Package: physics 
+
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip88
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen181
+))
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen182
+)
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count404
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count405
+\leftroot@=\count406
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count407
+\DOTSCASE@=\count408
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box57
+\strutbox@=\box58
+\big@size=\dimen183
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count409
+\c@MaxMatrixCols=\count410
+\dotsspace@=\muskip21
+\c@parentequation=\count411
+\dspbrk@lvl=\count412
+\tag@help=\toks23
+\row@=\count413
+\column@=\count414
+\maxfields@=\count415
+\andhelp@=\toks24
+\eqnshift@=\dimen184
+\alignsep@=\dimen185
+\tagshift@=\dimen186
+\tagwidth@=\dimen187
+\totwidth@=\dimen188
+\lineht@=\dimen189
+\@envbody=\toks25
+\multlinegap=\skip89
+\multlinetaggap=\skip90
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+))
 
 Package geometry Warning: Over-specification in `h'-direction.
     `width' (597.50787pt) is ignored.
@@ -493,8 +576,8 @@ Package geometry Warning: Over-specification in `v'-direction.
     `height' (845.04684pt) is ignored.
 
 )
-\@quotelevel=\count400
-\@quotereset=\count401
+\@quotelevel=\count416
+\@quotereset=\count417
  (finalReport.aux (prelude.aux) (chapters/chapter1.aux) (chapters/chapter2.aux)
  (chapters/chapter3.aux) (chapters/chapter4.aux) (appendices.aux))
 \openout1 = `finalReport.aux'.
@@ -552,35 +635,23 @@ LaTeX Font Info:    ... okay on input line 6.
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count402
-\scratchdimen=\dimen173
-\scratchbox=\box57
-\nofMPsegments=\count403
-\nofMParguments=\count404
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count405
-\MPscratchDim=\dimen174
-\MPnumerator=\count406
-\makeMPintoPDFobject=\count407
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count418
+\scratchdimen=\dimen190
+\scratchbox=\box59
+\nofMPsegments=\count419
+\nofMParguments=\count420
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count421
+\MPscratchDim=\dimen191
+\MPnumerator=\count422
+\makeMPintoPDFobject=\count423
+\everyMPtoPDFconversion=\toks28
 )
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-
-(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
-keys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
@@ -614,9 +685,16 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'RealShadingInUnreal':
 (biblatex)                - Invalid format of field 'month'.
 
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'BlinnModelsOfLightReflection':
+(biblatex)                - Can't use 'location' + 'address'.
+
 )
 Package biblatex Info: Reference section=0 on input line 6.
 Package biblatex Info: Reference segment=0 on input line 6.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 \openout2 = `prelude.aux'.
 
  (prelude.tex
@@ -675,12 +753,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 15.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 15.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 15.
 
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
 []\T1/cmr/m/n/10.95 Uploaded to Min-erva
@@ -716,21 +788,40 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 
  (chapters/chapter1.tex
 Chapter 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 18.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 18.
 [2
 
 
 
 
-] [3] [4]) [5]
+] [3] [4]
+<./images//PrincipleVectors.png, id=51, 602.85225pt x 257.16075pt>
+File: ./images//PrincipleVectors.png Graphic file (type png)
+<use ./images//PrincipleVectors.png>
+Package pdftex.def Info: ./images//PrincipleVectors.png  used on input line 100
+.
+(pdftex.def)             Requested size: 227.62204pt x 97.09818pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5]
+<./images//PhongIssue.png, id=55, 1134.639pt x 315.579pt>
+File: ./images//PhongIssue.png Graphic file (type png)
+<use ./images//PhongIssue.png>
+Package pdftex.def Info: ./images//PhongIssue.png  used on input line 119.
+(pdftex.def)             Requested size: 218.51521pt x 60.77441pt.
+<./images//BlinnFix.png, id=56, 1121.99174pt x 301.125pt>
+File: ./images//BlinnFix.png Graphic file (type png)
+<use ./images//BlinnFix.png>
+Package pdftex.def Info: ./images//BlinnFix.png  used on input line 125.
+(pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
+ [6 <./images//PrincipleVectors.png (PNG copy)> <./images//PhongIssue.png> <./i
+mages//BlinnFix.png>]) [7]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [6
+) [8
 
 
 
@@ -740,7 +831,7 @@ Chapter 2.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [7
+) [9
 
 
 
@@ -750,27 +841,27 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [8
+) [10
 
 
 
 
-] [9
+] [11
 
 
 
-]
+] [12]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[10
+[13
 
 
 
 ]
 Appendix B.
-) [11
+) [14
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -788,41 +879,46 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12861 strings out of 478584
- 251043 string characters out of 2844402
- 1019985 words of memory out of 3000000
- 30813 multiletter control sequences out of 15000+600000
- 488767 words of font info for 63 fonts, out of 8000000 for 9000
+ 15552 strings out of 478584
+ 293650 string characters out of 2844402
+ 1054974 words of memory out of 3000000
+ 33475 multiletter control sequences out of 15000+600000
+ 491810 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,10n,93p,1873b,1320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,11n,134p,1873b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc
 1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecsl1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\ej200\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\ej200\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\ej200\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\
-ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\
-Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk
->{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <C:
-\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.p
-k><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ej200/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ej200/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ej200/App
-Data/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (15 pages, 269862 bytes).
+0\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecsl1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\ej200\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\ej200\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\
+ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\
+Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk
+> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2
+074.pk>{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.en
+c} <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
+1440.pk><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbx8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej200/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ej200/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ej20
+0/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
+sers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
+fb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
+utmr8a.pfb>
+Output written on finalReport.pdf (18 pages, 413669 bytes).
 PDF statistics:
- 569 PDF objects out of 1000 (max. 8388607)
+ 632 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

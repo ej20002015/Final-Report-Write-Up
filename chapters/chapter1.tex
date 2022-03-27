@@ -41,6 +41,7 @@ When reasoning about different mathematical expressions and models, it's of vita
 		\begin{math}\vect{v}\end{math} & View vector \\
 		\begin{math}\vect{c}_{x}\end{math} & The RGB triplet vector representing the colour of \begin{math}x\end{math}\\
 		\begin{math}\vect{a}\cdot\vect{b}\end{math} & The dot product of vectors \begin{math}\vect{a}\end{math} and \begin{math}\vect{b}\end{math} \\
+		\begin{math}\norm{\vect{a}}\end{math} & The norm of vector \begin{math}\vect{a}\end{math} \\
 		\begin{math}x^+\end{math} & Clamp \begin{math}x\end{math} to \begin{math}0\end{math} if \begin{math}x<0\end{math} \\
 		\hline
 	\end{tabular}
@@ -54,20 +55,22 @@ The review begins with a brief discussion of the Blinn-Phong shading model; this
 
 \subsection{Blinn-Phong Shading}
 
-In 1975, Phong introduced a simple shading model for rendering realistic images~\cite{PhongShading}. The original model is parametrised as the sum of two terms, \textit{diffuse} and \textit{specular}, but in practice it is commonly supplemented with a third term, \textit{ambient} [citation]. Each one describes the contribution of a different lighting component.
+\subsubsection{Phong Model}
 
-The diffuse term encodes the lighting effects of parity between a primitive's surface orientation and the direction of the light, with surfaces facing the light being illuminated more intensely than those facing away from it. This behaviour is formulated as:
+In 1975, Phong introduced a simple shading model for rendering realistic images~\cite{PhongShading}. The original model is parametrised as the sum of two terms, \textit{diffuse} and \textit{specular}, but in practice it is commonly supplemented with a third term, \textit{ambient}. Each one describes the contribution of a different lighting component. Splitting shading into the evaluation of a diffuse and specular term is common practice, and the physical basis for doing this is explained in section \ref{PhysicsOfLightMatterInteraction}.
+
+An ideal diffuse surface follows Lambert's law: light incident onto a point will be diffused in all directions equally~\cite{Lambert}. Therefore, the determining factor in the appearance of such surfaces is the intensity of the incident light, which is a function of the direction of incident light and the orientation of the shaded surface. The diffuse term encodes the lighting effects of parity between a primitive's surface orientation and the direction of the light, with surfaces facing the light being illuminated more intensely than those facing away from it. This behaviour is formulated as:
 
 \begin{center}
 	\begin{math}\vect{c}_{shaded_{diff}} = \vect{c}_{surface_{diff}}\vect{c}_{light_{diff}}(\vect{n}\cdot\vect{l})^+\end{math}
 \end{center}
 
-\begin{math}\vect{c}_{shaded_{diff}}\end{math}, \begin{math}\vect{c}_{surface_{diff}}\end{math}, and \begin{math}\vect{c}_{light_{diff}}\end{math} are the RGB triplets that represent the diffuse colour of the shaded fragment, the diffuse colour of the surface, and the diffuse colour of the incident light respectively. This separation of the light and surface colours into separate components was not present in Phong's original model. However, many implementations have increased the flexibility of the model by exposing these additional parameters~\cite{LightingModelForComputerAnimators}. The \textit{normal}, \begin{math}\vect{n}\end{math}, is the unit vector pointing away from the surface at the shaded point, giving the orientation of the surface.  The \textit{light direction}, \begin{math}\vect{v}\end{math}, is the unit vector pointing in the direction of the incident light. See [Figure] for an illustration. The dot product of two unit vectors is equivalent to taking the cosine of the angle between them. Therefore, \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} will increase from 0 to 1 as the angle between the incident light direction and the surface normal decreases. Thus, the more aligned the surface orientation and light direction are, the greater the intensity of the diffuse term. Negative values of the dot product indicate that the light direction is underneath the surface. In these cases the light is not incident upon the surface at all, dot product is clamped to 0.
+\begin{math}\vect{c}_{shaded_{diff}}\end{math}, \begin{math}\vect{c}_{surface_{diff}}\end{math}, and \begin{math}\vect{c}_{light_{diff}}\end{math} are the RGB triplets that represent the diffuse colour of the shaded fragment, the diffuse colour of the surface, and the diffuse colour of the incident light respectively. This separation of the light and surface colours into separate components was not present in Phong's original model. However, many implementations have increased the flexibility of the model by exposing these additional parameters~\cite{LightingModelForComputerAnimators}. The \textit{normal}, \begin{math}\vect{n}\end{math}, is the unit vector pointing away from the surface at the shaded point, giving the orientation of the surface.  The \textit{light direction}, \begin{math}\vect{v}\end{math}, is the unit vector pointing in the direction of the incident light. See Figure \ref{fig:PrincipleVectors} for an illustration of the principle vectors used in the Phong shading model (and indeed, by most shading models). The dot product of two unit vectors is equivalent to taking the cosine of the angle between them. Therefore, \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} will increase from 0 to 1 as the angle between the incident light direction and the surface normal decreases. Thus, the more aligned the surface orientation and light direction are, the greater the intensity of the diffuse term. Negative values of the dot product indicate that the light direction is underneath the surface. In these cases the light is not incident upon the surface at all, so the dot product is clamped to 0.
 
-The specular term of the model captures the ability for surfaces to exhibit highlights due to surface reflections. When light is incident upon a surface, it will experience some reflection, and when the reflected light is aligned with the direction of the viewer, this is perceived as small region of high intensity colour, a \textit{specular highlight}. The formula for the specular term is:
+The specular term of the model captures the ability for surfaces to exhibit highlights due to surface reflections. When light is incident upon a surface, it will experience some reflection, and when the reflected light is aligned with the direction of the viewer, this is perceived as a region of increased illumination, a \textit{specular highlight}. The formula for the specular term is:
 
 \begin{center}
-	\begin{math}\vect{c}_{shaded_{spec}} = \vect{c}_{surface_{spec}}\vect{c}_{light_{spec}}((\vect{r}\cdot\vect{v})^+)^{shininess}\end{math} \\
+	\begin{math}\vect{c}_{shaded_{spec}} = \vect{c}_{surface_{spec}}\vect{c}_{light_{spec}}((\vect{r}\cdot\vect{v})^+)^{surface_{shininess}}\end{math} \\
 \end{center}
 
 Where \begin{math}\vect{r}\end{math} is the reflection of the incident light about the surface normal, and is defined as:
@@ -76,32 +79,75 @@ Where \begin{math}\vect{r}\end{math} is the reflection of the incident light abo
 	\begin{math}\vect{r} = 2(\vect{n}\cdot\vect{l})\vect{n} - \vect{l}\end{math}	
 \end{center}
 
-[Explain how the formula works]
+The RGB triplets are similar to those in the diffuse equation, except these are specific to the specular response. Phong's original model had the colour of the specular highlight be the same as the overall colour of the light (not split into separate diffuse and specular components). This gave all materials an overly plastic appearance. Introducing the \begin{math}\vect{c}_{surface_{spec}}\end{math} and \begin{math}\vect{c}_{light_{spec}}\end{math} variables allows for the colour of the specular highlight to be fully configurable, mitigating this issue~\cite{LightingModelForComputerAnimators}. The \textit{view vector}, \begin{math}\vect{v}\end{math}, is the unit vector pointing in the direction of the viewer. The dot product measures the alignment between the view direction, and the direction of the reflected incident light. The \begin{math}surface_{shininess}\end{math} parameter determines the concentration of the reflected light rays. The higher the value, the more focused the reflected rays are, the smaller the specular highlight becomes, and the shinier the object appears. Typical values range from 1 to 100.
 
-[the shininess variable controls the concentration/focus of the reflection]
+Finally, we have the ambient term. In the model developed so far, if a shaded point is not directly visible from a light source, then it will be black. In reality, such points are never completely unilluminated - rays from light sources will bounce around the environment, eventually lighting these obscured areas. So far we have only considered \textit{direct lighting}; the ambient term is used to crudely approximate the illumination that is a consequence of this \textit{indirect lighting}:
 
-[Ambient term - crude simulation of GI; can get much more complex]
+\begin{center}
+	\begin{math}\vect{c}_{shaded_{ambi}} = \vect{c}_{surface_{ambi}}x\end{math}
+\end{center}
 
-[Blinn improved with the half vector]
+\begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect lighting that occurs. A value of \begin{math}x = 0.2\end{math} is commonly used.
 
+These three terms are summed together to give the overall Phong shading model:
 
-The area of this highlighted region is variable, and depends on the material of the surface.
+\begin{center}
+	\begin{math}\vect{c}_{shaded} = \vect{c}_{shaded_{ambi}} + \vect{c}_{shaded_{diff}} + \vect{c}_{shaded_{spec}}\end{math}
+\end{center}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=8cm]{PrincipleVectors}
+	\caption{The surface normal \begin{math}\vect{n}\end{math}, light direction \begin{math}\vect{l}\end{math}, and view vector \begin{math}\vect{v}\end{math}~\cite{RTR4}}
+	\label{fig:PrincipleVectors}
+\end{figure}
 
+\subsubsection{Blinn-Phong Model}
 
-An illustration of this specular behavior can be seen in [Figure].
+One of the issues with the Phong shading model is made apparent when viewing a rough (low \begin{math}shininess\end{math} value) surface from a direction close to the incident light. The corresponding reflected light vector makes an angle with the view direction that is greater than 90$^{\circ}$. In this instance, the dot product \begin{math}\vect{r}\cdot\vect{v}\end{math} evaluates to a negative value, and is thus clamped to 0, leading to no specular contribution. However, for very rough surfaces, the specular highlight is so wide that even at these greater angles, there should still be a specular contribution. See Figure \ref{fig:PhongIssue} for an illustration of the problem.
 
+In 1977, Blinn remedied this issue by modifying the Phong shading model with a more accurate specular term~\cite{BlinnModelsOfLightReflection}. He utilised the half vector, \begin{math}\vect{h}\end{math}, dispensing with the reflected light vector, \begin{math}\vect{r}\end{math}, and replaced the existing specular dot product with \begin{math}\vect{h}\cdot\vect{n}\end{math}. \begin{math}\vect{h}\end{math} is a unit vector pointing in the direction that is halfway between the \begin{math}\vect{l}\end{math} and \begin{math}\vect{v}\end{math} vectors. It is calculated as:
 
-[Variables would be defined by the material of the surface.]
+\begin{center}
+	\begin{math}\vect{h} = \frac{\vect{l} + \vect{v}}{\norm{\vect{l} + \vect{v}}}\end{math}
+\end{center}
 
-Splitting shading into the evaluation of a diffuse and specular term is common practice, and the physical basis for such a practice is explained in section \ref{PhysicsOfLightMatterInteraction}.
+Blinn's specular term emulates the overall behaviour of the original Phong term. As the (now conceptual) reflection vector \begin{math}\vect{r}\end{math} aligns with \begin{math}\vect{v}\end{math}, so does the half vector \begin{math}\vect{h}\end{math} align with the surface normal \begin{math}\vect{n}\end{math}. Crucially though, \begin{math}\vect{h}\cdot\vect{n}\end{math} will only evaluate to a negative value, and subsequently be clamped to 0, if \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} is beneath the surface. Therefore, the scenario in which rough surfaces were being shaded incorrectly with no specular contribution, is resolved. See \ref{fig:BlinnFix} for an illustration.
 
-\sout{seminal paper in which he proposed a simple shading model. He also introduced the idea of computing this model per pixel rather than per vertex. As explained before, an object in the scene is made up of a collection of primitive shapes, this is called the mesh. Before we just calculated lighting per vertex of those primitives, in what is known as goroud shading, and inteprolated those colours across the mesh. Phong proposed that we interpolate the necessary data over the vertices but compute the colour for each pixel.}
+\begin{figure}[h]
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\linewidth]{PhongIssue}
+		\caption{The angle between \begin{math}\vect{r}\end{math} and \begin{math}\vect{v}\end{math} can exceed 90$^{\circ}$ whilst \begin{math}\vect{l}\end{math} and \begin{math}\vect{v}\end{math} are still above the surface}
+		\label{fig:PhongIssue}
+	\end{subfigure}
+	\hspace*{\fill}
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\linewidth]{BlinnFix}
+		\caption{The angle between \begin{math}\vect{h}\end{math} and \begin{math}\vect{n}\end{math} can't exceed 90$^{\circ}$ without \begin{math}\vect{l}\end{math} and \begin{math}\vect{v}\end{math} being below the surface }
+		\label{fig:BlinnFix}
+	\end{subfigure}
+	\caption{}
+\end{figure}
+
+Blinn's modification to the Phong model is known as the Blinn-Phong shading model, and it produces more realistic images than the original. The model is formulated as:
+
+\begin{center}
+	\begin{math}\vect{c}_{shaded} = p_{ambi} + p_{diff}(\vect{n}\cdot\vect{l})^+ + p_{spec}((\vect{h}\cdot\vect{n})^+)^{surface_{shininess}}\end{math}
+\end{center}
+
+where
+
+\begin{center}
+	\begin{math}p_{ambi} = \vect{c}_{surface_{ambi}}x\end{math} \\
+	\begin{math}p_{diff} = \vect{c}_{surface_{diff}}\vect{c}_{light_{diff}}\end{math} \\
+	\begin{math}p_{spec} = \vect{c}_{surface_{spec}}\vect{c}_{light_{spec}}\end{math}
+\end{center}
+
+Expressing the model in this way draws attention to the relative proportions of each component that contributes to the overall shading. These proportions, \begin{math}p\end{math}, are modulated via lighting parameters:  \begin{math}light\end{math} variables and \begin{math}x\end{math}; and material parameters: \begin{math}surface\end{math} variables.
 
 \subsection{Physics of Light-Matter Interaction} \label{PhysicsOfLightMatterInteraction}
 
 \begin{itemize}
-	\item Blinn-Phong Shading
 	\item Physics of light?
 	\item Reflectance equation
 	\item BRDFs
