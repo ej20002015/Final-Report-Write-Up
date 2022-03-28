@@ -600,5 +600,74 @@
     \field{year}{1977}
     \warn{\item Can't use 'location' + 'address'}
   \endentry
+
+  \entry{SpectralRendering}{incollection}{}
+    \name{author}{3}{}{%
+      {{hash=MD}{%
+         family={Murray},
+         familyi={M\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Fichet},
+         familyi={F\bibinitperiod},
+         given={Alban},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Pacanowski},
+         familyi={P\bibinitperiod},
+         given={Romain},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Springer}}%
+    }
+    \strng{namehash}{MDFAPR1}
+    \strng{fullhash}{MDFAPR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{{Ray Tracing Gems II}}
+    \verb{doi}
+    \verb 10.1007/978-1-4842-7185-8\_42
+    \endverb
+    \field{pages}{673 \bibrangedash  698}
+    \field{title}{{Efficient Spectral Rendering on the GPU for Predictive
+  Rendering}}
+    \verb{url}
+    \verb https://hal.inria.fr/hal-03331619
+    \endverb
+    \verb{file}
+    \verb https://hal.inria.fr/hal-03331619/file/Efficient%20Spectral%20Renderi
+    \verb ng%20on%20the%20GPU.pdf
+    \endverb
+    \field{year}{2021}
+  \endentry
+
+  \entry{RGBColours}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SM}{%
+         family={Stone},
+         familyi={S\bibinitperiod},
+         given={M.C.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SM1}
+    \strng{fullhash}{SM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/MCG.2005.84
+    \endverb
+    \field{number}{4}
+    \field{pages}{78\bibrangedash 85}
+    \field{title}{Representing colors as three numbers [color graphics]}
+    \field{volume}{25}
+    \field{journaltitle}{IEEE Computer Graphics and Applications}
+    \field{year}{2005}
+  \endentry
 \enddatalist
 \endinput

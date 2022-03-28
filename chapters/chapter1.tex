@@ -147,6 +147,14 @@ Expressing the model in this way draws attention to the relative proportions of 
 
 \subsection{Physics of Light-Matter Interaction} \label{PhysicsOfLightMatterInteraction}
 
+\subsubsection{Visible Light}
+
+The Electromagnetic spectrum is a distribution of wavelengths, of which a small section is spanned by visible light. More specifically, visible light are those electromagnetic (EM) waves with a wavelength between 400nm, violet, and 700nm, red. Typically, visible light will contain a combination of wavelengths within this range. We can express light waves as a relation between each wavelength and its associated energy, in what are known as Spectral Power Distributions (SPD). Although renderers exist that store light as SPDs, the negative performance implications that accompany this approach mean that in practice, an abstraction is often used~\cite{SpectralRendering}. This abstraction exploits the relative imprecision of the human visual perception system. Using a linear combination of three wavelengths, R, G and B, we can accurately represent any visible light wave and colour~\cite{RGBColours}. Renderers store this combination as an RGB triplet, with each value giving the weight of its associated wavelength.
+
+The area of study concerned with quantifying EM waves is called \textit{Radiometry}. Several \textit{radiometric} measurements exist, with the most commonly used one in rendering being \textit{radiance}, \begin{math}L\end{math}. Radiance measures the power of a single EM ray. It's defined as energy over time (power), with respect to area and direction: \begin{math}W/m^2sr\end{math}. Power is expressed in Watts, area in metres squared, and direction in \textit{Steradians}. Steradians are to solid angles, what radians are to normal angles. A solid angle is the 3D version of a normal 2D angle. Evaluating a shading model is equivalent to computing the radiance of a single light ray that goes from the shaded fragment to the viewer.
+
+\subsubsection{Light Interaction with Matter}
+
 \begin{itemize}
 	\item Physics of light?
 	\item Reflectance equation
