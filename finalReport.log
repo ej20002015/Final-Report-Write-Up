@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  28 MAR 2022 16:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  28 MAR 2022 22:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -816,12 +816,12 @@ File: ./images//BlinnFix.png Graphic file (type png)
 Package pdftex.def Info: ./images//BlinnFix.png  used on input line 125.
 (pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
  [6 <./images//PrincipleVectors.png (PNG copy)> <./images//PhongIssue.png> <./i
-mages//BlinnFix.png>]) [7]
+mages//BlinnFix.png>] [7]) [8]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [8
+) [9
 
 
 
@@ -831,7 +831,7 @@ Chapter 2.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [9
+) [10
 
 
 
@@ -841,27 +841,27 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [10
+) [11
 
 
 
 
-] [11
+] [12
 
 
 
-] [12]
+] [13]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[13
+[14
 
 
 
 ]
 Appendix B.
-) [14
+) [15
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -881,7 +881,7 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 Here is how much of TeX's memory you used:
  15560 strings out of 478584
  294006 string characters out of 2844402
- 1055092 words of memory out of 3000000
+ 1055094 words of memory out of 3000000
  33483 multiletter control sequences out of 15000+600000
  491810 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -916,9 +916,9 @@ sers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
 utmr8a.pfb>
-Output written on finalReport.pdf (18 pages, 418901 bytes).
+Output written on finalReport.pdf (19 pages, 421629 bytes).
 PDF statistics:
- 637 PDF objects out of 1000 (max. 8388607)
+ 641 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
