@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {1.3}Literature review}{4}{}%
 \contentsline {subsection}{\numberline {1.3.1}Blinn-Phong Shading}{4}{}%
 \contentsline {subsubsection}{Phong Model}{4}{}%
-\contentsline {subsubsection}{Blinn-Phong Model}{5}{}%
+\contentsline {subsubsection}{Blinn-Phong Model}{6}{}%
 \contentsline {subsection}{\numberline {1.3.2}Physics of Light-Matter Interaction}{7}{}%
 \contentsline {chapter}{\numberline {2}Methods}{8}{}%
 \contentsline {section}{\numberline {2.1}A section}{8}{}%

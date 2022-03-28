@@ -51,7 +51,7 @@ When reasoning about different mathematical expressions and models, it's of vita
 % and subsections as they make sense for your project.
 \section{Literature review}
 
-The review begins with a brief discussion of the Blinn-Phong shading model; this provides the necessary background knowledge for the later comparison with physically based shading models to be performed. We then delve into the physics of how light interacts with matter, and how this pertains to shading. An exploration of the theory underpinning physically based shading models follows, and then we present several such models. After, we consider how lights can be represented in a physical manner. Finally, we finish by focusing on the wider PBR aspect with a discussion on how we store pixel colours, and the transformations that need to be applied before passing those colours to the display.
+The review begins with a discussion of the Blinn-Phong shading model; this provides the necessary background knowledge for the later comparison with physically based shading models to be performed. We then delve into the physics of how light interacts with matter, and how this pertains to shading. An exploration of the theory underpinning physically based shading models follows, and then we present several such models. After, we consider how lights can be represented in a physical manner. Finally, we finish by focusing on the wider PBR aspect with a discussion on how we store pixel colours, and the transformations that need to be applied before passing those colours to the display.
 
 \subsection{Blinn-Phong Shading}
 
@@ -87,7 +87,7 @@ Finally, we have the ambient term. In the model developed so far, if a shaded po
 	\begin{math}\vect{c}_{shaded_{ambi}} = \vect{c}_{surface_{ambi}}x\end{math}
 \end{center}
 
-\begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect lighting that occurs. A value of \begin{math}x = 0.2\end{math} is commonly used.
+\begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect lighting that occurs. A value of \begin{math}x = 0.2\end{math} is commonly used, with anything greater often giving unrealistic results. Illumination via indirect lighting is usually quite subtle as light loses energy every time it reflects of a surface.
 
 These three terms are summed together to give the overall Phong shading model:
 
@@ -123,7 +123,7 @@ Blinn's specular term emulates the overall behaviour of the original Phong term.
 	\hspace*{\fill}
 	\begin{subfigure}{0.48\textwidth}
 		\includegraphics[width=\linewidth]{BlinnFix}
-		\caption{The angle between \begin{math}\vect{h}\end{math} and \begin{math}\vect{n}\end{math} can't exceed 90$^{\circ}$ without \begin{math}\vect{l}\end{math} and \begin{math}\vect{v}\end{math} being below the surface }
+		\caption{The angle between \begin{math}\vect{h}\end{math} and \begin{math}\vect{n}\end{math} can't exceed 90$^{\circ}$ without \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} being below the surface }
 		\label{fig:BlinnFix}
 	\end{subfigure}
 	\caption{}
