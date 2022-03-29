@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  28 MAR 2022 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  30 MAR 2022 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -816,12 +816,23 @@ File: ./images//BlinnFix.png Graphic file (type png)
 Package pdftex.def Info: ./images//BlinnFix.png  used on input line 125.
 (pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
  [6 <./images//PrincipleVectors.png (PNG copy)> <./images//PhongIssue.png> <./i
-mages//BlinnFix.png>] [7]) [8]
+mages//BlinnFix.png>] [7]
+<./images//BoundaryScattering.png, id=69, 389.65575pt x 390.258pt>
+File: ./images//BoundaryScattering.png Graphic file (type png)
+<use ./images//BoundaryScattering.png>
+Package pdftex.def Info: ./images//BoundaryScattering.png  used on input line 1
+80.
+(pdftex.def)             Requested size: 142.26378pt x 142.48764pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8]) [9 <./images//BoundaryScattering.png>]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [9
+) [10
 
 
 
@@ -831,7 +842,7 @@ Chapter 2.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [10
+) [11
 
 
 
@@ -841,27 +852,27 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [11
+) [12
 
 
 
 
-] [12
+] [13
 
 
 
-] [13]
+] [14]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[14
+[15
 
 
 
 ]
 Appendix B.
-) [15
+) [16
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -879,13 +890,13 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15560 strings out of 478584
- 294006 string characters out of 2844402
- 1055094 words of memory out of 3000000
- 33483 multiletter control sequences out of 15000+600000
- 491810 words of font info for 73 fonts, out of 8000000 for 9000
+ 15574 strings out of 478584
+ 294414 string characters out of 2844402
+ 1055106 words of memory out of 3000000
+ 33496 multiletter control sequences out of 15000+600000
+ 492118 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,11n,134p,1873b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,11n,134p,2104b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc
 1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -916,9 +927,9 @@ sers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
 utmr8a.pfb>
-Output written on finalReport.pdf (19 pages, 421629 bytes).
+Output written on finalReport.pdf (20 pages, 456136 bytes).
 PDF statistics:
- 641 PDF objects out of 1000 (max. 8388607)
+ 665 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
