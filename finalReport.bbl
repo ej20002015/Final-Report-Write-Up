@@ -669,5 +669,231 @@
     \field{journaltitle}{IEEE Computer Graphics and Applications}
     \field{year}{2005}
   \endentry
+
+  \entry{IntroToRadiometry}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DR}{%
+         family={Datla},
+         familyi={D\bibinitperiod},
+         given={Raju},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Parr},
+         familyi={P\bibinitperiod},
+         given={Albert},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DRPA1}
+    \strng{fullhash}{DRPA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/S1079-4042(05)41001-2
+    \endverb
+    \field{pages}{1\bibrangedash 34}
+    \field{title}{1. Introduction to Optical Radiometry}
+    \field{volume}{41}
+    \field{journaltitle}{Experimental Methods in the Physical Sciences}
+    \field{month}{12}
+    \field{year}{2005}
+  \endentry
+
+  \entry{SnellsLaw}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={{Wikipedia contributors}},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{[Online; accessed 30-March-2022]}
+    \field{title}{Snell's law --- {Wikipedia}{,} The Free Encyclopedia}
+    \verb{url}
+    \verb https://en.wikipedia.org/w/index.php?title=Snell%27s_law&oldid=107449
+    \verb 2276
+    \endverb
+    \field{year}{2022}
+  \endentry
+
+  \entry{ReflectionAndDiffractionModel}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HN}{%
+         family={Holzschuch},
+         familyi={H\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Pacanowski},
+         familyi={P\bibinitperiod},
+         given={Romain},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Association for Computing Machinery}}%
+    }
+    \keyw{BRDF ; diffraction ; material models ; CCS Concepts: Computing
+  methodologies $\rightarrow$ Reflectance modeling}
+    \strng{namehash}{HNPR1}
+    \strng{fullhash}{HNPR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1145/3072959.3073621
+    \endverb
+    \field{note}{Article 66}
+    \field{number}{4}
+    \field{pages}{12}
+    \field{title}{{A Two-Scale Microfacet Reflectance Model Combining
+  Reflection and Diffraction}}
+    \verb{url}
+    \verb https://hal.inria.fr/hal-01515948
+    \endverb
+    \field{volume}{36}
+    \verb{file}
+    \verb https://hal.inria.fr/hal-01515948/file/paper.pdf
+    \endverb
+    \field{journaltitle}{{ACM Transactions on Graphics}}
+    \field{month}{07}
+    \field{year}{2017}
+  \endentry
+
+  \entry{DiffuseSpecularAtSurfaces}{article}{}
+    \name{author}{3}{}{%
+      {{hash=vGB}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Ginneken},
+         familyi={G\bibinitperiod},
+         given={Bram},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Stavridi},
+         familyi={S\bibinitperiod},
+         given={Marigo},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KJJ}{%
+         family={Koenderink},
+         familyi={K\bibinitperiod},
+         given={Jan\bibnamedelima J.},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OSA}%
+    }
+    \keyw{Reflection; Optics at surfaces; Fresnel reflection; Geometric optics;
+  Reflection coefficient; Refractive index; Remote sensing; Vision modeling}
+    \strng{namehash}{GBvSMKJJ1}
+    \strng{fullhash}{GBvSMKJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We present a reflection model for isotropic rough surfaces thathave both
+  specular and diffuse components. The surface is assumedto have a normal
+  distribution of heights. Parameters of the modelare the surface roughness
+  given by the rms slope, the albedo, and thebalance between diffuse and
+  specular reflection. The effect ofroughness on diffuse reflection is taken
+  into account, instead of ourmodeling this component as a constant Lambertian
+  term. The modelincludes geometrical effects such as masking and shadowing.
+  Themodel is compared with experimental data obtained from
+  goniophotometricmeasurements on samples of tiles and bricks. The model fits
+  well tosamples with very different reflection properties. Measurements ofthe
+  sample profiles performed with a laser profilometer to determinethe rms slope
+  show that the assumed surface model is realistic. Themodel could therefore be
+  used in machine vision and computer graphicsto approximate reflection
+  characteristics of surfaces. It couldalso be used to predict the texture of
+  surfaces as a function ofillumination and viewing angles.%
+    }
+    \verb{doi}
+    \verb 10.1364/AO.37.000130
+    \endverb
+    \field{number}{1}
+    \field{pages}{130\bibrangedash 139}
+    \field{title}{Diffuse and Specular Reflectance from Rough Surfaces}
+    \verb{url}
+    \verb http://opg.optica.org/ao/abstract.cfm?URI=ao-37-1-130
+    \endverb
+    \field{volume}{37}
+    \field{journaltitle}{Appl. Opt.}
+    \field{year}{1998}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{SeparableSubsurfaceScattering}{article}{}
+    \name{author}{9}{}{%
+      {{hash=JJ}{%
+         family={Jimenez},
+         familyi={J\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZK}{%
+         family={Zsolnai},
+         familyi={Z\bibinitperiod},
+         given={Károly},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=JA}{%
+         family={Jarabo},
+         familyi={J\bibinitperiod},
+         given={Adrian},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FC}{%
+         family={Freude},
+         familyi={F\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=AT}{%
+         family={Auzinger},
+         familyi={A\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WXC}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Xian-Chun},
+         giveni={X\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=vdPJ}{%
+         prefix={von\bibnamedelima der},
+         prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Pahlen},
+         familyi={P\bibinitperiod},
+         given={Javier},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wimmer},
+         familyi={W\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Gutierrez},
+         familyi={G\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JJ+1}
+    \strng{fullhash}{JJZKJAFCATWXCPJvdWMGD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Separable Subsurface Scattering}
+    \field{journaltitle}{Computer Graphics Forum}
+    \field{year}{2015}
+  \endentry
 \enddatalist
 \endinput
