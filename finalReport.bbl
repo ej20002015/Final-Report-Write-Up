@@ -700,68 +700,47 @@
     \field{year}{2005}
   \endentry
 
-  \entry{SnellsLaw}{misc}{}
+  \entry{HowLightInteractsWithMatter}{article}{}
     \name{author}{1}{}{%
-      {{hash=W}{%
-         family={{Wikipedia contributors}},
+      {{hash=fWV}{%
+         prefix={frederick},
+         prefixi={f\bibinitperiod},
+         family={Weisskopf},
          familyi={W\bibinitperiod},
+         given={Victor},
+         giveni={V\bibinitperiod},
       }}%
     }
-    \strng{namehash}{W1}
-    \strng{fullhash}{W1}
+    \strng{namehash}{WVf1}
+    \strng{fullhash}{WVf1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{[Online; accessed 30-March-2022]}
-    \field{title}{Snell's law --- {Wikipedia}{,} The Free Encyclopedia}
-    \verb{url}
-    \verb https://en.wikipedia.org/w/index.php?title=Snell%27s_law&oldid=107449
-    \verb 2276
-    \endverb
-    \field{year}{2022}
+    \field{pages}{60\bibrangedash 71}
+    \field{title}{How Light Interacts with Matter}
+    \field{volume}{219}
+    \field{journaltitle}{Scientific American}
+    \field{year}{1968}
   \endentry
 
-  \entry{ReflectionAndDiffractionModel}{article}{}
-    \name{author}{2}{}{%
+  \entry{HoffmanPBSBackground}{article}{}
+    \name{author}{1}{}{%
       {{hash=HN}{%
-         family={Holzschuch},
+         family={Hoffman},
          familyi={H\bibinitperiod},
-         given={Nicolas},
+         given={Naty},
          giveni={N\bibinitperiod},
       }}%
-      {{hash=PR}{%
-         family={Pacanowski},
-         familyi={P\bibinitperiod},
-         given={Romain},
-         giveni={R\bibinitperiod},
-      }}%
     }
-    \list{publisher}{1}{%
-      {{Association for Computing Machinery}}%
-    }
-    \keyw{BRDF ; diffraction ; material models ; CCS Concepts: Computing
-  methodologies $\rightarrow$ Reflectance modeling}
-    \strng{namehash}{HNPR1}
-    \strng{fullhash}{HNPR1}
+    \strng{namehash}{HN1}
+    \strng{fullhash}{HN1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1145/3072959.3073621
-    \endverb
-    \field{note}{Article 66}
-    \field{number}{4}
-    \field{pages}{12}
-    \field{title}{{A Two-Scale Microfacet Reflectance Model Combining
-  Reflection and Diffraction}}
-    \verb{url}
-    \verb https://hal.inria.fr/hal-01515948
-    \endverb
-    \field{volume}{36}
-    \verb{file}
-    \verb https://hal.inria.fr/hal-01515948/file/paper.pdf
-    \endverb
-    \field{journaltitle}{{ACM Transactions on Graphics}}
-    \field{month}{07}
-    \field{year}{2017}
+    \field{number}{3}
+    \field{pages}{211\bibrangedash 223}
+    \field{title}{Background: physics and math of shading}
+    \field{volume}{24}
+    \field{journaltitle}{Physically Based Shading in Theory and Practice}
+    \field{year}{2013}
   \endentry
 
   \entry{DiffuseSpecularAtSurfaces}{article}{}
@@ -826,6 +805,134 @@
     \field{journaltitle}{Appl. Opt.}
     \field{year}{1998}
     \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{SnellsLaw}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={{Wikipedia contributors}},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{[Online; accessed 30-March-2022]}
+    \field{title}{Snell's law --- {Wikipedia}{,} The Free Encyclopedia}
+    \verb{url}
+    \verb https://en.wikipedia.org/w/index.php?title=Snell%27s_law&oldid=107449
+    \verb 2276
+    \endverb
+    \field{year}{2022}
+  \endentry
+
+  \entry{ReflectionAndDiffractionModel}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HN}{%
+         family={Holzschuch},
+         familyi={H\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Pacanowski},
+         familyi={P\bibinitperiod},
+         given={Romain},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Association for Computing Machinery}}%
+    }
+    \keyw{BRDF ; diffraction ; material models ; CCS Concepts: Computing
+  methodologies $\rightarrow$ Reflectance modeling}
+    \strng{namehash}{HNPR1}
+    \strng{fullhash}{HNPR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1145/3072959.3073621
+    \endverb
+    \field{note}{Article 66}
+    \field{number}{4}
+    \field{pages}{12}
+    \field{title}{{A Two-Scale Microfacet Reflectance Model Combining
+  Reflection and Diffraction}}
+    \verb{url}
+    \verb https://hal.inria.fr/hal-01515948
+    \endverb
+    \field{volume}{36}
+    \verb{file}
+    \verb https://hal.inria.fr/hal-01515948/file/paper.pdf
+    \endverb
+    \field{journaltitle}{{ACM Transactions on Graphics}}
+    \field{month}{07}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Spectroscopy}{book}{}
+    \name{author}{1}{}{%
+      {{hash=KG}{%
+         family={Kort{\"u}m},
+         familyi={K\bibinitperiod},
+         given={Gustav},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{KG1}
+    \strng{fullhash}{KG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{3}
+    \field{title}{Reflectance spectroscopy: principles, methods, applications}
+    \field{year}{2012}
+  \endentry
+
+  \entry{ReflectionFromLayeredSurfaces}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=HP}{%
+         family={Hanrahan},
+         familyi={H\bibinitperiod},
+         given={Pat},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=KW}{%
+         family={Krueger},
+         familyi={K\bibinitperiod},
+         given={Wolfgang},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{Monte Carlo, integral equations, reflection models}
+    \strng{namehash}{HPKW1}
+    \strng{fullhash}{HPKW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 20th Annual Conference on Computer
+  Graphics and Interactive Techniques}
+    \verb{doi}
+    \verb 10.1145/166117.166139
+    \endverb
+    \field{isbn}{0897916018}
+    \field{pages}{165–174}
+    \field{series}{SIGGRAPH '93}
+    \field{title}{Reflection from Layered Surfaces Due to Subsurface
+  Scattering}
+    \verb{url}
+    \verb https://doi.org/10.1145/166117.166139
+    \endverb
+    \list{location}{1}{%
+      {Anaheim, CA}%
+    }
+    \field{year}{1993}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{SeparableSubsurfaceScattering}{article}{}
