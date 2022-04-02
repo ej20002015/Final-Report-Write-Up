@@ -1002,5 +1002,48 @@
     \field{journaltitle}{Computer Graphics Forum}
     \field{year}{2015}
   \endentry
+
+  \entry{OriginalBRDF}{article}{}
+    \name{author}{5}{}{%
+      {{hash=NFE}{%
+         family={Nicodemus},
+         familyi={N\bibinitperiod},
+         given={Fred\bibnamedelima E},
+         giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=RJC}{%
+         family={Richmond},
+         familyi={R\bibinitperiod},
+         given={Joseph\bibnamedelima C},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=HJJ}{%
+         family={Hsia},
+         familyi={H\bibinitperiod},
+         given={Jack\bibnamedelima J},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=GI}{%
+         family={Ginsberg},
+         familyi={G\bibinitperiod},
+         given={IW},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=LT}{%
+         family={Limperis},
+         familyi={L\bibinitperiod},
+         given={T},
+         giveni={T},
+      }}%
+    }
+    \strng{namehash}{NFE+1}
+    \strng{fullhash}{NFERJCHJJGILT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Geometrical considerations and nomenclature for reflectance}
+    \field{volume}{160}
+    \field{journaltitle}{National Bureau of Standards (US) monograph}
+    \field{year}{1977}
+  \endentry
 \enddatalist
 \endinput

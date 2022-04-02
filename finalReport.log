@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  31 MAR 2022 21:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  2 APR 2022 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -855,20 +855,28 @@ Package pdftex.def Info: ./images//SpecularAndDiffuse.png  used on input line 1
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./images//BoundaryScattering.png>]
-Overfull \hbox (219.217pt too wide) in paragraph at lines 234--235
+[8 <./images//BoundaryScattering.png>] [9 <./images//SubsurfaceScattering.png (
+PNG copy)> <./images//SpecularAndDiffuse.png>]
+Overfull \hbox (3.23233pt too wide) in paragraph at lines 226--227
+\T1/cmr/m/n/10.95 The \T1/cmr/m/it/10.95 bidi-rec-tional re-flectance dis-tri-b
+u-tion func-tion \T1/cmr/m/n/10.95 (BRDF), $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/1
+0.95 (\OT1/cmr/bx/n/10.95 l\OML/cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 v\OT1/cmr/
+m/n/10.95 )$\T1/cmr/m/n/10.95 , was first in-tro-duced by Nicode-
+ []
+
+
+Overfull \hbox (219.217pt too wide) in paragraph at lines 256--257
 []\T1/cmr/m/n/10.95 Variations on the BRDF - down-sides of the BRDF lo-cal shad
 -ing model (http://www.graphics.stanford.edu/papers/bssrdf/bssrdf.pdf) 
  []
 
 
-Overfull \hbox (1.46066pt too wide) in paragraph at lines 236--237
+Overfull \hbox (1.46066pt too wide) in paragraph at lines 258--259
 []\T1/cmr/m/n/10.95 Fresnel Re-flectance (https://link.springer.com/content/pdf
 /10.1007/s10891-011-0452-
  []
 
-[9 <./images//SubsurfaceScattering.png (PNG copy)> <./images//SpecularAndDiffus
-e.png>]) [10]
+) [10]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
@@ -931,10 +939,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15643 strings out of 478584
- 297570 string characters out of 2844402
- 1056838 words of memory out of 3000000
- 33565 multiletter control sequences out of 15000+600000
+ 15647 strings out of 478584
+ 297742 string characters out of 2844402
+ 1057894 words of memory out of 3000000
+ 33569 multiletter control sequences out of 15000+600000
  492118 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,134p,2248b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -958,19 +966,20 @@ c} <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
 1440.pk><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmbx8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej200/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ej200/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
-sers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
-utmr8a.pfb>
-Output written on finalReport.pdf (22 pages, 509689 bytes).
+pe1/public/amsfonts/cm/cmex10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej200/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ej
+200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
+sers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/u
+rw/times/utmr8a.pfb>
+Output written on finalReport.pdf (22 pages, 523038 bytes).
 PDF statistics:
- 681 PDF objects out of 1000 (max. 8388607)
+ 690 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
