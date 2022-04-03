@@ -307,7 +307,7 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
-  \entry{movingFrostbitetoPBR}{inproceedings}{}
+  \entry{MovingFrostbitetoPBR}{inproceedings}{}
     \name{author}{2}{}{%
       {{hash=LS}{%
          family={Lagarde},
@@ -1044,6 +1044,153 @@
     \field{volume}{160}
     \field{journaltitle}{National Bureau of Standards (US) monograph}
     \field{year}{1977}
+  \endentry
+
+  \entry{PracticalModelForSubsurfaceLightTransport}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=JHW}{%
+         family={Jensen},
+         familyi={J\bibinitperiod},
+         given={Henrik\bibnamedelima Wann},
+         giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=MSR}{%
+         family={Marschner},
+         familyi={M\bibinitperiod},
+         given={Stephen\bibnamedelima R.},
+         giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Levoy},
+         familyi={L\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Hanrahan},
+         familyi={H\bibinitperiod},
+         given={Pat},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{realistic image synthesis, BSSRDF, diffusion theory, subsurface
+  scattering, reflection models, light transport}
+    \strng{namehash}{JHW+1}
+    \strng{fullhash}{JHWMSRLMHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    This paper introduces a simple model for subsurface light transport in
+  translucent materials. The model enables efficient simulation of effects that
+  BRDF models cannot capture, such as color bleeding within materials and
+  diffusion of light across shadow boundaries. The technique is efficient even
+  for anisotropic, highly scattering media that are expensive to simulate using
+  existing methods. The model combines an exact solution for single scattering
+  with a dipole point source diffusion approximation for multiple scattering.
+  We also have designed a new, rapid image-based measurement technique for
+  determining the optical properties of translucent materials. We validate the
+  model by comparing predicted and measured values and show how the technique
+  can be used to recover the optical properties of a variety of materials,
+  including milk, marble, and skin. Finally, we describe sampling techniques
+  that allow the model to be used within a conventional ray tracer.%
+    }
+    \field{booktitle}{Proceedings of the 28th Annual Conference on Computer
+  Graphics and Interactive Techniques}
+    \verb{doi}
+    \verb 10.1145/383259.383319
+    \endverb
+    \field{isbn}{158113374X}
+    \field{pages}{511–518}
+    \field{series}{SIGGRAPH '01}
+    \field{title}{A Practical Model for Subsurface Light Transport}
+    \verb{url}
+    \verb https://doi.org/10.1145/383259.383319
+    \endverb
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{year}{2001}
+  \endentry
+
+  \entry{HelmholtzReciprocity}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HB}{%
+         family={Hapke},
+         familyi={H\bibinitperiod},
+         given={Bruce},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{HB1}
+    \strng{fullhash}{HB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1017/CBO9781139025683
+    \endverb
+    \field{edition}{2}
+    \field{pages}{264\bibrangedash 265}
+    \field{title}{Theory of Reflectance and Emittance Spectroscopy}
+    \field{year}{2012}
+  \endentry
+
+  \entry{MeasuringAnisotropicReflections}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=WGJ}{%
+         family={Ward},
+         familyi={W\bibinitperiod},
+         given={Gregory\bibnamedelima J.},
+         giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{Monte Carlo, raytracing, reflectance, shading}
+    \strng{namehash}{WGJ1}
+    \strng{fullhash}{WGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 19th Annual Conference on Computer
+  Graphics and Interactive Techniques}
+    \verb{doi}
+    \verb 10.1145/133994.134078
+    \endverb
+    \field{isbn}{0897914791}
+    \field{pages}{265–272}
+    \field{series}{SIGGRAPH '92}
+    \field{title}{Measuring and Modeling Anisotropic Reflection}
+    \verb{url}
+    \verb https://doi.org/10.1145/133994.134078
+    \endverb
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{year}{1992}
+  \endentry
+
+  \entry{VisualisingBRDFs}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=RSM}{%
+         family={Rusinkiewicz},
+         familyi={R\bibinitperiod},
+         given={Szymon\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RSM1}
+    \strng{fullhash}{RSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Rendering Techniques}
+    \field{title}{A New Change of Variables for Efficient BRDF Representation}
+    \field{year}{1998}
   \endentry
 \enddatalist
 \endinput

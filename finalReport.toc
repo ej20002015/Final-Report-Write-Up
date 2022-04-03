@@ -1,40 +1,42 @@
 \contentsline {chapter}{\numberline {1}Introduction and Background Research}{1}{}%
 \contentsline {section}{\numberline {1.1}Introduction}{1}{}%
-\contentsline {section}{\numberline {1.2}Mathematical Notation}{2}{}%
-\contentsline {section}{\numberline {1.3}Literature review}{3}{}%
-\contentsline {subsection}{\numberline {1.3.1}Blinn-Phong Shading}{3}{}%
+\contentsline {section}{\numberline {1.2}Literature review}{2}{}%
+\contentsline {subsection}{\numberline {1.2.1}Blinn-Phong Shading}{3}{}%
 \contentsline {subsubsection}{Phong Model}{3}{}%
-\contentsline {subsubsection}{Blinn-Phong Model}{5}{}%
-\contentsline {subsection}{\numberline {1.3.2}Physics of Light-Matter Interaction}{6}{}%
-\contentsline {subsubsection}{Visible Light}{6}{}%
+\contentsline {subsubsection}{Blinn-Phong Model}{4}{}%
+\contentsline {subsection}{\numberline {1.2.2}Physics of Light-Matter Interaction}{5}{}%
+\contentsline {subsubsection}{Visible Light}{5}{}%
 \contentsline {subsubsection}{Light Interaction with Matter}{6}{}%
 \contentsline {subsubsection}{Light Incident to Surfaces}{7}{}%
 \contentsline {subsubsection}{Transmitted Light Interaction}{8}{}%
 \contentsline {subsubsection}{Metals and Dielectrics}{9}{}%
-\contentsline {subsection}{\numberline {1.3.3}Principles of Shading}{9}{}%
+\contentsline {subsection}{\numberline {1.2.3}Principles of Shading}{9}{}%
 \contentsline {subsubsection}{The Reflectance Equation}{9}{}%
 \contentsline {subsubsection}{The BRDF}{10}{}%
 \contentsline {subsubsection}{Incoming Radiance}{10}{}%
-\contentsline {subsubsection}{Cos term}{10}{}%
-\contentsline {chapter}{\numberline {2}Methods}{11}{}%
-\contentsline {section}{\numberline {2.1}A section}{11}{}%
-\contentsline {subsection}{\numberline {2.1.1}A sub-section}{11}{}%
-\contentsline {section}{\numberline {2.2}Another section}{11}{}%
-\contentsline {chapter}{\numberline {3}Results}{12}{}%
-\contentsline {section}{\numberline {3.1}A section}{12}{}%
-\contentsline {subsection}{\numberline {3.1.1}A sub-section}{12}{}%
-\contentsline {section}{\numberline {3.2}Another section}{12}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{13}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{13}{}%
-\contentsline {section}{\numberline {4.2}Ideas for future work}{13}{}%
-\contentsline {chapter}{References}{14}{}%
-\contentsline {chapter}{Appendices}{16}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{16}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{16}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{16}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{16}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{16}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{16}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{16}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{16}{}%
-\contentsline {chapter}{\numberline {B}External Material}{17}{}%
+\contentsline {subsubsection}{Dot Product Term}{11}{}%
+\contentsline {subsection}{\numberline {1.2.4}BRDFs}{11}{}%
+\contentsline {subsection}{\numberline {1.2.5}Illumination}{11}{}%
+\contentsline {chapter}{\numberline {2}Methods}{12}{}%
+\contentsline {section}{\numberline {2.1}A section}{12}{}%
+\contentsline {subsection}{\numberline {2.1.1}A sub-section}{12}{}%
+\contentsline {section}{\numberline {2.2}Another section}{12}{}%
+\contentsline {chapter}{\numberline {3}Results}{13}{}%
+\contentsline {section}{\numberline {3.1}A section}{13}{}%
+\contentsline {subsection}{\numberline {3.1.1}A sub-section}{13}{}%
+\contentsline {section}{\numberline {3.2}Another section}{13}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{14}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{14}{}%
+\contentsline {section}{\numberline {4.2}Ideas for future work}{14}{}%
+\contentsline {chapter}{References}{15}{}%
+\contentsline {chapter}{Appendices}{18}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{18}{}%
+\contentsline {section}{\numberline {A.1}Critical self-evaluation}{18}{}%
+\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{18}{}%
+\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{18}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal issues}{18}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social issues}{18}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{18}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional issues}{18}{}%
+\contentsline {chapter}{\numberline {B}External Material}{19}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{20}{}%

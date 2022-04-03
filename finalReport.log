@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  2 APR 2022 20:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  4 APR 2022 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -805,83 +805,80 @@ Chapter 1.
 
 
 ] [2] [3]
-<./images//PrincipleVectors.png, id=51, 602.85225pt x 257.16075pt>
+<./images//PrincipleVectors.png, id=50, 602.85225pt x 257.16075pt>
 File: ./images//PrincipleVectors.png Graphic file (type png)
 <use ./images//PrincipleVectors.png>
-Package pdftex.def Info: ./images//PrincipleVectors.png  used on input line 100
-.
+Package pdftex.def Info: ./images//PrincipleVectors.png  used on input line 82.
+
 (pdftex.def)             Requested size: 227.62204pt x 97.09818pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4]
-<./images//PhongIssue.png, id=55, 1134.639pt x 315.579pt>
+ [4 <./images//PrincipleVectors.png (PNG copy)>]
+<./images//PhongIssue.png, id=56, 1134.639pt x 315.579pt>
 File: ./images//PhongIssue.png Graphic file (type png)
 <use ./images//PhongIssue.png>
-Package pdftex.def Info: ./images//PhongIssue.png  used on input line 119.
+Package pdftex.def Info: ./images//PhongIssue.png  used on input line 101.
 (pdftex.def)             Requested size: 218.51521pt x 60.77441pt.
-<./images//BlinnFix.png, id=56, 1121.99174pt x 301.125pt>
+<./images//BlinnFix.png, id=57, 1121.99174pt x 301.125pt>
 File: ./images//BlinnFix.png Graphic file (type png)
 <use ./images//BlinnFix.png>
-Package pdftex.def Info: ./images//BlinnFix.png  used on input line 125.
+Package pdftex.def Info: ./images//BlinnFix.png  used on input line 107.
 (pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
- [5 <./images//PrincipleVectors.png (PNG copy)> <./images//PhongIssue.png> <./i
-mages//BlinnFix.png>] [6]
+ [5 <./images//PhongIssue.png> <./images//BlinnFix.png>] [6]
 <./images//BoundaryScattering.png, id=69, 389.65575pt x 390.258pt>
 File: ./images//BoundaryScattering.png Graphic file (type png)
 <use ./images//BoundaryScattering.png>
 Package pdftex.def Info: ./images//BoundaryScattering.png  used on input line 1
-78.
+60.
 (pdftex.def)             Requested size: 142.26378pt x 142.48764pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7]
-<./images//SubsurfaceScattering.png, id=73, 605.26125pt x 237.2865pt>
+ [7 <./images//BoundaryScattering.png>]
+<./images//SubsurfaceScattering.png, id=74, 605.26125pt x 237.2865pt>
 File: ./images//SubsurfaceScattering.png Graphic file (type png)
 <use ./images//SubsurfaceScattering.png>
 Package pdftex.def Info: ./images//SubsurfaceScattering.png  used on input line
- 193.
+ 175.
 (pdftex.def)             Requested size: 218.51521pt x 85.66565pt.
-<./images//SpecularAndDiffuse.png, id=74, 391.4625pt x 143.78719pt>
+<./images//SpecularAndDiffuse.png, id=75, 391.4625pt x 143.78719pt>
 File: ./images//SpecularAndDiffuse.png Graphic file (type png)
 <use ./images//SpecularAndDiffuse.png>
 Package pdftex.def Info: ./images//SpecularAndDiffuse.png  used on input line 1
-99.
+81.
 (pdftex.def)             Requested size: 218.51521pt x 80.26357pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <./images//BoundaryScattering.png>] [9 <./images//SubsurfaceScattering.png (
-PNG copy)> <./images//SpecularAndDiffuse.png>]
-Overfull \hbox (3.23233pt too wide) in paragraph at lines 226--227
+[8 <./images//SubsurfaceScattering.png (PNG copy)> <./images//SpecularAndDiffus
+e.png>]
+Overfull \hbox (3.23233pt too wide) in paragraph at lines 208--209
 \T1/cmr/m/n/10.95 The \T1/cmr/m/it/10.95 bidi-rec-tional re-flectance dis-tri-b
 u-tion func-tion \T1/cmr/m/n/10.95 (BRDF), $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/1
 0.95 (\OT1/cmr/bx/n/10.95 l\OML/cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 v\OT1/cmr/
 m/n/10.95 )$\T1/cmr/m/n/10.95 , was first in-tro-duced by Nicode-
  []
 
+[9]
+<./images//ExampleBRDF.png, id=84, 302.63063pt x 301.125pt>
+File: ./images//ExampleBRDF.png Graphic file (type png)
+<use ./images//ExampleBRDF.png>
+Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 222.
+(pdftex.def)             Requested size: 113.81102pt x 113.24323pt.
 
-Overfull \hbox (219.217pt too wide) in paragraph at lines 256--257
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10]
+Overfull \hbox (219.217pt too wide) in paragraph at lines 243--244
 []\T1/cmr/m/n/10.95 Variations on the BRDF - down-sides of the BRDF lo-cal shad
 -ing model (http://www.graphics.stanford.edu/papers/bssrdf/bssrdf.pdf) 
  []
 
 
-Overfull \hbox (1.46066pt too wide) in paragraph at lines 258--259
+Overfull \hbox (1.46066pt too wide) in paragraph at lines 245--246
 []\T1/cmr/m/n/10.95 Fresnel Re-flectance (https://link.springer.com/content/pdf
 /10.1007/s10891-011-0452-
  []
 
-) [10]
+) [11 <./images//ExampleBRDF.png>]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [11
+) [12
 
 
 
@@ -891,7 +888,7 @@ Chapter 2.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [12
+) [13
 
 
 
@@ -901,27 +898,31 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [13
+) [14
 
 
 
 
-] [14
+] [15
 
 
 
-] [15]
+] [16] [17]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[16
+[18
 
 
 
 ]
 Appendix B.
-) [17
+[19
+
+]
+Appendix C.
+) [20
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -939,10 +940,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15647 strings out of 478584
- 297742 string characters out of 2844402
- 1057894 words of memory out of 3000000
- 33569 multiletter control sequences out of 15000+600000
+ 15685 strings out of 478584
+ 299196 string characters out of 2844402
+ 1058287 words of memory out of 3000000
+ 33607 multiletter control sequences out of 15000+600000
  492118 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,134p,2248b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -977,9 +978,9 @@ pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/u
 rw/times/utmr8a.pfb>
-Output written on finalReport.pdf (22 pages, 523038 bytes).
+Output written on finalReport.pdf (25 pages, 551869 bytes).
 PDF statistics:
- 690 PDF objects out of 1000 (max. 8388607)
+ 714 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

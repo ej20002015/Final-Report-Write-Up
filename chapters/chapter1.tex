@@ -21,31 +21,13 @@ With rasterization, each object in the world is composed of an arrangement of pr
 
 The appearance of the final rendered frames is largely determined by the shading model, and therefore the choice of such a model is crucial. For a long time, the standard shading model used for photo-realistic real-time rendering was Blinn-Phong; it was utilised in popular game engines, and was the default model used in OpenGL's fixed function pipeline~\cite{UnityBlinnPhong}~\cite{UnrealBlinnPhong}~\cite{OpenGLBlinnPhongFixedFunction}. Blinn-Phong is an empirical model: it is based on human observations of how light interacts with materials, rather than the underlying real-world physical rules that govern those interactions~\cite{PhongShading}. Blinn-Phong can produce reasonably realistic images, and is computationally inexpensive - a very desirable trait for real-time rendering. However, due to its non-physically based nature, Blinn-Phong has many issues. Paramount amongst which is its inability to render certain physical phenomena, which limits the realism of rendered frames. Furthermore, the parameters of Blinn-Phong that are used to specify material properties, bear little relation to the characteristics of physical materials. This problem manifests itself in a tight coupling between material parameters and lighting conditions. In order to accurately depict the same physical material under different lighting conditions, it may be necessary to specify differing values for these parameters. This reduces the reusability of assets, making artist workflow more difficult.
 
-In an effort to alleviate these issues, the replacement of Blinn-Phong in favour of physically based shading models has seen widespread adoption. Such models work by evaluating equations that simulate the real world physical interaction of light and objects. Using these models for shading is known as \textit{Physically Based Shading} (PBS), and their use in the wider rendering pipeline is called \textit{Physically Based Rendering} (PBR). PBS represented a seismic shift in the real-time rendering industry, with major game engines migrating to a PBR pipeline~\cite{RealShadingInUnreal}~\cite{movingFrostbitetoPBR}.
+In an effort to alleviate these issues, the replacement of Blinn-Phong in favour of physically based shading models has seen widespread adoption. Such models work by evaluating equations that simulate the real world physical interaction of light and objects. Using these models for shading is known as \textit{Physically Based Shading} (PBS), and their use in the wider rendering pipeline is called \textit{Physically Based Rendering} (PBR). PBS represented a seismic shift in the real-time rendering industry, with major game engines migrating to a PBR pipeline~\cite{RealShadingInUnreal}~\cite{MovingFrostbitetoPBR}.
 
 The aim of this project is to investigate the use of physically based shading models in real time rendering. Specifically, I will seek to highlight the benefits of PBS when compared to the technology is superseded, Blinn-Phong shading.
 
-The advantages of using PBS over Blinn-Phong shading can be broadly categorised into two groups: the improvements to artist workflow; and the improved photorealism. As mentioned previously, because of how materials are defined in Blinn-Phong shading they are often not portable between different lighting environments. In contrast, the parameters that determine materials in PBS are based on physical properties. This permits the reuse of materials and assets over different lighting configurations~\cite{movingFrostbitetoPBR}~\cite{SIGGRAPH2020Course}. Burley outlines how this reduction in the need for "material 're-do's" yields an extremely significant improvement to artist workflow~\cite{Burley2012Physically}. Although these benefits are an important motivating factor for using PBS, the practical issues that arise from trying to investigate and quantify them (I don’t have access to a team of artists) mean that this report will focus solely on exploring those advantages in the latter category – how does PBS render frames that are more photorealistic than Blinn-Phong?
+The advantages of using PBS over Blinn-Phong shading can be broadly categorised into two groups: the improvements to artist workflow; and the improved photorealism. As mentioned previously, because of how materials are defined in Blinn-Phong shading they are often not portable between different lighting environments. In contrast, the parameters that determine materials in PBS are based on physical properties. This permits the reuse of materials and assets over different lighting configurations~\cite{MovingFrostbitetoPBR}~\cite{SIGGRAPH2020Course}. Burley outlines how this reduction in the need for "material 're-do's" yields an extremely significant improvement to artist workflow~\cite{Burley2012Physically}. Although these benefits are an important motivating factor for using PBS, the practical issues that arise from trying to investigate and quantify them (I don’t have access to a team of artists) mean that this report will focus solely on exploring those advantages in the latter category – how does PBS render frames that are more photorealistic than Blinn-Phong?
 
 Answering this question by simply commenting on the general perceived realism of a frame when compared to another, is a largely subjective exercise. Instead, in a concerted effort to be as objective as possible, I will examine the benefits of PBS by identifying physical phenomena that it models in its rendered frames, but that are absent when using Blinn-Phong shading. To this end, I will be developing a piece of software that can render scenes using both Blinn-Phong shading, and PBS.
-
-\section{Mathematical Notation}
-
-When reasoning about different mathematical expressions and models, it's of vital importance that a standard, coherent notation is used throughout.
-
-\begin{center}
-	\begin{tabular}{ c c }
-		\hline
-		\begin{math}\vect{n}\end{math} & Normal vector \\
-		\begin{math}\vect{l}\end{math} & Light direction \\
-		\begin{math}\vect{v}\end{math} & View vector \\
-		\begin{math}\vect{c}_{x}\end{math} & The RGB triplet vector representing the colour of \begin{math}x\end{math}\\
-		\begin{math}\vect{a}\cdot\vect{b}\end{math} & The dot product of vectors \begin{math}\vect{a}\end{math} and \begin{math}\vect{b}\end{math} \\
-		\begin{math}\norm{\vect{a}}\end{math} & The norm of vector \begin{math}\vect{a}\end{math} \\
-		\begin{math}x^+\end{math} & Clamp \begin{math}x\end{math} to \begin{math}0\end{math} if \begin{math}x<0\end{math} \\
-		\hline
-	\end{tabular}
-\end{center}
 
 % Must provide evidence of a literature review. Use sections
 % and subsections as they make sense for your project.
@@ -53,7 +35,7 @@ When reasoning about different mathematical expressions and models, it's of vita
 
 The review begins with a discussion of the Blinn-Phong shading model; this provides the necessary background knowledge for the later comparison with physically based shading models to be performed. We then delve into the physics of how light interacts with matter, and how this pertains to shading. An exploration of the theory underpinning physically based shading models follows, and then we present several such models. After, we consider how lights can be represented in a physical manner. Finally, we finish by focusing on the wider PBR aspect with a discussion on how we store pixel colours, and the transformations that need to be applied before passing those colours to the display.
 
-\subsection{Blinn-Phong Shading}
+\subsection{Blinn-Phong Shading} \label{BlinnPhongShading}
 
 \subsubsection{Phong Model}
 
@@ -81,13 +63,13 @@ Where \begin{math}\vect{r}\end{math} is the reflection of the incident light abo
 
 The RGB triplets are similar to those in the diffuse equation, except these are specific to the specular response. Phong's original model had the colour of the specular highlight be the same as the overall colour of the light (not split into separate diffuse and specular components). This gave all materials an overly plastic appearance. Introducing the \begin{math}\vect{c}_{surface_{spec}}\end{math} and \begin{math}\vect{c}_{light_{spec}}\end{math} variables allows for the colour of the specular highlight to be fully configurable, mitigating this issue~\cite{LightingModelForComputerAnimators}. The \textit{view vector}, \begin{math}\vect{v}\end{math}, is the unit vector pointing in the direction of the viewer. The dot product measures the alignment between the view direction, and the direction of the reflected incident light. The \begin{math}surface_{shininess}\end{math} parameter determines the concentration of the reflected light rays. The higher the value, the more focused the reflected rays are, the smaller the specular highlight becomes, and the shinier the object appears. Typical values range from 1 to 100.
 
-Finally, we have the ambient term. In the model developed so far, if a shaded point is not directly visible from a light source, then it will be black. In reality, such points are never completely unilluminated - rays from light sources will bounce around the environment, eventually lighting these obscured areas. So far we have only considered \textit{direct lighting}; the ambient term is used to crudely approximate the illumination that is a consequence of this \textit{indirect lighting}:
+Finally, we have the ambient term. In the model developed so far, if a shaded point is not directly visible from a light source, then it will be black. In reality, such points are never completely unilluminated - rays from light sources will bounce around the environment, eventually lighting these obscured areas. So far we have only considered \textit{direct illumination}; the ambient term is used to crudely approximate the lighting that is a consequence of this \textit{indirect illumination}:
 
 \begin{center}
 	\begin{math}\vect{c}_{shaded_{ambi}} = \vect{c}_{surface_{ambi}}x\end{math}
 \end{center}
 
-\begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect lighting that occurs. A value of \begin{math}x = 0.2\end{math} is commonly used, with anything greater often giving unrealistic results. Illumination via indirect lighting is usually quite subtle as light loses energy every time it reflects of a surface.
+\begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect illumination that occurs. A value of \begin{math}x = 0.2\end{math} is commonly used, with anything greater often giving unrealistic results. Lighting via indirect illumination is usually quite subtle as light loses energy every time it reflects of a surface.
 
 These three terms are summed together to give the overall Phong shading model:
 
@@ -161,7 +143,7 @@ The way in which light interacts with matter is characterised by the matter's \t
 
 Light interacts with matter in three ways~\cite{HoffmanPBSBackground}. When light is travelling through a volume of matter with a uniform IOR, a \textit{homogenous medium}, it will not deviate in its direction. However, the absorption value of the IOR may cause the light to undergo changes in intensity, and if this varies by wavelength, changes in colour also. Water is an example of a homogenous medium that absorbs light, but mostly around the red wavelengths - this gives its intrinsic blue and green colour~\cite{HowLightInteractsWithMatter}.
 
-Light behaves differently in a \textit{heterogeneous medium}, where the IOR is not uniform. If light encounters a change in IOR that takes place over a distance smaller that a light wavelength, it will \textit{scatter} into multiple directions. The frequency of scattered light will be the same as the original light. In the likely case that the original light is comprised of a distribution of different wavelengths and frequencies, each one will interact independently. If interacting with a single isolated particle, the scattered light will move in all directions, but at different intensities~\cite{RTR4}.
+Light behaves differently in a \textit{heterogeneous medium}, where the IOR is not uniform. If light encounters a change in IOR that takes place over a distance smaller that a light wavelength, it will \textit{scatter} into multiple directions. The amount of scattering varies by wavelength. The frequency of scattered light will be the same as the original light. The only exception to this is when fluorescence or phosphorescence phenomena is present, but since this is very rare in the real world, we ignore such scenarios when rendering. In the likely case that the original light is comprised of a distribution of different wavelengths and frequencies, each one will interact independently. If interacting with a single isolated particle, the scattered light will move in all directions, but at different intensities~\cite{RTR4}.
 
 Finally, light can interact with matter in a manner that is opposite to that of absorption. \textit{Emission} can take place within matter, where other forms of energy are converted to light energy, and light is emitted. Light sources work in this way.
 
@@ -184,7 +166,7 @@ Now we focus on the effect that geometry plays when light is incident on a surfa
 
 \subsubsection{Transmitted Light Interaction}
 
-As explained previously, the light that is transmitted into the interior of an object will experience a mixture of scattering and absorption. In some materials, the light will be scattered enough that it is re-emitted at the surface of the object in a process called \textit{subsurface scattering}~\cite{Spectroscopy}. See Figure \ref{fig:SubsurfaceScattering} for an illustration. The distance between the subsurface scattered light and the original incident light is determined by the nature of the material, and is very important when shading. If the subsurface scattering distances are smaller than the span of one pixel, we call it \textit{local subsurface scattering}. In such cases, the subsurface scattered light is combined with the light reflected from the object surface to form a local shading model, where the outgoing light at one point is wholly dependent on the incoming light at that same point. Due to the protracted interactions that subsurface scattered light encounters before being re-emitted, it will have a distinctly different colour to the surface reflected light~\cite{ReflectionFromLayeredSurfaces}. For this reason, shading is split into two different terms: the \textit{specular term} captures the light reflected at the object surface, whilst the \textit{diffuse term} models the local subsurface scattering. See Figure \ref{fig:SpecularAndDiffuse} for an illustration of these two shading components.
+As explained previously, the light that is transmitted into the interior of an object will experience a mixture of scattering and absorption. In some materials, the light will be scattered enough that it is re-emitted at the surface of the object in a process called \textit{subsurface scattering}~\cite{Spectroscopy}. See Figure \ref{fig:SubsurfaceScattering} for an illustration. The distance between the subsurface scattered light and the original incident light is determined by the nature of the material, and is very important when shading. If the subsurface scattering distances are smaller than the span of one pixel, we call it \textit{local subsurface scattering}. In such cases, the subsurface scattered light is combined with the light reflected from the object surface to form a local shading model, where the outgoing light at one point is wholly dependent on the incoming light at that same point. Subsurface scattered light will encounter protracted interactions of absorption and scattering in the interior of the object, before finally being re-emitted. Therefore, it will have a distinctly different colour to the surface reflected light~\cite{ReflectionFromLayeredSurfaces}. For this reason, shading is split into two different terms: the \textit{specular term} captures the light reflected at the object surface, whilst the \textit{diffuse term} models the local subsurface scattering. See Figure \ref{fig:SpecularAndDiffuse} for an illustration of these two shading components.
 
 Shading is more complex when the subsurface scattering distances are larger than a single pixel. \textit{Global subsurface scattering} is often encountered when rendering skin or wax, and although special models have been developed to shade these materials, it is beyond the scope of this report~\cite{SeparableSubsurfaceScattering}.
 
@@ -211,7 +193,7 @@ The proportion of scattering and absorption that transmitted light induces varie
 
 \subsubsection{The Reflectance Equation}
 
-When rendering, we model the viewer as a camera placed at point \begin{math}\vect{c}\end{math}. The camera projects a 2D matrix of sensors that map to pixels on the display. By combining outputs of all the sensors, we get the final rendered image. For each of the sensors, we have a ray that originates from \begin{math}\vect{c}\end{math}, intersects the sensor, and then continues into the scene; this ray propagates in the opposite direction to the view vector, \begin{math}\vect{-v}\end{math}. With PBS, we obtain the colour of a sensor by calculating the incoming radiance to \begin{math}\vect{c}\end{math} in the direction \begin{math}\vect{-v}\end{math}. Thus, the final rendered image is given by calculating incoming radiance to \begin{math}\vect{c}\end{math} over the set of all \begin{math}\vect{-v}\end{math} vectors.
+When rendering, we model the viewer as a camera placed at point \begin{math}\vect{c}\end{math}. The camera projects a 2D matrix of photosensitive sensors that map to pixels on the display. By combining outputs of all the sensors, we get the final rendered image. For each of the sensors, we have a ray that originates from \begin{math}\vect{c}\end{math}, intersects the sensor, and then continues into the scene; this ray propagates in the opposite direction to the view vector, \begin{math}\vect{-v}\end{math}. With PBS, we obtain the colour of a sensor by calculating the incoming radiance to \begin{math}\vect{c}\end{math} in the direction \begin{math}\vect{-v}\end{math}. Thus, the final rendered image is given by calculating incoming radiance to \begin{math}\vect{c}\end{math} over the set of all \begin{math}\vect{-v}\end{math} vectors.
 
 A scene is comprised of a number of objects separated by media. Typically when rendering, we just consider all media to be air. Air is a medium that exhibits very little scattering nor absorption, so its effect on radiance is minimal and can be ignored. Therefore, incoming radiance to \begin{math}\vect{c}\end{math} in the direction \begin{math}\vect{-v}\end{math}, is equivalent to outgoing radiance from point \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math}, where \begin{math}\vect{p}\end{math} is the intersection point that the closest object will make with a ray that travels along \begin{math}\vect{-v}\end{math}. This quantity is defined as \begin{math}L_o(\vect{p}, \vect{v})\end{math} and is calculated by means of the \textit{reflectance equation}:
 
@@ -219,35 +201,40 @@ A scene is comprised of a number of objects separated by media. Typically when r
 	\[L_o(\vect{p}, \vect{v}) = \int_{\vect{l}\in\Omega}f(\vect{l}, \vect{v})L_i(\vect{p}, \vect{l})(\vect{n}\cdot\vect{l})\,d\vect{l}\]
 \end{center}
 
-The \begin{math}\vect{l}\in\Omega\end{math} in the integral subscript says that the integral should be performed over all directions \begin{math}\vect{l}\end{math} that exist in the unit hemisphere \begin{math}\Omega\end{math}, which is centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. In this way, the incoming radiance from all possible light sources is considered. The product within the integral gives the outgoing radiance from \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math} for a singular incident light direction \begin{math}\vect{l}\end{math}. The effect of the integration is to sum over all the individual components of outgoing radiance, to obtain the total value. This formulation is consistent with the shading scenario that was introduced in the "Transmitted Light Interaction" section of \ref{PhysicsOfLightMatterInteraction}, except it is expressed from a slightly different perspective: instead of keeping the incoming light direction constant and considering many outgoing light directions, we are now keeping the outgoing light direction constant, and considering all possible incoming light directions. Note that this is a local shading model, with all outgoing light at \begin{math}\vect{p}\end{math} being wholly dependent on incoming light at \begin{math}\vect{p}\end{math}. We now discuss each of the factors of the integral's product in turn.
+The \begin{math}\vect{l}\in\Omega\end{math} in the integral subscript says that the integral should be performed over all directions \begin{math}\vect{l}\end{math} that exist in the unit hemisphere \begin{math}\Omega\end{math}, which is centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. In this way, the incoming radiance from all possible light sources is considered. The product within the integral gives the outgoing radiance from \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math} for a singular incident light direction \begin{math}\vect{l}\end{math}. The effect of the integration is to sum over all the individual components of outgoing radiance, to obtain the total value. This formulation is consistent with the shading scenario that was introduced in the "Transmitted Light Interaction" section of \ref{PhysicsOfLightMatterInteraction}, except it is expressed from a slightly different perspective: instead of keeping the incoming light direction constant and considering many outgoing light directions, we are now keeping the outgoing light direction constant, and considering all possible incoming light directions. Note that this is indeed a local shading model, with all outgoing light at \begin{math}\vect{p}\end{math} being wholly dependent on incoming light at \begin{math}\vect{p}\end{math}. We now discuss each of the factors of the integral's product in turn.
 
 \subsubsection{The BRDF}
 
-The \textit{bidirectional reflectance distribution function} (BRDF), \begin{math}f(\vect{l}, \vect{v})\end{math}, was first introduced by Nicodemus et al in 1977 \cite{OriginalBRDF}.
+The \textit{bidirectional reflectance distribution function} (BRDF), \begin{math}f(\vect{l}, \vect{v})\end{math}, was first introduced by Nicodemus et al in 1977 \cite{OriginalBRDF}. For a given \begin{math}\vect{l}\end{math} and \begin{math}\vect{v}\end{math}, the BRDF gives the ratio of incident light in direction \begin{math}\vect{l}\end{math}, which after striking the surface, is reflected in direction \begin{math}\vect{v}\end{math}. The function is a distribution over all possible values of \begin{math}\vect{l}\end{math} and \begin{math}\vect{v}\end{math} that lie in the unit hemisphere introduced above, and thereby it completely describes a surface's local reflectance response to incident light. Local reflectance encompasses both surface reflection and local subsurface scattering. Variations of the BRDF exist which seek to capture other light-matter interactions, such as the BSSRDF which accounts for the influence of global subsurface scattering~\cite{PracticalModelForSubsurfaceLightTransport}.
 
-\begin{itemize}
-	\item Characterises reflectance
-	\item Reflectance is as a consequence of surface reflection and sub-surface reflection (scattering)
-	\item Isotropic and anisotropic
-	\item Spectral distribution function (phosorunce)
-\end{itemize}
+As explained previously, scattering and absorption - the two phenomena that underpin local reflectance - vary by wavelength. Therefore, the BRDF also needs to vary by wavelength, so the ratios it returns are given as RGB triplets.
+
+For a BRDF to be considered physically plausible, two constraints must hold. The first is called the Helmholtz reciprocity and states that \begin{math}f(\vect{l}, \vect{v}) = f(\vect{v}, \vect{l})\end{math}~\cite{HelmholtzReciprocity}. BRDFs used in rendering don't often comply with this equality, but still look physically correct~\cite{RTR4}. The second constraint is imposed by conservation of energy: the outgoing light energy cannot exceed the incoming light energy. In real-time rendering, exact adherence to this principle is not required, but respecting it in the approximate sense is very important - otherwise, objects will be rendered as overly bright and unrealistic~\cite{RTR4}\cite{MovingFrostbitetoPBR}.
+
+Constructing a BRDF can be accomplished in two ways: via optical measurements of real materials, or by leveraging mathematical formulas. Ward discusses the use of a \textit{Gonioreflectometer} to measure BRDFs of real world materials \cite{MeasuringAnisotropicReflections}. This process is time consuming and thus it's use in rendering is impractical. Instead, we construct BRDFs using parametrised mathematical formulas. The parameters involved are properties of the object's material. If the material properties are specified over every point on the object - which is commonly practiced in graphics by utilising textures - then this is equivalent to defining a BRDF for every point on the object's surface. As mentioned, the local reflectance response of a surface is split into specular and diffuse terms when shading. Naturally, this extends to the BRDF itself, and it is expressed as the sum of a specular BRDF and a diffuse BRDF.
+
+These parametrised mathematical formulas can be categorised as either empirical or physically based. Although not represented explicitly, the Blinn-Phong shading model detailed in section \ref{BlinnPhongShading} defines within it an empirical BRDF. Physically based BRDFs lie at the very heart of PBS, and section \ref{BRDFs} is concerned with investigating them.
+
+Figure \ref{fig:ExampleBRDF} gives an example of a BRDF. Visualising a BRDF is difficult as it is a function of four parameters (two angles per vector, one for elevation and another for rotation), so the Figure adopts the common approach of keeping the incident light direction constant.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=4cm]{ExampleBRDF}
+	\caption{The Cook-Torrance-Sparrow BRDF~\cite{VisualisingBRDFs}}
+	\label{fig:ExampleBRDF}
+\end{figure}
 
 \subsubsection{Incoming Radiance}
 
-\subsubsection{Cos term}
+The incoming radiance term, \begin{math}L_i(\vect{p}, \vect{l})\end{math}, represents the light that originates in direction \begin{math}\vect{l}\end{math} and strikes the surface at point \begin{math}\vect{p}\end{math}. Illumination and light sources are discussed in depth in section \ref{Illumination}.
 
-[Light existing a point can be via emission but we will not consider this]
-[We consider the light exiting only originating from the light entering]
-[As described we will only be considering a local shading model]
-[Such models only depend on L and V]
-[The function that describes how local reflectance behaves is called the BRDF]
-[Originally defined for a whole surface]
-[Now assumed to be spatially variant]
-[Isotropic and anisotropic]
-[Incoming light wavelnghts will be the same as outgoing but the intensities can change]
-[Therefore the BRDF returns an RGB triplet]
-[We have the \textit{reflectance equation}]
+\subsubsection{Dot Product Term}
 
+The dot product term, \begin{math}(\vect{n}\cdot\vect{l})\end{math}, is the same as that discussed in section \ref{BlinnPhongShading}. It fulfils the same purpose, going from 0 to 1 as the light direction approaches the surface normal. When multiplied by the incoming radiance term, it appropriately scales the amount of illumination. It's also common for this dot product to be clamped to 0 in the reflectance equation, so that contributions from light sources below the surface are ignored.
+
+\subsection{BRDFs} \label{BRDFs}
+
+\subsection{Illumination} \label{Illumination}
 
 \begin{itemize}
 	\item Principles of Shading
