@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  4 APR 2022 00:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  4 APR 2022 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -861,24 +861,24 @@ Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 222.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10]
-Overfull \hbox (219.217pt too wide) in paragraph at lines 243--244
+[10] [11 <./images//ExampleBRDF.png>]
+Overfull \hbox (219.217pt too wide) in paragraph at lines 259--260
 []\T1/cmr/m/n/10.95 Variations on the BRDF - down-sides of the BRDF lo-cal shad
 -ing model (http://www.graphics.stanford.edu/papers/bssrdf/bssrdf.pdf) 
  []
 
 
-Overfull \hbox (1.46066pt too wide) in paragraph at lines 245--246
+Overfull \hbox (1.46066pt too wide) in paragraph at lines 261--262
 []\T1/cmr/m/n/10.95 Fresnel Re-flectance (https://link.springer.com/content/pdf
 /10.1007/s10891-011-0452-
  []
 
-) [11 <./images//ExampleBRDF.png>]
+) [12]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [12
+) [13
 
 
 
@@ -888,7 +888,7 @@ Chapter 2.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [13
+) [14
 
 
 
@@ -898,31 +898,31 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [14
+) [15
 
 
 
 
-] [15
+] [16
 
 
 
-] [16] [17]
+] [17] [18]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[18
+[19
 
 
 
 ]
 Appendix B.
-[19
+[20
 
 ]
 Appendix C.
-) [20
+) [21
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -940,13 +940,13 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15685 strings out of 478584
- 299196 string characters out of 2844402
- 1058287 words of memory out of 3000000
- 33607 multiletter control sequences out of 15000+600000
+ 15698 strings out of 478584
+ 299784 string characters out of 2844402
+ 1059469 words of memory out of 3000000
+ 33620 multiletter control sequences out of 15000+600000
  492118 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,11n,134p,2248b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,11n,134p,2256b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc
 1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -978,9 +978,9 @@ pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/u
 rw/times/utmr8a.pfb>
-Output written on finalReport.pdf (25 pages, 551869 bytes).
+Output written on finalReport.pdf (26 pages, 559688 bytes).
 PDF statistics:
- 714 PDF objects out of 1000 (max. 8388607)
+ 722 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

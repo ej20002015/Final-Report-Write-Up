@@ -16,27 +16,29 @@
 \contentsline {subsubsection}{Incoming Radiance}{10}{}%
 \contentsline {subsubsection}{Dot Product Term}{11}{}%
 \contentsline {subsection}{\numberline {1.2.4}BRDFs}{11}{}%
-\contentsline {subsection}{\numberline {1.2.5}Illumination}{11}{}%
-\contentsline {chapter}{\numberline {2}Methods}{12}{}%
-\contentsline {section}{\numberline {2.1}A section}{12}{}%
-\contentsline {subsection}{\numberline {2.1.1}A sub-section}{12}{}%
-\contentsline {section}{\numberline {2.2}Another section}{12}{}%
-\contentsline {chapter}{\numberline {3}Results}{13}{}%
-\contentsline {section}{\numberline {3.1}A section}{13}{}%
-\contentsline {subsection}{\numberline {3.1.1}A sub-section}{13}{}%
-\contentsline {section}{\numberline {3.2}Another section}{13}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{14}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{14}{}%
-\contentsline {section}{\numberline {4.2}Ideas for future work}{14}{}%
-\contentsline {chapter}{References}{15}{}%
-\contentsline {chapter}{Appendices}{18}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{18}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{18}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{18}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{18}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{18}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{18}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{18}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{18}{}%
-\contentsline {chapter}{\numberline {B}External Material}{19}{}%
-\contentsline {chapter}{\numberline {C}Mathematical Notation}{20}{}%
+\contentsline {subsubsection}{Fresnel Reflectance}{11}{}%
+\contentsline {subsubsection}{Microfacet Theory}{12}{}%
+\contentsline {subsection}{\numberline {1.2.5}Illumination}{12}{}%
+\contentsline {chapter}{\numberline {2}Methods}{13}{}%
+\contentsline {section}{\numberline {2.1}What physical phenomena am I going to use for comparison?}{13}{}%
+\contentsline {subsection}{\numberline {2.1.1}A sub-section}{13}{}%
+\contentsline {section}{\numberline {2.2}Another section}{13}{}%
+\contentsline {chapter}{\numberline {3}Results}{14}{}%
+\contentsline {section}{\numberline {3.1}A section}{14}{}%
+\contentsline {subsection}{\numberline {3.1.1}A sub-section}{14}{}%
+\contentsline {section}{\numberline {3.2}Another section}{14}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{15}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{15}{}%
+\contentsline {section}{\numberline {4.2}Ideas for future work}{15}{}%
+\contentsline {chapter}{References}{16}{}%
+\contentsline {chapter}{Appendices}{19}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{19}{}%
+\contentsline {section}{\numberline {A.1}Critical self-evaluation}{19}{}%
+\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{19}{}%
+\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{19}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal issues}{19}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social issues}{19}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{19}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional issues}{19}{}%
+\contentsline {chapter}{\numberline {B}External Material}{20}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{21}{}%
