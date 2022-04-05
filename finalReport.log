@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  4 APR 2022 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  6 APR 2022 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,6 +700,21 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'ReflectionFromLayeredSurfaces':
 (biblatex)                - Can't use 'location' + 'address'.
 
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'HeitzMicrofacetTheory':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'MultipleScatteringMicrofacet':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'CookTorrance':
+(biblatex)                - Invalid format of field 'month'.
+
 )
 Package biblatex Info: Reference section=0 on input line 6.
 Package biblatex Info: Reference segment=0 on input line 6.
@@ -823,20 +838,20 @@ File: ./images//BlinnFix.png Graphic file (type png)
 Package pdftex.def Info: ./images//BlinnFix.png  used on input line 107.
 (pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
  [5 <./images//PhongIssue.png> <./images//BlinnFix.png>] [6]
-<./images//BoundaryScattering.png, id=69, 389.65575pt x 390.258pt>
+<./images//BoundaryScattering.png, id=68, 389.65575pt x 390.258pt>
 File: ./images//BoundaryScattering.png Graphic file (type png)
 <use ./images//BoundaryScattering.png>
 Package pdftex.def Info: ./images//BoundaryScattering.png  used on input line 1
 60.
 (pdftex.def)             Requested size: 142.26378pt x 142.48764pt.
  [7 <./images//BoundaryScattering.png>]
-<./images//SubsurfaceScattering.png, id=74, 605.26125pt x 237.2865pt>
+<./images//SubsurfaceScattering.png, id=73, 605.26125pt x 237.2865pt>
 File: ./images//SubsurfaceScattering.png Graphic file (type png)
 <use ./images//SubsurfaceScattering.png>
 Package pdftex.def Info: ./images//SubsurfaceScattering.png  used on input line
  175.
 (pdftex.def)             Requested size: 218.51521pt x 85.66565pt.
-<./images//SpecularAndDiffuse.png, id=75, 391.4625pt x 143.78719pt>
+<./images//SpecularAndDiffuse.png, id=74, 391.4625pt x 143.78719pt>
 File: ./images//SpecularAndDiffuse.png Graphic file (type png)
 <use ./images//SpecularAndDiffuse.png>
 Package pdftex.def Info: ./images//SpecularAndDiffuse.png  used on input line 1
@@ -857,28 +872,23 @@ File: ./images//ExampleBRDF.png Graphic file (type png)
 <use ./images//ExampleBRDF.png>
 Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 222.
 (pdftex.def)             Requested size: 113.81102pt x 113.24323pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10] [11 <./images//ExampleBRDF.png>]
-Overfull \hbox (219.217pt too wide) in paragraph at lines 259--260
-[]\T1/cmr/m/n/10.95 Variations on the BRDF - down-sides of the BRDF lo-cal shad
--ing model (http://www.graphics.stanford.edu/papers/bssrdf/bssrdf.pdf) 
- []
-
-
-Overfull \hbox (1.46066pt too wide) in paragraph at lines 261--262
-[]\T1/cmr/m/n/10.95 Fresnel Re-flectance (https://link.springer.com/content/pdf
-/10.1007/s10891-011-0452-
- []
-
-) [12]
+ [10 <./images//ExampleBRDF.png>] [11]
+<./images//Masking.png, id=92, 498.36188pt x 185.19188pt>
+File: ./images//Masking.png Graphic file (type png)
+<use ./images//Masking.png>
+Package pdftex.def Info: ./images//Masking.png  used on input line 259.
+(pdftex.def)             Requested size: 218.51521pt x 81.19926pt.
+<./images//Shadowing.png, id=93, 502.12593pt x 237.13594pt>
+File: ./images//Shadowing.png Graphic file (type png)
+<use ./images//Shadowing.png>
+Package pdftex.def Info: ./images//Shadowing.png  used on input line 264.
+(pdftex.def)             Requested size: 218.51521pt x 103.19672pt.
+ [12 <./images//Masking.png> <./images//Shadowing.png>]) [13]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [13
+) [14
 
 
 
@@ -888,7 +898,7 @@ Chapter 2.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [14
+) [15
 
 
 
@@ -898,31 +908,31 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [15
+) [16
 
 
 
 
-] [16
+] [17
 
 
 
-] [17] [18]
+] [18] [19]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[19
+[20
 
 
 
 ]
 Appendix B.
-[20
+[21
 
 ]
 Appendix C.
-) [21
+) [22
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -940,10 +950,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15698 strings out of 478584
- 299784 string characters out of 2844402
- 1059469 words of memory out of 3000000
- 33620 multiletter control sequences out of 15000+600000
+ 15749 strings out of 478584
+ 301371 string characters out of 2844402
+ 1058801 words of memory out of 3000000
+ 33671 multiletter control sequences out of 15000+600000
  492118 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,134p,2256b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -978,9 +988,9 @@ pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/u
 rw/times/utmr8a.pfb>
-Output written on finalReport.pdf (26 pages, 559688 bytes).
+Output written on finalReport.pdf (27 pages, 616469 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
+ 735 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

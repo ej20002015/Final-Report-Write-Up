@@ -43,39 +43,39 @@ In 1975, Phong introduced a simple shading model for rendering realistic images~
 
 An ideal diffuse surface follows Lambert's law: light incident onto a point will be diffused in all directions equally~\cite{Lambert}. Therefore, the determining factor in the appearance of such surfaces is the intensity of the incident light, which is a function of the direction of incident light and the orientation of the shaded surface. The diffuse term encodes the lighting effects of parity between a primitive's surface orientation and the direction of the light, with surfaces facing the light being illuminated more intensely than those facing away from it. This behaviour is formulated as:
 
-\begin{center}
-	\begin{math}\vect{c}_{shaded_{diff}} = \vect{c}_{surface_{diff}}\vect{c}_{light_{diff}}(\vect{n}\cdot\vect{l})^+\end{math}
-\end{center}
+\begin{equation}
+	\vect{c}_{shaded_{diff}} = \vect{c}_{surface_{diff}}\vect{c}_{light_{diff}}(\vect{n}\cdot\vect{l})^+
+\end{equation}
 
 \begin{math}\vect{c}_{shaded_{diff}}\end{math}, \begin{math}\vect{c}_{surface_{diff}}\end{math}, and \begin{math}\vect{c}_{light_{diff}}\end{math} are the RGB triplets that represent the diffuse colour of the shaded fragment, the diffuse colour of the surface, and the diffuse colour of the incident light respectively. This separation of the light and surface colours into separate components was not present in Phong's original model. However, many implementations have increased the flexibility of the model by exposing these additional parameters~\cite{LightingModelForComputerAnimators}. The \textit{normal}, \begin{math}\vect{n}\end{math}, is the unit vector pointing away from the surface at the shaded point, giving the orientation of the surface.  The \textit{light direction}, \begin{math}\vect{v}\end{math}, is the unit vector pointing in the direction of the incident light. See Figure \ref{fig:PrincipleVectors} for an illustration of the principle vectors used in the Phong shading model (and indeed, by most shading models). The dot product of two unit vectors is equivalent to taking the cosine of the angle between them. Therefore, \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} will increase from 0 to 1 as the angle between the incident light direction and the surface normal decreases. Thus, the more aligned the surface orientation and light direction are, the greater the intensity of the diffuse term. Negative values of the dot product indicate that the light direction is underneath the surface. In these cases the light is not incident upon the surface at all, so the dot product is clamped to 0.
 
 The specular term of the model captures the ability for surfaces to exhibit highlights due to surface reflections. When light is incident upon a surface, it will experience some reflection, and when the reflected light is aligned with the direction of the viewer, this is perceived as a region of increased illumination, a \textit{specular highlight}. The formula for the specular term is:
 
-\begin{center}
-	\begin{math}\vect{c}_{shaded_{spec}} = \vect{c}_{surface_{spec}}\vect{c}_{light_{spec}}((\vect{r}\cdot\vect{v})^+)^{surface_{shininess}}\end{math} \\
-\end{center}
+\begin{equation}
+	\vect{c}_{shaded_{spec}} = \vect{c}_{surface_{spec}}\vect{c}_{light_{spec}}((\vect{r}\cdot\vect{v})^+)^{surface_{shininess}}
+\end{equation}
 
 Where \begin{math}\vect{r}\end{math} is the reflection of the incident light about the surface normal, and is defined as:
 
-\begin{center}
-	\begin{math}\vect{r} = 2(\vect{n}\cdot\vect{l})\vect{n} - \vect{l}\end{math}	
-\end{center}
+\begin{equation}
+	\vect{r} = 2(\vect{n}\cdot\vect{l})\vect{n} - \vect{l}
+\end{equation}
 
 The RGB triplets are similar to those in the diffuse equation, except these are specific to the specular response. Phong's original model had the colour of the specular highlight be the same as the overall colour of the light (not split into separate diffuse and specular components). This gave all materials an overly plastic appearance. Introducing the \begin{math}\vect{c}_{surface_{spec}}\end{math} and \begin{math}\vect{c}_{light_{spec}}\end{math} variables allows for the colour of the specular highlight to be fully configurable, mitigating this issue~\cite{LightingModelForComputerAnimators}. The \textit{view vector}, \begin{math}\vect{v}\end{math}, is the unit vector pointing in the direction of the viewer. The dot product measures the alignment between the view direction, and the direction of the reflected incident light. The \begin{math}surface_{shininess}\end{math} parameter determines the concentration of the reflected light rays. The higher the value, the more focused the reflected rays are, the smaller the specular highlight becomes, and the shinier the object appears. Typical values range from 1 to 100.
 
 Finally, we have the ambient term. In the model developed so far, if a shaded point is not directly visible from a light source, then it will be black. In reality, such points are never completely unilluminated - rays from light sources will bounce around the environment, eventually lighting these obscured areas. So far we have only considered \textit{direct illumination}; the ambient term is used to crudely approximate the lighting that is a consequence of this \textit{indirect illumination}:
 
-\begin{center}
-	\begin{math}\vect{c}_{shaded_{ambi}} = \vect{c}_{surface_{ambi}}x\end{math}
-\end{center}
+\begin{equation}
+	\vect{c}_{shaded_{ambi}} = \vect{c}_{surface_{ambi}}x
+\end{equation}
 
 \begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect illumination that occurs. A value of \begin{math}x = 0.2\end{math} is commonly used, with anything greater often giving unrealistic results. Lighting via indirect illumination is usually quite subtle as light loses energy every time it reflects of a surface.
 
 These three terms are summed together to give the overall Phong shading model:
 
-\begin{center}
-	\begin{math}\vect{c}_{shaded} = \vect{c}_{shaded_{ambi}} + \vect{c}_{shaded_{diff}} + \vect{c}_{shaded_{spec}}\end{math}
-\end{center}
+\begin{equation}
+	\vect{c}_{shaded} = \vect{c}_{shaded_{ambi}} + \vect{c}_{shaded_{diff}} + \vect{c}_{shaded_{spec}}
+\end{equation}
 
 \begin{figure}[h]
 	\centering
@@ -90,9 +90,9 @@ One of the issues with the Phong shading model is made apparent when viewing a r
 
 In 1977, Blinn remedied this issue by modifying the Phong shading model with a more accurate specular term~\cite{BlinnModelsOfLightReflection}. He utilised the half vector, \begin{math}\vect{h}\end{math}, dispensing with the reflected light vector, \begin{math}\vect{r}\end{math}, and replaced the existing specular dot product with \begin{math}\vect{h}\cdot\vect{n}\end{math}. \begin{math}\vect{h}\end{math} is a unit vector pointing in the direction that is halfway between the \begin{math}\vect{l}\end{math} and \begin{math}\vect{v}\end{math} vectors. It is calculated as:
 
-\begin{center}
-	\begin{math}\vect{h} = \frac{\vect{l} + \vect{v}}{\norm{\vect{l} + \vect{v}}}\end{math}
-\end{center}
+\begin{equation}
+	\vect{h} = \frac{\vect{l} + \vect{v}}{\norm{\vect{l} + \vect{v}}}
+\end{equation}
 
 Blinn's specular term emulates the overall behaviour of the original Phong term. As the (now conceptual) reflection vector \begin{math}\vect{r}\end{math} aligns with \begin{math}\vect{v}\end{math}, so does the half vector \begin{math}\vect{h}\end{math} align with the surface normal \begin{math}\vect{n}\end{math}. Crucially though, \begin{math}\vect{h}\cdot\vect{n}\end{math} will only evaluate to a negative value, and subsequently be clamped to 0, if \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} is beneath the surface. Therefore, the scenario in which rough surfaces were being shaded incorrectly with no specular contribution, is resolved. See \ref{fig:BlinnFix} for an illustration.
 
@@ -113,9 +113,9 @@ Blinn's specular term emulates the overall behaviour of the original Phong term.
 
 Blinn's modification to the Phong model is known as the Blinn-Phong shading model, and it produces more realistic images than the original. The model is formulated as:
 
-\begin{center}
-	\begin{math}\vect{c}_{shaded} = p_{ambi} + p_{diff}(\vect{n}\cdot\vect{l})^+ + p_{spec}((\vect{h}\cdot\vect{n})^+)^{surface_{shininess}}\end{math}
-\end{center}
+\begin{equation} \label{eq:BlinnPhong}
+	\vect{c}_{shaded} = p_{ambi} + p_{diff}(\vect{n}\cdot\vect{l})^+ + p_{spec}((\vect{h}\cdot\vect{n})^+)^{surface_{shininess}}
+\end{equation}
 
 where
 
@@ -127,7 +127,7 @@ where
 
 Expressing the model in this way draws attention to the relative proportions of each component that contributes to the overall shading. These proportions, \begin{math}p\end{math}, are modulated via lighting parameters:  \begin{math}light\end{math} variables and \begin{math}x\end{math}; and material parameters: \begin{math}surface\end{math} variables.
 
-In scenes with multiple lights, we perform the shading equation for each one and then sum up the intermediate values to get the overall colour of the fragment.
+In scenes with multiple lights, we perform the equation \ref{eq:BlinnPhong} for each one and then sum up the intermediate values to get the overall colour of the fragment.
 
 \subsection{Physics of Light-Matter Interaction} \label{PhysicsOfLightMatterInteraction}
 
@@ -197,9 +197,9 @@ When rendering, we model the viewer as a camera placed at point \begin{math}\vec
 
 A scene is comprised of a number of objects separated by media. Typically when rendering, we just consider all media to be air. Air is a medium that exhibits very little scattering nor absorption, so its effect on radiance is minimal and can be ignored. Therefore, incoming radiance to \begin{math}\vect{c}\end{math} in the direction \begin{math}\vect{-v}\end{math}, is equivalent to outgoing radiance from point \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math}, where \begin{math}\vect{p}\end{math} is the intersection point that the closest object will make with a ray that travels along \begin{math}\vect{-v}\end{math}. This quantity is defined as \begin{math}L_o(\vect{p}, \vect{v})\end{math} and is calculated by means of the \textit{reflectance equation}:
 
-\begin{center}
-	\[L_o(\vect{p}, \vect{v}) = \int_{\vect{l}\in\Omega}f(\vect{l}, \vect{v})L_i(\vect{p}, \vect{l})(\vect{n}\cdot\vect{l})\,d\vect{l}\]
-\end{center}
+\begin{equation}
+	L_o(\vect{p}, \vect{v}) = \int_{\vect{l}\in\Omega}f(\vect{l}, \vect{v})L_i(\vect{p}, \vect{l})(\vect{n}\cdot\vect{l})\,d\vect{l}
+\end{equation}
 
 The \begin{math}\vect{l}\in\Omega\end{math} in the integral subscript says that the integral should be performed over all directions \begin{math}\vect{l}\end{math} that exist in the unit hemisphere \begin{math}\Omega\end{math}, which is centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. In this way, the incoming radiance from all possible light sources is considered. The product within the integral gives the outgoing radiance from \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math} for a singular incident light direction \begin{math}\vect{l}\end{math}. The effect of the integration is to sum over all the individual components of outgoing radiance, to obtain the total value. This formulation is consistent with the shading scenario that was introduced in the "Transmitted Light Interaction" section of \ref{PhysicsOfLightMatterInteraction}, except it is expressed from a slightly different perspective: instead of keeping the incoming light direction constant and considering many outgoing light directions, we are now keeping the outgoing light direction constant, and considering all possible incoming light directions. Note that this is indeed a local shading model, with all outgoing light at \begin{math}\vect{p}\end{math} being wholly dependent on incoming light at \begin{math}\vect{p}\end{math}. We now discuss each of the factors of the integral's product in turn.
 
@@ -213,7 +213,7 @@ For a BRDF to be considered physically plausible, two constraints must hold. The
 
 Constructing a BRDF can be accomplished in two ways: via optical measurements of real materials, or by leveraging mathematical formulas. Ward discusses the use of a \textit{Gonioreflectometer} to measure BRDFs of real world materials \cite{MeasuringAnisotropicReflections}. This process is time consuming and thus it's use in rendering is impractical. Instead, we construct BRDFs using parametrised mathematical formulas. The parameters involved are properties of the object's material. If the material properties are specified over every point on the object - which is commonly practiced in graphics by utilising textures - then this is equivalent to defining a BRDF for every point on the object's surface. As mentioned, the local reflectance response of a surface is split into specular and diffuse terms when shading. Naturally, this extends to the BRDF itself, and it is expressed as the sum of a specular BRDF and a diffuse BRDF.
 
-These parametrised mathematical formulas can be categorised as either empirical or physically based. Although not represented explicitly, the Blinn-Phong shading model detailed in section \ref{BlinnPhongShading} defines within it an empirical BRDF. Physically based BRDFs lie at the very heart of PBS, and section \ref{BRDFs} is concerned with investigating them.
+These parametrised mathematical formulas can be categorised as either empirical or physically based. Although not represented explicitly, the Blinn-Phong shading model detailed in section \ref{BlinnPhongShading} defines within it an empirical BRDF. Physically based BRDFs lie at the very heart of PBS, and sections \ref{BRDFBuildingBlocks}, \ref{SpecularBRDFs} and \ref{DiffuseBRDFs} are concerned with investigating them.
 
 Figure \ref{fig:ExampleBRDF} gives an example of a BRDF. Visualising a BRDF is difficult as it is a function of four parameters (two angles per vector, one for elevation and another for rotation), so the Figure adopts the common approach of keeping the incident light direction constant.
 
@@ -232,37 +232,61 @@ The incoming radiance term, \begin{math}L_i(\vect{p}, \vect{l})\end{math}, repre
 
 The dot product term, \begin{math}(\vect{n}\cdot\vect{l})\end{math}, is the same as that discussed in section \ref{BlinnPhongShading}. It fulfils the same purpose, going from 0 to 1 as the light direction approaches the surface normal. When multiplied by the incoming radiance term, it appropriately scales the amount of illumination. It's also common for this dot product to be clamped to 0 in the reflectance equation, so that contributions from light sources below the surface are ignored.
 
-\subsection{BRDFs} \label{BRDFs}
+\subsection{BRDF Building Blocks} \label{BRDFBuildingBlocks}
 
-Most physically based BRDFs are built upon the same set of standard mathematical functions and theory. The individual BRDFs then differ from one another in how these functions are implemented and compiled together. We first detail the standard mathematical building blocks, and then specific specular and diffuse BRDFs are discussed.
+Most physically based BRDFs are built upon the same set of standard mathematical functions and theory. The individual BRDFs then differ from one another in how these functions are implemented and compiled together. We first detail the standard mathematical building blocks, and then specific specular and diffuse BRDFs are discussed in sections \ref{SpecularBRDFs} and \ref{DiffuseBRDFs} respectively.
 
 \subsubsection{Fresnel Reflectance} \label{FresnelReflectance}
 
-In section \ref{PhysicsOfLightMatterInteraction}, the behaviour of light that impinges upon a surface was said to be dependent on two factors: the substances either side of the surface, and the geometry of the surface. As alluded to, the Fresnel equations describe how light behaves due to the substance part. We again assume a perfectly flat boundary separating an outer and inner substance, which have IORs of \begin{math}n_1\end{math} and \begin{math}n_2\end{math} respectively. The Fresnel reflectance, \begin{math}F\end{math}, gives the proportion of incoming light that is reflected at the boundary. Due to the conservation of energy, the amount of transmitted light can then also be easily obtained. \begin{math}F\end{math} varies by wavelength so is expressed as an RGB triplet. Given values of \begin{math}n_1\end{math} and \begin{math}n_2\end{math}, \begin{math}F\end{math} is then a function of incident light angle, \begin{math}F(\theta_i)\end{math}. As mentioned, in rendering it's typical for the outer substance to be air with an IOR of 1, and thus we will be in a scenario of \textit{external reflection}, where \begin{math}n_1 < n_2\end{math}.
+In section \ref{PhysicsOfLightMatterInteraction}, the behaviour of light that impinges upon a surface was said to be dependent on two factors: the substances either side of the surface, and the geometry of the surface. As alluded to, the Fresnel equations describe how light behaves due to the substances. We again assume a perfectly flat boundary separating an outer and inner substance, which have IORs of \begin{math}n_1\end{math} and \begin{math}n_2\end{math} respectively. The Fresnel reflectance, \begin{math}F\end{math}, gives the proportion of incoming light that is reflected at the boundary. Due to the conservation of energy, the amount of transmitted light can then also be easily obtained. \begin{math}F\end{math} varies by wavelength so is expressed as an RGB triplet. Given values of \begin{math}n_1\end{math} and \begin{math}n_2\end{math}, \begin{math}F\end{math} is then a function of incident light angle, \begin{math}F(\theta_i)\end{math}. As mentioned, in rendering it's typical for the outer substance to be air with an IOR of 1, and thus we will be in a scenario of \textit{external reflection}, where \begin{math}n_1 < n_2\end{math}.
 
 In the case of external reflectance, \begin{math}F(\theta_i)\end{math} always follows the same pattern~\cite{RTR4}. When \begin{math}\theta_i = 0^\circ\end{math}, \begin{math}F\end{math} will be equal to the intrinsic specular colour of the inner substance, \begin{math}F_0\end{math}. Between 0$^{\circ}$ and 90$^{\circ}$, \begin{math}F\end{math} will then increase non-linearly towards white; slowly for most of the interval and then rising rapidly when close to 90$^{\circ}$. The tendency for surfaces to exhibit increased reflection at glancing angles is called the \textit{Fresnel effect}.
 
-Using the Fresnel equations themselves is not possible in real-time rendering because \begin{math}n_1\end{math} and \begin{math}n_2\end{math} must be known for all wavelengths of visible light, and this data is not available~\cite{SchlickApproximation}. Instead, approximations that rely on the characteristic pattern outlined above are utilised. These are functions that depend in part on \begin{math}F_0\end{math}, which is known for many materials. The "Specular BRDFs" section presents some of these approximations.
+Using the Fresnel equations themselves is not possible in real-time rendering because \begin{math}n_1\end{math} and \begin{math}n_2\end{math} must be known for all wavelengths of visible light, and this data is not available~\cite{SchlickApproximation}. Instead, approximations that rely on the pattern outlined above are utilised. These are functions that depend in part on \begin{math}F_0\end{math}, which is known for many materials. The "Specular BRDFs" section presents some of these approximations.
 
 \begin{math}F_0\end{math} is defined by the object's material parameters. Dielectrics all have very low \begin{math}F_0\end{math} values, grouping around the \begin{math}(0.04, 0.04, 0.04)\end{math} mark - a fact that is exploited by many physically based shading models. This means dielectrics only reflect a noticeable amount of light at very glancing angles. Metals on the other hand have much higher \begin{math}F_0\end{math} values, with each RGB channel typically exceeding 0.5. Akenine-M\"{o}ller et al give a comprehensive overview of the \begin{math}F_0\end{math} values for different materials~\cite{RTR4}.
 
 \subsubsection{Microfacet Theory} \label{MicrofacetTheory}
 
-We now revisit the role that the surface geometry plays in local reflectance. Recall that when rendering, a single pixel will lie over many pieces of microgeometry. The reflectance at the shading point is then determined by the aggregation of the individual interactions that light will have with each piece of microgeometry. We reason about these interactions by utilising \textit{microfacet theory}. The theory states that microgeometry be modelled as a collection of perfectly flat planes called \textit{microfacets}~\cite{BlinnModelsOfLightReflection}. Such a model is effective at representing many real world materials~\cite{ExperimentalAnalysisOfBRDF}. The microfacets' impact on surface reflectance is described by a \textit{Normal Distribution Function} (NDF), a \textit{masking-shadowing function}, and a \textit{microfacet BRDF}.
+We now revisit the role that the surface geometry plays in local reflectance. Recall that when rendering, a single pixel will lie over many pieces of microgeometry. The reflectance at the shading point is then determined by the aggregation of the individual interactions that light will have with each piece of microgeometry. We reason about these interactions by utilising \textit{microfacet theory}. The theory states that microgeometry be modelled as a collection of perfectly flat planes called \textit{microfacets}~\cite{BlinnModelsOfLightReflection}. Such a model is effective at representing many real world materials~\cite{ExperimentalAnalysisOfBRDF}. The microfacets' impact on surface reflectance is described by a \textit{Normal Distribution Function} (NDF), a \textit{masking-shadowing function}, and a \textit{micro-BRDF}.
+
+The NDF, \begin{math}D(\vect{m})\end{math}, statistically describes the orientations of the microfacets over the macrosurface (the shaded point when viewed at the pixel scale)~\cite{HeitzMicrofacetTheory}. The more microfacets that have a normal of \begin{math}\vect{m}\end{math}, the higher the value of \begin{math}D(\vect{m})\end{math}. Typically, surfaces posses a distribution of microfacet normals that is concentrated around the normal of the macrosurface \begin{math}\vect{n}\end{math}.
+
+Whilst the NDF describes the orientations of the microfacets, it doesn't describe their arrangement, which also plays a significant role in how light reflects off the macrosurface. Some microfacets will not be visible from the view vector \begin{math}\vect{v}\end{math} because they are occluded by other microfacets. This is known as \textit{masking}. Only those microfacets that are not masked by others will be visible to the viewer and thus contribute to the shading. Furthermore, some microfacets will be occluded so they aren't visible to the incoming light direction \begin{math}\vect{l}\end{math}. This is known as \textit{shadowing}. Microfacet theory only models the first interaction between light and microfacet, thus, only those microfacets that are not shadowed by others are assumed to contribute to the local reflectance~\cite{HeitzMicrofacetTheory}. In reality, incident light will bounce multiple times within a surfaces microgeometry, meaning even microsurfaces that aren't visible directly from the light will exhibit some reflectance. This is known as \textit{interreflection}. Surfaces can look overly dark when this phenomena is not modelled~\cite{MultipleScatteringMicrofacet}. Figure \ref{fig:MaskingAndShadowing} illustrates masking and shadowing. The appropriately named \textit{masking-shadowing function}, \begin{math}G(\vect{l}, \vect{v}, \vect{m})\end{math}, accounts for the effects of masking and shadowing. It provides the fraction of microfacets with normal \begin{math}\vect{m}\end{math} that are visible from directions \begin{math}\vect{v}\end{math} and \begin{math}\vect{l}\end{math}~\cite{BlinnModelsOfLightReflection}.
+
+\begin{figure}[h]
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\linewidth]{Masking}
+		\caption{Some microfacets are masked by others}
+	\end{subfigure}
+	\hspace*{\fill}
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\linewidth]{Shadowing}
+		\caption{Some microfacets are shadowed by others}
+	\end{subfigure}
+	\caption{}
+	\label{fig:MaskingAndShadowing}
+\end{figure}
+
+The micro-BRDF, \begin{math}f_\mu(\vect{l}, \vect{v}, \vect{m})\end{math}, describes how light is reflected of an individual microfacet. There are two common choices for micro-BRDF. It's typical in a specular (macro) BRDF, that all the microfacets are modelled as perfect mirrors~\cite{CookTorrance}. This means that the micro-BRDF will reflect an incident light ray \begin{math}\vect{l}\end{math} in only one direction: \begin{math}\vect{l}\end{math} reflected about the microfacet normal \begin{math}\vect{m}\end{math}. Conversely, some diffuse (macro) BRDFs model all the microfacets as perfect diffuse surfaces~\cite{OrenAndNayar}. As explained in section \ref{BlinnPhongShading}, in compliance with Lambert's law, these surfaces diffuse incoming light equally in all directions and have no specular component; this translates to a micro-BRDF of constant value.
+
+The microfacet theory developed in the above paragraphs can be used to create an expressions for the overall (macro) BRDF~\cite{RTR4}:
+
+\begin{equation} \label{eq:Microfacet}
+	f(\vect{l}, \vect{v}) = \int_{\vect{m}\in\Omega}f_\mu(\vect{l}, \vect{v}, \vect{m})G(\vect{l}, \vect{v}, \vect{m})D(\vect{m})\frac{(\vect{m}\cdot\vect{l})^+}{\abs{\vect{n}\cdot\vect{l}}}\frac{(\vect{m}\cdot\vect{v})^+}{\abs{\vect{n}\cdot\vect{v}}}\,d\vect{m}
+\end{equation}
+
+Again, \begin{math}\Omega\end{math} is the unit hemisphere centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. Heitz gives a thorough explanation as to how this equation is derived~\cite{HeitzMicrofacetTheory}. Although not used directly in rendering, given a specific choice of micro-BDRF, equation \ref{eq:Microfacet} can be simplified to obtain a BRDF suitable for use in a shading model~\cite{RTR4}. An example of such a simplification can be seen in section \ref{SpecularBRDFs}.
+
+\subsection{Specular BRDFs} \label{SpecularBRDFs}
+
+\subsection{Diffuse BRDFs} \label{DiffuseBRDFs}
 
 \subsection{Illumination} \label{Illumination}
 
 \begin{itemize}
-	\item Principles of Shading
-	\item BRDFs
-	\begin{itemize}
-		\item Variations on the BRDF - downsides of the BRDF local shading model (http://www.graphics.stanford.edu/papers/bssrdf/bssrdf.pdf)
-		\item What makes a good BRDF (energy conservation and the reihtsz... reciprocity)
-		\item Fresnel Reflectance (https://link.springer.com/content/pdf/10.1007/s10891-011-0452-5.pdf)
-		\item Microfacet theory
-		\item Surface reflection
-		\item Subsurface reflection
-	\end{itemize}
+	\item Surface reflection
+	\item Subsurface reflection
 	\item Lights
 	\item HDR, tonemapping and gamma correction (display encoding)
 \end{itemize}

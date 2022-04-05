@@ -379,3 +379,73 @@
 	ISBN = {3-905673-23-1},
 	DOI = {10.2312/EGWR/EGSR05/117-126}
 }
+
+@article{HeitzMicrofacetTheory,
+	author  = {Eric Heitz},
+	title   = {Understanding the Masking-Shadowing Function in Microfacet-Based BRDFs},
+	year    = {2014},
+	month   = {June},
+	day     = {30},
+	journal = {Journal of Computer Graphics Techniques (JCGT)},
+	volume  = {3},
+	number  = {2},
+	pages   = {48--107},
+	url     = {http://jcgt.org/published/0003/02/03/},
+	issn    = {2331-7418}
+}
+
+@article{MultipleScatteringMicrofacet,
+	author = {Heitz, Eric and Hanika, Johannes and d'Eon, Eugene and Dachsbacher, Carsten},
+	title = {Multiple-Scattering Microfacet BSDFs with the Smith Model},
+	year = {2016},
+	issue_date = {July 2016},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {35},
+	number = {4},
+	issn = {0730-0301},
+	url = {https://doi.org/10.1145/2897824.2925943},
+	doi = {10.1145/2897824.2925943},
+	abstract = {Modeling multiple scattering in microfacet theory is considered an important open problem because a non-negligible portion of the energy leaving rough surfaces is due to paths that bounce multiple times. In this paper we derive the missing multiple-scattering components of the popular family of BSDFs based on the Smith microsurface model. Our derivations are based solely on the original assumptions of the Smith model. We validate our BSDFs using raytracing simulations of explicit random Beckmann surfaces.Our main insight is that the microfacet theory for surfaces with the Smith model can be derived as a special case of the microflake theory for volumes, with additional constraints to enforce the presence of a sharp interface, i.e. to transform the volume into a surface. We derive new free-path distributions and phase functions such that plane-parallel scattering from a microvolume with these distributions exactly produces the BSDF based on the Smith microsurface model, but with the addition of higher-order scattering.With this new formulation, we derive multiple-scattering micro-facet BSDFs made of either diffuse, conductive, or dielectric material. Our resulting BSDFs are reciprocal, energy conserving, and support popular anisotropic parametric normal distribution functions such as Beckmann and GGX. While we do not provide closed-form expressions for the BSDFs, they are mathematically well-defined and can be evaluated at arbitrary precision. We show how to practically use them with Monte Carlo physically based rendering algorithms by providing analytic importance sampling and unbiased stochastic evaluation. Our implementation is analytic and does not use per-BSDF precomputed data, which makes our BSDFs usable with textured albedos, roughness, and anisotropy.},
+	journal = {ACM Trans. Graph.},
+	month = {jul},
+	articleno = {58},
+	numpages = {14},
+	keywords = {multiple scattering, BSDF, microfacet theory, BRDF}
+}
+
+@article{CookTorrance,
+	author = {Cook, R. L. and Torrance, K. E.},
+	title = {A Reflectance Model for Computer Graphics},
+	year = {1982},
+	issue_date = {Jan. 1982},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {1},
+	number = {1},
+	issn = {0730-0301},
+	url = {https://doi.org/10.1145/357290.357293},
+	doi = {10.1145/357290.357293},
+	journal = {ACM Trans. Graph.},
+	month = {jan},
+	pages = {7–24},
+	numpages = {18},
+	keywords = {image synthesis, reflectance}
+}
+
+@inproceedings{OrenAndNayar,
+	author = {Oren, Michael and Nayar, Shree K.},
+	title = {Generalization of Lambert's Reflectance Model},
+	year = {1994},
+	isbn = {0897916670},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/192161.192213},
+	doi = {10.1145/192161.192213},
+	abstract = {Lambert's model for body reflection is widely used in computer graphics. It is used extensively by rendering techniques such as radiosity and ray tracing. For several real-world objects, however, Lambert's model can prove to be a very inaccurate approximation to the body reflectance. While the brightness of a Lambertian surface is independent of viewing direction, that of a rough surface increases as the viewing direction approaches the light source direction. In this paper, a comprehensive model is developed that predicts body reflectance from rough surfaces. The surface is modeled as a collection of Lambertian facets. It is shown that such a surface is inherently non-Lambertian due to the foreshortening of the surface facets. Further, the model accounts for complex geometric and radiometric phenomena such as masking, shadowing, and interreflections between facets. Several experiments have been conducted on samples of rough diffuse surfaces, such as, plaster, sand, clay, and cloth. All these surface demonstrate significant deviation from Lambertian behavior. The reflectance measurements obtained are in strong agreement with the reflectance predicted by the model.},
+	booktitle = {Proceedings of the 21st Annual Conference on Computer Graphics and Interactive Techniques},
+	pages = {239–246},
+	numpages = {8},
+	keywords = {moon reflectance, rough surfaces, Lambert's model, reflection models, BRDF},
+	series = {SIGGRAPH '94}
+}
