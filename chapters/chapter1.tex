@@ -153,7 +153,7 @@ In general, the appearance of most media is as a consequence of both scattering 
 
 When shading, we are interested in simulating what happens when light is incident upon the surface of an object. When this interaction occurs, two properties effect the outcome: the geometry of the surface, and the nature of the substances either side of the surface~\cite{RTR4}~\cite{DiffuseSpecularAtSurfaces}.
 
-We first consider the substance factor and assume that the surface's geometry is a perfectly flat plane. An object's surface can then be described as a flat two-dimensional boundary separating two volumes with differing IORs. In rendering it is typical that the outer volume is comprised of air, which has an IOR of 1 (or to be exact, 1.0003). The inner volume has an IOR defined by the material of the object. Any light wave that impinges on the boundary will encounter an abrupt change in the IOR, which - as explained above - will result in scattering. Because the boundary is a flat plane, the nature of this scattering is well defined: some of the scattered waves will continue moving into the surface, the \textit{transmitted wave}, and the others will be reflected at the surface and move away, the \textit{reflected wave}. The reflected wave propagates in a direction that is the reflection of the incident wave about the surface normal. The transmitted wave will undergo \textit{refraction} and move at an angle of \begin{math}\theta_t\end{math}, which is defined by the relative IOR of the two volumes and the angle of the incident light, \begin{math}\theta_i\end{math}~\cite{SnellsLaw}. See Figure \ref{fig:BoundaryScattering} for an illustration of this scattering behaviour. The proportion of reflected versus transmitted light follows the Fresnel equations, which are explained in section \ref{FresnelReflectance}. The transmitted wave will interact with the interior of the object in the same way as light interacts with any medium - it will experience some degree of scattering and absorption.
+We first consider the substance factor and assume that the surface's geometry is a perfectly flat plane. An object's surface can then be described as a flat two-dimensional boundary separating two volumes with differing IORs. In rendering it is typical that the outer volume is comprised of air, which has an IOR of 1 (or to be exact, 1.0003). The inner volume has an IOR defined by the material of the object. Any light wave that impinges on the boundary will encounter an abrupt change in the IOR, which - as explained above - will result in scattering. Because the boundary is a flat plane, the nature of this scattering is well defined: some of the scattered waves will continue moving into the surface, the \textit{transmitted wave}, and the others will be reflected at the surface and move away, the \textit{reflected wave}. The reflected wave propagates in a direction that is the reflection of the incident wave about the surface normal. The transmitted wave will undergo \textit{refraction} and move at an angle of \begin{math}\theta_t\end{math}, which is defined by the relative IOR of the two volumes and the angle of the incident light, \begin{math}\theta_i\end{math}~\cite{SnellsLaw}. See Figure \ref{fig:BoundaryScattering} for an illustration of this scattering behaviour. The proportion of reflected versus transmitted light follows the Fresnel equations, which are explained in section \ref{FresnelReflectance}~\cite{PractitionersReflectionModels}. The transmitted wave will interact with the interior of the object in the same way as light interacts with any medium - it will experience some degree of scattering and absorption.
 
 \begin{figure}[h]
 	\centering
@@ -166,7 +166,7 @@ Now we focus on the effect that geometry plays when light is incident on a surfa
 
 \subsubsection{Transmitted Light Interaction}
 
-As explained previously, the light that is transmitted into the interior of an object will experience a mixture of scattering and absorption. In some materials, the light will be scattered enough that it is re-emitted at the surface of the object in a process called \textit{subsurface scattering}~\cite{Spectroscopy}. See Figure \ref{fig:SubsurfaceScattering} for an illustration. The distance between the subsurface scattered light and the original incident light is determined by the nature of the material, and is very important when shading. If the subsurface scattering distances are smaller than the span of one pixel, we call it \textit{local subsurface scattering}. In such cases, the subsurface scattered light is combined with the light reflected from the object surface to form a local shading model, where the outgoing light at one point is wholly dependent on the incoming light at that same point. Subsurface scattered light will encounter protracted interactions of absorption and scattering in the interior of the object, before finally being re-emitted. Therefore, it will have a distinctly different colour to the surface reflected light~\cite{ReflectionFromLayeredSurfaces}. For this reason, shading is split into two different terms: the \textit{specular term} captures the light reflected at the object surface, whilst the \textit{diffuse term} models the local subsurface scattering. See Figure \ref{fig:SpecularAndDiffuse} for an illustration of these two shading components.
+As explained previously, the light that is transmitted into the interior of an object will experience a mixture of scattering and absorption. In some materials, the light will be scattered enough that it is re-emitted at the surface of the object in a process called \textit{subsurface scattering}~\cite{Spectroscopy}. See Figure \ref{fig:SubsurfaceScattering} for an illustration. The distance between the subsurface scattered light and the original incident light is determined by the nature of the material, and is very important when shading. If the subsurface scattering distances are smaller than the span of one pixel, as is common for most materials, we call it \textit{local subsurface scattering}~\cite{PractitionersReflectionModels}. In such cases, the subsurface scattered light is combined with the light reflected from the object surface to form a local shading model, where the outgoing light at one point is wholly dependent on the incoming light at that same point. Subsurface scattered light will encounter protracted interactions of absorption and scattering in the interior of the object, before finally being re-emitted. Therefore, it will have a distinctly different colour to the surface reflected light~\cite{ReflectionFromLayeredSurfaces}. For this reason, shading is split into two different terms: the \textit{specular term} captures the light reflected at the object surface, whilst the \textit{diffuse term} models the local subsurface scattering. See Figure \ref{fig:SpecularAndDiffuse} for an illustration of these two shading components.
 
 Shading is more complex when the subsurface scattering distances are larger than a single pixel. \textit{Global subsurface scattering} is often encountered when rendering skin or wax, and although special models have been developed to shade these materials, it is beyond the scope of this report~\cite{SeparableSubsurfaceScattering}.
 
@@ -201,7 +201,7 @@ A scene is comprised of a number of objects separated by media. Typically when r
 	L_o(\vect{p}, \vect{v}) = \int_{\vect{l}\in\Omega}f(\vect{l}, \vect{v})L_i(\vect{p}, \vect{l})(\vect{n}\cdot\vect{l})\,d\vect{l}
 \end{equation}
 
-The \begin{math}\vect{l}\in\Omega\end{math} in the integral subscript says that the integral should be performed over all directions \begin{math}\vect{l}\end{math} that exist in the unit hemisphere \begin{math}\Omega\end{math}, which is centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. In this way, the incoming radiance from all possible light sources is considered. The product within the integral gives the outgoing radiance from \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math} for a singular incident light direction \begin{math}\vect{l}\end{math}. The effect of the integration is to sum over all the individual components of outgoing radiance, to obtain the total value. This formulation is consistent with the shading scenario that was introduced in the "Transmitted Light Interaction" section of \ref{PhysicsOfLightMatterInteraction}, except it is expressed from a slightly different perspective: instead of keeping the incoming light direction constant and considering many outgoing light directions, we are now keeping the outgoing light direction constant, and considering all possible incoming light directions. Note that this is indeed a local shading model, with all outgoing light at \begin{math}\vect{p}\end{math} being wholly dependent on incoming light at \begin{math}\vect{p}\end{math}. We now discuss each of the factors of the integral's product in turn.
+The \begin{math}\vect{l}\in\Omega\end{math} in the integral subscript says that the integral should be performed over all directions \begin{math}\vect{l}\end{math} that exist in the unit hemisphere \begin{math}\Omega\end{math}, which is centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. In this way, the incoming radiance from all possible light sources is considered. The product within the integral gives the outgoing radiance from \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math} for a singular incident light direction \begin{math}\vect{l}\end{math}. The effect of the integration is to sum over all the individual components of outgoing radiance, to obtain the total value. This formulation is consistent with the shading scenario that was introduced in the "Transmitted Light Interaction" section of \ref{PhysicsOfLightMatterInteraction}, except it is expressed from a slightly different perspective: instead of keeping the incoming light direction constant and considering many outgoing light directions, we are now keeping the outgoing light direction constant, and considering all possible incoming light directions. Note that this is indeed a local shading model, with all outgoing light at \begin{math}\vect{p}\end{math} being wholly dependent on incoming light at \begin{math}\vect{p}\end{math}. A physically based shading model computes the reflectance equation. We now discuss each of the factors of the integral's product in turn.
 
 \subsubsection{The BRDF}
 
@@ -242,9 +242,9 @@ In section \ref{PhysicsOfLightMatterInteraction}, the behaviour of light that im
 
 In the case of external reflectance, \begin{math}F(\theta_i)\end{math} always follows the same pattern~\cite{RTR4}. When \begin{math}\theta_i = 0^\circ\end{math}, \begin{math}F\end{math} will be equal to the intrinsic specular colour of the inner substance, \begin{math}F_0\end{math}. Between 0$^{\circ}$ and 90$^{\circ}$, \begin{math}F\end{math} will then increase non-linearly towards white; slowly for most of the interval and then rising rapidly when close to 90$^{\circ}$. The tendency for surfaces to exhibit increased reflection at glancing angles is called the \textit{Fresnel effect}.
 
-Using the Fresnel equations themselves is not possible in real-time rendering because \begin{math}n_1\end{math} and \begin{math}n_2\end{math} must be known for all wavelengths of visible light, and this data is not available~\cite{SchlickApproximation}. Instead, approximations that rely on the pattern outlined above are utilised. These are functions that depend in part on \begin{math}F_0\end{math}, which is known for many materials. The "Specular BRDFs" section presents some of these approximations.
+Using the Fresnel equations themselves is not possible in real-time rendering because \begin{math}n_1\end{math} and \begin{math}n_2\end{math} must be known for all wavelengths of visible light, and this data is not available~\cite{SchlickApproximation}. Instead, approximations that rely on the pattern outlined above are utilised. These are functions that depend in part on \begin{math}F_0\end{math}, which is known for many materials.
 
-\begin{math}F_0\end{math} is defined by the object's material parameters. Dielectrics all have very low \begin{math}F_0\end{math} values, grouping around the \begin{math}(0.04, 0.04, 0.04)\end{math} mark - a fact that is exploited by many physically based shading models. This means dielectrics only reflect a noticeable amount of light at very glancing angles. Metals on the other hand have much higher \begin{math}F_0\end{math} values, with each RGB channel typically exceeding 0.5. Akenine-M\"{o}ller et al give a comprehensive overview of the \begin{math}F_0\end{math} values for different materials~\cite{RTR4}.
+\begin{math}F_0\end{math} is defined by the object's material parameters. Dielectrics all have very low \begin{math}F_0\end{math} values, grouping around the \begin{math}(0.04, 0.04, 0.04)\end{math} mark - a fact that is exploited by many physically based shading models. This means dielectrics only reflect a noticeable amount of light at very glancing angles. Metals on the other hand have much higher \begin{math}F_0\end{math} values, with each RGB channel typically exceeding 0.5. Akenine-M\"{o}ller et al give a comprehensive overview of \begin{math}F_0\end{math} values for different materials~\cite{RTR4}.
 
 \subsubsection{Microfacet Theory} \label{MicrofacetTheory}
 
@@ -252,7 +252,7 @@ We now revisit the role that the surface geometry plays in local reflectance. Re
 
 The NDF, \begin{math}D(\vect{m})\end{math}, statistically describes the orientations of the microfacets over the macrosurface (the shaded point when viewed at the pixel scale)~\cite{HeitzMicrofacetTheory}. The more microfacets that have a normal of \begin{math}\vect{m}\end{math}, the higher the value of \begin{math}D(\vect{m})\end{math}. Typically, surfaces posses a distribution of microfacet normals that is concentrated around the normal of the macrosurface \begin{math}\vect{n}\end{math}.
 
-Whilst the NDF describes the orientations of the microfacets, it doesn't describe their arrangement, which also plays a significant role in how light reflects off the macrosurface. Some microfacets will not be visible from the view vector \begin{math}\vect{v}\end{math} because they are occluded by other microfacets. This is known as \textit{masking}. Only those microfacets that are not masked by others will be visible to the viewer and thus contribute to the shading. Furthermore, some microfacets will be occluded so they aren't visible to the incoming light direction \begin{math}\vect{l}\end{math}. This is known as \textit{shadowing}. Microfacet theory only models the first interaction between light and microfacet, thus, only those microfacets that are not shadowed by others are assumed to contribute to the local reflectance~\cite{HeitzMicrofacetTheory}. In reality, incident light will bounce multiple times within a surfaces microgeometry, meaning even microsurfaces that aren't visible directly from the light will exhibit some reflectance. This is known as \textit{interreflection}. Surfaces can look overly dark when this phenomena is not modelled~\cite{MultipleScatteringMicrofacet}. Figure \ref{fig:MaskingAndShadowing} illustrates masking and shadowing. The appropriately named \textit{masking-shadowing function}, \begin{math}G(\vect{l}, \vect{v}, \vect{m})\end{math}, accounts for the effects of masking and shadowing. It provides the fraction of microfacets with normal \begin{math}\vect{m}\end{math} that are visible from directions \begin{math}\vect{v}\end{math} and \begin{math}\vect{l}\end{math}~\cite{BlinnModelsOfLightReflection}.
+Whilst the NDF describes the orientations of the microfacets, it doesn't describe their arrangement, which also plays a significant role in how light reflects off the macrosurface. Some microfacets will not be visible from the view vector \begin{math}\vect{v}\end{math} because they are occluded by other microfacets. This is known as \textit{masking}. Only those microfacets that are not masked by others will be visible to the viewer and thus contribute to the shading. Furthermore, some microfacets will be occluded so they aren't visible to the incoming light direction \begin{math}\vect{l}\end{math}. This is known as \textit{shadowing}. Microfacet theory only models the first interaction between light and microfacet, thus, only those microfacets that are not shadowed by others are assumed to contribute to the local reflectance~\cite{HeitzMicrofacetTheory}. In reality, incident light will bounce multiple times within a surfaces microgeometry, meaning even microsurfaces that aren't visible directly from the light will exhibit some reflectance. This is known as \textit{interreflection}. Surfaces can look overly dark and conservation of energy will be violated when this phenomena is not modelled~\cite{MultipleScatteringMicrofacet}. Figure \ref{fig:MaskingAndShadowing} illustrates masking and shadowing. The appropriately named \textit{masking-shadowing function}, \begin{math}G(\vect{l}, \vect{v}, \vect{m})\end{math}, accounts for the effects of masking and shadowing. It provides the fraction of microfacets with normal \begin{math}\vect{m}\end{math} that are visible from directions \begin{math}\vect{v}\end{math} and \begin{math}\vect{l}\end{math}~\cite{BlinnModelsOfLightReflection}.
 
 \begin{figure}[h]
 	\begin{subfigure}{0.48\textwidth}
@@ -270,7 +270,7 @@ Whilst the NDF describes the orientations of the microfacets, it doesn't describ
 
 The micro-BRDF, \begin{math}f_\mu(\vect{l}, \vect{v}, \vect{m})\end{math}, describes how light is reflected of an individual microfacet. There are two common choices for micro-BRDF. It's typical in a specular (macro) BRDF, that all the microfacets are modelled as perfect mirrors~\cite{CookTorrance}. This means that the micro-BRDF will reflect an incident light ray \begin{math}\vect{l}\end{math} in only one direction: \begin{math}\vect{l}\end{math} reflected about the microfacet normal \begin{math}\vect{m}\end{math}. Conversely, some diffuse (macro) BRDFs model all the microfacets as perfect diffuse surfaces~\cite{OrenAndNayar}. As explained in section \ref{BlinnPhongShading}, in compliance with Lambert's law, these surfaces diffuse incoming light equally in all directions and have no specular component; this translates to a micro-BRDF of constant value.
 
-The microfacet theory developed in the above paragraphs can be used to create an expressions for the overall (macro) BRDF~\cite{RTR4}:
+The microfacet theory developed in the above paragraphs can be used to create an expression for the overall (macro) BRDF~\cite{RTR4}:
 
 \begin{equation} \label{eq:Microfacet}
 	f(\vect{l}, \vect{v}) = \int_{\vect{m}\in\Omega}f_\mu(\vect{l}, \vect{v}, \vect{m})G(\vect{l}, \vect{v}, \vect{m})D(\vect{m})\frac{(\vect{m}\cdot\vect{l})^+}{\abs{\vect{n}\cdot\vect{l}}}\frac{(\vect{m}\cdot\vect{v})^+}{\abs{\vect{n}\cdot\vect{v}}}\,d\vect{m}
@@ -280,12 +280,114 @@ Again, \begin{math}\Omega\end{math} is the unit hemisphere centred on \begin{mat
 
 \subsection{Specular BRDFs} \label{SpecularBRDFs}
 
+Physically based specular BRDFs are built upon microfacet theory, and therefore utilise equation \ref{eq:Microfacet}. This equation integrates over all possible microfacet normals \begin{math}\vect{m}\end{math} that point above the macrosurface. However, because each microfacet is modelled as a perfect mirror, \begin{math}f_\mu(\vect{l}, \vect{v}, \vect{m})\end{math} will only be non-zero when \begin{math}\vect{m}\end{math} is of a value such that \begin{math}\vect{l}\end{math} is reflected exactly in direction \begin{math}\vect{v}\end{math}. The only instance of \begin{math}\vect{m}\end{math} that satisfies this is when \begin{math}\vect{m} = \vect{h}\end{math}, the half vector introduced in section \ref{BlinnPhongShading}. Therefore, we can remove the integration in equation \ref{eq:Microfacet}, simplifying it to the case when \begin{math}\vect{m} = \vect{h}\end{math}. After some further derivation we arrive at the following equation for specular BRDFs~\cite{HeitzMicrofacetTheory}:
+
+\begin{equation} \label{eq:SpecularBRDF}
+	f_{spec}(\vect{l}, \vect{v}) = \frac{F(\vect{h}, \vect{l})G(\vect{l}, \vect{v}, \vect{h})D(\vect{h})}{4\abs{\vect{n}\cdot\vect{v}}\abs{\vect{n}\cdot\vect{l}}}
+\end{equation}
+
+All the terms in equation \ref{eq:SpecularBRDF} are familiar, although the Fresnel reflectance, \begin{math}F(\vect{h}, \vect{l})\end{math}, is parametrised slightly different to the one introduced in section \ref{BRDFBuildingBlocks} - this is explained in the section below. Given this equation, the construction of a specific specular BRDF then boils down to choosing how these functions are implemented.
+
+\subsubsection{Fresnel Reflectance Implementations}
+
+As explained in section \ref{BRDFBuildingBlocks}, we don't make use of the Fresnel equations directly, but rather utilise approximations. An early approximation was given by Cook and Torrance~\cite{CookTorrance}. Schlick then improved upon this with his own function that has since seen widespread use~\cite{SchlickApproximation}:
+
+\begin{equation}
+	F(\vect{n}, \vect{l}) = F_0 + (1 - F_0)(1 - (\vect{n}\cdot\vect{l})^+)^5
+\end{equation}
+
+This function approximates the Fresnel reflection with less than a 1\% error~\cite{SchlickApproximation}. Figure \ref{fig:SchlickApproximation} shows the difference between the actual Fresnel reflectance and this approximation for several materials. The equation interpolates between \begin{math}F_0\end{math} and white in a non-linear manner that emulates the description given in section \ref{BRDFBuildingBlocks}. When the light is directly incident to the surface, \begin{math}\vect{n}\cdot\vect{l} = 0\end{math} so the Fresnel reflectance will be \begin{math}F_0\end{math}. As the angle between the microfacets' normal and the incident light increases, \begin{math}\vect{n}\cdot\vect{l}\end{math} decreases and so the overall value of \begin{math}F\end{math} tends towards white.
+
+Lagarde created a more optimised version of Schlicks approximation by using \textit{Spherical Gaussians}~\cite{LagardeSphericalGaussian}:
+
+\begin{equation}
+	F(\vect{n}, \vect{l}) = F_0 + (1 - F_0)2^{(-5.55473(\vect{n}\cdot\vect{l}) - 6.98316)(\vect{n}\cdot\vect{l})}
+\end{equation}
+
+Unreal engine makes use of this formulation for their Fresnel term~\cite{RealShadingInUnreal}. Frostbite on the other hand, have adapted the Schlick approximation into a more flexible form~\cite{MovingFrostbitetoPBR}:
+
+\begin{equation}
+	F(\vect{n}, \vect{l}) = F_0 + (F_{90} - F_0)(1 - (\vect{n}\cdot\vect{l})^+)^\frac{1}{p}
+\end{equation}
+
+\begin{math}F_{90}\end{math} can be used to define the colour that the reflectance tends towards at glancing angles - it doesn't have to be white. Although this is physically incorrect, it does give artists more control. The \begin{math}p\end{math} variable is used to modify the steepness of the transition to \begin{math}F_{90}\end{math}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{SchlickApproximation}
+	\caption{From left to right the materials are, glass, copper and aluminium. Along the x-axis is plotted \begin{math}\sin(\theta_i)\end{math}, and along the y is the intensities of each RGB channel. The solid lines are the actual Fresnel reflectance, and the dotted lines are the values given by the Schlick approximation. Similarly, the upper colour strip is the actual Fresnel reflectance, and the lower is that yielded from the Schlick approximation. Taken from~\cite{RTR4}.}
+	\label{fig:SchlickApproximation}
+\end{figure}
+
+\subsubsection{NDF Implementations}
+
+In this section we will only concern ourselves with \textit{isotropic} NDFs, which are those that are invariant when rotated about \begin{math}n\end{math}. \textit{Anisotropic} NDFs do exist and are crucial when rendering surfaces like brushed metal. A prominent isotropic NDF is the Beckmann distribution~\cite{Beckmann}. It is widely used in the field of optics and is the NDF of choice in the Cook-Torrance BRDF~\cite{WalterRefraction}~\cite{CookTorrance}. Walter et al give an equation for the Beckmann distribution~\cite{WalterRefraction}. After using some identities to manipulate it, the trigonometric functions can be replaced with dot products to yield the following:
+
+\begin{equation}
+	D(\vect{m}) = \frac{\mathcal{X}^+(\vect{m}\cdot\vect{n})}{\pi\alpha_b^2(\vect{m}\cdot\vect{n})^4}\exp(\frac{(\vect{m}\cdot\vect{n})^2 - 1}{\alpha_b^2(\vect{m}\cdot\vect{n})^2})
+\end{equation}
+
+\begin{math}\alpha_b\end{math} controls the roughness of the surface and thus the spread of the specular response~\cite{CookTorrance}.
+
+The other NDF that has seen extensive use in the graphics community is the GGX distribution. Originally formulated by Trowbridge and Reitz in 1975, the GGX distribution only started to see use after it was reformulated by Walter et al in 2007~\cite{TrowbridgeAndReitz}\cite{WalterRefraction}. It has the following form:
+
+\begin{equation}
+	D(\vect{m}) = \frac{\alpha_g^2\mathcal{X}^+(\vect{m}\cdot\vect{n})}{\pi(1 + (\vect{m}\cdot\vect{n})^2(\alpha_g^2 - 1))^2}
+\end{equation}
+
+\begin{math}\alpha_g\end{math} is similarly used to control the roughness of the surface, although it scales in a different manner. Burley proposes mapping \begin{math}\alpha_g = r^2\end{math} where \begin{math}r\end{math} provides a perceptually linear change in roughness as it moves between 0 and 1~\cite{Burley2012Physically}. Exposing parameters to artists in this linear manner is a common trope in graphics. Karis outlines it as one of the key goals they pursued when migrating the Unreal Engine over to a PBR pipeline~\cite{RealShadingInUnreal}.
+
+\subsubsection{Masking-shadowing Function Implementations}
+
+Implementations of the masking-shadowing function depend on the NDF used. There are two main options to choose from. The first is a function created by Torrance and Sparrow, which considers adjacent microfacets to form a "V-groove cavity"~\cite{TorranceSparrowVCavity}. The second option is the Smith masking-shadowing function~\cite{SmithMaskingShadowingFunction}. Heitz thoroughly analyses the two models and concludes that whilst they are both physically based, the Smith function is more accurate to real materials, with the Torrence and Sparrow function producing too small a specular component for rough materials viewed at glancing angles~\cite{HeitzMicrofacetTheory}. The most accurate version of the Smith function is the \textit{Smith height-correlated masking-shadowing function}. This takes into account the height of surface points relative to the rest of the surface. This is significant because points that are lower in the surface are more likely to experience masking and shadowing~\cite{RTR4}.
+
+The Smith height-correlated masking-shadowing function that is intended for use with the GGX NDF is~\cite{RTR4}:
+
+\begin{equation}
+	G(\vect{l}, \vect{v}, \vect{m}) = \frac{\mathcal{X}^+(\vect{m}\cdot\vect{v})\mathcal{X}^+(\vect{m}\cdot\vect{l})}{1 + \Lambda(a_{\vect{v}}) + \Lambda(a_{\vect{l}})}
+\end{equation}
+
+where
+
+\begin{equation}
+	\Lambda(a) = \frac{-1 + \sqrt{1 + \frac{1}{a^2}}}{2}
+\end{equation}
+
+and
+
+\begin{gather*}
+	a_{\vect{v}} = \frac{\vect{n}\cdot\vect{v}}{\alpha_g\sqrt{1 - (\vect{n}\cdot\vect{v})^2}}
+	\quad
+	a_{\vect{l}} = \frac{\vect{n}\cdot\vect{l}}{\alpha_g\sqrt{1 - (\vect{n}\cdot\vect{l})^2}}
+\end{gather*}
+
 \subsection{Diffuse BRDFs} \label{DiffuseBRDFs}
+
+We now focus on diffuse BRDFs, which model the local subsurface scattering component of local reflectance. Similar to the intrinsic specular colour of a material, \begin{math}F_0\end{math}, we also define an intrinsic diffuse colour called the \textit{subsurface albedo}. Denoted by \begin{math}\rho_{ss}\end{math}, this is the proportion of transmitted light that is re-emitted at the surface via subsurface scattering. Since this amount is a distribution of wavelengths, \begin{math}\rho_{ss}\end{math} is represented as an RGB triplet. The more \begin{math}\rho_{ss}\end{math} tends towards \begin{math}(0, 0, 0)\end{math}, the more absorption takes place within the interior of the associated material.
+
+Diffuse BRDFs can be placed into two categories: those that are built upon microfacet theory and account for surface roughness; and those that don't utilise microfacet theory and just assume the surface is flat. As explained by Akenine-M\"{o}ller et al, the type of model to use is determined by the differences between the size of the microgeometry, and the subsurface scattering distances~\cite{RTR4}. If the microgeometry is larger than the scattering distances, then a rough-surface diffuse BRDF should be used. If the microgeometry is smaller than the scattering distances, then a flat-surface diffuse BRDF can be used.
+
+\subsubsection{Flat-surface Diffuse BRDFs}
+
+The most common diffuse BRDF is based on the Lambert's law and has the following formulation:
+
+\begin{equation} \label{LambertionDiffuse}
+	f_{diff}(\vect{l}, \vect{v}) = (1 - F(\vect{h}, \vect{l}))\frac{\rho_{ss}}{\pi}
+\end{equation}
+
+The \begin{math}\pi\end{math} is obtained by setting the \textit{directional-hemispherical reflectance function} to a constant value and integrating it over all values of \begin{math}\vect{v}\end{math}~\cite{RTR4}. The inclusion of the Fresnel reflectance ensures that only light that was transmitted into the interior of the object is available to the diffuse term~\cite{ShirleySimpleConservationOfEnergy}. This helps to comply with the law of conservation of energy.
+
+Equation \ref{LambertionDiffuse} has a constant value for all view directions. However, this is not the case for real materials as they will show some directional bias~\cite{RTR4}. The fact that equation \ref{LambertionDiffuse} does not respect Helmholtz reciprocity (it varies by \begin{math}\vect{l}\end{math} but doesn't change by \begin{math}\vect{v}\end{math}), suggests its inaccuracy. Moreover, transmitted light will be refracted in a certain direction and therefore show some directional variance. Shirley et al present a more accurate diffuse BRDF that is partially coupled with the specular component~\cite{PractitionersReflectionModels}.
+
+\subsubsection{Rough-surface Diffuse BRDFs}
+
+Oren-Nayar
+
+Disney-diffuse (normalisation by frostbite)
 
 \subsection{Illumination} \label{Illumination}
 
 \begin{itemize}
-	\item Surface reflection
 	\item Subsurface reflection
 	\item Lights
 	\item HDR, tonemapping and gamma correction (display encoding)

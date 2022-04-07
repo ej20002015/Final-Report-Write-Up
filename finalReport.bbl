@@ -827,6 +827,46 @@
     \field{year}{2022}
   \endentry
 
+  \entry{PractitionersReflectionModels}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SP}{%
+         family={Shirley},
+         familyi={S\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Hu},
+         familyi={H\bibinitperiod},
+         given={Helen},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Smits},
+         familyi={S\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lafortune},
+         familyi={L\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SP+1}
+    \strng{fullhash}{SPHHSBLE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/PCCGA.1997.626170
+    \endverb
+    \field{isbn}{0-8186-8028-8}
+    \field{title}{A Practitioners' Assessment of Light Reflection Models}
+    \field{month}{09}
+    \field{year}{1997}
+  \endentry
+
   \entry{ReflectionAndDiffractionModel}{article}{}
     \name{author}{2}{}{%
       {{hash=HN}{%
@@ -1498,6 +1538,316 @@
       {New York, NY, USA}%
     }
     \field{year}{1994}
+  \endentry
+
+  \entry{LagardeSphericalGaussian}{online}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lagarde},
+         familyi={L\bibinitperiod},
+         given={S},
+         giveni={S},
+      }}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Spherical Gaussian approximation for Blinn-Phong, Phong and
+  Fresnel}
+    \verb{url}
+    \verb https://seblagarde.wordpress.com/2012/06/03/spherical-gaussien-approx
+    \verb imation-for-blinn-phong-phong-and-fresnel
+    \endverb
+    \field{day}{03}
+    \field{month}{06}
+    \field{year}{2012}
+    \field{urlday}{06}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{Beckmann}{book}{}
+    \name{author}{3}{}{%
+      {{hash=BP}{%
+         family={Beckmann},
+         familyi={B\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Coulson},
+         familyi={C\bibinitperiod},
+         given={J.M.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Spizzichino},
+         familyi={S\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pergamon Press; [distributed in the Western Hemisphere by Macmillan, New
+  York]}%
+    }
+    \strng{namehash}{BPCJSA1}
+    \strng{fullhash}{BPCJSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{9780080100074}
+    \field{series}{A Pergamon Press book}
+    \field{title}{The Scattering of Electromagnetic Waves from Rough Surfaces}
+    \verb{url}
+    \verb https://books.google.co.uk/books?id=QBEIAQAAIAAJ
+    \endverb
+    \field{year}{1963}
+  \endentry
+
+  \entry{WalterRefraction}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=WB}{%
+         family={Walter},
+         familyi={W\bibinitperiod},
+         given={Bruce},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MSR}{%
+         family={Marschner},
+         familyi={M\bibinitperiod},
+         given={Stephen\bibnamedelima R.},
+         giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Hongsong},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TKE}{%
+         family={Torrance},
+         familyi={T\bibinitperiod},
+         given={Kenneth\bibnamedelima E.},
+         giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Eurographics Association}%
+    }
+    \keyw{cook-torrance model, global illumination, refraction, Monte Carlo
+  sampling, microfacet BTDF}
+    \strng{namehash}{WB+1}
+    \strng{fullhash}{WBMSRLHTKE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Microfacet models have proven very successful for modeling light reflection
+  from rough surfaces. In this paper we review microfacet theory and
+  demonstrate how it can be extended to simulate transmission through rough
+  surfaces such as etched glass. We compare the resulting transmission model to
+  measured data from several real surfaces and discuss appropriate choices for
+  the microfacet distribution and shadowing-masking functions. Since rendering
+  transmission through media requires tracking light that crosses at least two
+  interfaces, good importance sampling is a practical necessity. Therefore, we
+  also describe efficient schemes for sampling the microfacet models and the
+  corresponding probability density functions.%
+    }
+    \field{booktitle}{Proceedings of the 18th Eurographics Conference on
+  Rendering Techniques}
+    \field{isbn}{9783905673524}
+    \field{pages}{195–206}
+    \field{series}{EGSR'07}
+    \field{title}{Microfacet Models for Refraction through Rough Surfaces}
+    \list{location}{1}{%
+      {Grenoble, France}%
+    }
+    \field{year}{2007}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{TrowbridgeAndReitz}{article}{}
+    \name{author}{2}{}{%
+      {{hash=TTS}{%
+         family={Trowbridge},
+         familyi={T\bibinitperiod},
+         given={T.\bibnamedelima S.},
+         giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=RKP}{%
+         family={Reitz},
+         familyi={R\bibinitperiod},
+         given={K.\bibnamedelima P.},
+         giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OSA}%
+    }
+    \keyw{Diffraction; Electromagnetic radiation; Fresnel equations;
+  Reflection; Refractive index; Surfaces}
+    \strng{namehash}{TTSRKP1}
+    \strng{fullhash}{TTSRKP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A new ray model is presented for the reflection of electromagnetic
+  radiation from the rough air-material interface of a randomly rough surface.
+  Unlike previous derivations that modeled the rough interface as consisting of
+  microareas randomly oriented but flat (facets), this derivation models it as
+  consisting of microareas not only randomly oriented but also randomly curved.
+  Physically, the models are the same, but this new derivation leads to some
+  new results. (1) For any given rough surface, there exists a single,
+  optically smooth, curved surface of revolution of very restricted shape that
+  will reflect radiation in the same distribution as that reflected by the
+  rough interface. (2) Modeling that surface as an ellipsoid of revolution
+  gives a surface-structure function that appears more accurate and useful than
+  existing ones. (3) Unlike the facet derivations, this derivation lends itself
+  to a normalization that gives the absolute, instead of just a comparative,
+  reflectance-distribution function.%
+    }
+    \verb{doi}
+    \verb 10.1364/JOSA.65.000531
+    \endverb
+    \field{number}{5}
+    \field{pages}{531\bibrangedash 536}
+    \field{title}{Average irregularity representation of a rough surface for
+  ray reflection}
+    \verb{url}
+    \verb http://opg.optica.org/abstract.cfm?URI=josa-65-5-531
+    \endverb
+    \field{volume}{65}
+    \field{journaltitle}{J. Opt. Soc. Am.}
+    \field{year}{1975}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{TorranceSparrowVCavity}{article}{}
+    \name{author}{2}{}{%
+      {{hash=TKE}{%
+         family={Torrance},
+         familyi={T\bibinitperiod},
+         given={K.\bibnamedelima E.},
+         giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=SEM}{%
+         family={Sparrow},
+         familyi={S\bibinitperiod},
+         given={E.\bibnamedelima M.},
+         giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OSA}%
+    }
+    \keyw{Absorption coefficient; Bidirectional reflectance distribution
+  function; Fresnel reflection; Geometric optics; Reflection; Refractive index}
+    \strng{namehash}{TKESEM1}
+    \strng{fullhash}{TKESEM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The directional distribution of radiant flux reflected from roughened
+  surfaces is analyzed on the basis of geometrical optics. The analytical model
+  assumes that the surface consists of small, randomly disposed, mirror-like
+  facets. Specular reflection from these facets plus a diffuse component due to
+  multiple reflections and/or internal scattering are postulated as the basic
+  mechanisms of the reflection process. The effects of shadowing and masking of
+  facets by adjacent facets are included in the analysis. The angular
+  distributions of reflected flux predicted by the analysis are in very good
+  agreement with experiment for both metallic and nonmetallic surfaces.
+  Moreover, the analysis successfully predicts the off-specular maxima in the
+  reflection distribution which are observed experimentally and which emerge as
+  the incidence angle increases. The model thus affords a rational explanation
+  for the off-specular peak phenomenon in terms of mutual masking and shadowing
+  of mirror-like, specularly reflecting surface facets.%
+    }
+    \verb{doi}
+    \verb 10.1364/JOSA.57.001105
+    \endverb
+    \field{number}{9}
+    \field{pages}{1105\bibrangedash 1114}
+    \field{title}{Theory for Off-Specular Reflection From Roughened
+  Surfaces$\ast$}
+    \verb{url}
+    \verb http://opg.optica.org/abstract.cfm?URI=josa-57-9-1105
+    \endverb
+    \field{volume}{57}
+    \field{journaltitle}{J. Opt. Soc. Am.}
+    \field{year}{1967}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{SmithMaskingShadowingFunction}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SB}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SB1}
+    \strng{fullhash}{SB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TAP.1967.1138991
+    \endverb
+    \field{number}{5}
+    \field{pages}{668\bibrangedash 671}
+    \field{title}{Geometrical shadowing of a random rough surface}
+    \field{volume}{15}
+    \field{journaltitle}{IEEE Transactions on Antennas and Propagation}
+    \field{year}{1967}
+  \endentry
+
+  \entry{ShirleySimpleConservationOfEnergy}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=SPS}{%
+         family={Shirley},
+         familyi={S\bibinitperiod},
+         given={Peter\bibnamedelima S.},
+         giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {University of Illinois at Urbana-Champaign}%
+    }
+    \strng{namehash}{SPS1}
+    \strng{fullhash}{SPS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Realistic image generation is presented in a theoretical formulation that
+  builds from previous work on the rendering equation. Previous and new
+  solution techniques for the global illumination are discussed in the context
+  of this formulation. The physical rules governing reflection are used to make
+  improvements in local reflection models. The conventional local illumination
+  models used in computer graphics are examined and modified to be consistent
+  with these physical rules.Global illumination is treated in terms of
+  evaluation of a Global Radiance Function. Image-based solution methods are
+  phrased as a lazy evaluation of the Global Radiance Function; evaluation
+  takes place for visible points. Zonal solution methods are phrased as table
+  based solutions. A proof is given that, subject to certain constraints, only
+  O(N) rays are required for a zonal solution with N zones. Simulation allows
+  for surfaces which are not zoned to interact with those that are.The ray
+  tracing zonal solution methods used for surfaces are extended to scenes with
+  participating media. The impact of wavelength selection and time dependencies
+  is also discussed.An object oriented implementation is discussed. This
+  implementation separates the local and global illumination modules, so all of
+  the specifics of the local models are hidden from the global energy transport
+  code. This allows new local modules to be added by specifying the black box
+  access routines.%
+    }
+    \field{note}{UMI Order NO. GAX91-24487}
+    \field{pages}{47\bibrangedash 48}
+    \field{title}{Physically Based Lighting Calculations for Computer Graphics}
+    \list{location}{1}{%
+      {USA}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{1991}
   \endentry
 \enddatalist
 \endinput

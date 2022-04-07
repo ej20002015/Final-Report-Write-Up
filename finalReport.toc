@@ -12,35 +12,40 @@
 \contentsline {subsubsection}{Metals and Dielectrics}{9}{}%
 \contentsline {subsection}{\numberline {1.2.3}Principles of Shading}{9}{}%
 \contentsline {subsubsection}{The Reflectance Equation}{9}{}%
-\contentsline {subsubsection}{The BRDF}{9}{}%
-\contentsline {subsubsection}{Incoming Radiance}{11}{}%
+\contentsline {subsubsection}{The BRDF}{10}{}%
+\contentsline {subsubsection}{Incoming Radiance}{10}{}%
 \contentsline {subsubsection}{Dot Product Term}{11}{}%
 \contentsline {subsection}{\numberline {1.2.4}BRDF Building Blocks}{11}{}%
 \contentsline {subsubsection}{Fresnel Reflectance}{11}{}%
 \contentsline {subsubsection}{Microfacet Theory}{12}{}%
 \contentsline {subsection}{\numberline {1.2.5}Specular BRDFs}{13}{}%
-\contentsline {subsection}{\numberline {1.2.6}Diffuse BRDFs}{13}{}%
-\contentsline {subsection}{\numberline {1.2.7}Illumination}{13}{}%
-\contentsline {chapter}{\numberline {2}Methods}{14}{}%
-\contentsline {section}{\numberline {2.1}What physical phenomena am I going to use for comparison?}{14}{}%
-\contentsline {subsection}{\numberline {2.1.1}A sub-section}{14}{}%
-\contentsline {section}{\numberline {2.2}Another section}{14}{}%
-\contentsline {chapter}{\numberline {3}Results}{15}{}%
-\contentsline {section}{\numberline {3.1}A section}{15}{}%
-\contentsline {subsection}{\numberline {3.1.1}A sub-section}{15}{}%
-\contentsline {section}{\numberline {3.2}Another section}{15}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{16}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{16}{}%
-\contentsline {section}{\numberline {4.2}Ideas for future work}{16}{}%
-\contentsline {chapter}{References}{17}{}%
-\contentsline {chapter}{Appendices}{20}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{20}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{20}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{20}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{20}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{20}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{20}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{20}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{20}{}%
-\contentsline {chapter}{\numberline {B}External Material}{21}{}%
-\contentsline {chapter}{\numberline {C}Mathematical Notation}{22}{}%
+\contentsline {subsubsection}{Fresnel Reflectance Implementations}{13}{}%
+\contentsline {subsubsection}{NDF Implementations}{14}{}%
+\contentsline {subsubsection}{Masking-shadowing Function Implementations}{15}{}%
+\contentsline {subsection}{\numberline {1.2.6}Diffuse BRDFs}{15}{}%
+\contentsline {subsubsection}{Flat-surface Diffuse BRDFs}{16}{}%
+\contentsline {subsubsection}{Rough-surface Diffuse BRDFs}{16}{}%
+\contentsline {subsection}{\numberline {1.2.7}Illumination}{16}{}%
+\contentsline {chapter}{\numberline {2}Methods}{17}{}%
+\contentsline {section}{\numberline {2.1}What physical phenomena am I going to use for comparison?}{17}{}%
+\contentsline {subsection}{\numberline {2.1.1}A sub-section}{17}{}%
+\contentsline {section}{\numberline {2.2}Another section}{17}{}%
+\contentsline {chapter}{\numberline {3}Results}{18}{}%
+\contentsline {section}{\numberline {3.1}A section}{18}{}%
+\contentsline {subsection}{\numberline {3.1.1}A sub-section}{18}{}%
+\contentsline {section}{\numberline {3.2}Another section}{18}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{19}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{19}{}%
+\contentsline {section}{\numberline {4.2}Ideas for future work}{19}{}%
+\contentsline {chapter}{References}{20}{}%
+\contentsline {chapter}{Appendices}{24}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{24}{}%
+\contentsline {section}{\numberline {A.1}Critical self-evaluation}{24}{}%
+\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{24}{}%
+\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{24}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal issues}{24}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social issues}{24}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{24}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional issues}{24}{}%
+\contentsline {chapter}{\numberline {B}External Material}{25}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{26}{}%

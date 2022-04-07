@@ -226,6 +226,15 @@
 	note = "[Online; accessed 30-March-2022]"
 }
 
+@inproceedings{PractitionersReflectionModels,
+	author = {Shirley, Peter and Hu, Helen and Smits, Brian and Lafortune, Eric},
+	year = {1997},
+	month = {09},
+	title = {A Practitioners' Assessment of Light Reflection Models},
+	isbn = {0-8186-8028-8},
+	doi = {10.1109/PCCGA.1997.626170}
+}
+
 @article{ReflectionAndDiffractionModel,
 	TITLE = {{A Two-Scale Microfacet Reflectance Model Combining Reflection and Diffraction}},
 	AUTHOR = {Holzschuch, Nicolas and Pacanowski, Romain},
@@ -448,4 +457,93 @@
 	numpages = {8},
 	keywords = {moon reflectance, rough surfaces, Lambert's model, reflection models, BRDF},
 	series = {SIGGRAPH '94}
+}
+
+@online{LagardeSphericalGaussian,
+	author = {Lagarde, S},
+	title = {Spherical Gaussian approximation for Blinn-Phong, Phong and Fresnel},
+	url = {https://seblagarde.wordpress.com/2012/06/03/spherical-gaussien-approximation-for-blinn-phong-phong-and-fresnel},
+	date = {2012-06-03},
+	urldate = {2022-04-06}
+}
+
+@book{Beckmann,
+	title={The Scattering of Electromagnetic Waves from Rough Surfaces},
+	author={Beckmann, P. and Coulson, J.M. and Spizzichino, A.},
+	isbn={9780080100074},
+	lccn={63010108},
+	series={A Pergamon Press book},
+	url={https://books.google.co.uk/books?id=QBEIAQAAIAAJ},
+	year={1963},
+	publisher={Pergamon Press; [distributed in the Western Hemisphere by Macmillan, New York]}
+}
+
+@inproceedings{WalterRefraction,
+	author = {Walter, Bruce and Marschner, Stephen R. and Li, Hongsong and Torrance, Kenneth E.},
+	title = {Microfacet Models for Refraction through Rough Surfaces},
+	year = {2007},
+	isbn = {9783905673524},
+	publisher = {Eurographics Association},
+	address = {Goslar, DEU},
+	abstract = {Microfacet models have proven very successful for modeling light reflection from rough surfaces. In this paper we review microfacet theory and demonstrate how it can be extended to simulate transmission through rough surfaces such as etched glass. We compare the resulting transmission model to measured data from several real surfaces and discuss appropriate choices for the microfacet distribution and shadowing-masking functions. Since rendering transmission through media requires tracking light that crosses at least two interfaces, good importance sampling is a practical necessity. Therefore, we also describe efficient schemes for sampling the microfacet models and the corresponding probability density functions.},
+	booktitle = {Proceedings of the 18th Eurographics Conference on Rendering Techniques},
+	pages = {195–206},
+	numpages = {12},
+	keywords = {cook-torrance model, global illumination, refraction, Monte Carlo sampling, microfacet BTDF},
+	location = {Grenoble, France},
+	series = {EGSR'07}
+}
+
+@article{TrowbridgeAndReitz,
+	author = {T. S. Trowbridge and K. P. Reitz},
+	journal = {J. Opt. Soc. Am.},
+	keywords = {Diffraction; Electromagnetic radiation; Fresnel equations; Reflection; Refractive index; Surfaces},
+	number = {5},
+	pages = {531--536},
+	publisher = {OSA},
+	title = {Average irregularity representation of a rough surface for ray reflection},
+	volume = {65},
+	month = {May},
+	year = {1975},
+	url = {http://opg.optica.org/abstract.cfm?URI=josa-65-5-531},
+	doi = {10.1364/JOSA.65.000531},
+	abstract = {A new ray model is presented for the reflection of electromagnetic radiation from the rough air-material interface of a randomly rough surface. Unlike previous derivations that modeled the rough interface as consisting of microareas randomly oriented but flat (facets), this derivation models it as consisting of microareas not only randomly oriented but also randomly curved. Physically, the models are the same, but this new derivation leads to some new results. (1) For any given rough surface, there exists a single, optically smooth, curved surface of revolution of very restricted shape that will reflect radiation in the same distribution as that reflected by the rough interface. (2) Modeling that surface as an ellipsoid of revolution gives a surface-structure function that appears more accurate and useful than existing ones. (3) Unlike the facet derivations, this derivation lends itself to a normalization that gives the absolute, instead of just a comparative, reflectance-distribution function.},
+}
+
+@article{TorranceSparrowVCavity,
+	author = {K. E. Torrance and E. M. Sparrow},
+	journal = {J. Opt. Soc. Am.},
+	keywords = {Absorption coefficient; Bidirectional reflectance distribution function; Fresnel reflection; Geometric optics; Reflection; Refractive index},
+	number = {9},
+	pages = {1105--1114},
+	publisher = {OSA},
+	title = {Theory for Off-Specular Reflection From Roughened Surfaces$\ast$},
+	volume = {57},
+	month = {Sep},
+	year = {1967},
+	url = {http://opg.optica.org/abstract.cfm?URI=josa-57-9-1105},
+	doi = {10.1364/JOSA.57.001105},
+	abstract = {The directional distribution of radiant flux reflected from roughened surfaces is analyzed on the basis of geometrical optics. The analytical model assumes that the surface consists of small, randomly disposed, mirror-like facets. Specular reflection from these facets plus a diffuse component due to multiple reflections and/or internal scattering are postulated as the basic mechanisms of the reflection process. The effects of shadowing and masking of facets by adjacent facets are included in the analysis. The angular distributions of reflected flux predicted by the analysis are in very good agreement with experiment for both metallic and nonmetallic surfaces. Moreover, the analysis successfully predicts the off-specular maxima in the reflection distribution which are observed experimentally and which emerge as the incidence angle increases. The model thus affords a rational explanation for the off-specular peak phenomenon in terms of mutual masking and shadowing of mirror-like, specularly reflecting surface facets.},
+}
+
+@article{SmithMaskingShadowingFunction,
+	author={Smith, B.},
+	journal={IEEE Transactions on Antennas and Propagation},
+	title={Geometrical shadowing of a random rough surface},
+	year={1967},
+	volume={15},
+	number={5},
+	pages={668-671},
+	doi={10.1109/TAP.1967.1138991}
+}
+
+@phdthesis{ShirleySimpleConservationOfEnergy,
+	author = {Shirley, Peter S.},
+	title = {Physically Based Lighting Calculations for Computer Graphics},
+	year = {1991},
+	publisher = {University of Illinois at Urbana-Champaign},
+	address = {USA},
+	abstract = {Realistic image generation is presented in a theoretical formulation that builds from previous work on the rendering equation. Previous and new solution techniques for the global illumination are discussed in the context of this formulation. The physical rules governing reflection are used to make improvements in local reflection models. The conventional local illumination models used in computer graphics are examined and modified to be consistent with these physical rules.Global illumination is treated in terms of evaluation of a Global Radiance Function. Image-based solution methods are phrased as a lazy evaluation of the Global Radiance Function; evaluation takes place for visible points. Zonal solution methods are phrased as table based solutions. A proof is given that, subject to certain constraints, only O(N) rays are required for a zonal solution with N zones. Simulation allows for surfaces which are not zoned to interact with those that are.The ray tracing zonal solution methods used for surfaces are extended to scenes with participating media. The impact of wavelength selection and time dependencies is also discussed.An object oriented implementation is discussed. This implementation separates the local and global illumination modules, so all of the specifics of the local models are hidden from the global energy transport code. This allows new local modules to be added by specifying the black box access routines.},
+	note = {UMI Order NO. GAX91-24487},
+	pages = {47-48}
 }
