@@ -1849,5 +1849,179 @@
     \field{type}{phdthesis}
     \field{year}{1991}
   \endentry
+
+  \entry{HammonBRDF}{unpublished}{}
+    \name{author}{1}{}{%
+      {{hash=HJE}{%
+         family={Hammon\bibnamedelima Jr.},
+         familyi={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={Earl},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HJE1}
+    \strng{fullhash}{HJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Game Developers Conference (GDC)}
+    \field{title}{PBR Diffuse Lighting for GGX+Smith Microsurfaces}
+    \verb{url}
+    \verb https://www.gdcvault.com/play/1024478/PBR-Diffuse-Lighting-for-GGX
+    \endverb
+    \field{year}{2017}
+    \field{urlday}{08}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{GotandaDiffuseBRDF}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=GY}{%
+         family={Gotanda},
+         familyi={G\bibinitperiod},
+         given={Yoshiharu},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GY1}
+    \strng{fullhash}{GY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Designing Reflectance Models for New Consoles}
+    \field{year}{2014}
+  \endentry
+
+  \entry{UberBake}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SD}{%
+         family={Seyb},
+         familyi={S\bibinitperiod},
+         given={Dario},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SPP}{%
+         family={Sloan},
+         familyi={S\bibinitperiod},
+         given={Peter-Pike},
+         giveni={P\bibinithyphendelim P\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Silvennoinen},
+         familyi={S\bibinitperiod},
+         given={Ari},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=IM}{%
+         family={Iwanicki},
+         familyi={I\bibinitperiod},
+         given={Micha\l{}},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=JW}{%
+         family={Jarosz},
+         familyi={J\bibinitperiod},
+         given={Wojciech},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{global illumination, baked lighting, real time systems}
+    \strng{namehash}{SD+1}
+    \strng{fullhash}{SDSPPSAIMJW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We describe the design and evolution of UberBake, a global illumination
+  system developed by Activision, which supports limited lighting changes in
+  response to certain player interactions. Instead of relying on a fully
+  dynamic solution, we use a traditional static light baking pipeline and
+  extend it with a small set of features that allow us to dynamically update
+  the precomputed lighting at run-time with minimal performance and memory
+  overhead. This means that our system works on the complete set of target
+  hardware, ranging from high-end PCs to previous generation gaming consoles,
+  allowing the use of lighting changes for gameplay purposes. In particular, we
+  show how to efficiently precompute lighting changes due to individual lights
+  being enabled and disabled and doors opening and closing. Finally, we provide
+  a detailed performance evaluation of our system using a set of production
+  levels and discuss how to extend its dynamic capabilities in the future.%
+    }
+    \verb{doi}
+    \verb 10.1145/3386569.3392394
+    \endverb
+    \field{issn}{0730-0301}
+    \field{number}{4}
+    \field{title}{The Design and Evolution of the UberBake Light Baking System}
+    \verb{url}
+    \verb https://doi.org/10.1145/3386569.3392394
+    \endverb
+    \field{volume}{39}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Trans. Graph.}
+    \field{year}{2020}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{IrradianceMaps}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=RR}{%
+         family={Ramamoorthi},
+         familyi={R\bibinitperiod},
+         given={Ravi},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Hanrahan},
+         familyi={H\bibinitperiod},
+         given={Pat},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{environment maps, rendering hardware, illumination, signal
+  processing, Lambertian reflectance, irradiance, prefiltering, spherical
+  harmonics, radiance}
+    \strng{namehash}{RRHP1}
+    \strng{fullhash}{RRHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We consider the rendering of diffuse objects under distant illumination, as
+  specified by an environment map. Using an analytic expression for the
+  irradiance in terms of spherical harmonic coefficients of the lighting, we
+  show that one needs to compute and use only 9 coefficients, corresponding to
+  the lowest-frequency modes of the illumination, in order to achieve average
+  errors of only 1%. In other words, the irradiance is insensitive to high
+  frequencies in the lighting, and is well approximated using only 9
+  parameters. In fact, we show that the irradiance can be procedurally
+  represented simply as a quadratic polynomial in the cartesian components of
+  the surface normal, and give explicit formulae. These observations lead to a
+  simple and efficient procedural rendering algorithm amenable to hardware
+  implementation, a prefiltering method up to three orders of magnitude faster
+  than previous techniques, and new representations for lighting design and
+  image-based rendering.%
+    }
+    \field{booktitle}{Proceedings of the 28th Annual Conference on Computer
+  Graphics and Interactive Techniques}
+    \verb{doi}
+    \verb 10.1145/383259.383317
+    \endverb
+    \field{isbn}{158113374X}
+    \field{pages}{497–500}
+    \field{series}{SIGGRAPH '01}
+    \field{title}{An Efficient Representation for Irradiance Environment Maps}
+    \verb{url}
+    \verb https://doi.org/10.1145/383259.383317
+    \endverb
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{year}{2001}
+  \endentry
 \enddatalist
 \endinput

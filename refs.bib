@@ -547,3 +547,55 @@
 	note = {UMI Order NO. GAX91-24487},
 	pages = {47-48}
 }
+
+@unpublished{HammonBRDF,
+	title= {PBR Diffuse Lighting for GGX+Smith Microsurfaces},
+	author = {Hammon Jr., Earl},
+	year = {2017},
+	note = {Game Developers Conference (GDC)},
+	URL = {https://www.gdcvault.com/play/1024478/PBR-Diffuse-Lighting-for-GGX},
+	urldate = {2022-04-08}
+}
+
+@inproceedings{GotandaDiffuseBRDF,
+	title={Designing Reflectance Models for New Consoles},
+	author={Yoshiharu Gotanda},
+	year={2014}
+}
+
+@article{UberBake,
+	author = {Seyb, Dario and Sloan, Peter-Pike and Silvennoinen, Ari and Iwanicki, Micha\l{} and Jarosz, Wojciech},
+	title = {The Design and Evolution of the UberBake Light Baking System},
+	year = {2020},
+	issue_date = {August 2020},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {39},
+	number = {4},
+	issn = {0730-0301},
+	url = {https://doi.org/10.1145/3386569.3392394},
+	doi = {10.1145/3386569.3392394},
+	abstract = {We describe the design and evolution of UberBake, a global illumination system developed by Activision, which supports limited lighting changes in response to certain player interactions. Instead of relying on a fully dynamic solution, we use a traditional static light baking pipeline and extend it with a small set of features that allow us to dynamically update the precomputed lighting at run-time with minimal performance and memory overhead. This means that our system works on the complete set of target hardware, ranging from high-end PCs to previous generation gaming consoles, allowing the use of lighting changes for gameplay purposes. In particular, we show how to efficiently precompute lighting changes due to individual lights being enabled and disabled and doors opening and closing. Finally, we provide a detailed performance evaluation of our system using a set of production levels and discuss how to extend its dynamic capabilities in the future.},
+	journal = {ACM Trans. Graph.},
+	month = {jul},
+	articleno = {150},
+	numpages = {13},
+	keywords = {global illumination, baked lighting, real time systems}
+}
+
+@inproceedings{IrradianceMaps,
+	author = {Ramamoorthi, Ravi and Hanrahan, Pat},
+	title = {An Efficient Representation for Irradiance Environment Maps},
+	year = {2001},
+	isbn = {158113374X},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/383259.383317},
+	doi = {10.1145/383259.383317},
+	abstract = {We consider the rendering of diffuse objects under distant illumination, as specified by an environment map. Using an analytic expression for the irradiance in terms of spherical harmonic coefficients of the lighting, we show that one needs to compute and use only 9 coefficients, corresponding to the lowest-frequency modes of the illumination, in order to achieve average errors of only 1%. In other words, the irradiance is insensitive to high frequencies in the lighting, and is well approximated using only 9 parameters. In fact, we show that the irradiance can be procedurally represented simply as a quadratic polynomial in the cartesian components of the surface normal, and give explicit formulae. These observations lead to a simple and efficient procedural rendering algorithm amenable to hardware implementation, a prefiltering method up to three orders of magnitude faster than previous techniques, and new representations for lighting design and image-based rendering.},
+	booktitle = {Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques},
+	pages = {497–500},
+	numpages = {4},
+	keywords = {environment maps, rendering hardware, illumination, signal processing, Lambertian reflectance, irradiance, prefiltering, spherical harmonics, radiance},
+	series = {SIGGRAPH '01}
+}

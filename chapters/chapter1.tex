@@ -31,9 +31,9 @@ Answering this question by simply commenting on the general perceived realism of
 
 % Must provide evidence of a literature review. Use sections
 % and subsections as they make sense for your project.
-\section{Literature review}
+\section{Background Research}
 
-The review begins with a discussion of the Blinn-Phong shading model; this provides the necessary background knowledge for the later comparison with physically based shading models to be performed. We then delve into the physics of how light interacts with matter, and how this pertains to shading. An exploration of the theory underpinning physically based shading models follows, and then we present several such models. After, we consider how lights can be represented in a physical manner. Finally, we finish by focusing on the wider PBR aspect with a discussion on how we store pixel colours, and the transformations that need to be applied before passing those colours to the display.
+The research begins with a discussion of the Blinn-Phong shading model; this provides the necessary background knowledge for the later comparison with physically based shading models to be performed. We then delve into the physics of how light interacts with matter, and how this pertains to shading. An exploration of the theory underpinning physically based shading models follows, and then we present several such models. After, we consider how lights can be represented in a physical manner. Finally, we finish by focusing on the wider PBR aspect with a discussion on how we store pixel colours, and the transformations that need to be applied before passing those colours to the display.
 
 \subsection{Blinn-Phong Shading} \label{BlinnPhongShading}
 
@@ -41,7 +41,7 @@ The review begins with a discussion of the Blinn-Phong shading model; this provi
 
 In 1975, Phong introduced a simple shading model for rendering realistic images~\cite{PhongShading}. The original model is parametrised as the sum of two terms, \textit{diffuse} and \textit{specular}, but in practice it is commonly supplemented with a third term, \textit{ambient}. Each one describes the contribution of a different lighting component. Splitting shading into the evaluation of a diffuse and specular term is common practice, and the physical basis for doing this is explained in section \ref{PhysicsOfLightMatterInteraction}.
 
-An ideal diffuse surface follows Lambert's law: light incident onto a point will be diffused in all directions equally~\cite{Lambert}. Therefore, the determining factor in the appearance of such surfaces is the intensity of the incident light, which is a function of the direction of incident light and the orientation of the shaded surface. The diffuse term encodes the lighting effects of parity between a primitive's surface orientation and the direction of the light, with surfaces facing the light being illuminated more intensely than those facing away from it. This behaviour is formulated as:
+An ideal diffuse surface is one that has a Lambertian response to incident light, where the light is diffused in all directions equally~\cite{Lambert}. Therefore, the determining factor in the appearance of such surfaces is the intensity of the incident light, which is a function of the direction of incident light and the orientation of the shaded surface. This is called \textit{Lambert's Cosine Law}~\cite{Lambert}. The diffuse term encodes the lighting effects of parity between a primitive's surface orientation and the direction of the light, with surfaces facing the light being illuminated more intensely than those facing away from it. This behaviour is formulated as:
 
 \begin{equation}
 	\vect{c}_{shaded_{diff}} = \vect{c}_{surface_{diff}}\vect{c}_{light_{diff}}(\vect{n}\cdot\vect{l})^+
@@ -201,7 +201,7 @@ A scene is comprised of a number of objects separated by media. Typically when r
 	L_o(\vect{p}, \vect{v}) = \int_{\vect{l}\in\Omega}f(\vect{l}, \vect{v})L_i(\vect{p}, \vect{l})(\vect{n}\cdot\vect{l})\,d\vect{l}
 \end{equation}
 
-The \begin{math}\vect{l}\in\Omega\end{math} in the integral subscript says that the integral should be performed over all directions \begin{math}\vect{l}\end{math} that exist in the unit hemisphere \begin{math}\Omega\end{math}, which is centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. In this way, the incoming radiance from all possible light sources is considered. The product within the integral gives the outgoing radiance from \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math} for a singular incident light direction \begin{math}\vect{l}\end{math}. The effect of the integration is to sum over all the individual components of outgoing radiance, to obtain the total value. This formulation is consistent with the shading scenario that was introduced in the "Transmitted Light Interaction" section of \ref{PhysicsOfLightMatterInteraction}, except it is expressed from a slightly different perspective: instead of keeping the incoming light direction constant and considering many outgoing light directions, we are now keeping the outgoing light direction constant, and considering all possible incoming light directions. Note that this is indeed a local shading model, with all outgoing light at \begin{math}\vect{p}\end{math} being wholly dependent on incoming light at \begin{math}\vect{p}\end{math}. A physically based shading model computes the reflectance equation. We now discuss each of the factors of the integral's product in turn.
+The \begin{math}\vect{l}\in\Omega\end{math} in the integral subscript says that the integral should be performed over all directions \begin{math}\vect{l}\end{math} that exist in the unit hemisphere \begin{math}\Omega\end{math}, which is centred on \begin{math}\vect{p}\end{math} and orientated along the surface normal \begin{math}\vect{n}\end{math}. In this way, the incoming radiance from all possible light sources is considered. The product within the integral gives the outgoing radiance from \begin{math}\vect{p}\end{math} along \begin{math}\vect{v}\end{math} for a singular incident light direction \begin{math}\vect{l}\end{math}. The effect of the integration is to sum over all the individual components of outgoing radiance, to obtain the total value. This formulation is consistent with the shading scenario that was introduced in the "Transmitted Light Interaction" section of \ref{PhysicsOfLightMatterInteraction}, except it is expressed from a slightly different perspective: instead of keeping the incoming light direction constant and considering many outgoing light directions, we are now keeping the outgoing light direction constant, and considering all possible incoming light directions. Note that this is indeed a local shading model, with all outgoing light at \begin{math}\vect{p}\end{math} being wholly dependent on incoming light at \begin{math}\vect{p}\end{math}. A physically based shading model computes the reflectance equation using physically based implementations of \begin{math}f\end{math} and \begin{math}L_i\end{math}. We now discuss each of the factors of the integral's product in turn.
 
 \subsubsection{The BRDF}
 
@@ -230,7 +230,7 @@ The incoming radiance term, \begin{math}L_i(\vect{p}, \vect{l})\end{math}, repre
 
 \subsubsection{Dot Product Term}
 
-The dot product term, \begin{math}(\vect{n}\cdot\vect{l})\end{math}, is the same as that discussed in section \ref{BlinnPhongShading}. It fulfils the same purpose, going from 0 to 1 as the light direction approaches the surface normal. When multiplied by the incoming radiance term, it appropriately scales the amount of illumination. It's also common for this dot product to be clamped to 0 in the reflectance equation, so that contributions from light sources below the surface are ignored.
+The dot product term, \begin{math}(\vect{n}\cdot\vect{l})\end{math}, is the same as that discussed in section \ref{BlinnPhongShading}. It fulfils the same purpose, going from 0 to 1 as the light direction approaches the surface normal. When multiplied by the incoming radiance term, it appropriately scales the amount of illumination. It's also common for this dot product to be clamped to 0, so that contributions from light sources below the surface are ignored.
 
 \subsection{BRDF Building Blocks} \label{BRDFBuildingBlocks}
 
@@ -268,7 +268,7 @@ Whilst the NDF describes the orientations of the microfacets, it doesn't describ
 	\label{fig:MaskingAndShadowing}
 \end{figure}
 
-The micro-BRDF, \begin{math}f_\mu(\vect{l}, \vect{v}, \vect{m})\end{math}, describes how light is reflected of an individual microfacet. There are two common choices for micro-BRDF. It's typical in a specular (macro) BRDF, that all the microfacets are modelled as perfect mirrors~\cite{CookTorrance}. This means that the micro-BRDF will reflect an incident light ray \begin{math}\vect{l}\end{math} in only one direction: \begin{math}\vect{l}\end{math} reflected about the microfacet normal \begin{math}\vect{m}\end{math}. Conversely, some diffuse (macro) BRDFs model all the microfacets as perfect diffuse surfaces~\cite{OrenAndNayar}. As explained in section \ref{BlinnPhongShading}, in compliance with Lambert's law, these surfaces diffuse incoming light equally in all directions and have no specular component; this translates to a micro-BRDF of constant value.
+The micro-BRDF, \begin{math}f_\mu(\vect{l}, \vect{v}, \vect{m})\end{math}, describes how light is reflected of an individual microfacet. There are two common choices for micro-BRDF. It's typical in a specular (macro) BRDF, that all the microfacets are modelled as perfect mirrors~\cite{CookTorrance}. This means that the micro-BRDF will reflect an incident light ray \begin{math}\vect{l}\end{math} in only one direction: \begin{math}\vect{l}\end{math} reflected about the microfacet normal \begin{math}\vect{m}\end{math}. Conversely, some diffuse (macro) BRDFs model all the microfacets as perfect diffuse surfaces~\cite{OrenAndNayar}. As explained in section \ref{BlinnPhongShading}, in compliance with Lambertian reflection, these surfaces diffuse incoming light equally in all directions and have no specular component; this translates to a micro-BRDF of constant value.
 
 The microfacet theory developed in the above paragraphs can be used to create an expression for the overall (macro) BRDF~\cite{RTR4}:
 
@@ -339,7 +339,7 @@ The other NDF that has seen extensive use in the graphics community is the GGX d
 
 \subsubsection{Masking-shadowing Function Implementations}
 
-Implementations of the masking-shadowing function depend on the NDF used. There are two main options to choose from. The first is a function created by Torrance and Sparrow, which considers adjacent microfacets to form a "V-groove cavity"~\cite{TorranceSparrowVCavity}. The second option is the Smith masking-shadowing function~\cite{SmithMaskingShadowingFunction}. Heitz thoroughly analyses the two models and concludes that whilst they are both physically based, the Smith function is more accurate to real materials, with the Torrence and Sparrow function producing too small a specular component for rough materials viewed at glancing angles~\cite{HeitzMicrofacetTheory}. The most accurate version of the Smith function is the \textit{Smith height-correlated masking-shadowing function}. This takes into account the height of surface points relative to the rest of the surface. This is significant because points that are lower in the surface are more likely to experience masking and shadowing~\cite{RTR4}.
+Implementations of the masking-shadowing function depend on the NDF used. There are two main options to choose from. The first is a function created by Torrance and Sparrow, which considers adjacent microfacets to form a "V-groove cavity"~\cite{TorranceSparrowVCavity}. The second option is the Smith masking-shadowing function~\cite{SmithMaskingShadowingFunction}. Heitz thoroughly analyses the two models and concludes that whilst they are both physically based, the Smith function is more accurate to real materials, with the Torrence-Sparrow function producing too small a specular component for rough materials viewed at glancing angles~\cite{HeitzMicrofacetTheory}. The most accurate version of the Smith function is the \textit{Smith height-correlated masking-shadowing function}. This takes into account the height of surface points relative to the rest of the surface. This is significant because points that are lower in the surface are more likely to experience masking and shadowing~\cite{RTR4}.
 
 The Smith height-correlated masking-shadowing function that is intended for use with the GGX NDF is~\cite{RTR4}:
 
@@ -369,26 +369,51 @@ Diffuse BRDFs can be placed into two categories: those that are built upon micro
 
 \subsubsection{Flat-surface Diffuse BRDFs}
 
-The most common diffuse BRDF is based on the Lambert's law and has the following formulation:
+The most common diffuse BRDF is based on Lambertian reflection and has the following formulation:
 
-\begin{equation} \label{LambertionDiffuse}
+\begin{equation} \label{LambertianDiffuse}
 	f_{diff}(\vect{l}, \vect{v}) = (1 - F(\vect{h}, \vect{l}))\frac{\rho_{ss}}{\pi}
 \end{equation}
 
 The \begin{math}\pi\end{math} is obtained by setting the \textit{directional-hemispherical reflectance function} to a constant value and integrating it over all values of \begin{math}\vect{v}\end{math}~\cite{RTR4}. The inclusion of the Fresnel reflectance ensures that only light that was transmitted into the interior of the object is available to the diffuse term~\cite{ShirleySimpleConservationOfEnergy}. This helps to comply with the law of conservation of energy.
 
-Equation \ref{LambertionDiffuse} has a constant value for all view directions. However, this is not the case for real materials as they will show some directional bias~\cite{RTR4}. The fact that equation \ref{LambertionDiffuse} does not respect Helmholtz reciprocity (it varies by \begin{math}\vect{l}\end{math} but doesn't change by \begin{math}\vect{v}\end{math}), suggests its inaccuracy. Moreover, transmitted light will be refracted in a certain direction and therefore show some directional variance. Shirley et al present a more accurate diffuse BRDF that is partially coupled with the specular component~\cite{PractitionersReflectionModels}.
+Equation \ref{LambertianDiffuse} has a constant value for all view directions. The physical basis for such a formulation is rooted in the observation that, prior to re-emission, subsurface scattered light will undergo many scattering events in the interior of the object (as explained in section \ref{PhysicsOfLightMatterInteraction}). This has the effect of randomising the directions of outgoing light, which can be intuitively modelled as a constant value over all \begin{math}\vect{v}\end{math}~\cite{HammonBRDF}. However, real materials will show some directional bias, whether that's due to refraction or the need to respect Helmholtz reciprocity (which equation \ref{LambertianDiffuse} violates)~\cite{RTR4}. Shirley et al present a more accurate diffuse BRDF that is partially coupled with the specular component~\cite{PractitionersReflectionModels}.
 
 \subsubsection{Rough-surface Diffuse BRDFs}
 
-Oren-Nayar
+The most notable microfacet-based, rough-surface diffuse BRDF is that created by Oren and Nayar~\cite{OrenAndNayar}. It is comprised of: a gaussian NDF; a Torrence-Sparrow masking-shadowing function; and a constant micro-BRDF that models each microfacet as a perfectly diffuse surface. The Oren-Nayar BRDF increases in intensity as \begin{math}\vect{v}\end{math} approaches \begin{math}\vect{l}\end{math}, a property that is coherent with the reflectance characteristics of rough surfaces like clay~\cite{OrenAndNayar}. As a result, their BRDF produces much more realistic results for these rough surfaces when compared to the Lambertian BRDF. Alternative diffuse BRDFs that are based on microfacet theory are given by Gotanda, and another by Hammon~\cite{GotandaDiffuseBRDF}\cite{HammonBRDF}. These both make use of the more modern GGX distribution and Smith height-correlated masking-shadowing function.
 
-Disney-diffuse (normalisation by frostbite)
+Burley presents a BRDF that accounts for roughness, but does not use microfacet theory~\cite{Burley2012Physically}. Instead, it is empirically constructed by observing how light responds to different materials in the \textit{MERL} database. The Frostbite Engine utilises a slightly modified version of Burley's BRDF, where it has been tweaked to respect energy conservation~\cite{MovingFrostbitetoPBR}.
 
 \subsection{Illumination} \label{Illumination}
 
+Having thoroughly examined the BRDF, we now study the other function in the reflectance equation, the incoming radiance, \begin{math}L_i(\vect{p}, \vect{l})\end{math}.
+
+In section \ref{BlinnPhongShading}, a distinction was made between direct and indirect illumination. Direct illumination is light that arrives directly from a light source. Indirect illumination is light that only strikes point \begin{math}\vect{p}\end{math} after first undergoing collisions with other objects and media within the scene. When considering the unit hemisphere of incoming light, direct illumination contributes high levels of radiance, over small solid angles. Indirect illumination then spans the rest of the hemisphere, with small to moderate levels of radiance. This difference means that when integrating the reflectance equation over all possible incident light directions, it is common to deal with direct and indirect light sources separately.
+
+\subsubsection{Indirect Illumination}
+
+Indirect illumination impinging upon \begin{math}\vect{p}\end{math} can be computed using \textit{Global Illumination} (GI) or \textit{Local Illumination} techniques. GI algorithms determine \begin{math}L_i(\vect{p}, \vect{l})\end{math} by backtracking, and explicitly simulating the previous light-matter interactions that have led to that illumination. Such techniques are dependent on having a global view of the objects in the scene at each shading point. The ray tracing algorithm briefly discussed in the introduction is a GI technique. The tremendous amount of realism and detail that GI techniques yield, unfortunately demand an equally tremendous amount of compute time. The frame times given for ray tracing was indicative of this. As a result, GI algorithms cannot be computed per frame in real-time rendering. However, for static environments, GI can be used to precompute some aspects of lighting, which are then retrieved at run time. This process is known as \textit{baking}~\cite{UberBake}.
+
+Local Illumination techniques do not require a global view of scene objects; they only need to be aware of the current object that is being shaded. We have already examined a crude Local Illumination technique for modelling indirect illumination: the ambient term presented in section \ref{BlinnPhongShading}. More advanced techniques are Image Based Lighting and Irradiance Mapping~\cite{HoffmanPBSBackground}\cite{IrradianceMaps}. These both involve sampling a cube or sphere for multiple values of \begin{math}\vect{l}\end{math}.
+
+\subsubsection{Direct illumination}
+
+Computing the direct illumination incident to \begin{math}\vect{p}\end{math} involves integrating the reflectance equation over specific, known values of \begin{math}\vect{l}\end{math}. There are three types of light sources: area, punctual and directional. Area lights, as the name suggests, have a size, as well as a location and colour. When projected onto the unit hemisphere, this size translates to a solid angle. Therefore, to work out the contribution of incoming radiance from that area light, an integration is done over values of \begin{math}\vect{l}\end{math} that lie within its solid angle. The punctual light is a non-physical simplification of the area light that has an infitsimally small size. This helps to greatly simplify the reflectance equation since only one direction v needs to be integrated for each light source. Issues with that are...
+
+[Directional lights then are a further simplification where they are assumed to be very far away so only their direction makes a difference - they have no location]
+
+\subsubsection{Point Light Parametrisation and Attenuation}
+
+If you only use point lights then then solving the reflectance equation is the same as this: [Summation]
+
+[Give equation for incoming radiance for a point light]
+
+Perhaps talk about 4*PI
+
+Explain the attenuation factor.
+
 \begin{itemize}
-	\item Subsurface reflection
 	\item Lights
 	\item HDR, tonemapping and gamma correction (display encoding)
 \end{itemize}
