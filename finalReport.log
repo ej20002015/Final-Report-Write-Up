@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  8 APR 2022 21:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  9 APR 2022 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,10 +986,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15831 strings out of 478584
- 304945 string characters out of 2844402
- 1059689 words of memory out of 3000000
- 33753 multiletter control sequences out of 15000+600000
+ 15833 strings out of 478584
+ 304985 string characters out of 2844402
+ 1059714 words of memory out of 3000000
+ 33755 multiletter control sequences out of 15000+600000
  492118 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,134p,2256b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1025,9 +1025,9 @@ cmsy10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/
 type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (33 pages, 679843 bytes).
+Output written on finalReport.pdf (33 pages, 682941 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
+ 771 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

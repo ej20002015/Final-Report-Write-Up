@@ -399,19 +399,27 @@ Local Illumination techniques do not require a global view of scene objects; the
 
 \subsubsection{Direct illumination}
 
-Computing the direct illumination incident to \begin{math}\vect{p}\end{math} involves integrating the reflectance equation over specific, known values of \begin{math}\vect{l}\end{math}. There are three types of light sources: area, punctual and directional. Area lights, as the name suggests, have a size, as well as a location and colour. When projected onto the unit hemisphere, this size translates to a solid angle. Therefore, to work out the contribution of incoming radiance from that area light, an integration is done over values of \begin{math}\vect{l}\end{math} that lie within its solid angle. The punctual light is a non-physical simplification of the area light that has an infitsimally small size. This helps to greatly simplify the reflectance equation since only one direction v needs to be integrated for each light source. Issues with that are...
+Computing the direct illumination incident to \begin{math}\vect{p}\end{math} involves integrating the reflectance equation over specific, known values of \begin{math}\vect{l}\end{math}. There are three types of light sources: area, punctual and directional. Area lights, as the name suggests, have a size, as well as a location. When projected onto the unit hemisphere, this size translates to a solid angle. Therefore, to work out the contribution of incoming radiance from that area light, an integration is done over values of \begin{math}\vect{l}\end{math} that lie within its projected solid angle.
 
-[Directional lights then are a further simplification where they are assumed to be very far away so only their direction makes a difference - they have no location]
+Punctual lights are similar to area lights, except they have an infinitesimally small size. This simplifies the evaluation of the reflectance equation because only one direction \begin{math}\vect{l}\end{math} needs to be integrated for each punctual light source. However, punctual lights are an abstraction of the real world - all lights occupy some area - and therefore the simplified computation they provide comes at a cost. Point lights will produce very small specular highlights on shiny materials, which looks unrealistic. To combat this, artists will often increase the roughness of the material to spread the highlight out, but in doing so they couple the specific lighting environment and material properties together~\cite{MovingFrostbitetoPBR}~\cite{RealShadingInUnreal}. In the introduction we discussed why such a practise can be problematic.
 
-\subsubsection{Point Light Parametrisation and Attenuation}
+Directional lights are then a further simplification, where they are assumed to be positioned so far away, that their direction is constant over all objects in the scene. Thus, they are not associated with a particular location.
 
-If you only use point lights then then solving the reflectance equation is the same as this: [Summation]
+\subsubsection{Point Lights}
 
-[Give equation for incoming radiance for a point light]
+The most common form of punctual light is the point light. A point light emits constant radiance over all directions. The colour of the point light is denoted as \begin{math}\vect{c}_{PL}\end{math}, which is an unbounded RGB triplet~\cite{HoffmanPBSBackground}. \begin{math}\vect{c}_{PL}\end{math} is then defined as the reflected radiance from a perfectly diffuse white surface that directly faces the light. Given this definition, Hoffman derives a simplified version of the reflectance equation for a single point light~\cite{HoffmanPBSBackground}. Extending this for multiple point lights, the reflectance equation becomes:
 
-Perhaps talk about 4*PI
+\begin{equation} \label{eq:PointLightsReflectanceEquation}
+	L_o(\vect{p}, \vect{v}) = \pi\sum_{i = 0}^{N - 1}f(\vect{l}_{PL_i}, \vect{v})\vect{c}_{PL_i}(\vect{n}\cdot\vect{l}_{PL_i})^+
+\end{equation}
 
-Explain the attenuation factor.
+where \begin{math}N\end{math} is the number of point lights.
+
+Light intensity is attenuated as the distance between the light source and shaded point \begin{math}\vect{p}\end{math} increases. For point lights, this attenuation is equal to the inverse of the squared distance. Therefore, \begin{math}\vect{c}_{PL_i}\end{math} is proportional to \begin{math}1 / (\vect{p} - \vect{p}_{PL_i})^2\end{math}, where \begin{math}\vect{p}_{PL_i}\end{math} is the position of point light \begin{math}i\end{math}.
+
+The dot product term has been clamped to 0, so that the contribution of point lights that are located below the surface is discarded.
+
+\subsection{HDR} \label{HDR}
 
 \begin{itemize}
 	\item Lights
