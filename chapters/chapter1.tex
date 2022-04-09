@@ -395,7 +395,7 @@ In section \ref{BlinnPhongShading}, a distinction was made between direct and in
 
 Indirect illumination impinging upon \begin{math}\vect{p}\end{math} can be computed using \textit{Global Illumination} (GI) or \textit{Local Illumination} techniques. GI algorithms determine \begin{math}L_i(\vect{p}, \vect{l})\end{math} by backtracking, and explicitly simulating the previous light-matter interactions that have led to that illumination. Such techniques are dependent on having a global view of the objects in the scene at each shading point. The ray tracing algorithm briefly discussed in the introduction is a GI technique. The tremendous amount of realism and detail that GI techniques yield, unfortunately demand an equally tremendous amount of compute time. The frame times given for ray tracing was indicative of this. As a result, GI algorithms cannot be computed per frame in real-time rendering. However, for static environments, GI can be used to precompute some aspects of lighting, which are then retrieved at run time. This process is known as \textit{baking}~\cite{UberBake}.
 
-Local Illumination techniques do not require a global view of scene objects; they only need to be aware of the current object that is being shaded. We have already examined a crude Local Illumination technique for modelling indirect illumination: the ambient term presented in section \ref{BlinnPhongShading}. More advanced techniques are Image Based Lighting and Irradiance Mapping~\cite{HoffmanPBSBackground}\cite{IrradianceMaps}. These both involve sampling a cube or sphere for multiple values of \begin{math}\vect{l}\end{math}.
+Local Illumination techniques do not require a global view of scene objects; they only need to be aware of the current object that is being shaded. We have already examined a crude Local Illumination technique for modelling indirect illumination: the ambient term presented in section \ref{BlinnPhongShading}. More advanced techniques are Image Based Lighting and Irradiance Mapping~\cite{HoffmanPBSBackground}\cite{IrradianceMaps}.
 
 \subsubsection{Direct illumination}
 
@@ -415,7 +415,7 @@ The most common form of punctual light is the point light. A point light emits c
 
 where \begin{math}N\end{math} is the number of point lights.
 
-Light intensity is attenuated as the distance between the light source and shaded point \begin{math}\vect{p}\end{math} increases. For point lights, this attenuation is equal to the inverse of the squared distance. Therefore, \begin{math}\vect{c}_{PL_i}\end{math} is proportional to \begin{math}1 / (\vect{p} - \vect{p}_{PL_i})^2\end{math}, where \begin{math}\vect{p}_{PL_i}\end{math} is the position of point light \begin{math}i\end{math}.
+Light intensity is attenuated as the distance between the light source and shaded point \begin{math}\vect{p}\end{math} increases. For point lights, this attenuation is equal to the inverse of the squared distance. Therefore, \begin{math}\vect{c}_{PL_i}\end{math} will be proportional to \begin{math}1 / (\vect{p} - \vect{p}_{PL_i})^2\end{math}, where \begin{math}\vect{p}_{PL_i}\end{math} is the position of point light \begin{math}i\end{math}.
 
 The dot product term has been clamped to 0, so that the contribution of point lights that are located below the surface is discarded.
 
