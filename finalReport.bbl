@@ -2023,5 +2023,175 @@
     }
     \field{year}{2001}
   \endentry
+
+  \entry{Reinhard}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RE}{%
+         family={Reinhard},
+         familyi={R\bibinitperiod},
+         given={Erik},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Stark},
+         familyi={S\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Shirley},
+         familyi={S\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Ferwerda},
+         familyi={F\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{zone system, dynamic range, tone reproduction}
+    \strng{namehash}{RE+1}
+    \strng{fullhash}{RESMSPFJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A classic photographic task is the mapping of the potentially high dynamic
+  range of real world luminances to the low dynamic range of the photographic
+  print. This tone reproduction problem is also faced by computer graphics
+  practitioners who map digital images to a low dynamic range print or screen.
+  The work presented in this paper leverages the time-tested techniques of
+  photographic practice to develop a new tone reproduction operator. In
+  particular, we use and extend the techniques developed by Ansel Adams to deal
+  with digital images. The resulting algorithm is simple and produces good
+  results for a wide variety of images.%
+    }
+    \field{booktitle}{Proceedings of the 29th Annual Conference on Computer
+  Graphics and Interactive Techniques}
+    \verb{doi}
+    \verb 10.1145/566570.566575
+    \endverb
+    \field{isbn}{1581135211}
+    \field{pages}{267–276}
+    \field{series}{SIGGRAPH '02}
+    \field{title}{Photographic Tone Reproduction for Digital Images}
+    \verb{url}
+    \verb https://doi.org/10.1145/566570.566575
+    \endverb
+    \list{location}{1}{%
+      {San Antonio, Texas}%
+    }
+    \field{year}{2002}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{HoffmanKeynoteEchoChamber}{unpublished}{}
+    \name{author}{1}{}{%
+      {{hash=HN}{%
+         family={Hoffman},
+         familyi={H\bibinitperiod},
+         given={Naty},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HN1}
+    \strng{fullhash}{HN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games}
+    \field{title}{Outside the Echo Chamber: Learning from Other Disciplines,
+  Industries, and Art Forms}
+    \verb{url}
+    \verb http://renderwonk.com/publications/i3d2013-keynote/i3dkeynote-final.p
+    \verb df
+    \endverb
+    \field{year}{2013}
+    \field{urlday}{10}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{Hable}{unpublished}{}
+    \name{author}{1}{}{%
+      {{hash=HJ}{%
+         family={Hable},
+         familyi={H\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HJ1}
+    \strng{fullhash}{HJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Game Developers Conference (GDC)}
+    \field{title}{Uncharted 2: HDR Lighting}
+    \verb{url}
+    \verb https://www.gdcvault.com/play/1012351/Uncharted-2-HDR
+    \endverb
+    \field{year}{2010}
+    \field{urlday}{10}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{ACESUnreal}{online}{}
+    \name{author}{1}{}{%
+      {{hash=EU}{%
+         family={Engine},
+         familyi={E\bibinitperiod},
+         given={Unreal},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EU1}
+    \strng{fullhash}{EU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Color Grading and Filmic Tonemapper}
+    \verb{url}
+    \verb https://docs.unrealengine.com/4.27/en-US/RenderingAndGraphics/PostPro
+    \verb cessEffects/ColorGrading/
+    \endverb
+    \field{urlday}{10}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{GPUGemsChapter24}{book}{}
+    \name{author}{2}{}{%
+      {{hash=GL}{%
+         family={Gritz},
+         familyi={G\bibinitperiod},
+         given={Larry},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=dE}{%
+         family={d'Eon},
+         familyi={d\bibinitperiod},
+         given={Eugene},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Addison-Wesley Professional}%
+    }
+    \strng{namehash}{GLdE1}
+    \strng{fullhash}{GLdE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{First}
+    \field{isbn}{9780321545428}
+    \field{title}{Gpu Gems 3: Chapter 24. The Importance of Being Linear}
+    \verb{url}
+    \verb https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/c
+    \verb hapter-24-importance-being-linear
+    \endverb
+    \field{year}{2007}
+  \endentry
 \enddatalist
 \endinput
