@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  10 APR 2022 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  11 APR 2022 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -827,13 +827,13 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ))
 [3
 
-] (finalReport.toc)
+] (finalReport.toc [4
+
+])
 \tf@toc=\write4
 \openout4 = `finalReport.toc'.
 
- [4
-
-])
+ [5])
 \openout2 = `./chapters/chapter1.aux'.
 
  (chapters/chapter1.tex
@@ -845,101 +845,101 @@ Chapter 1.
 
 
 ] [2] [3]
-<./images//PrincipleVectors.png, id=50, 602.85225pt x 257.16075pt>
+<./images//PrincipleVectors.png, id=53, 602.85225pt x 257.16075pt>
 File: ./images//PrincipleVectors.png Graphic file (type png)
 <use ./images//PrincipleVectors.png>
-Package pdftex.def Info: ./images//PrincipleVectors.png  used on input line 82.
+Package pdftex.def Info: ./images//PrincipleVectors.png  used on input line 84.
 
 (pdftex.def)             Requested size: 227.62204pt x 97.09818pt.
  [4 <./images//PrincipleVectors.png (PNG copy)>]
-<./images//PhongIssue.png, id=56, 1134.639pt x 315.579pt>
+<./images//PhongIssue.png, id=58, 1134.639pt x 315.579pt>
 File: ./images//PhongIssue.png Graphic file (type png)
 <use ./images//PhongIssue.png>
-Package pdftex.def Info: ./images//PhongIssue.png  used on input line 101.
+Package pdftex.def Info: ./images//PhongIssue.png  used on input line 103.
 (pdftex.def)             Requested size: 218.51521pt x 60.77441pt.
-<./images//BlinnFix.png, id=57, 1121.99174pt x 301.125pt>
+<./images//BlinnFix.png, id=59, 1121.99174pt x 301.125pt>
 File: ./images//BlinnFix.png Graphic file (type png)
 <use ./images//BlinnFix.png>
-Package pdftex.def Info: ./images//BlinnFix.png  used on input line 107.
+Package pdftex.def Info: ./images//BlinnFix.png  used on input line 109.
 (pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
  [5 <./images//PhongIssue.png> <./images//BlinnFix.png>] [6]
-<./images//BoundaryScattering.png, id=68, 389.65575pt x 390.258pt>
+<./images//BoundaryScattering.png, id=71, 389.65575pt x 390.258pt>
 File: ./images//BoundaryScattering.png Graphic file (type png)
 <use ./images//BoundaryScattering.png>
 Package pdftex.def Info: ./images//BoundaryScattering.png  used on input line 1
-60.
+62.
 (pdftex.def)             Requested size: 142.26378pt x 142.48764pt.
  [7 <./images//BoundaryScattering.png>]
-<./images//SubsurfaceScattering.png, id=73, 605.26125pt x 237.2865pt>
+<./images//SubsurfaceScattering.png, id=77, 605.26125pt x 237.2865pt>
 File: ./images//SubsurfaceScattering.png Graphic file (type png)
 <use ./images//SubsurfaceScattering.png>
 Package pdftex.def Info: ./images//SubsurfaceScattering.png  used on input line
- 175.
+ 177.
 (pdftex.def)             Requested size: 218.51521pt x 85.66565pt.
-<./images//SpecularAndDiffuse.png, id=74, 391.4625pt x 143.78719pt>
+<./images//SpecularAndDiffuse.png, id=78, 391.4625pt x 143.78719pt>
 File: ./images//SpecularAndDiffuse.png Graphic file (type png)
 <use ./images//SpecularAndDiffuse.png>
 Package pdftex.def Info: ./images//SpecularAndDiffuse.png  used on input line 1
-81.
+83.
 (pdftex.def)             Requested size: 218.51521pt x 80.26357pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8] [9 <./images//SubsurfaceScattering.png (PNG copy)> <./images//SpecularAndDi
 ffuse.png>]
-Overfull \hbox (3.23233pt too wide) in paragraph at lines 208--209
+Overfull \hbox (3.23233pt too wide) in paragraph at lines 210--211
 \T1/cmr/m/n/10.95 The \T1/cmr/m/it/10.95 bidi-rec-tional re-flectance dis-tri-b
 u-tion func-tion \T1/cmr/m/n/10.95 (BRDF), $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/1
 0.95 (\OT1/cmr/bx/n/10.95 l\OML/cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 v\OT1/cmr/
 m/n/10.95 )$\T1/cmr/m/n/10.95 , was first in-tro-duced by Nicode-
  []
 
-<./images//ExampleBRDF.png, id=84, 302.63063pt x 301.125pt>
+<./images//ExampleBRDF.png, id=87, 302.63063pt x 301.125pt>
 File: ./images//ExampleBRDF.png Graphic file (type png)
 <use ./images//ExampleBRDF.png>
-Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 222.
+Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 224.
 (pdftex.def)             Requested size: 113.81102pt x 113.24323pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10] [11 <./images//ExampleBRDF.png>]
-<./images//Masking.png, id=92, 498.36188pt x 185.19188pt>
+<./images//Masking.png, id=95, 498.36188pt x 185.19188pt>
 File: ./images//Masking.png Graphic file (type png)
 <use ./images//Masking.png>
-Package pdftex.def Info: ./images//Masking.png  used on input line 259.
+Package pdftex.def Info: ./images//Masking.png  used on input line 261.
 (pdftex.def)             Requested size: 218.51521pt x 81.19926pt.
-<./images//Shadowing.png, id=93, 502.12593pt x 237.13594pt>
+<./images//Shadowing.png, id=96, 502.12593pt x 237.13594pt>
 File: ./images//Shadowing.png Graphic file (type png)
 <use ./images//Shadowing.png>
-Package pdftex.def Info: ./images//Shadowing.png  used on input line 264.
+Package pdftex.def Info: ./images//Shadowing.png  used on input line 266.
 (pdftex.def)             Requested size: 218.51521pt x 103.19672pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12] [13 <./images//Masking.png> <./images//Shadowing.png>]
-<./images//SchlickApproximation.png, id=102, 759.58781pt x 202.50656pt>
+<./images//SchlickApproximation.png, id=106, 759.58781pt x 202.50656pt>
 File: ./images//SchlickApproximation.png Graphic file (type png)
 <use ./images//SchlickApproximation.png>
 Package pdftex.def Info: ./images//SchlickApproximation.png  used on input line
- 317.
+ 319.
 (pdftex.def)             Requested size: 341.43306pt x 91.02821pt.
  [14 <./images//SchlickApproximation.png>] [15] [16] [17] [18]) [19] [20]
 \openout2 = `./chapters/chapter2.aux'.
 
  (chapters/chapter2.tex
 Chapter 2.
-) [21
+[21
 
 
 
 
-]
+]) [22]
 \openout2 = `./chapters/chapter3.aux'.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [22
+) [23
 
 
 
@@ -949,38 +949,38 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [23
+) [24
 
 
 
 
-] [24
+] [25
 
 
 
-] [25] [26] [27]
+] [26] [27] [28]
 Overfull \hbox (3.36388pt too wide) in paragraph at lines 23--23
 []\T1/cmr/m/n/10.95 Unreal En-gine. \T1/cmr/m/it/10.95 Color Grad-ing and Filmi
 c Tonemap-per\T1/cmr/m/n/10.95 . \T1/cmr/m/sc/10.95 url\T1/cmr/m/n/10.95 : $\T1
 /cmtt/m/n/10.95 https : / / docs . unrealengine .
  []
 
-[28]
+[29]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[29
+[30
 
 
 
 ]
 Appendix B.
-[30
+[31
 
 ]
 Appendix C.
-) [31
+) [32
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -998,22 +998,22 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15855 strings out of 478584
- 305942 string characters out of 2844402
- 1061002 words of memory out of 3000000
- 33777 multiletter control sequences out of 15000+600000
+ 15858 strings out of 478584
+ 306000 string characters out of 2844402
+ 1061024 words of memory out of 3000000
+ 33780 multiletter control sequences out of 15000+600000
  492118 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,134p,2256b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc
 1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecsl1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppData\Loca
+/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users\ej200\AppData\Loca
 l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\ej200\AppDat
 a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\ej200\
 AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\
@@ -1037,9 +1037,9 @@ cmsy10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/
 type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (36 pages, 689280 bytes).
+Output written on finalReport.pdf (38 pages, 693347 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
+ 793 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

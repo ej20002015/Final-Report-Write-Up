@@ -1,16 +1,81 @@
 \chapter{Methods}
 \label{chapter2}
 
-<Everything that comes under the `Methods' criterion in the mark scheme should be described in one, or possibly more than one, chapter(s).>
+This chapter documents the design and implementation of the renderer, as well as outlining the specific physical phenomena that will be used to compare Blinn-Phong shading and PBS.
 
-\section{What physical phenomena am I going to use for comparison?}
-\lipsum[5]
+\section{Design and Implementation}
 
-\subsection{A sub-section}
-\lipsum[6]
+This section provides a general overview of the design and implementation of the renderer. We begin by discussing the language, technologies and libraries used to develop the program. This is followed by an explanation of the architecture, which has particular focus on how the two different shading models were supported in the same application. Finally, we detail how the development was carried out, providing information on the development tools used and the software engineering methodology adopted.
 
-\section{Another section}
-\lipsum[7]
+\subsubsection{Technologies Used}
 
-This is the key point: in the real world the relative proportions of matte and specular appearance change with viewing
-angle. - Practitioners guide to reflectance models
+\begin{itemize}
+	\item C++
+	\item OpenGL
+	\item Libraries used (place in the appendix)
+\end{itemize}
+
+\subsubsection{General Architecture}
+
+\begin{itemize}
+	\item Overall program structure (what is a renderer? Blinn-Phong Renderer and PBR)
+	\item Rendering building blocks - abstraction of OpenGL
+	\item RendererImplementation (mention that more detail given to the Blinn-Phong and PBR implementations in sections below - the implementations actually create buffers, shaders, framebuffers and make the draw calls)
+\end{itemize}
+
+\subsubsection{Development Process}
+
+\begin{itemize}
+	\item Tools Used (IDE and Renderdoc)
+	\item Build system
+	\item Using git and devops (kinda tried to do sprints?)
+\end{itemize}
+
+\section{Blinn-Phong Renderer Implementation} \label{BlinnPhongImplementation}
+
+\begin{itemize}
+	\item Shader is implemented in the same way as equation 1.7
+	\item framebuffer that doesn't support HDR
+	\item Material specification
+	\item Point light specification
+\end{itemize}
+
+\section{Physically Based Renderer Implementation} \label{PBRImplementation}
+
+[Intro]
+
+\subsubsection{Picking the model}
+
+\begin{itemize}
+	\item Specular Model
+	\begin{itemize}
+		\item Which Fresnel term and why
+		\item Which NDF and why (show GGX is better)
+		\item Which geometry function
+		\item Optimisation using Hammon approach
+	\end{itemize}
+	\item Diffuse Model - justify why I used the lamertian BRDF (reference paper)
+	\item framebuffer that does support HDR
+\end{itemize}
+
+\subsubsection{Material Model}
+
+\subsubsection{Point Light Model}
+
+\begin{itemize}
+	\item Falloff
+	\item Adopting the physical approach given by Frostbite
+\end{itemize}
+
+\section{Identifying the evaluation scenes}
+
+[Intro]
+
+\subsubsection{Fresnel Effect}
+
+[This is the key point: in the real world the relative proportions of matte and specular appearance change with viewing
+angle. - Practitioners guide to reflectance models]
+
+\subsubsection{Long Tailed Specular Highlights}
+
+\subsubsection{HDR? Energy Conservation?}
