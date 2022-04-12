@@ -27,10 +27,38 @@
 %
 % Any other appendices you wish to use should come after "Self-appraisal". You can have as many appendices as you like.
 %
-\chapter{External Material}
+\chapter{External Material} \label{ExternalMaterial}
 <This appendix should provide a brief record of materials used in the solution that are not the student's own work. Such materials might be pieces of codes made available from a research group/company or from the internet, datasets prepared by external users or any preliminary materials/drafts/notes provided by a supervisor. It should be clear what was used as ready-made components and what was developed as part of the project. This appendix should be included even if no external materials were used, in which case a statement to that effect is all that is required.>
 
+Three types of external material were used in my solution: software libraries, an implementation of the ACES tone mapping operator, and 3D Models.
 
+\section{Software Libraries} \label{SoftwareLibraries}
+
+The libraries used in my renderer are listed below. For each one, a description is provided, along with a link. Note that the separation between my code and the external libraries is very clear in the code base, with all libraries being present under the \mintinline{bash}|/Application/Vendor| directory.
+
+\vspace{20pt}
+
+\noindent\begin{tabular}{|m{5em}|m{28em}|m{8em}|}
+	\hline
+	\textbf{Library Name} & \textbf{Description} & \textbf{Link} \\
+	\hline\hline
+	GLFW & A cross-platform utility library that provides windowing, OpenGL contexts and retrieves input events & \url{https://www.glfw.org/} \\
+	\hline
+	Glad & A library for loading pointers to the OpenGL functions & \url{https://glad.dav1d.de/} \\
+	\hline
+	GLM	& A maths library specifically designed for use with OpenGL & \url{https://github.com/g-truc/glm} \\
+	\hline
+	spdlog & A fast logging library & \url{https://github.com/gabime/spdlog} \\
+	\hline
+	stb\_image & An image loading library that is used when creating textures & \url{https://github.com/nothings/stb/blob/master/stb_image.h} \\
+	\hline
+	assimp & A library to import 3D models of various different file types & \url{https://github.com/assimp/assimp} \\
+	\hline
+\end{tabular}
+
+\section{ACES Tone Mapping Operator}
+
+\section{3D Models}
 
 
 %

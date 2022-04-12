@@ -9,27 +9,29 @@ This section provides a general overview of the design and implementation of the
 
 \subsubsection{Technologies Used}
 
-\begin{itemize}
-	\item C++
-	\item OpenGL
-	\item Libraries used (place in the appendix)
-\end{itemize}
+The renderer is written in C++. This choice was made for a number of reasons. First and foremost, C++ is a language I'm familiar and proficient with, having used it extensively for my own personal projects. Furthermore, real-time rendering is by it's very definition, highly performance orientated, which excludes all but the fastest programming languages. Finally, C++ is the most widely used language in the graphics industry, and as such is widely supported by graphics APIs, and a multitude of useful libraries. The C++17 standard is used as it is modern, supported by many compilers and offers helpful features like the \mintinline{C++}|std::filesystem| library and structured bindings.
+
+Like any renderer, the program utilises a graphics API. OpenGL was chosen for its simplicity, and again, due to my familiarity with it. Although Vulkan and Direct3D boast a much richer and more low-level API, this enhanced control was superfluous to requirements so would have been more of a hindrance than a benefit.
+
+The renderer is supplemented with several libraries, all of which are listed and described in Appendix \ref{SoftwareLibraries}.
 
 \subsubsection{General Architecture}
 
-\begin{itemize}
-	\item Overall program structure (what is a renderer? Blinn-Phong Renderer and PBR)
-	\item Rendering building blocks - abstraction of OpenGL
-	\item RendererImplementation (mention that more detail given to the Blinn-Phong and PBR implementations in sections below - the implementations actually create buffers, shaders, framebuffers and make the draw calls)
-\end{itemize}
+The renderer is split into a few main components. The \mintinline{C++}|Application| class manages the whole program. It is concerned with initialising and shutting down the various subsystems, and also performs the main render loop. The class creates and maintains a \mintinline{C++}|Window| object, registering callback functions with it to capture pertinent events. The \mintinline{C++}|Application| class can be regarded as providing the necessary framework for any type of interactive application to be created. The specifics are then left up to the \mintinline{C++}|Workspace| class. This class acts as a sandbox environment in which resources can be loaded, scenes created and commands given to the renderer. It also holds an instance of the \mintinline{C++}|Camera| class. This camera is designed to emulate the Unity Engine style of editor camera. The \mintinline{C++}|Scene| class is a simple way of assembling together models and lights into a 3D scene. Models can be imported using the \mintinline{C++}|Model| class, or more simplistic meshes, including cubes and spheres, can be created using the \mintinline{C++}|ModelFactory| class.
+
+The rendering API is exposed by the \mintinline{C++}|Renderer| class. This includes methods for common utility commands, like setting the clear colour, and drawing commands, such as those for rendering individual models and others for rendering entire scenes. However, the \mintinline{C++}|Renderer| class doesn't perform any of the actual rendering itself. Instead, depending on the active renderer type, it forwards any rendering calls onto one of the two renderer implementations: either the \mintinline{C++}|BlinnPhongRendererImplementation| is invoked, or the \mintinline{C++}|PBRRendererImplementation|. Both feature the same API because both derive from the \mintinline{C++}|RendererImplementation| pure virtual class, but they behave very differently. As the names would suggest, the \mintinline{C++}|BlinnPhongRendererImplementation| is a renderer that makes use of the Blinn-Phong shading model, whilst the \mintinline{C++}|PBRRendererImplementation| is a physically based renderer. The Blinn-Phong renderer is covered in section \ref{BlinnPhongImplementation}, and the details of the physically based renderer, including the specific physically based shading model that is used, is given in section \ref{PBRImplementation}. The whole program is designed so that the renderer implementation being used can be swapped during runtime, making it easy to compare the two approaches.
+
+The two renderer implementations, as well as other parts of the program, make extensive use of the constructs provided by OpenGL. To this end, considerable time was spent abstracting away elements of the OpenGL API behind coherent, clear interfaces. These interfaces include provisions for creating and manipulating vertex buffers, index buffers, framebuffers, textures and shaders. Not only do they serve to create cleaner code, but the interfaces also have the added benefit of hiding the notoriously confusing, state machine nature of OpenGL, behind the more standard OOP paradigm.
 
 \subsubsection{Development Process}
 
-\begin{itemize}
-	\item Tools Used (IDE and Renderdoc)
-	\item Build system
-	\item Using git and devops (kinda tried to do sprints?)
-\end{itemize}
+Development was undertaken in an agile manner, being driven by a Kanban board hosted on an Azure DevOps project. A number of days at the start of development were dedicated to assessing the required work, and packaging that into a set of clear, actionable work items. These were arranged hierarchically so that overarching milestones could be identified. Throughout development, new work items were added, old ones were removed when they fell out of scope, and invaluable documentation was accumulated in the items that remained.
+
+Git version control was used and the repo was hosted on the same Azure DevOps project. For each modification I made to the program, I checked out a new branch, and when finished with development, created a pull request. Although I only worked on my own, I found the pull request feature in Azure DevOps to be extremely useful. It allowed me to easily and thoroughly review my changes before I merged them in, which on many occasions meant I identified and solved a bug which otherwise would have made its way into the code base. Had I been simply committing my changes to the main branch, I don't think I would have found it as easy to do that due diligence.
+
+Visual Studio was my IDE of choice. It's an application I have lots of experience with, and one that provides an impressive suite of debugging tools. However, I decided not to directly use the Visual Studio build system, instead opting for Premake. Premake allows for the specification of projects to be done in an intuitive, and build system agnostic way. I found building with Premake to be much easier, and if I choose to migrate the program to to other platforms in the future, it should make that process simpler.
+
+Debugging graphics applications is incredibly difficult since most of the important stuff happens on the GPU. Therefore, I also utilised RenderDoc, which is a tool that allows one to inspect an application as it moves through all the stages of the graphics pipeline.
 
 \section{Blinn-Phong Renderer Implementation} \label{BlinnPhongImplementation}
 
