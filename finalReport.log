@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  12 APR 2022 22:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  13 APR 2022 20:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -906,6 +906,16 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'Reinhard':
 (biblatex)                - Can't use 'location' + 'address'.
 
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'RealityEngine':
+(biblatex)                - Can't use 'location' + 'address'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'BlinnBumpMapping':
+(biblatex)                - Invalid format of field 'month'.
+
 )
 Package biblatex Info: Reference section=0 on input line 6.
 Package biblatex Info: Reference segment=0 on input line 6.
@@ -1104,43 +1114,43 @@ Chapter 2.
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/7F4D3E34DC8DA98E10F188D7F14C54EADC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/7F4D3E34DC8DA98E10F188D7F14C54EA33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/BE2CF1C303F5FD3ADF197F0D2EDC1606DC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/BE2CF1C303F5FD3ADF197F0D2EDC160633249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/7F4D3E34DC8DA98E10F188D7F14C54EADC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/7F4D3E34DC8DA98E10F188D7F14C54EA33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/389C00BC8199710547E04BF64AEBAE3EDC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/389C00BC8199710547E04BF64AEBAE3E33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/E75D81F8161207CD92C29B805B394170DC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/E75D81F8161207CD92C29B805B39417033249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/6DCED223D76F5A58DF8E358A0359E5BEDC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/6DCED223D76F5A58DF8E358A0359E5BE33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/96922CDA733ED8DFB320B2A5AFCA949EDC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/96922CDA733ED8DFB320B2A5AFCA949E33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/3369C5B42795A7FC4DD776E9EDE9D09CDC72E4E7528F6BB38F64819853
-936090.pygtex) [21
+(_minted-finalReport/3369C5B42795A7FC4DD776E9EDE9D09C33249DB7EFE3D431BCE80BC665
+353FA9.pygtex) [21
 
 
 
@@ -1149,38 +1159,38 @@ Chapter 2.
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/D14A61163F04A61E0F97D04580C26E08DC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/D14A61163F04A61E0F97D04580C26E0833249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/D14A61163F04A61E0F97D04580C26E08DC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/D14A61163F04A61E0F97D04580C26E0833249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/E67AE3FA85FD84BD4C77397717877F07DC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/E67AE3FA85FD84BD4C77397717877F0733249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/7C9B9E0EDB9DEAA45FC8A9FA490B5EADDC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/7C9B9E0EDB9DEAA45FC8A9FA490B5EAD33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/A9775A807B78F0641CFE73C6F6E27F02DC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/A9775A807B78F0641CFE73C6F6E27F0233249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/E67AE3FA85FD84BD4C77397717877F07DC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/E67AE3FA85FD84BD4C77397717877F0733249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/7C9B9E0EDB9DEAA45FC8A9FA490B5EADDC72E4E7528F6BB38F64819853
-936090.pygtex)
+(_minted-finalReport/7C9B9E0EDB9DEAA45FC8A9FA490B5EAD33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
 Overfull \hbox (33.21727pt too wide) in paragraph at lines 22--23
 \T1/cmr/m/n/10.95 but they be-have very dif-fer-ently. As the names would sug-g
 est, the []
@@ -1192,12 +1202,141 @@ Overfull \hbox (29.76561pt too wide) in paragraph at lines 22--23
 el, whilst the []
  []
 
-[22]) [23] [24]
+[22]
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/B84E7AC944C47DBF885BB8F7E967151C33249DB7EFE3D431BCE80BC665
+353FA9.pygtex) [23]
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/DA573B00FB862B7D1AC1A87B30D9C257F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/4E3C3AC984213E80909C245DA448EF6133249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/3A73D7B8F5C12208BC9393746A8B885033249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]|\T1/cmr/bx/n/10.95 Data
+ []
+
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/4E3C3AC984213E80909C245DA448EF6133249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/92E74B59907D187263637A95E4DB36AD33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/3A73D7B8F5C12208BC9393746A8B885033249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/91544A009CC183E7C99F875F1FBDE72233249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/13C1D57C24C1025A5A66C1B20287653233249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/A4B4E437FA3B4F27BFC4AFE730E92D8133249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/4A38E1AC45D8B83E802028BD145CB85833249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/91544A009CC183E7C99F875F1FBDE72233249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/6F09F8C8E004E30ED9D39603B988C44A33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/EDCB5B280A371D1FE22BF3489485E14733249DB7EFE3D431BCE80BC665
+353FA9.pygtex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+)
+Underfull \hbox (badness 1286) in paragraph at lines 99--100
+[]|\T1/cmr/m/n/10.95 Specifies the shini-ness of the mesh. Maps di-rectly to th
+e
+ []
+
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/05D6B0866965334CD8372BE3D591654F33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/91544A009CC183E7C99F875F1FBDE72233249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+Overfull \hbox (28.75888pt too wide) in paragraph at lines 87--104
+[] 
+ []
+
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/0C6DD1C2798BEA2B95CAC42B5090D79A33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/5AF40C0E5DC44567046AD771661AA53333249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/DF7669F20A5170C3F447A11C7A7575E233249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/0C6DD1C2798BEA2B95CAC42B5090D79A33249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/5AF40C0E5DC44567046AD771661AA53333249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/DF7669F20A5170C3F447A11C7A7575E233249DB7EFE3D431BCE80BC665
+353FA9.pygtex) [24] [25]) [26]
 \openout2 = `./chapters/chapter3.aux'.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [25
+) [27
 
 
 
@@ -1207,28 +1346,28 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [26
+) [28
 
 
 
 
-] [27
+] [29
 
 
 
-] [28] [29] [30]
+] [30] [31] [32]
 Overfull \hbox (3.36388pt too wide) in paragraph at lines 23--23
 []\T1/cmr/m/n/10.95 Unreal En-gine. \T1/cmr/m/it/10.95 Color Grad-ing and Filmi
 c Tonemap-per\T1/cmr/m/n/10.95 . \T1/cmr/m/sc/10.95 url\T1/cmr/m/n/10.95 : $\T1
 /cmtt/m/n/10.95 https : / / docs . unrealengine .
  []
 
-[31]
+[33]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[32
+[34
 
 
 
@@ -1309,11 +1448,15 @@ Overfull \hbox (28.75888pt too wide) in paragraph at lines 41--58
 [] 
  []
 
-[33
+[35
 
-] [34]
+] [36]
 Appendix C.
-) [35
+[37
+
+]
+Appendix D.
+) [38
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -1333,48 +1476,49 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19478 strings out of 478584
- 389030 string characters out of 2844402
- 1179514 words of memory out of 3000000
- 37274 multiletter control sequences out of 15000+600000
- 492118 words of font info for 74 fonts, out of 8000000 for 9000
+ 19621 strings out of 478584
+ 401392 string characters out of 2844402
+ 1181320 words of memory out of 3000000
+ 37357 multiletter control sequences out of 15000+600000
+ 492431 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,11n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,13n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc
 1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users\ej200\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\ej200\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\ej200\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\
-ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\
-Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk
-> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2
-074.pk>{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.en
-c} <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
-1440.pk><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmex10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej200/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ej
-200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pf
-b><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (41 pages, 704984 bytes).
+0\ectt0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users\ej200\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\ej200\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\
+ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\
+Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk
+> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
+200.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecbx2074.pk>{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base
+/8r.enc} <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecbx1440.pk><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmbx8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ej200/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej20
+0/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Us
+ers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb
+><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/
+fonts/type1/urw/times/utmr8a.pfb>
+Output written on finalReport.pdf (44 pages, 734075 bytes).
 PDF statistics:
- 810 PDF objects out of 1000 (max. 8388607)
+ 886 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

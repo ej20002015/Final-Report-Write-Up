@@ -39,33 +39,48 @@
 \contentsline {subsubsection}{General Architecture}{21}{}%
 \contentsline {subsubsection}{Development Process}{22}{}%
 \contentsline {section}{\numberline {2.2}Blinn-Phong Renderer Implementation}{23}{}%
-\contentsline {section}{\numberline {2.3}Physically Based Renderer Implementation}{23}{}%
-\contentsline {subsubsection}{Picking the model}{23}{}%
-\contentsline {subsubsection}{Material Model}{23}{}%
-\contentsline {subsubsection}{Point Light Model}{23}{}%
-\contentsline {section}{\numberline {2.4}Identifying the evaluation scenes}{23}{}%
-\contentsline {subsubsection}{Fresnel Effect}{23}{}%
-\contentsline {subsubsection}{Long Tailed Specular Highlights}{24}{}%
-\contentsline {subsubsection}{HDR? Energy Conservation?}{24}{}%
-\contentsline {chapter}{\numberline {3}Results}{25}{}%
-\contentsline {section}{\numberline {3.1}A section}{25}{}%
-\contentsline {subsection}{\numberline {3.1.1}A sub-section}{25}{}%
-\contentsline {section}{\numberline {3.2}Another section}{25}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{26}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{26}{}%
-\contentsline {section}{\numberline {4.2}Ideas for future work}{26}{}%
-\contentsline {chapter}{References}{27}{}%
-\contentsline {chapter}{Appendices}{32}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{32}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{32}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{32}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{32}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{32}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{32}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{32}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{32}{}%
-\contentsline {chapter}{\numberline {B}External Material}{33}{}%
-\contentsline {section}{\numberline {B.1}Software Libraries}{33}{}%
-\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{34}{}%
-\contentsline {section}{\numberline {B.3}3D Models}{34}{}%
-\contentsline {chapter}{\numberline {C}Mathematical Notation}{35}{}%
+\contentsline {subsection}{\numberline {2.2.1}Operation of the Renderer}{23}{}%
+\contentsline {subsection}{\numberline {2.2.2}Shader Program}{23}{}%
+\contentsline {subsection}{\numberline {2.2.3}Material Specification}{24}{}%
+\contentsline {subsection}{\numberline {2.2.4}Lighting}{25}{}%
+\contentsline {section}{\numberline {2.3}Physically Based Renderer Implementation}{25}{}%
+\contentsline {subsection}{\numberline {2.3.1}Picking the model}{25}{}%
+\contentsline {subsection}{\numberline {2.3.2}Material Model}{25}{}%
+\contentsline {subsection}{\numberline {2.3.3}Point Light Model}{25}{}%
+\contentsline {section}{\numberline {2.4}Identifying the evaluation scenes}{25}{}%
+\contentsline {subsubsection}{Fresnel Effect}{26}{}%
+\contentsline {subsubsection}{Long Tailed Specular Highlights}{26}{}%
+\contentsline {subsubsection}{HDR? Energy Conservation?}{26}{}%
+\contentsline {chapter}{\numberline {3}Results}{27}{}%
+\contentsline {section}{\numberline {3.1}A section}{27}{}%
+\contentsline {subsection}{\numberline {3.1.1}A sub-section}{27}{}%
+\contentsline {section}{\numberline {3.2}Another section}{27}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{28}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{28}{}%
+\contentsline {section}{\numberline {4.2}Ideas for future work}{28}{}%
+\contentsline {chapter}{References}{29}{}%
+\contentsline {chapter}{Appendices}{34}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{34}{}%
+\contentsline {section}{\numberline {A.1}Critical self-evaluation}{34}{}%
+\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{34}{}%
+\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{34}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal issues}{34}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social issues}{34}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{34}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional issues}{34}{}%
+\contentsline {chapter}{\numberline {B}External Material}{35}{}%
+\contentsline {section}{\numberline {B.1}Software Libraries}{35}{}%
+\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{36}{}%
+\contentsline {section}{\numberline {B.3}3D Models}{36}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{37}{}%
+\contentsline {chapter}{\numberline {D}Shader Code}{38}{}%
+\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{38}{}%
+\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{38}{}%
+\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{38}{}%
+\contentsline {section}{\numberline {D.2}Physically Based Shaders}{38}{}%
+\contentsline {subsection}{\numberline {D.2.1}PBS Shader}{38}{}%
+\contentsline {subsubsection}{Vertex Shader}{38}{}%
+\contentsline {subsubsection}{Fragment Shader}{38}{}%
+\contentsline {subsection}{\numberline {D.2.2}Post Processing Shader}{38}{}%
+\contentsline {subsubsection}{Vertex Shader}{38}{}%
+\contentsline {subsubsection}{Fragment Shader}{38}{}%

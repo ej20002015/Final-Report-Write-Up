@@ -2193,5 +2193,94 @@
     \endverb
     \field{year}{2007}
   \endentry
+
+  \entry{RealityEngine}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=AK}{%
+         family={Akeley},
+         familyi={A\bibinitperiod},
+         given={Kurt},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{AK1}
+    \strng{fullhash}{AK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 20th Annual Conference on Computer
+  Graphics and Interactive Techniques}
+    \verb{doi}
+    \verb 10.1145/166117.166131
+    \endverb
+    \field{isbn}{0897916018}
+    \field{pages}{109–116}
+    \field{series}{SIGGRAPH '93}
+    \field{title}{Reality Engine Graphics}
+    \verb{url}
+    \verb https://doi.org/10.1145/166117.166131
+    \endverb
+    \list{location}{1}{%
+      {Anaheim, CA}%
+    }
+    \field{year}{1993}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{BlinnBumpMapping}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BJF}{%
+         family={Blinn},
+         familyi={B\bibinitperiod},
+         given={James\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{BJF1}
+    \strng{fullhash}{BJF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Computer generated shaded images have reached an impressive degree of
+  realism with the current state of the art. They are not so realistic,
+  however, that they would fool many people into believing they are real. One
+  problem is that the surfaces tend to look artificial due to their extreme
+  smoothness. What is needed is a means of simulating the surface
+  irregularities that are on real surfaces. In 1973 Ed Catmull introduced the
+  idea of using the parameter values of parametrically defined surfaces to
+  index into a texture definition function which scales the intensity of the
+  reflected light. By tying the texture pattern to the parameter values, the
+  texture is guaranteed to rotate and move with the object. This is good for
+  showing patterns painted on the surface, but attempts to simulate rough
+  surfaces in this way are unconvincing. This paper presents a method of using
+  a texturing function to perform a small perturbation on the direction of the
+  surface normal before using it in the intensity calculations. This process
+  yields images with realistic looking surface wrinkles without the need to
+  model each wrinkle as a separate surface element. Several samples of images
+  made with this technique are included.%
+    }
+    \verb{doi}
+    \verb 10.1145/965139.507101
+    \endverb
+    \field{issn}{0097-8930}
+    \field{number}{3}
+    \field{pages}{286–292}
+    \field{title}{Simulation of Wrinkled Surfaces}
+    \verb{url}
+    \verb https://doi.org/10.1145/965139.507101
+    \endverb
+    \field{volume}{12}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{SIGGRAPH Comput. Graph.}
+    \field{year}{1978}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 \enddatalist
 \endinput

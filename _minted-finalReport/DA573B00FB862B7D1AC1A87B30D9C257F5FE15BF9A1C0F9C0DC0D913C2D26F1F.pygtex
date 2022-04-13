@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{vec3} \PYG{n}{gammaCorrectColor}\PYG{p}{(}\PYG{k+kt}{vec3} \PYG{n}{color}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{vec3} \PYG{n}{SRGBEncodedHigher} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mf}{1.055}\PYG{n}{f} \PYG{o}{*} \PYG{n}{pow}\PYG{p}{(}\PYG{n}{color}\PYG{p}{,} \PYG{k+kt}{vec3}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{/} \PYG{l+m+mf}{2.4}\PYG{n}{f}\PYG{p}{)))} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{0.055}\PYG{n}{f}\PYG{p}{;}
+	\PYG{k+kt}{vec3} \PYG{n}{SRGBEncodedLower} \PYG{o}{=} \PYG{l+m+mf}{12.92}\PYG{n}{f} \PYG{o}{*} \PYG{n}{color}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{rSRGBEncoded} \PYG{o}{=} \PYG{p}{(}\PYG{n}{color}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.0031308}\PYG{n}{f}\PYG{p}{)} \PYG{o}{?} \PYG{n}{SRGBEncodedHigher}\PYG{p}{.}\PYG{n}{r} \PYG{o}{:} \PYG{n}{SRGBEncodedLower}\PYG{p}{.}\PYG{n}{r}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{gSRGBEncoded} \PYG{o}{=} \PYG{p}{(}\PYG{n}{color}\PYG{p}{.}\PYG{n}{g} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.0031308}\PYG{n}{f}\PYG{p}{)} \PYG{o}{?} \PYG{n}{SRGBEncodedHigher}\PYG{p}{.}\PYG{n}{g} \PYG{o}{:} \PYG{n}{SRGBEncodedLower}\PYG{p}{.}\PYG{n}{g}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{bSRGBEncoded} \PYG{o}{=} \PYG{p}{(}\PYG{n}{color}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.0031308}\PYG{n}{f}\PYG{p}{)} \PYG{o}{?} \PYG{n}{SRGBEncodedHigher}\PYG{p}{.}\PYG{n}{b} \PYG{o}{:} \PYG{n}{SRGBEncodedLower}\PYG{p}{.}\PYG{n}{b}\PYG{p}{;}
+	\PYG{k}{return} \PYG{k+kt}{vec3}\PYG{p}{(}\PYG{n}{rSRGBEncoded}\PYG{p}{,} \PYG{n}{gSRGBEncoded}\PYG{p}{,} \PYG{n}{bSRGBEncoded}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

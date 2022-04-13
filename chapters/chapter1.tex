@@ -67,7 +67,7 @@ The RGB triplets are similar to those in the diffuse equation, except these are 
 
 Finally, we have the ambient term. In the model developed so far, if a shaded point is not directly visible from a light source, then it will be black. In reality, such points are never completely unilluminated - rays from light sources will bounce around the environment, eventually lighting these obscured areas. So far we have only considered \textit{direct illumination}; the ambient term is used to crudely approximate the lighting that is a consequence of this \textit{indirect illumination}:
 
-\begin{equation}
+\begin{equation} \label{eq:BlinnPhongAmbient}
 	\vect{c}_{shaded_{ambi}} = \vect{c}_{surface_{ambi}}x
 \end{equation}
 
@@ -129,7 +129,7 @@ where
 
 Expressing the model in this way draws attention to the relative proportions of each component that contributes to the overall shading. These proportions, \begin{math}p\end{math}, are modulated via lighting parameters:  \begin{math}light\end{math} variables and \begin{math}x\end{math}; and material parameters: \begin{math}surface\end{math} variables.
 
-In scenes with multiple lights, we perform the equation \ref{eq:BlinnPhong} for each one and then sum up the intermediate values to get the overall colour of the fragment.
+In scenes with multiple lights, the diffuse and specular terms of equation \ref{eq:BlinnPhong} are evaluated for each one. Then these intermediate values are summed together with the scene's ambient term to get the overall colour of the fragment.
 
 \subsection{Physics of Light-Matter Interaction} \label{PhysicsOfLightMatterInteraction}
 
