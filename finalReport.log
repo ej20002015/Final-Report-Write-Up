@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  13 APR 2022 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  14 APR 2022 21:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1331,12 +1331,67 @@ Overfull \hbox (28.75888pt too wide) in paragraph at lines 87--104
 
 
 (_minted-finalReport/DF7669F20A5170C3F447A11C7A7575E233249DB7EFE3D431BCE80BC665
-353FA9.pygtex) [24] [25]) [26]
+353FA9.pygtex) [24]
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/B4056B35FAE4922176C5975DF1B9F64F33249DB7EFE3D431BCE80BC665
+353FA9.pygtex) [25]
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/5A71ADE19F2054D29D1B6233E4BAC803F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex)
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/7170E9235A93E0B3F82C08D77FB4CAFEF5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex) [26]
+Overfull \hbox (8.12149pt too wide) in paragraph at lines 181--182
+[]\T1/cmr/m/n/10.95 Hammon com-pares this ap-prox-i-ma-tion to the ex-act Smith
+ height-correlated masking-shadowing
+ []
+
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/954880BFABC1181C8F3FDE90EE34A659F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex)
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/02E4DE170502AD2BBFF4AA9F5926BA1FF5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/742DCA3EA34123C6FB165734D22AD29EF5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/2B812EFDA6FF64A4DA218A7236732EE1F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex) [27]
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/C61D8891AB6CB8F32DA11D363C228069F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/5B1D5B9432F3426ECAC692026E63BE55F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex)
+Overfull \hbox (189.81018pt too wide) in paragraph at lines 1--247
+[] 
+ []
+
+) [28]
 \openout2 = `./chapters/chapter3.aux'.
 
  (chapters/chapter3.tex
 Chapter 3.
-) [27
+) [29
 
 
 
@@ -1346,28 +1401,28 @@ Chapter 3.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [28
+) [30
 
 
 
 
-] [29
+] [31
 
 
 
-] [30] [31] [32]
+] [32] [33] [34]
 Overfull \hbox (3.36388pt too wide) in paragraph at lines 23--23
 []\T1/cmr/m/n/10.95 Unreal En-gine. \T1/cmr/m/it/10.95 Color Grad-ing and Filmi
 c Tonemap-per\T1/cmr/m/n/10.95 . \T1/cmr/m/sc/10.95 url\T1/cmr/m/n/10.95 : $\T1
 /cmtt/m/n/10.95 https : / / docs . unrealengine .
  []
 
-[33]
+[35]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[34
+[36
 
 
 
@@ -1448,15 +1503,20 @@ Overfull \hbox (28.75888pt too wide) in paragraph at lines 41--58
 [] 
  []
 
-[35
-
-] [36]
-Appendix C.
 [37
+
+] [38]
+Appendix C.
+
+Overfull \hbox (37.45093pt too wide) in paragraph at lines 70--84
+ [] 
+ []
+
+[39
 
 ]
 Appendix D.
-) [38
+) [40
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -1476,10 +1536,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19621 strings out of 478584
- 401392 string characters out of 2844402
- 1181320 words of memory out of 3000000
- 37357 multiletter control sequences out of 15000+600000
+ 19689 strings out of 478584
+ 407311 string characters out of 2844402
+ 1182132 words of memory out of 3000000
+ 37398 multiletter control sequences out of 15000+600000
  492431 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1516,9 +1576,9 @@ ts/cm/cmsy10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/
 fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (44 pages, 734075 bytes).
+Output written on finalReport.pdf (46 pages, 749324 bytes).
 PDF statistics:
- 886 PDF objects out of 1000 (max. 8388607)
+ 911 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

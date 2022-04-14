@@ -12,26 +12,44 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Operation of the Renderer}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Shader Program}{23}{}\protected@file@percent }
 \newlabel{BlinnPhongRendererShaderProgram}{{2.2.2}{23}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces The specification of a Blinn-Phong material\relax }}{24}{}\protected@file@percent }
-\newlabel{tb:BlinnPhongMaterial}{{2.1}{24}}
 \@writefile{lol}{\contentsline {listing}{\numberline {1}{\ignorespaces Shader code for performing gamma correction\relax }}{24}{}\protected@file@percent }
 \newlabel{ls:GammaCorrection}{{1}{24}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Material Specification}{24}{}\protected@file@percent }
 \newlabel{BlinnPhongRendererMaterialSpecification}{{2.2.3}{24}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Lighting}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Lighting}{24}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces The specification of a Blinn-Phong material\relax }}{25}{}\protected@file@percent }
+\newlabel{tb:BlinnPhongMaterial}{{2.1}{25}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Physically Based Renderer Implementation}{25}{}\protected@file@percent }
 \newlabel{PBRImplementation}{{2.3}{25}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Picking the model}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Material Model}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Point Light Model}{25}{}\protected@file@percent }
-\newlabel{PBRPointLightModel}{{2.3.3}{25}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Identifying the evaluation scenes}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Fresnel Effect}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Long Tailed Specular Highlights}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{HDR? Energy Conservation?}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Operation of the Renderer}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}BRDF Choice and Implementation}{26}{}\protected@file@percent }
+\newlabel{BRDFChoiceAndImplementation}{{2.3.2}{26}}
+\@writefile{toc}{\contentsline {subsubsection}{Specular BRDF}{26}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {2}{\ignorespaces Shader code for calculating the Fresnel reflectance using the Schlick approximation\relax }}{26}{}\protected@file@percent }
+\newlabel{ls:SchlickApproximation}{{2}{26}}
+\@writefile{lol}{\contentsline {listing}{\numberline {3}{\ignorespaces Shader code for the GGX NDF\relax }}{27}{}\protected@file@percent }
+\newlabel{ls:GGX}{{3}{27}}
+\newlabel{eq:HammonApproximation}{{2.1}{27}}
+\@writefile{lol}{\contentsline {listing}{\numberline {4}{\ignorespaces Shader code for the Hammon approximation of the Smith height-correlated masking-shadowing function\relax }}{27}{}\protected@file@percent }
+\newlabel{ls:HammonMasking}{{4}{27}}
+\@writefile{lol}{\contentsline {listing}{\numberline {5}{\ignorespaces Shader code for the Specular BRDF\relax }}{27}{}\protected@file@percent }
+\newlabel{ls:SpecularBRDF}{{5}{27}}
+\@writefile{toc}{\contentsline {subsubsection}{Diffuse BRDF}{27}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {6}{\ignorespaces Shader code for the diffuse BRDF\relax }}{28}{}\protected@file@percent }
+\newlabel{ls:DiffuseBRDF}{{6}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Material Specification}{28}{}\protected@file@percent }
+\newlabel{PBRMaterialSpecification}{{2.3.3}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Lighting}{28}{}\protected@file@percent }
+\newlabel{PBRLighting}{{2.3.4}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Tone Mapping}{28}{}\protected@file@percent }
+\newlabel{ToneMappingImplementation}{{2.3.5}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Identifying the evaluation scenes}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Fresnel Effect}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Long Tailed Specular Highlights}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{HDR? Energy Conservation?}{28}{}\protected@file@percent }
 \@setckpt{./chapters/chapter2}{
-\setcounter{page}{27}
-\setcounter{equation}{0}
+\setcounter{page}{29}
+\setcounter{equation}{1}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -59,7 +77,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{118}
+\setcounter{instcount}{122}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -83,7 +101,7 @@
 \setcounter{parenlevel}{0}
 \setcounter{blx@maxsection}{0}
 \setcounter{blx@maxsegment@0}{0}
-\setcounter{blx@sectionciteorder@0}{118}
+\setcounter{blx@sectionciteorder@0}{122}
 \setcounter{mincomprange}{10}
 \setcounter{maxcomprange}{100000}
 \setcounter{mincompwidth}{1}
@@ -170,17 +188,17 @@
 \setcounter{continuedfloat}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
-\setcounter{FancyVerbLine}{9}
+\setcounter{FancyVerbLine}{2}
 \setcounter{linenumber}{1}
-\setcounter{LN@truepage}{32}
+\setcounter{LN@truepage}{34}
 \setcounter{FV@TrueTabGroupLevel}{0}
 \setcounter{FV@TrueTabCounter}{0}
 \setcounter{FV@HighlightLinesStart}{0}
 \setcounter{FV@HighlightLinesStop}{0}
 \setcounter{FancyVerbLineBreakLast}{0}
 \setcounter{float@type}{8}
-\setcounter{minted@FancyVerbLineTemp}{9}
-\setcounter{minted@pygmentizecounter}{38}
-\setcounter{listing}{1}
+\setcounter{minted@FancyVerbLineTemp}{2}
+\setcounter{minted@pygmentizecounter}{47}
+\setcounter{listing}{6}
 \setcounter{parentequation}{0}
 }

@@ -294,21 +294,21 @@ All the terms in equation \ref{eq:SpecularBRDF} are familiar, although the Fresn
 
 As explained in section \ref{BRDFBuildingBlocks}, we don't make use of the Fresnel equations directly, but rather utilise approximations. An early approximation was given by Cook and Torrance~\cite{CookTorrance}. Schlick then improved upon this with his own function that has since seen widespread use~\cite{SchlickApproximation}:
 
-\begin{equation}
+\begin{equation} \label{eq:SchlickAppoximation}
 	F(\vect{n}, \vect{l}) = F_0 + (1 - F_0)(1 - (\vect{n}\cdot\vect{l})^+)^5
 \end{equation}
 
 This function approximates the Fresnel reflection with less than a 1\% error~\cite{SchlickApproximation}. Figure \ref{fig:SchlickApproximation} shows the difference between the actual Fresnel reflectance and this approximation for several materials. The equation interpolates between \begin{math}F_0\end{math} and white in a non-linear manner that emulates the description given in section \ref{BRDFBuildingBlocks}. When the light is directly incident to the surface, \begin{math}\vect{n}\cdot\vect{l} = 0\end{math} so the Fresnel reflectance will be \begin{math}F_0\end{math}. As the angle between the microfacets' normal and the incident light increases, \begin{math}\vect{n}\cdot\vect{l}\end{math} decreases and so the overall value of \begin{math}F\end{math} tends towards white.
 
-Lagarde created a more optimised version of Schlicks approximation by using \textit{Spherical Gaussians}~\cite{LagardeSphericalGaussian}:
+Lagarde created a more optimised version of Schlick's approximation by using \textit{Spherical Gaussians}~\cite{LagardeSphericalGaussian}:
 
-\begin{equation}
+\begin{equation} \label{eq:SphericalGaussian}
 	F(\vect{n}, \vect{l}) = F_0 + (1 - F_0)2^{(-5.55473(\vect{n}\cdot\vect{l}) - 6.98316)(\vect{n}\cdot\vect{l})}
 \end{equation}
 
 Unreal engine makes use of this formulation for their Fresnel term~\cite{RealShadingInUnreal}. Frostbite on the other hand, have adapted the Schlick approximation into a more flexible form~\cite{MovingFrostbitetoPBR}:
 
-\begin{equation}
+\begin{equation} \label{eq:FlexibleSchlickApproximation}
 	F(\vect{n}, \vect{l}) = F_0 + (F_{90} - F_0)(1 - (\vect{n}\cdot\vect{l})^+)^\frac{1}{p}
 \end{equation}
 
@@ -333,7 +333,7 @@ In this section we will only concern ourselves with \textit{isotropic} NDFs, whi
 
 The other NDF that has seen extensive use in the graphics community is the GGX distribution. Originally formulated by Trowbridge and Reitz in 1975, the GGX distribution only started to see use after it was reformulated by Walter et al in 2007~\cite{TrowbridgeAndReitz}\cite{WalterRefraction}. It has the following form:
 
-\begin{equation}
+\begin{equation} \label{eq:GGX}
 	D(\vect{m}) = \frac{\alpha_g^2\mathcal{X}^+(\vect{m}\cdot\vect{n})}{\pi(1 + (\vect{m}\cdot\vect{n})^2(\alpha_g^2 - 1))^2}
 \end{equation}
 
@@ -345,7 +345,7 @@ Implementations of the masking-shadowing function depend on the NDF used. There 
 
 The Smith height-correlated masking-shadowing function that is intended for use with the GGX NDF is~\cite{RTR4}:
 
-\begin{equation}
+\begin{equation} \label{eq:SmithGGXFunction}
 	G(\vect{l}, \vect{v}, \vect{m}) = \frac{\mathcal{X}^+(\vect{m}\cdot\vect{v})\mathcal{X}^+(\vect{m}\cdot\vect{l})}{1 + \Lambda(a_{\vect{v}}) + \Lambda(a_{\vect{l}})}
 \end{equation}
 
@@ -373,13 +373,13 @@ Diffuse BRDFs can be placed into two categories: those that are built upon micro
 
 The most common diffuse BRDF is based on Lambertian reflection and has the following formulation:
 
-\begin{equation} \label{LambertianDiffuse}
+\begin{equation} \label{eq:LambertianDiffuse}
 	f_{diff}(\vect{l}, \vect{v}) = (1 - F(\vect{h}, \vect{l}))\frac{\rho_{ss}}{\pi}
 \end{equation}
 
-The \begin{math}\pi\end{math} is obtained by setting the \textit{directional-hemispherical reflectance function} to a constant value and integrating it over all values of \begin{math}\vect{v}\end{math}~\cite{RTR4}. The inclusion of the Fresnel reflectance ensures that only light that was transmitted into the interior of the object is available to the diffuse term~\cite{ShirleySimpleConservationOfEnergy}. This helps to comply with the law of conservation of energy.
+The \begin{math}\pi\end{math} is obtained by setting the \textit{directional-hemispherical reflectance function} to a constant value and integrating it over all values of \begin{math}\vect{v}\end{math}~\cite{RTR4}. The inclusion of the Fresnel reflectance ensures that only light that was transmitted into the interior of the object is available to the diffuse term~\cite{ShirleySimpleConservationOfEnergy}. This helps to comply with the law of conservation of energy. When the \begin{math}(1 - F(\vect{h}, \vect{l}))\end{math} is removed from equation \ref{eq:LambertianDiffuse}, what is left is commonly referred to as the Lambertian BRDF.
 
-Equation \ref{LambertianDiffuse} has a constant value for all view directions. The physical basis for such a formulation is rooted in the observation that, prior to re-emission, subsurface scattered light will undergo many scattering events in the interior of the object (as explained in section \ref{PhysicsOfLightMatterInteraction}). This has the effect of randomising the directions of outgoing light, which can be intuitively modelled as a constant value over all \begin{math}\vect{v}\end{math}~\cite{HammonBRDF}. However, real materials will show some directional bias, whether that's due to refraction or the need to respect Helmholtz reciprocity (which equation \ref{LambertianDiffuse} violates)~\cite{RTR4}. Shirley et al present a more accurate diffuse BRDF that is partially coupled with the specular component~\cite{PractitionersReflectionModels}.
+Equation \ref{eq:LambertianDiffuse} has a constant value for all view directions. The physical basis for such a formulation is rooted in the observation that, prior to re-emission, subsurface scattered light will undergo many scattering events in the interior of the object (as explained in section \ref{PhysicsOfLightMatterInteraction}). This has the effect of randomising the directions of outgoing light, which can be intuitively modelled as a constant value over all \begin{math}\vect{v}\end{math}~\cite{HammonBRDF}. However, real materials will show some directional bias, whether that's due to refraction or the need to respect Helmholtz reciprocity (which equation \ref{eq:LambertianDiffuse} violates)~\cite{RTR4}. Shirley et al present a more accurate diffuse BRDF that is partially coupled with the specular component~\cite{PractitionersReflectionModels}.
 
 \subsubsection{Rough-surface Diffuse BRDFs}
 

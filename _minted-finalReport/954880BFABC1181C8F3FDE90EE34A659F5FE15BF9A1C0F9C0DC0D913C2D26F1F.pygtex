@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{float} \PYG{n}{calculateHammonSmithMaskingSpecularDenominatorAppoximation}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{nDotL}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{float} \PYG{n}{alpha} \PYG{o}{=} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{roughness} \PYG{o}{*} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{roughness}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mf}{2.0}\PYG{n}{f} \PYG{o}{*} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{nDotL}\PYG{p}{)} \PYG{o}{*} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{g\PYGZus{}dotProducts}\PYG{p}{.}\PYG{n}{nDotV}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{y} \PYG{o}{=} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{nDotL}\PYG{p}{)} \PYG{o}{+} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{g\PYGZus{}dotProducts}\PYG{p}{.}\PYG{n}{nDotV}\PYG{p}{);}
+	\PYG{k}{return} \PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mf}{2.0}\PYG{n}{f} \PYG{o}{*} \PYG{n}{mix}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{alpha}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
