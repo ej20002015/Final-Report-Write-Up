@@ -60,7 +60,8 @@ Prior to that colour being outputted to the framebuffer, gamma correction is per
 	framesep=2mm,
 	baselinestretch=1.2,
 	fontsize=\footnotesize,
-	linenos
+	linenos,
+	breaklines
 ]
 {glsl}
 vec3 gammaCorrectColor(vec3 color)
@@ -79,7 +80,7 @@ vec3 gammaCorrectColor(vec3 color)
 
 \subsection{Material Specification} \label{BlinnPhongRendererMaterialSpecification}
 
-As was explained in detail in chapter \ref{chapter1}, the appearance of an object depends heavily on the properties of its surface. These properties are encapsulated within a material. The 3D models that make up a scene are formed from multiple meshes, with each mesh being associated with a material. Materials that are supplied to the Blinn-Phong renderer are of the form given in table \ref{tb:BlinnPhongMaterial}. The texture and vector variants of the same attributes are not intended to be used in conjunction. For example, either a \mintinline{cpp}|diffuseColor| or \mintinline{cpp}|diffuseMap| is specified - not both.
+As was explained in detail in chapter \ref{chapter1}, the appearance of an object depends heavily on the properties of its surface. These properties are encapsulated within a material. The 3D models that make up a scene are formed from multiple meshes, with each mesh being associated with a material. Materials that are supplied to the Blinn-Phong renderer are of the form given in Table \ref{tb:BlinnPhongMaterial}. The global and per pixel variants of the same attributes are not intended to be used in conjunction. For example, either a \mintinline{cpp}|diffuseColor| or \mintinline{cpp}|diffuseMap| is specified - not both.
 
 \vspace{20pt}
 
@@ -88,11 +89,11 @@ As was explained in detail in chapter \ref{chapter1}, the appearance of an objec
 	\hline
 	\textbf{Attribute} & \textbf{Data Type} & \textbf{Description} \\
 	\hline\hline
-	\mintinline{cpp}|diffuseColor| & \mintinline{cpp}|glm::vec4| & Specifies the diffuse colour over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{diff}}\end{math} variable in equation \ref{eq:BlinnPhong}. The fourth component in the vector represents transparency. \\
+	\mintinline{cpp}|diffuseColor| & \mintinline{cpp}|glm::vec4| & Specifies the diffuse colour globally over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{diff}}\end{math} variable in equation \ref{eq:BlinnPhong}. The fourth component in the vector represents transparency. \\
 	\hline
 	\mintinline{cpp}|diffuseMap| & \mintinline{cpp}|Texture| & Specifies the diffuse colour per pixel. \\
 	\hline
-	\mintinline{cpp}|specularColor| & \mintinline{cpp}|glm::vec3| & Specifies the specular colour over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{spec}}\end{math} variable in equation \ref{eq:BlinnPhong}. \\
+	\mintinline{cpp}|specularColor| & \mintinline{cpp}|glm::vec3| & Specifies the specular colour globally over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{spec}}\end{math} variable in equation \ref{eq:BlinnPhong}. \\
 	\hline
 	\mintinline{cpp}|specularMap| & \mintinline{cpp}|Texture| & Specifies the specular colour per pixel. \\
 	\hline
@@ -111,11 +112,11 @@ Scenes submitted to the Blinn-Phong renderer contain point lights. Each point li
 
 \section{Physically Based Renderer Implementation} \label{PBRImplementation}
 
-The physically based renderer renders scenes using Physically Based Shading. Its behaviour is defined by the specific physically based shading model that is employed. As explained in section \ref{PrinciplesOfShading}, a physically based shading model computes the reflectance equation with a physically based BRDF and a physically based incoming radiance function. Section \ref{BRDFChoiceAndImplementation} deals with the choice of BRDF, outlining the details of its construction, justifying design decisions made, and explaining how it is implemented in the shader program. The choice of BRDF then informs the material specification, which is covered in section \ref{PBRMaterialSpecification}. The specifics of the lighting model, and how it yields physically based values for the incoming radiance, is discussed in section \ref{PBRLighting}. Section \ref{ToneMappingImplementation} explains how tone mapping is implemented, and the specific operator that is used. However, before all that, a description of how the renderer operates is given.
+The physically based renderer makes use of a physically based shading model. Its behaviour is defined by the specific model that is employed. As explained in section \ref{PrinciplesOfShading}, a physically based shading model computes the reflectance equation with a physically based BRDF and a physically based incoming radiance function. Section \ref{BRDFChoiceAndImplementation} deals with the choice of BRDF, outlining the details of its construction, justifying design decisions made, and explaining how it is implemented in the shader program. The choice of BRDF then informs the material specification, which is covered in section \ref{PBRMaterialSpecification}. The specifics of the lighting model, and how it yields physically based values for the incoming radiance, is discussed in section \ref{PBRLighting}. Section \ref{ToneMappingImplementation} explains how tone mapping is implemented, and the specific operator that is used. However, before all that, a description of how the renderer operates is given.
 
 \subsection{Operation of the Renderer}
 
-At a high level, the physically based renderer operates similarly to its Blinn-Phong counterpart, with just a few important differences. Upon initialisation, the physically based renderer creates two framebuffers. These framebuffers store HDR RGB triplets, with their colour attachment format being \mintinline{cpp}|GL_RGBA16F|. Having two of these framebuffers facilitates the separation of shading from \textit{post-processing}. Post-processing refers to a collection of screen space effects that can be applied to shaded frames - for our purpose, this includes applying exposure, tone mapping and performing gamma correction. Separating these two stages out is a common pattern used by many renderers.
+At a high level, the physically based renderer operates similarly to its Blinn-Phong counterpart, with just a few important differences. Upon initialisation, the physically based renderer creates two framebuffers. These framebuffers store HDR RGB triplets, with their colour attachment format being \mintinline{cpp}|GL_RGBA16F|. Having two of these framebuffers facilitates the separation of shading from \textit{post-processing}. Post-processing refers to a collection of screen space effects that can be applied to shaded frames - for our purpose, this includes applying exposure, tone mapping and gamma correction. Separating these two stages out is a common pattern used by many renderers.
 
 Two shader programs are created on startup, one that carries out the PBS, and another for doing the post processing steps listed above. When a scene is submitted for rendering, the physically based renderer makes an additional draw call when compared to the Blinn-Phong renderer. This draw call invokes the post-processing shader program, which after completion, writes the output pixel values to the default framebuffer, displaying the result on the screen.
 
@@ -136,7 +137,8 @@ frame=lines,
 framesep=2mm,
 baselinestretch=1.2,
 fontsize=\footnotesize,
-linenos
+linenos,
+breaklines
 ]
 {glsl}
 vec3 calculateFresnelSchlickApproximation(vec3 f0, float u)
@@ -148,7 +150,7 @@ vec3 calculateFresnelSchlickApproximation(vec3 f0, float u)
 \label{ls:SchlickApproximation}
 \end{listing}
 
-In Burley's observations of real world materials, he points out that most surfaces exhibit specular lobes with long tails~\cite{Burley2012Physically}. Furthermore, he notes that traditional NDFs, such as the Beckmann distribution, do not model these tails well, whereas the GGX NDF is much more accurate. Therefore, knowing it to be more representative of the real world, the GGX distribution is chosen as the Normal Distribution Function. The implementation of the GGX NDF is based of equation \ref{eq:GGX} and can be seen in Listing \ref{ls:GGX}. Two things are noteworthy. The first is that the Burley's mapping of \begin{math}\alpha\end{math} to a linear roughness value is clearly being employed. The second is that the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term has not been carried over to the implementation. This is because that term will only evaluate to 0, when the half vector \begin{math}\vect{h}\end{math} points below the surface (recall that \begin{math}\vect{m} = \vect{h}\end{math} in a microfacet based specular BRDF). This only happens when \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} point below the surface. When \begin{math}\vect{l}\end{math} points below the surface, the whole reflectance equation is set to 0, and when \begin{math}\vect{v}\end{math} points below the surface, the depth testing stage of the graphics pipeline will discard the shaded fragment (normal mapping can cause issues with this assumption but we ignore such cases for simplicity). Therefore, the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term is redundant in practice and consequently omitted.
+In Burley's observations of real world materials, he points out that most surfaces exhibit specular lobes with long tails~\cite{Burley2012Physically}. Furthermore, he notes that traditional NDFs, such as the Beckmann distribution, do not model these tails well, whereas the GGX NDF is much more accurate. Therefore, knowing it to be more representative of the real world, the GGX distribution is chosen as the Normal Distribution Function. The implementation of the GGX NDF is based of equation \ref{eq:GGX} and can be seen in Listing \ref{ls:GGX}. Two things are noteworthy. The first is that the Burley's mapping of \begin{math}\alpha\end{math} to a linear roughness value is being employed. The second is that the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term has not been carried over to the implementation. This is because that term will only evaluate to 0 when the half vector \begin{math}\vect{h}\end{math} points below the surface (recall that \begin{math}\vect{m} = \vect{h}\end{math} in a microfacet based specular BRDF). This only happens when \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} point below the surface. When \begin{math}\vect{l}\end{math} points below the surface, the whole reflectance equation is set to 0 (due to the \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} term), and when \begin{math}\vect{v}\end{math} points below the surface, the depth testing stage of the graphics pipeline will discard the shaded fragment (normal mapping can cause issues with this assumption but we ignore such cases for simplicity). Therefore, the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term is redundant in practice and consequently omitted.
 
 \begin{listing}[!ht]
 \begin{minted}
@@ -157,7 +159,8 @@ frame=lines,
 framesep=2mm,
 baselinestretch=1.2,
 fontsize=\footnotesize,
-linenos
+linenos,
+breaklines
 ]
 {glsl}
 float calculateGGXDistribution(float nDotH)
@@ -189,7 +192,8 @@ frame=lines,
 framesep=2mm,
 baselinestretch=1.2,
 fontsize=\footnotesize,
-linenos
+linenos,
+breaklines
 ]
 {glsl}
 float calculateHammonSmithMaskingSpecularDenominatorAppoximation(float nDotL)
@@ -211,7 +215,8 @@ frame=lines,
 framesep=2mm,
 baselinestretch=1.2,
 fontsize=\footnotesize,
-linenos
+linenos,
+breaklines
 ]
 {glsl}
 vec3 specularTerm = fresnelReflectance * hammonSmithMaskingSpecularDenominatorApproximation * NDF;
@@ -222,7 +227,7 @@ vec3 specularTerm = fresnelReflectance * hammonSmithMaskingSpecularDenominatorAp
 
 \subsubsection{Diffuse BRDF}
 
-The diffuse BRDF used is the Lambertian BRDF with the Fresnel reflectance term, which is given by equation \ref{eq:LambertianDiffuse}. Although BRDF's that take into account surface roughness, such as the Burley diffuse BRDF, are technically more accurate to the real world, the visual differences with the Lambertian BRDF are often subtle~\cite{RealShadingInUnreal}. Couple this with the simplicity of the Lambertian BRDF, and it becomes an attractive choice. The implementation of the diffuse BRDF is given in Listing \ref{ls:DiffuseBRDF}. The only difference between this and equation \ref{eq:LambertianDiffuse}, is the additional multiplication by \mintinline{glsl}|(1.0f - g_materialProperties.metalness)|. This term is required to account for the fact that metals absorb all transmitted light so have no diffuse component - when \mintinline{glsl}|g_materialProperties.metalness| is set to 1, the diffuse component will have no effect.
+The diffuse BRDF used is the Lambertian BRDF with the Fresnel reflectance term, which is given by equation \ref{eq:LambertianDiffuse}. Although BRDF's that take into account surface roughness, such as the Burley diffuse BRDF, are technically more accurate to the real world, the visual differences with the Lambertian BRDF are often subtle~\cite{RealShadingInUnreal}. Couple this with the simplicity of the Lambertian BRDF, and it becomes an attractive choice. The implementation of the diffuse BRDF is given in Listing \ref{ls:DiffuseBRDF}. The only difference between this and equation \ref{eq:LambertianDiffuse}, is the additional multiplication by \mintinline{glsl}|(1.0f - g_materialProperties.metalness)|. This term is required to account for the fact that metals absorb all transmitted light so have no diffuse component - when \mintinline{glsl}|g_materialProperties.metalness| is set to 1, the diffuse component will have no effect. The metalness material property is explained in section \ref{PBRMaterialSpecification}.
 
 \begin{listing}[!ht]
 \begin{minted}
@@ -231,7 +236,8 @@ frame=lines,
 framesep=2mm,
 baselinestretch=1.2,
 fontsize=\footnotesize,
-linenos
+linenos,
+breaklines
 ]
 {glsl}
 vec3 diffuseTermContribution = (vec3(1.0f) - fresnelReflectance) * (1.0f - g_materialProperties.metalness);
@@ -243,16 +249,187 @@ vec3 diffuseTerm = diffuseTermContribution * (g_materialProperties.baseColor / P
 
 \subsection{Material Specification} \label{PBRMaterialSpecification}
 
-\mintinline{glsl}|g_materialProperties.f0 = mix(F0_FOR_DIELECTRICS, g_materialProperties.baseColor, g_materialProperties.metalness);|
+The shading model detailed above requires the presence of some material properties. These properties are encapsulated within the material specification for the physically based renderer, which is described in Table \ref{tb:PBRMaterial}. Again, the global and per pixel variants of the same attribute are not used together. This material specification is a subset of that used in the Disney Principled model~\cite{Burley2012Physically}.
+
+The motivation for representing both the \begin{math}\rho_{ss}\end{math} and \begin{math}F_0\end{math} values through the one \mintinline{cpp}|baseColor| attribute is that is saves memory. This is particularity the case when the texture variants are used.  However, using this representation does necessitate extra processing to retrieve the two values, and also an additional material parameter to be present, \mintinline{cpp}|metalness|. \mintinline{cpp}|metalness| only makes physical sense when it is either set to 0 or 1 - it is not possible for a material to be partially a metal. Most materials stick to this convention. However, permitting \mintinline{cpp}|metalness| to roam in between these limits can help to smooth transitions from metals to dielectrics. This could be utilised when, for example, representing the boundary between metal and rust.
+
+Section \ref{BRDFChoiceAndImplementation} and Listing \ref{ls:DiffuseBRDF} already outlined how \begin{math}\rho_{ss}\end{math} is retrieved from the \mintinline{cpp}|baseColor| using \mintinline{cpp}|metalness|. Listing \ref{ls:F0} shows how the retrieval of \begin{math}F_0\end{math} is implemented. As discussed in section \ref{FresnelReflectance}, \begin{math}F_0 = 0.04\end{math} is a suitable assignment for dielectrics.
+
+Further optimisations could be made to this material specification. A popular option is to pack the \mintinline{cpp}|roughnessMap| and \mintinline{cpp}|metalnessMap| into the same texture, but at separate channels. The \textit{glTF} 3D model format makes use of this~\cite{glTFTexture}. However, importing 3D models of a different format is then made more difficult, so packing is not used in the material specification.
+
+\begin{table}
+	\noindent\begin{tabular}{|m{7em}|m{5em}|m{29em}|}
+		\hline
+		\textbf{Attribute} & \textbf{Data Type} & \textbf{Description} \\
+		\hline\hline
+		\mintinline{cpp}|baseColor| & \mintinline{cpp}|glm::vec4| & For dielectrics, it specifies the subsurface albedo \begin{math}\rho_{ss}\end{math}, and for metals it specifies the intrinsic specular colour \begin{math}F_0\end{math}. The fourth component in the vector represents transparency. This value is specified globally over the whole mesh. \\
+		\hline
+		\mintinline{cpp}|baseColorMap| & \mintinline{cpp}|Texture| & Specifies the base colour per pixel. \\
+		\hline
+		\mintinline{cpp}|roughness| & \mintinline{cpp}|float| & Specifies the surface roughness globally over the whole mesh. Following Burley's linear remapping suggestion, this value is between 0 and 1. \\
+		\hline
+		\mintinline{cpp}|roughnessMap| & \mintinline{cpp}|Texture| & Specifies the surface roughness per pixel. \\
+		\hline
+		\mintinline{cpp}|metalness| & \mintinline{cpp}|float| & Specifies the metalness globally over the whole mesh. Takes on values between 0 and 1, where 0 means a dielectric, and 1 means a metal. \\
+		\hline
+		\mintinline{cpp}|metalnessMap| & \mintinline{cpp}|Texture| & Specifies the metalness per pixel. \\
+		\hline
+		\mintinline{cpp}|normalMap| & \mintinline{cpp}|Texture| & Optional attribute for specifying surface normals per pixel. \\
+		\hline
+	\end{tabular}
+	\caption{The specification of a physically based material}
+	\label{tb:PBRMaterial}
+\end{table}
+
+\begin{listing}[!ht]
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos,
+breaklines
+]
+{glsl}
+const vec3 F0_FOR_DIELECTRICS = vec3(0.04f);
+...
+g_materialProperties.f0 = mix(F0_FOR_DIELECTRICS, g_materialProperties.baseColor, g_materialProperties.metalness);
+\end{minted}
+\caption{Extracting \begin{math}F_0\end{math} from \mintinline{cpp}|baseColor| using \mintinline{cpp}|metalness|}
+\label{ls:F0}
+\end{listing}
 
 \subsection{Lighting} \label{PBRLighting}
 
-\begin{itemize}
-	\item Falloff
-	\item Adopting the physical approach given by Frostbite
-\end{itemize}
+As discussed in section \ref{Illumination}, evaluating the reflectance equation can be done separately for indirect and direct illumination. Unfortunately, due to time constraints, indirect illumination is only evaluated using a simple ambient term. This term does a basic job of ensuring no shaded areas are completely black, but it is much more empirically based than physically based, and also violates the law of conservation of energy. A much more physically based and accurate solution would have been to use Image Based Lighting and Irradiance Mapping.
+
+Direct illumination is evaluated with the restriction that all light sources are point lights. Although supporting area light sources would be more physically accurate, and avoid the material-light coupling that was detailed in section \ref{Illumination}, dispensing with them allows for the implementation to be greatly simplified.
+
+Computing the reflectance equation is implemented by summing over all the contributions of the point lights in the scene, and then adding on the ambient term. The code for doing this mostly follows equation \ref{eq:PointLightsReflectanceEquation}. The main difference is that the multiplication by \begin{math}\pi\end{math} is not done. This is because \begin{math}\pi\end{math} is implicitly embedded in the \mintinline{cpp}|luminousPower| attribute of the point light, which is a common practice~\cite{LagardePi}. The code that calculates the contribution of a single point light is given by Listing \ref{ls:SinglePointLightOutgoingRadiance}. \mintinline{cpp}|lightRadiance| is the product of two things: an \textit{attenuation factor}, and the point light's radiance when unaffected by attenuation.
+
+\begin{listing}[!ht]
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos,
+breaklines
+]
+{glsl}
+vec3 BRDFValue = diffuseTerm + specularTerm;
+return BRDFValue * lightRadiance * max(nDotL, 0.0f);
+\end{minted}
+\caption{Calculating the reflectance equation for a single point light}
+\label{ls:SinglePointLightOutgoingRadiance}
+\end{listing}
+
+\subsubsection{Point Light Specification}
+
+A point light that is submitted to the physically based renderer is specified with the following attributes: \mintinline{cpp}|worldPosition|, \mintinline{cpp}|lightRadius|, \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower|. The \begin{math}\vect{c}_{PL_i}\end{math} variable in equation \ref{eq:PointLightsReflectanceEquation} is calculated in the shader as a function of \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower|. \mintinline{cpp}|lightColor| is an RGB triplet that limited to 1 for each channel, and defines the hue of the point light. \mintinline{cpp}|luminousPower| is a float that represents the power of the point light. Together, they allow the radiance value of the point light to take on values in the HDR space.
+
+The use of \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower| is based of the point light model used by the Frostbite Engine. Lagarde and De Rousiers show that by defining a point light in terms of its luminous power, it is easier to model real-world lights, as this measurement is often given by the manufacturer~\cite{MovingFrostbitetoPBR}. From luminous power, an equation for luminous intensity can be derived by integrating over the unit sphere: \begin{math}luminousIntensity = luminousPower / 4\pi\end{math}. We then multiply the light colour by the luminous intensity to obtain the light's radiance when unaffected by attenuation. Although we are suddenly using \textit{photometric} rather than radiometric quantities, Lagarde and De Rousiers specify that the calculations are the same for both. See Listing \ref{ls:LightRadiance} for the code that calculates \mintinline{cpp}|lightRadiance|. The way in which \mintinline{cpp}|lightAttenuationFactor| is determined is explained below.
+
+\begin{listing}[!ht]
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos,
+breaklines
+]
+{glsl}
+float luminousIntensity = pointLight.luminousPower / (4.0f * PI);
+vec3 lightRadiance = pointLight.lightColor * luminousIntensity * lightAttenuationFactor;
+\end{minted}
+\caption{Calculating incoming radiance for a point light}
+\label{ls:LightRadiance}
+\end{listing}
+
+\subsubsection{Attenuation Factor}
+
+As stipulated previously, light intensity attenuates over distance, and for point lights, this attenuation is inversely proportional to the square of the distance between light source and shaded point. However, just calculating the attenuation factor as \begin{math}1 / distance^2\end{math} has three problems. The first is that when the distance is 0, division will cause an error. The second is that as the denominator tends to 0, the attenuation factor will explode to massive values - it should only take on values between 0 and 1. The third is that the attenuation factor will approach 0 asymptotically, never actually reaching it. It is desirable for a light to be fully attenuated at some finite distance, as such lights can be culled, improving performance.
+
+The Unreal and Frostbite Engines give solutions that solve all three of these problems~\cite{RealShadingInUnreal}\cite{MovingFrostbitetoPBR}. Both of them accomplish this using a similar approach: they offset the denominator, clamp return values, and make use of a windowing function. Frostbite's equation for the attenuation factor is employed in the shader program. It is used over Unreal's because it features a more physical interpretation for the denominator offset. Listing \ref{ls:AttenuationFactor} shows how it is implemented. \mintinline{cpp}|lightRadius| is a float that is specified per point light, and gives the maximum distance of a light's reach.
+
+\begin{listing}[!ht]
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos,
+breaklines
+]
+{glsl}
+float calculatePointLightAttenuationFactor(float lightDistance, float lightRadius)
+{
+	const float lightSize = 0.01f;
+	const uint n = 4;
+
+	float inverseSquaredDistance = 1.0f / pow(max(lightDistance, lightSize), 2.0f);
+	
+	float lightDistanceNOverLightRadiusN = 1.0f - pow(lightDistance / lightRadius, n);
+	float windowingFunctionValue = pow(clamp(lightDistanceNOverLightRadiusN, 0.0f, 1.0f), 2.0f);
+	
+	return min(inverseSquaredDistance * windowingFunctionValue, 1.0f);
+}
+\end{minted}
+\caption{Calculating attenuation factor for a point light}
+\label{ls:AttenuationFactor}
+\end{listing}
 
 \subsection{Tone Mapping} \label{ToneMappingImplementation}
+
+As previously mentioned, tone mapping is applied in the post processing shader program. As shown by Cerda-Company et al, the Reinhard operator is very effective at image reproduction~\cite{ComparingToneMappingOperators}. However, ACES still excels at image reproduction and we find its filmic response to be more aesthetically pleasing. Therefore, the ACES tone mapping operator is used, and its implementation can be seen in Listing \ref{ls:ACES}. This code utilises some external material that is discussed in Appendix \ref{ACESExternalMaterial}.
+
+Just before tone mapping, exposure is used to scale all the radiance values. This exposure is set as a static value over the scene. Dynamically calculating the exposure is unnecessary here; that is only required in interactive games where the overall light level can change drastically as the player moves around a scene.
+
+As explained before, the final step of the post processing shader program is to apply gamma correction using the same code that was given in Listing \ref{ls:GammaCorrection}.
+
+\begin{listing}[!ht]
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos,
+breaklines
+]
+{glsl}
+vec3 applyToneMapping(vec3 color)
+{
+	mat3 inputMatrix = mat3
+	(
+		0.59719f,  0.07600f,  0.02840f,
+		0.35458f,  0.90834f,  0.13383f,
+		0.04823f,  0.01566f,  0.83777f
+	);
+	
+	mat3 outputMatrix = mat3
+	(
+		1.60475f, -0.10208f, -0.00327f,
+		-0.53108f,  1.10813f, -0.07276f,
+		-0.07367f, -0.00605f,  1.07602f
+	);
+	
+	color = inputMatrix * color;
+	vec3 a = color * (color + 0.0245786f) - 0.000090537f;
+	vec3 b = color * (0.983729f * color + 0.4329510f) + 0.238081f;
+	color = a / b;
+	
+	return clamp(outputMatrix * color, 0.0f, 1.0f);
+}
+\end{minted}
+\caption{The ACES tone mapping operator}
+\label{ls:ACES}
+\end{listing}
 
 \section{Identifying the evaluation scenes}
 

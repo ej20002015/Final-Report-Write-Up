@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{float} \PYG{n}{calculatePointLightAttenuationFactor}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{lightDistance}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{lightRadius}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{lightSize} \PYG{o}{=} \PYG{l+m+mf}{0.01}\PYG{n}{f}\PYG{p}{;}
+	\PYG{k}{const} \PYG{k+kt}{uint} \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{4}\PYG{p}{;}
+
+	\PYG{k+kt}{float} \PYG{n}{inverseSquaredDistance} \PYG{o}{=} \PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{/} \PYG{n}{pow}\PYG{p}{(}\PYG{n}{max}\PYG{p}{(}\PYG{n}{lightDistance}\PYG{p}{,} \PYG{n}{lightSize}\PYG{p}{),} \PYG{l+m+mf}{2.0}\PYG{n}{f}\PYG{p}{);}
+	
+	\PYG{k+kt}{float} \PYG{n}{lightDistanceNOverLightRadiusN} \PYG{o}{=} \PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{\PYGZhy{}} \PYG{n}{pow}\PYG{p}{(}\PYG{n}{lightDistance} \PYG{o}{/} \PYG{n}{lightRadius}\PYG{p}{,} \PYG{n}{n}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{windowingFunctionValue} \PYG{o}{=} \PYG{n}{pow}\PYG{p}{(}\PYG{n}{clamp}\PYG{p}{(}\PYG{n}{lightDistanceNOverLightRadiusN}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{),} \PYG{l+m+mf}{2.0}\PYG{n}{f}\PYG{p}{);}
+	
+	\PYG{k}{return} \PYG{n}{min}\PYG{p}{(}\PYG{n}{inverseSquaredDistance} \PYG{o}{*} \PYG{n}{windowingFunctionValue}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -56,7 +56,9 @@ The libraries used in my renderer are listed below. For each one, a description 
 	\hline
 \end{tabular}
 
-\section{ACES Tone Mapping Operator}
+\section{ACES Tone Mapping Operator} \label{ACESExternalMaterial}
+
+The implementation of the ACES tone mapping operator, which is given in Listing \ref{ls:ACES}, is a slightly modified version of Stephen Hill's code. His code can be accessed via the following link: \url{https://github.com/TheRealMJP/BakingLab/blob/master/BakingLab/ACES.hlsl}
 
 \section{3D Models}
 
@@ -93,16 +95,12 @@ The libraries used in my renderer are listed below. For each one, a description 
 
 \section{Physically Based Shaders}
 
-\subsection{PBS Shader}
+\subsection{PBS Vertex Shader}
 
-\subsubsection{Vertex Shader}
+\subsection{PBS Fragment Shader}
 
-\subsubsection{Fragment Shader}
+\subsection{Post Processing Vertex Shader}
 
-\subsection{Post Processing Shader}
-
-\subsubsection{Vertex Shader}
-
-\subsubsection{Fragment Shader}
+\subsection{Post Processing Fragment Shader}
 
 \end{appendices}

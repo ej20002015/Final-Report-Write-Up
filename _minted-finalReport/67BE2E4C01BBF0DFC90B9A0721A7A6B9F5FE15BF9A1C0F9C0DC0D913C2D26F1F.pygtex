@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{vec3} \PYG{n}{applyToneMapping}\PYG{p}{(}\PYG{k+kt}{vec3} \PYG{n}{color}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{mat3} \PYG{n}{inputMatrix} \PYG{o}{=} \PYG{k+kt}{mat3}
+	\PYG{p}{(}
+		\PYG{l+m+mf}{0.59719}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{0.07600}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{0.02840}\PYG{n}{f}\PYG{p}{,}
+		\PYG{l+m+mf}{0.35458}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{0.90834}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{0.13383}\PYG{n}{f}\PYG{p}{,}
+		\PYG{l+m+mf}{0.04823}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{0.01566}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{0.83777}\PYG{n}{f}
+	\PYG{p}{);}
+	
+	\PYG{k+kt}{mat3} \PYG{n}{outputMatrix} \PYG{o}{=} \PYG{k+kt}{mat3}
+	\PYG{p}{(}
+		\PYG{l+m+mf}{1.60475}\PYG{n}{f}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.10208}\PYG{n}{f}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.00327}\PYG{n}{f}\PYG{p}{,}
+		\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.53108}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{1.10813}\PYG{n}{f}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.07276}\PYG{n}{f}\PYG{p}{,}
+		\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.07367}\PYG{n}{f}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.00605}\PYG{n}{f}\PYG{p}{,}  \PYG{l+m+mf}{1.07602}\PYG{n}{f}
+	\PYG{p}{);}
+	
+	\PYG{n}{color} \PYG{o}{=} \PYG{n}{inputMatrix} \PYG{o}{*} \PYG{n}{color}\PYG{p}{;}
+	\PYG{k+kt}{vec3} \PYG{n}{a} \PYG{o}{=} \PYG{n}{color} \PYG{o}{*} \PYG{p}{(}\PYG{n}{color} \PYG{o}{+} \PYG{l+m+mf}{0.0245786}\PYG{n}{f}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{0.000090537}\PYG{n}{f}\PYG{p}{;}
+	\PYG{k+kt}{vec3} \PYG{n}{b} \PYG{o}{=} \PYG{n}{color} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mf}{0.983729}\PYG{n}{f} \PYG{o}{*} \PYG{n}{color} \PYG{o}{+} \PYG{l+m+mf}{0.4329510}\PYG{n}{f}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mf}{0.238081}\PYG{n}{f}\PYG{p}{;}
+	\PYG{n}{color} \PYG{o}{=} \PYG{n}{a} \PYG{o}{/} \PYG{n}{b}\PYG{p}{;}
+	
+	\PYG{k}{return} \PYG{n}{clamp}\PYG{p}{(}\PYG{n}{outputMatrix} \PYG{o}{*} \PYG{n}{color}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

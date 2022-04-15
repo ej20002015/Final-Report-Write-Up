@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{vec3} \PYG{n}{BRDFValue} \PYG{o}{=} \PYG{n}{diffuseTerm} \PYG{o}{+} \PYG{n}{specularTerm}\PYG{p}{;}
+\PYG{k}{return} \PYG{n}{BRDFValue} \PYG{o}{*} \PYG{n}{lightRadiance} \PYG{o}{*} \PYG{n}{max}\PYG{p}{(}\PYG{n}{nDotL}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{);}
+\end{Verbatim}

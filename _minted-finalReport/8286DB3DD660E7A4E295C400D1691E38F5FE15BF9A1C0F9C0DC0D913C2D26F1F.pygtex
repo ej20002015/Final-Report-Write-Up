@@ -1,3 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{const} \PYG{k+kt}{vec3} \PYG{n}{F0\PYGZus{}FOR\PYGZus{}DIELECTRICS} \PYG{o}{=} \PYG{k+kt}{vec3}\PYG{p}{(}\PYG{l+m+mf}{0.04}\PYG{n}{f}\PYG{p}{);}
+\PYG{p}{...}
 \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{f0} \PYG{o}{=} \PYG{n}{mix}\PYG{p}{(}\PYG{n}{F0\PYGZus{}FOR\PYGZus{}DIELECTRICS}\PYG{p}{,} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{baseColor}\PYG{p}{,} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{metalness}\PYG{p}{);}
 \end{Verbatim}
