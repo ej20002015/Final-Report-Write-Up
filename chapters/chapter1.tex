@@ -71,7 +71,7 @@ Finally, we have the ambient term. In the model developed so far, if a shaded po
 	\vect{c}_{shaded_{ambi}} = \vect{c}_{surface_{ambi}}x
 \end{equation}
 
-\begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect illumination that occurs. A value of \begin{math}x = 0.2\end{math} is commonly used, with anything greater often giving unrealistic results. Lighting via indirect illumination is usually quite subtle as light loses energy every time it reflects of a surface.
+\begin{math}\vect{c}_{surface_{ambi}}\end{math} controls the colour of the ambient shading. Typically, it is just set equal to \begin{math}\vect{c}_{surface_{diff}}\end{math}. \begin{math}x\end{math} is a constant value defined for the whole scene, rather than per light, and controls the amount of indirect illumination that occurs. Small values of \begin{math}x\end{math} should be used, as anything too large will make the scene look unrealistically bright - lighting via indirect illumination is usually quite subtle as light loses energy every time it reflects of a surface.
 
 These three terms are summed together to give the overall Phong shading model:
 
@@ -417,7 +417,7 @@ The most common form of punctual light is the point light. A point light emits c
 
 where \begin{math}N\end{math} is the number of point lights.
 
-Light intensity is attenuated as the distance between the light source and shaded point \begin{math}\vect{p}\end{math} increases. For point lights, this attenuation is equal to the inverse of the squared distance. Therefore, \begin{math}\vect{c}_{PL_i}\end{math} will be proportional to \begin{math}1 / (\vect{p} - \vect{p}_{PL_i})^2\end{math}, where \begin{math}\vect{p}_{PL_i}\end{math} is the position of point light \begin{math}i\end{math}. The dot product term has been clamped to 0, so that the contribution of point lights that are located below the surface is discarded.
+Light intensity is attenuated as the distance between the light source and shaded point \begin{math}\vect{p}\end{math} increases. For point lights, this attenuation is equal to the inverse of the squared distance. Therefore, \begin{math}\vect{c}_{PL_i}\end{math} will be proportional to \begin{math}1 / distance^2\end{math}. The dot product term has been clamped to 0, so that the contribution of point lights that are located below the surface is discarded.
 
 \subsection{Dynamic Range and Displays} \label{DynamicRangeAndDisplays}
 

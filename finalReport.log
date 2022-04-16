@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  16 APR 2022 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  16 APR 2022 21:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1320,6 +1320,11 @@ Overfull \hbox (28.75888pt too wide) in paragraph at lines 88--105
 \openout5 = `finalReport.pyg'.
 
 
+(_minted-finalReport/4DB3DF75F46705BBA026F7CE46D6608333249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
 (_minted-finalReport/DF7669F20A5170C3F447A11C7A7575E233249DB7EFE3D431BCE80BC665
 353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
@@ -1331,6 +1336,11 @@ Overfull \hbox (28.75888pt too wide) in paragraph at lines 88--105
 
 
 (_minted-finalReport/5AF40C0E5DC44567046AD771661AA53333249DB7EFE3D431BCE80BC665
+353FA9.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/4DB3DF75F46705BBA026F7CE46D6608333249DB7EFE3D431BCE80BC665
 353FA9.pygtex)
 \openout5 = `finalReport.pyg'.
 
@@ -1769,10 +1779,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19858 strings out of 478584
- 425728 string characters out of 2844402
- 1186692 words of memory out of 3000000
- 37462 multiletter control sequences out of 15000+600000
+ 19866 strings out of 478584
+ 426635 string characters out of 2844402
+ 1186838 words of memory out of 3000000
+ 37465 multiletter control sequences out of 15000+600000
  492744 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1810,7 +1820,7 @@ ic/amsfonts/cm/cmsy6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs
 /MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (51 pages, 775503 bytes).
+Output written on finalReport.pdf (51 pages, 775400 bytes).
 PDF statistics:
  938 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
