@@ -35,9 +35,9 @@
 \contentsline {subsubsection}{Gamma Correction}{19}{}%
 \contentsline {chapter}{\numberline {2}Methods}{21}{}%
 \contentsline {section}{\numberline {2.1}Design and Implementation}{21}{}%
-\contentsline {subsubsection}{Technologies Used}{21}{}%
-\contentsline {subsubsection}{General Architecture}{21}{}%
-\contentsline {subsubsection}{Development Process}{22}{}%
+\contentsline {subsection}{\numberline {2.1.1}Technologies Used}{21}{}%
+\contentsline {subsection}{\numberline {2.1.2}General Architecture}{21}{}%
+\contentsline {subsection}{\numberline {2.1.3}Development Process}{22}{}%
 \contentsline {section}{\numberline {2.2}Blinn-Phong Renderer Implementation}{23}{}%
 \contentsline {subsection}{\numberline {2.2.1}Operation of the Renderer}{23}{}%
 \contentsline {subsection}{\numberline {2.2.2}Shader Program}{23}{}%
@@ -53,38 +53,38 @@
 \contentsline {subsubsection}{Point Light Specification}{30}{}%
 \contentsline {subsubsection}{Attenuation Factor}{30}{}%
 \contentsline {subsection}{\numberline {2.3.5}Tone Mapping}{30}{}%
-\contentsline {section}{\numberline {2.4}Identifying the evaluation scenes}{31}{}%
-\contentsline {subsubsection}{Fresnel Effect}{31}{}%
-\contentsline {subsubsection}{Long Tailed Specular Highlights}{31}{}%
-\contentsline {subsubsection}{HDR? Energy Conservation?}{31}{}%
 \contentsline {chapter}{\numberline {3}Results}{33}{}%
-\contentsline {section}{\numberline {3.1}A section}{33}{}%
-\contentsline {subsection}{\numberline {3.1.1}A sub-section}{33}{}%
-\contentsline {section}{\numberline {3.2}Another section}{33}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{34}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{34}{}%
-\contentsline {section}{\numberline {4.2}Ideas for future work}{34}{}%
-\contentsline {chapter}{References}{35}{}%
-\contentsline {chapter}{Appendices}{40}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{40}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{40}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{40}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{40}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{40}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{40}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{40}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{40}{}%
-\contentsline {chapter}{\numberline {B}External Material}{41}{}%
-\contentsline {section}{\numberline {B.1}Software Libraries}{41}{}%
-\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{42}{}%
-\contentsline {section}{\numberline {B.3}3D Models}{42}{}%
-\contentsline {chapter}{\numberline {C}Mathematical Notation}{43}{}%
-\contentsline {chapter}{\numberline {D}Shader Code}{44}{}%
-\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{44}{}%
-\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{44}{}%
-\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{44}{}%
-\contentsline {section}{\numberline {D.2}Physically Based Shaders}{44}{}%
-\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{44}{}%
-\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{44}{}%
-\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{44}{}%
-\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{44}{}%
+\contentsline {section}{\numberline {3.1}Identifying the evaluation scenes}{33}{}%
+\contentsline {subsubsection}{Fresnel Effect}{33}{}%
+\contentsline {subsubsection}{Long Tailed Specular Highlights}{33}{}%
+\contentsline {subsubsection}{HDR? Energy Conservation?}{33}{}%
+\contentsline {section}{\numberline {3.2}A section}{33}{}%
+\contentsline {subsection}{\numberline {3.2.1}A sub-section}{33}{}%
+\contentsline {section}{\numberline {3.3}Another section}{34}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{35}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{35}{}%
+\contentsline {section}{\numberline {4.2}Ideas for future work}{35}{}%
+\contentsline {chapter}{References}{36}{}%
+\contentsline {chapter}{Appendices}{41}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{41}{}%
+\contentsline {section}{\numberline {A.1}Critical self-evaluation}{41}{}%
+\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{41}{}%
+\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{41}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal issues}{41}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social issues}{41}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{41}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional issues}{41}{}%
+\contentsline {chapter}{\numberline {B}External Material}{42}{}%
+\contentsline {section}{\numberline {B.1}Software Libraries}{42}{}%
+\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{43}{}%
+\contentsline {section}{\numberline {B.3}3D Models}{43}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{44}{}%
+\contentsline {chapter}{\numberline {D}Shader Code}{45}{}%
+\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{45}{}%
+\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{45}{}%
+\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{45}{}%
+\contentsline {section}{\numberline {D.2}Physically Based Shaders}{45}{}%
+\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{45}{}%
+\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{45}{}%
+\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{45}{}%
+\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{45}{}%

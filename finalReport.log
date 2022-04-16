@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  15 APR 2022 18:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  16 APR 2022 17:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1629,33 +1629,33 @@ Chapter 3.
 
 
 
-]
+] [34]
 \openout2 = `./chapters/chapter4.aux'.
 
  (chapters/chapter4.tex
 Chapter 4.
-) [34
+) [35
 
 
 
 
-] [35
+] [36
 
 
 
-] [36] [37] [38]
+] [37] [38] [39]
 Overfull \hbox (3.36388pt too wide) in paragraph at lines 23--23
 []\T1/cmr/m/n/10.95 Unreal En-gine. \T1/cmr/m/it/10.95 Color Grad-ing and Filmi
 c Tonemap-per\T1/cmr/m/n/10.95 . \T1/cmr/m/sc/10.95 url\T1/cmr/m/n/10.95 : $\T1
 /cmtt/m/n/10.95 https : / / docs . unrealengine .
  []
 
-[39]
+[40]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[40
+[41
 
 
 
@@ -1736,20 +1736,20 @@ Overfull \hbox (28.75888pt too wide) in paragraph at lines 41--58
 [] 
  []
 
-[41
+[42
 
-] [42]
+] [43]
 Appendix C.
 
 Overfull \hbox (37.45093pt too wide) in paragraph at lines 72--86
  [] 
  []
 
-[43
+[44
 
 ]
 Appendix D.
-) [44
+) [45
 
 ] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
 (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
@@ -1810,9 +1810,9 @@ ic/amsfonts/cm/cmsy6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs
 /MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (50 pages, 773511 bytes).
+Output written on finalReport.pdf (51 pages, 775503 bytes).
 PDF statistics:
- 932 PDF objects out of 1000 (max. 8388607)
+ 938 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

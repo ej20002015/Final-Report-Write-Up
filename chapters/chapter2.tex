@@ -1,13 +1,13 @@
 \chapter{Methods}
 \label{chapter2}
 
-This chapter documents the design and implementation of the renderer, as well as outlining the specific physical phenomena that will be used to compare Blinn-Phong shading and PBS.
+This chapter documents the design and implementation of the renderer. Details of the comparison between Blinn-Phong shading and PBS is given in the following chapter.
 
 \section{Design and Implementation}
 
 This section provides a general overview of the design and implementation of the renderer. We begin by discussing the language, technologies and libraries used to develop the program. This is followed by an explanation of the architecture, which has particular focus on how the two different shading models were supported in the same application. Finally, we detail how the development was carried out, providing information on the development tools used and the software engineering methodology adopted.
 
-\subsubsection{Technologies Used}
+\subsection{Technologies Used}
 
 The renderer is written in C++. This choice was made for a number of reasons. First and foremost, C++ is a language I'm familiar and proficient with, having used it extensively for my own personal projects. Furthermore, real-time rendering is by it's very definition, highly performance orientated, which excludes all but the fastest programming languages. Finally, C++ is the most widely used language in the graphics industry, and as such is widely supported by graphics APIs, and a multitude of useful libraries. The C++17 standard is used as it is modern, supported by many compilers and offers helpful features like the \mintinline{C++}|std::filesystem| library and structured bindings.
 
@@ -15,7 +15,7 @@ Like any renderer, the program utilises a graphics API. OpenGL was chosen for it
 
 The renderer is supplemented with several libraries, all of which are listed and described in Appendix \ref{SoftwareLibraries}.
 
-\subsubsection{General Architecture}
+\subsection{General Architecture}
 
 The renderer is split into a few main components. The \mintinline{cpp}|Application| class manages the whole program. It is concerned with initialising and shutting down the various subsystems, and also performs the main render loop. The class creates and maintains a \mintinline{cpp}|Window| object, registering callback functions with it to capture pertinent events. The \mintinline{cpp}|Application| class can be regarded as providing the necessary framework for any type of interactive application to be created. The specifics are then left up to the \mintinline{cpp}|Workspace| class. This class acts as a sandbox environment in which resources can be loaded, scenes created and commands given to the renderer. It also holds an instance of the \mintinline{cpp}|Camera| class. This camera is designed to emulate the Unity Engine style of editor camera. The \mintinline{cpp}|Scene| class is a simple way of assembling together models and lights into a 3D scene. Models can be imported using the \mintinline{cpp}|Model| class, or more simplistic meshes, including cubes and spheres, can be created using the \mintinline{cpp}|ModelFactory| class.
 
@@ -23,7 +23,7 @@ The rendering API is exposed by the \mintinline{cpp}|Renderer| class. This inclu
 
 The two renderer implementations, as well as other parts of the program, make extensive use of the constructs provided by OpenGL. To this end, considerable time was spent abstracting away elements of the OpenGL API behind coherent, clear interfaces. These interfaces include provisions for creating and manipulating vertex buffers, index buffers, framebuffers, textures and shaders. Not only do they serve to create cleaner code, but the interfaces also have the added benefit of hiding the notoriously confusing, state machine nature of OpenGL, behind the more standard OOP paradigm.
 
-\subsubsection{Development Process}
+\subsection{Development Process}
 
 Development was undertaken in an agile manner, being driven by a Kanban board hosted on an Azure DevOps project. A number of days at the start of development were dedicated to assessing the required work, and packaging that into a set of clear, actionable work items. These were arranged hierarchically so that overarching milestones could be identified. Throughout development, new work items were added, old ones were removed when they fell out of scope, and invaluable documentation was accumulated in the items that remained.
 
@@ -150,7 +150,7 @@ vec3 calculateFresnelSchlickApproximation(vec3 f0, float u)
 \label{ls:SchlickApproximation}
 \end{listing}
 
-In Burley's observations of real world materials, he points out that most surfaces exhibit specular lobes with long tails~\cite{Burley2012Physically}. Furthermore, he notes that traditional NDFs, such as the Beckmann distribution, do not model these tails well, whereas the GGX NDF is much more accurate. Therefore, knowing it to be more representative of the real world, the GGX distribution is chosen as the Normal Distribution Function. The implementation of the GGX NDF is based of equation \ref{eq:GGX} and can be seen in Listing \ref{ls:GGX}. Two things are noteworthy. The first is that the Burley's mapping of \begin{math}\alpha\end{math} to a linear roughness value is being employed. The second is that the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term has not been carried over to the implementation. This is because that term will only evaluate to 0 when the half vector \begin{math}\vect{h}\end{math} points below the surface (recall that \begin{math}\vect{m} = \vect{h}\end{math} in a microfacet based specular BRDF). This only happens when \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} point below the surface. When \begin{math}\vect{l}\end{math} points below the surface, the whole reflectance equation is set to 0 (due to the \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} term), and when \begin{math}\vect{v}\end{math} points below the surface, the depth testing stage of the graphics pipeline will discard the shaded fragment (normal mapping can cause issues with this assumption but we ignore such cases for simplicity). Therefore, the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term is redundant in practice and consequently omitted.
+In Burley's observations of real world materials, he points out that most surfaces exhibit specular lobes with long tails~\cite{Burley2012Physically}. Furthermore, he notes that traditional NDFs, such as the Beckmann distribution, do not model these tails well, whereas the GGX NDF is much more accurate. Therefore, knowing it to be more representative of the real world, the GGX distribution is chosen as the Normal Distribution Function. The implementation of the GGX NDF is based of equation \ref{eq:GGX} and can be seen in Listing \ref{ls:GGX}. Two things are noteworthy. The first is that the Burley's mapping of \begin{math}\alpha\end{math} to a linear roughness value is being employed. The second is that the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term has not been carried over to the implementation. This is because that term will only evaluate to 0 when the half vector \begin{math}\vect{h}\end{math} points below the surface (recall that \begin{math}\vect{m} = \vect{h}\end{math} in a microfacet based specular BRDF). This only happens when \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} point below the surface. When \begin{math}\vect{l}\end{math} points below the surface, the whole reflectance equation is set to 0 (due to the \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} term), and when \begin{math}\vect{v}\end{math} points below the surface, the depth testing stage of the graphics pipeline will discard the shaded fragment \footnote{normal mapping can cause issues with this assumption but we ignore such cases for simplicity}. Therefore, the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term is redundant in practice and consequently omitted.
 
 \begin{listing}[!ht]
 \begin{minted}
@@ -253,7 +253,7 @@ The shading model detailed above requires the presence of some material properti
 
 The motivation for representing both the \begin{math}\rho_{ss}\end{math} and \begin{math}F_0\end{math} values through the one \mintinline{cpp}|baseColor| attribute is that is saves memory. This is particularity the case when the texture variants are used.  However, using this representation does necessitate extra processing to retrieve the two values, and also an additional material parameter to be present, \mintinline{cpp}|metalness|. \mintinline{cpp}|metalness| only makes physical sense when it is either set to 0 or 1 - it is not possible for a material to be partially a metal. Most materials stick to this convention. However, permitting \mintinline{cpp}|metalness| to roam in between these limits can help to smooth transitions from metals to dielectrics. This could be utilised when, for example, representing the boundary between metal and rust.
 
-Section \ref{BRDFChoiceAndImplementation} and Listing \ref{ls:DiffuseBRDF} already outlined how \begin{math}\rho_{ss}\end{math} is retrieved from the \mintinline{cpp}|baseColor| using \mintinline{cpp}|metalness|. Listing \ref{ls:F0} shows how the retrieval of \begin{math}F_0\end{math} is implemented. As discussed in section \ref{FresnelReflectance}, \begin{math}F_0 = 0.04\end{math} is a suitable assignment for dielectrics.
+Section \ref{BRDFChoiceAndImplementation} and Listing \ref{ls:DiffuseBRDF} already outlined how \begin{math}\rho_{ss}\end{math} is retrieved from the \mintinline{cpp}|baseColor| using \mintinline{cpp}|metalness|. Listing \ref{ls:F0} shows how the retrieval of \begin{math}F_0\end{math} is implemented. As discussed in section \ref{FresnelReflectance}, \begin{math}F_0 = (0.04, 0.04, 0.04)\end{math} is a suitable assignment for dielectrics.
 
 Further optimisations could be made to this material specification. A popular option is to pack the \mintinline{cpp}|roughnessMap| and \mintinline{cpp}|metalnessMap| into the same texture, but at separate channels. The \textit{glTF} 3D model format makes use of this~\cite{glTFTexture}. However, importing 3D models of a different format is then made more difficult, so packing is not used in the material specification.
 
@@ -262,7 +262,7 @@ Further optimisations could be made to this material specification. A popular op
 		\hline
 		\textbf{Attribute} & \textbf{Data Type} & \textbf{Description} \\
 		\hline\hline
-		\mintinline{cpp}|baseColor| & \mintinline{cpp}|glm::vec4| & For dielectrics, it specifies the subsurface albedo \begin{math}\rho_{ss}\end{math}, and for metals it specifies the intrinsic specular colour \begin{math}F_0\end{math}. The fourth component in the vector represents transparency. This value is specified globally over the whole mesh. \\
+		\mintinline{cpp}|baseColor| & \mintinline{cpp}|glm::vec4| & For dielectrics it specifies the subsurface albedo \begin{math}\rho_{ss}\end{math}, and for metals it specifies the intrinsic specular colour \begin{math}F_0\end{math}. The fourth component in the vector represents transparency. This value is specified globally over the whole mesh. \\
 		\hline
 		\mintinline{cpp}|baseColorMap| & \mintinline{cpp}|Texture| & Specifies the base colour per pixel. \\
 		\hline
@@ -388,7 +388,7 @@ float calculatePointLightAttenuationFactor(float lightDistance, float lightRadiu
 
 As previously mentioned, tone mapping is applied in the post processing shader program. As shown by Cerda-Company et al, the Reinhard operator is very effective at image reproduction~\cite{ComparingToneMappingOperators}. However, ACES still excels at image reproduction and we find its filmic response to be more aesthetically pleasing. Therefore, the ACES tone mapping operator is used, and its implementation can be seen in Listing \ref{ls:ACES}. This code utilises some external material that is discussed in Appendix \ref{ACESExternalMaterial}.
 
-Just before tone mapping, exposure is used to scale all the radiance values. This exposure is set as a static value over the scene. Dynamically calculating the exposure is unnecessary here; that is only required in interactive games where the overall light level can change drastically as the player moves around a scene.
+Just before tone mapping, exposure is used to scale all the radiance values. This exposure is set as a static value over the scene. Dynamically calculating the exposure is unnecessary here; that is only required in interactive games, where the overall light level can change drastically as the player moves around a scene.
 
 As explained before, the final step of the post processing shader program is to apply gamma correction using the same code that was given in Listing \ref{ls:GammaCorrection}.
 
@@ -430,16 +430,3 @@ vec3 applyToneMapping(vec3 color)
 \caption{The ACES tone mapping operator}
 \label{ls:ACES}
 \end{listing}
-
-\section{Identifying the evaluation scenes}
-
-[Intro]
-
-\subsubsection{Fresnel Effect}
-
-[This is the key point: in the real world the relative proportions of matte and specular appearance change with viewing
-angle. - Practitioners guide to reflectance models]
-
-\subsubsection{Long Tailed Specular Highlights}
-
-\subsubsection{HDR? Energy Conservation?}
