@@ -33,6 +33,8 @@ Visual Studio was my IDE of choice. It's an application I have lots of experienc
 
 Debugging graphics applications is incredibly difficult since most of the important stuff happens on the GPU. Therefore, I also utilised RenderDoc, which is a tool that allows one to inspect an application as it moves through all the stages of the graphics pipeline.
 
+The testing process for the application was greatly aided by being able to draw on two renderer implementations. When developing the physically based renderer, I often compared its renders to that of the Blinn-Phong renderer to ensure that nothing was fundamentally incorrect\footnote{The more specific aspects of the physically based renderer obviously could not be tested in this way since the two implementations still use very different shading models}.
+
 \section{Blinn-Phong Renderer Implementation} \label{BlinnPhongImplementation}
 
 As previously discussed, the Blinn-Phong renderer is responsible for rendering scenes using the Blinn-Phong shading model.
