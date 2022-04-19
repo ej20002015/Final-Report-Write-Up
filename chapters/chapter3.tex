@@ -1,28 +1,57 @@
 \chapter{Results}
 \label{chapter3}
 
-\section{Identifying the evaluation scenes}
+\section{Evaluation Strategy}
 
-[Intro]
+As outlined in the introduction, the focus of this report is on showing how PBS produces more photorealistic images than Blinn-Phong shading. This is fulfilled by highlighting physical phenomena that are represented more accurately in frames rendered using PBS, than in frames rendered using Blinn-Phong shading. Two such physical phenomena are identified below, and subsequent comparisons performed for each using the application developed.
 
-\subsubsection{Fresnel Effect}
+The first phenomena is the Fresnel effect. Mentioned in section \ref{FresnelReflectance}, the Fresnel effect is the observation that a surface reflects light at varying intensities as the angle of incident light changes. Faul shows that the Fresnel effect is a key contributor to the appearance of specular materials~\cite{FaulInfluenceOfFresnelEffect}. This suggests that the realism of a shading model is influenced by the degree to which it models the impact of the Fresnel effect. Therefore, it forms a suitable candidate for comparison. In an effort to further build on Faul's investigation, comparing the presence of the Fresnel effect is done by considering the impact it has on the appearance of diffuse materials, rather than specular.
+
+The second physical phenomena is the way in which light intensity determines the appearance of an object. In the real world, light sources have an output power which defines how intense they are. Given a light source of a varying power, a comparison is performed between the two shading models to ascertain how accurately they depict how the power influences the appearance of an object.
+
+The evaluation is also supplemented with an analysis of frame times. This assesses whether the implemented shading models are indeed performant enough to be used in real time rendering.W
+
+\section{Fresnel Effect Comparison}
+
+\begin{itemize}
+	\item How it's tested
+	\item Results of those tests (pictures)
+	\item Discussion of results
+\end{itemize}
 
 [This is the key point: in the real world the relative proportions of matte and specular appearance change with viewing
 angle. - Practitioners guide to reflectance models]
 
-\subsubsection{Long Tailed Specular Highlights}
+\section{HDR / Energy Conservation / Long Tails?}
+
+[Increase light power over a certian range]
+[Comment on the fact that Blinn-Phong doesn't increase in brightness beyond a certian point as it just goes to white - this is because of the clipping due to non-HDR framebuffer values]
+[Now dive into why the conversion between real world physical light properties to Blinn-Phong lights is not even really defined - how did I do it?]
+
+\begin{itemize}
+	\item How it's tested
+	\item Results of those tests (pictures)
+	\item Discussion of results
+\end{itemize}
+
+\section{Real Time}
+
+\begin{itemize}
+	\item How it's tested
+	\begin{itemize}
+		\item Perhaps increasing complexities of scenes
+	\end{itemize}
+	\item Results of those tests (table of frame times)
+	\item Discussion of results
+\end{itemize}
+
+\section{How does the industry compare scenes / evaluate shading models?}
+
+[Frostbite has some good stuff on this]
+[Disney have stuff on the MERL database - and there are lots of papers]
 
 \subsubsection{HDR? Energy Conservation?}
 
 <Results, evaluation (including user evaluation) {\em etc.} should be described in one or more chapters. See the `Results and Discussion' criterion in the mark scheme for the sorts of material that may be included here.>
 
 Fresnel effect shown; energy conservation shown; more artist options shown; show the specular lobe is more accurate using PBR approaches (page 338 of the real-time rendering book)? Take pictures from papers - reconstruct scene and show how PBR is close to the paper image and Blinn-Phong isn't.
-
-\section{A section}
-\lipsum[8]
-
-\subsection{A sub-section}
-\lipsum[11]
-
-\section{Another section}
-\lipsum[12]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  17 APR 2022 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  19 APR 2022 21:39
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1033,18 +1033,23 @@ File: ./images//PrincipleVectors.png Graphic file (type png)
 Package pdftex.def Info: ./images//PrincipleVectors.png  used on input line 84.
 
 (pdftex.def)             Requested size: 227.62204pt x 97.09818pt.
- [4 <./images//PrincipleVectors.png (PNG copy)>]
-<./images//PhongIssue.png, id=58, 1134.639pt x 315.579pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
+<./images//PhongIssue.png, id=59, 1134.639pt x 315.579pt>
 File: ./images//PhongIssue.png Graphic file (type png)
 <use ./images//PhongIssue.png>
 Package pdftex.def Info: ./images//PhongIssue.png  used on input line 103.
 (pdftex.def)             Requested size: 218.51521pt x 60.77441pt.
-<./images//BlinnFix.png, id=59, 1121.99174pt x 301.125pt>
+<./images//BlinnFix.png, id=60, 1121.99174pt x 301.125pt>
 File: ./images//BlinnFix.png Graphic file (type png)
 <use ./images//BlinnFix.png>
 Package pdftex.def Info: ./images//BlinnFix.png  used on input line 109.
 (pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
- [5 <./images//PhongIssue.png> <./images//BlinnFix.png>] [6]
+ [5 <./images//PrincipleVectors.png (PNG copy)> <./images//PhongIssue.png> <./i
+mages//BlinnFix.png>] [6]
 <./images//BoundaryScattering.png, id=71, 389.65575pt x 390.258pt>
 File: ./images//BoundaryScattering.png Graphic file (type png)
 <use ./images//BoundaryScattering.png>
@@ -1065,6 +1070,7 @@ Package pdftex.def Info: ./images//SpecularAndDiffuse.png  used on input line 1
 83.
 (pdftex.def)             Requested size: 218.51521pt x 80.26357pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8] [9 <./images//SubsurfaceScattering.png (PNG copy)> <./images//SpecularAndDi
@@ -1081,9 +1087,6 @@ File: ./images//ExampleBRDF.png Graphic file (type png)
 <use ./images//ExampleBRDF.png>
 Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 224.
 (pdftex.def)             Requested size: 113.81102pt x 113.24323pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [10] [11 <./images//ExampleBRDF.png>]
 <./images//Masking.png, id=95, 498.36188pt x 185.19188pt>
 File: ./images//Masking.png Graphic file (type png)
@@ -1634,12 +1637,12 @@ D26F1F.pygtex)) [31] [32]
 
  (chapters/chapter3.tex
 Chapter 3.
-) [33
+[33
 
 
 
 
-] [34]
+]) [34]
 \openout2 = `./chapters/chapter4.aux'.
 
  (chapters/chapter4.tex
@@ -1779,10 +1782,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19866 strings out of 478584
- 426635 string characters out of 2844402
- 1186838 words of memory out of 3000000
- 37465 multiletter control sequences out of 15000+600000
+ 19872 strings out of 478584
+ 426906 string characters out of 2844402
+ 1186935 words of memory out of 3000000
+ 37471 multiletter control sequences out of 15000+600000
  492744 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1820,9 +1823,9 @@ ic/amsfonts/cm/cmsy6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs
 /MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (51 pages, 776650 bytes).
+Output written on finalReport.pdf (51 pages, 779672 bytes).
 PDF statistics:
- 940 PDF objects out of 1000 (max. 8388607)
+ 947 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
