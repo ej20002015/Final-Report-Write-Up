@@ -27,7 +27,7 @@ The aim of this project is to investigate the use of physically based shading mo
 
 The advantages of using PBS over Blinn-Phong shading can be broadly categorised into two groups: the improvements to artist workflow; and the improved photorealism. As mentioned previously, because of how materials are defined in Blinn-Phong shading they are often not portable between different lighting environments. In contrast, the parameters that determine materials in PBS are based on physical properties. This permits the reuse of materials and assets over different lighting configurations~\cite{MovingFrostbitetoPBR}~\cite{SIGGRAPH2020Course}. Burley outlines how this reduction in the need for "material 're-do's" yields an extremely significant improvement to artist workflow~\cite{Burley2012Physically}. Although these benefits are an important motivating factor for using PBS, the practical issues that arise from trying to investigate and quantify them (I don’t have access to a team of artists) mean that this report will focus solely on exploring those advantages in the latter category – how does PBS render frames that are more photorealistic than Blinn-Phong?
 
-Answering this question by simply commenting on the general perceived realism of a frame when compared to another is a largely subjective exercise. Instead, in a concerted effort to be as objective as possible, I will examine the benefits of PBS by identifying physical phenomena that are more accurately represented in frames rendered using PBS, than in frames rendered using Blinn-Phong shading. To this end, I will be developing a renderer that can render scenes using both Blinn-Phong shading, and PBS.
+Answering this question by simply commenting on the general perceived realism of a frame when compared to another is a largely subjective exercise. Instead, in a concerted effort to be as objective as possible, I will examine the benefits of PBS by identifying physical phenomena that are more accurately modelled in frames rendered using PBS, than in frames rendered using Blinn-Phong shading. To this end, I will be developing a renderer that can render scenes using both Blinn-Phong shading, and PBS.
 
 % Must provide evidence of a literature review. Use sections
 % and subsections as they make sense for your project.
@@ -82,7 +82,7 @@ These three terms are summed together to give the overall Phong shading model:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=8cm]{PrincipleVectors}
-	\caption{The surface normal \begin{math}\vect{n}\end{math}, light direction \begin{math}\vect{l}\end{math}, and view vector \begin{math}\vect{v}\end{math}~\cite{RTR4}}
+	\caption{The surface normal \begin{math}\vect{n}\end{math}, light direction \begin{math}\vect{l}\end{math}, and view vector \begin{math}\vect{v}\end{math}. Taken from~\cite{RTR4}}
 	\label{fig:PrincipleVectors}
 \end{figure}
 
@@ -222,7 +222,7 @@ Figure \ref{fig:ExampleBRDF} gives an example of a BRDF. Visualising a BRDF is d
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=4cm]{ExampleBRDF}
-	\caption{The Cook-Torrance-Sparrow BRDF~\cite{VisualisingBRDFs}}
+	\caption{An example BRDF. The spherical shape represents the diffuse response, and the lobe represents the specular response. Notice that the specular lobe is concentrated around the reflection vector \begin{math}\vect{r}\end{math}. Adapted from~\cite{FaulInfluenceOfFresnelEffect}.}
 	\label{fig:ExampleBRDF}
 \end{figure}
 
@@ -292,7 +292,7 @@ All the terms in equation \ref{eq:SpecularBRDF} are familiar, although the Fresn
 
 \subsubsection{Fresnel Reflectance Implementations}
 
-As explained in section \ref{BRDFBuildingBlocks}, we don't make use of the Fresnel equations directly, but rather utilise approximations. An early approximation was given by Cook and Torrance~\cite{CookTorrance}. Schlick then improved upon this with his own function that has since seen widespread use~\cite{SchlickApproximation}:
+As explained in section \ref{BRDFBuildingBlocks}, we don't make use of the Fresnel equations directly, but rather utilise approximations. The following functions are given in terms of \begin{math}\vect{n}\end{math} to maintain consistency with much of the literature, but note that in practice \begin{math}\vect{n}\end{math} is replaced with \begin{math}\vect{h}\end{math} as stipulated by equation \ref{eq:SpecularBRDF}. An early approximation was given by Cook and Torrance~\cite{CookTorrance}. Schlick then improved upon this with his own function that has since seen widespread use~\cite{SchlickApproximation}:
 
 \begin{equation} \label{eq:SchlickAppoximation}
 	F(\vect{n}, \vect{l}) = F_0 + (1 - F_0)(1 - (\vect{n}\cdot\vect{l})^+)^5
@@ -317,7 +317,7 @@ Unreal engine makes use of this formulation for their Fresnel term~\cite{RealSha
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=12cm]{SchlickApproximation}
-	\caption{From left to right the materials are, glass, copper and aluminium. Along the x-axis is plotted \begin{math}\sin(\theta_i)\end{math}, and along the y is the intensities of each RGB channel. The solid lines are the actual Fresnel reflectance, and the dotted lines are the values given by the Schlick approximation. Similarly, the upper colour strip is the actual Fresnel reflectance, and the lower is that yielded from the Schlick approximation. Taken from~\cite{RTR4}.}
+	\caption{From left to right the materials are, glass, copper and aluminium. Along the x-axis is plotted \begin{math}\sin(\theta_i)\end{math}, and along the y-axis is the intensities of each RGB channel. The solid lines are the actual Fresnel reflectance, and the dotted lines are the values given by the Schlick approximation. Similarly, the upper colour strip is the actual Fresnel reflectance, and the lower is that yielded from the Schlick approximation. Taken from~\cite{RTR4}.}
 	\label{fig:SchlickApproximation}
 \end{figure}
 

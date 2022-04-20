@@ -56,34 +56,43 @@
 \contentsline {chapter}{\numberline {3}Results}{33}{}%
 \contentsline {section}{\numberline {3.1}Evaluation Strategy}{33}{}%
 \contentsline {section}{\numberline {3.2}Fresnel Effect Comparison}{33}{}%
-\contentsline {section}{\numberline {3.3}HDR / Energy Conservation / Long Tails?}{33}{}%
-\contentsline {section}{\numberline {3.4}Real Time}{34}{}%
-\contentsline {section}{\numberline {3.5}How does the industry compare scenes / evaluate shading models?}{34}{}%
-\contentsline {subsubsection}{HDR? Energy Conservation?}{34}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{35}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{35}{}%
-\contentsline {section}{\numberline {4.2}Ideas for future work}{35}{}%
-\contentsline {chapter}{References}{36}{}%
-\contentsline {chapter}{Appendices}{41}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{41}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{41}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{41}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{41}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{41}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{41}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{41}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{41}{}%
-\contentsline {chapter}{\numberline {B}External Material}{42}{}%
-\contentsline {section}{\numberline {B.1}Software Libraries}{42}{}%
-\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{43}{}%
-\contentsline {section}{\numberline {B.3}3D Models}{43}{}%
-\contentsline {chapter}{\numberline {C}Mathematical Notation}{44}{}%
-\contentsline {chapter}{\numberline {D}Shader Code}{45}{}%
-\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{45}{}%
-\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{45}{}%
-\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{45}{}%
-\contentsline {section}{\numberline {D.2}Physically Based Shaders}{45}{}%
-\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{45}{}%
-\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{45}{}%
-\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{45}{}%
-\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{45}{}%
+\contentsline {subsection}{\numberline {3.2.1}Testing Method}{33}{}%
+\contentsline {subsection}{\numberline {3.2.2}Results}{34}{}%
+\contentsline {subsection}{\numberline {3.2.3}Analysis}{34}{}%
+\contentsline {section}{\numberline {3.3}HDR / Energy Conservation / Long Tails?}{35}{}%
+\contentsline {subsection}{\numberline {3.3.1}Testing Method}{35}{}%
+\contentsline {subsection}{\numberline {3.3.2}Results}{35}{}%
+\contentsline {subsection}{\numberline {3.3.3}Analysis}{35}{}%
+\contentsline {section}{\numberline {3.4}Real Time}{35}{}%
+\contentsline {subsection}{\numberline {3.4.1}Testing Method}{36}{}%
+\contentsline {subsection}{\numberline {3.4.2}Results}{36}{}%
+\contentsline {subsection}{\numberline {3.4.3}Analysis}{36}{}%
+\contentsline {section}{\numberline {3.5}How does the industry compare scenes / evaluate shading models?}{36}{}%
+\contentsline {subsubsection}{HDR? Energy Conservation?}{36}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{37}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{37}{}%
+\contentsline {section}{\numberline {4.2}Ideas for future work}{37}{}%
+\contentsline {chapter}{References}{38}{}%
+\contentsline {chapter}{Appendices}{43}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{43}{}%
+\contentsline {section}{\numberline {A.1}Critical self-evaluation}{43}{}%
+\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{43}{}%
+\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional issues}{43}{}%
+\contentsline {chapter}{\numberline {B}External Material}{44}{}%
+\contentsline {section}{\numberline {B.1}Software Libraries}{44}{}%
+\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{45}{}%
+\contentsline {section}{\numberline {B.3}3D Models}{45}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{46}{}%
+\contentsline {chapter}{\numberline {D}Shader Code}{47}{}%
+\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{47}{}%
+\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{47}{}%
+\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{47}{}%
+\contentsline {section}{\numberline {D.2}Physically Based Shaders}{47}{}%
+\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{47}{}%
+\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{47}{}%
+\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{47}{}%
+\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{47}{}%
