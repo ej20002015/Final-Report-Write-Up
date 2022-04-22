@@ -3,23 +3,23 @@
 \contentsline {section}{\numberline {1.2}Background Research}{2}{}%
 \contentsline {subsection}{\numberline {1.2.1}Blinn-Phong Shading}{3}{}%
 \contentsline {subsubsection}{Phong Model}{3}{}%
-\contentsline {subsubsection}{Blinn-Phong Model}{4}{}%
+\contentsline {subsubsection}{Blinn-Phong Model}{5}{}%
 \contentsline {subsection}{\numberline {1.2.2}Physics of Light-Matter Interaction}{6}{}%
 \contentsline {subsubsection}{Visible Light}{6}{}%
 \contentsline {subsubsection}{Light Interaction with Matter}{6}{}%
 \contentsline {subsubsection}{Light Incident to Surfaces}{7}{}%
 \contentsline {subsubsection}{Transmitted Light Interaction}{8}{}%
-\contentsline {subsubsection}{Metals and Dielectrics}{9}{}%
+\contentsline {subsubsection}{Metals and Dielectrics}{8}{}%
 \contentsline {subsection}{\numberline {1.2.3}Principles of Shading}{9}{}%
 \contentsline {subsubsection}{The Reflectance Equation}{9}{}%
 \contentsline {subsubsection}{The BRDF}{10}{}%
-\contentsline {subsubsection}{Incoming Radiance}{11}{}%
+\contentsline {subsubsection}{Incoming Radiance}{10}{}%
 \contentsline {subsubsection}{Dot Product Term}{11}{}%
 \contentsline {subsection}{\numberline {1.2.4}BRDF Building Blocks}{11}{}%
 \contentsline {subsubsection}{Fresnel Reflectance}{11}{}%
 \contentsline {subsubsection}{Microfacet Theory}{12}{}%
 \contentsline {subsection}{\numberline {1.2.5}Specular BRDFs}{13}{}%
-\contentsline {subsubsection}{Fresnel Reflectance Implementations}{14}{}%
+\contentsline {subsubsection}{Fresnel Reflectance Implementations}{13}{}%
 \contentsline {subsubsection}{NDF Implementations}{14}{}%
 \contentsline {subsubsection}{Masking-shadowing Function Implementations}{15}{}%
 \contentsline {subsection}{\numberline {1.2.6}Diffuse BRDFs}{16}{}%
@@ -62,7 +62,7 @@
 \contentsline {section}{\numberline {3.3}Multiple Lights Comparison}{35}{}%
 \contentsline {subsection}{\numberline {3.3.1}Testing Method}{35}{}%
 \contentsline {subsection}{\numberline {3.3.2}Results}{35}{}%
-\contentsline {subsection}{\numberline {3.3.3}Analysis}{36}{}%
+\contentsline {subsection}{\numberline {3.3.3}Analysis}{35}{}%
 \contentsline {section}{\numberline {3.4}Real Time}{37}{}%
 \contentsline {subsection}{\numberline {3.4.1}Testing Method}{37}{}%
 \contentsline {subsection}{\numberline {3.4.2}Results}{37}{}%
