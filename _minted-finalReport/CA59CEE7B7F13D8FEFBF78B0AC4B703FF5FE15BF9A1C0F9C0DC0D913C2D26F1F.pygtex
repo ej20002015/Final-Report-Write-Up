@@ -1,0 +1,235 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}version 460 core}
+
+\PYG{c+c1}{// INPUTS FROM VERTEX SHADER}
+
+\PYG{k}{struct} \PYG{n}{VertexOutput}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{vec3} \PYG{n}{worldPosition}\PYG{p}{;}
+	\PYG{k+kt}{vec3} \PYG{n}{normal}\PYG{p}{;}
+	\PYG{k+kt}{vec2} \PYG{n}{textureCoordinates}\PYG{p}{;}
+	\PYG{k+kt}{mat3} \PYG{n}{TBN}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{k}{in} \PYG{n}{VertexOutput} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{;}
+
+\PYG{c+c1}{// UNIFORMS}
+
+\PYG{c+c1}{// Material}
+
+\PYG{k}{struct} \PYG{n}{Material}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{vec4} \PYG{n}{baseColor}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{roughness}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{metalness}\PYG{p}{;}
+	\PYG{k+kt}{sampler2D} \PYG{n}{baseColorMap}\PYG{p}{;}
+	\PYG{k+kt}{sampler2D} \PYG{n}{roughnessMap}\PYG{p}{;}
+	\PYG{k+kt}{sampler2D} \PYG{n}{metalnessMap}\PYG{p}{;}
+	\PYG{k+kt}{sampler2D} \PYG{n}{normalMap}\PYG{p}{;}
+	
+	\PYG{k+kt}{bool} \PYG{n}{useNormalMap}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{k}{uniform} \PYG{n}{Material} \PYG{n}{u\PYGZus{}material}\PYG{p}{;}
+
+\PYG{c+c1}{// Point lights}
+
+\PYG{k}{struct} \PYG{n}{PointLight}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{vec3} \PYG{n}{worldPosition}\PYG{p}{;}
+	\PYG{k+kt}{vec3} \PYG{n}{lightColor}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{luminousPower}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{lightRadius}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{k}{const} \PYG{k+kt}{uint} \PYG{n}{MAX\PYGZus{}NUMBER\PYGZus{}OF\PYGZus{}POINT\PYGZus{}LIGHTS} \PYG{o}{=} \PYG{l+m+mi}{128}\PYG{p}{;}
+\PYG{k}{uniform} \PYG{n}{PointLight} \PYG{n}{u\PYGZus{}pointLights}\PYG{p}{[}\PYG{n}{MAX\PYGZus{}NUMBER\PYGZus{}OF\PYGZus{}POINT\PYGZus{}LIGHTS}\PYG{p}{];}
+\PYG{k}{uniform} \PYG{k+kt}{uint} \PYG{n}{u\PYGZus{}pointLightNumber}\PYG{p}{;}
+
+\PYG{k}{uniform} \PYG{k+kt}{vec3} \PYG{n}{u\PYGZus{}viewPosition}\PYG{p}{;}
+
+\PYG{k}{uniform} \PYG{k+kt}{float} \PYG{n}{u\PYGZus{}exposure}\PYG{p}{;}
+
+\PYG{c+c1}{// OUTPUTS}
+
+\PYG{k}{layout}\PYG{p}{(}\PYG{n}{location} \PYG{o}{=} \PYG{l+m+mo}{0}\PYG{p}{)} \PYG{k}{out} \PYG{k+kt}{vec4} \PYG{n}{o\PYGZus{}fragColor}\PYG{p}{;}
+
+\PYG{c+c1}{// CONSTANTS}
+
+\PYG{k}{const} \PYG{k+kt}{vec3} \PYG{n}{F0\PYGZus{}FOR\PYGZus{}DIELECTRICS} \PYG{o}{=} \PYG{k+kt}{vec3}\PYG{p}{(}\PYG{l+m+mf}{0.04}\PYG{n}{f}\PYG{p}{);}
+\PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{PI} \PYG{o}{=} \PYG{l+m+mf}{3.14159265359}\PYG{p}{;}
+
+\PYG{c+c1}{// GLOBAL DATA}
+
+\PYG{k}{struct} \PYG{n}{Directions}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{vec3} \PYG{n}{normal}\PYG{p}{;}
+	\PYG{k+kt}{vec3} \PYG{n}{viewDirection}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{n}{Directions} \PYG{n}{g\PYGZus{}directions}\PYG{p}{;}
+
+\PYG{k}{struct} \PYG{n}{DotProducts}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{float} \PYG{n}{nDotV}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{n}{DotProducts} \PYG{n}{g\PYGZus{}dotProducts}\PYG{p}{;}
+
+\PYG{k}{struct} \PYG{n}{MaterialProperties}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{vec3} \PYG{n}{baseColor}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{alpha}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{roughness}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{metalness}\PYG{p}{;}
+	
+	\PYG{k+kt}{vec3} \PYG{n}{f0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{n}{MaterialProperties} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{;}
+
+\PYG{c+c1}{// FUNCTIONS}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{Used the Sclick approximation to calculate the Fresnel reflectance}
+\PYG{c+cm}{*/}
+\PYG{k+kt}{vec3} \PYG{n}{calculateFresnelSchlickApproximation}\PYG{p}{(}\PYG{k+kt}{vec3} \PYG{n}{f0}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{u}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n}{f0} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{f0}\PYG{p}{)} \PYG{o}{*} \PYG{n}{pow}\PYG{p}{((}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{),} \PYG{l+m+mf}{5.0}\PYG{n}{f}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{Used the Smith height\PYGZhy{}correlated masking\PYGZhy{}shadowing function.}
+
+\PYG{c+cm}{As pointed out by Lagarde, using a combination of Smith and the GGX NDF}
+\PYG{c+cm}{in the specular (surface reflection) BRDF term means optimisations can be made.}
+
+\PYG{c+cm}{Namely, G(l,v) / (4 * |n.l| * |n.v|) can be simplified. Hammon gives an accurate}
+\PYG{c+cm}{approximation for the above term. This approximation is being calculated in the function.}
+
+\PYG{c+cm}{See https://www.gdcvault.com/play/1024478/PBR\PYGZhy{}Diffuse\PYGZhy{}Lighting\PYGZhy{}for\PYGZhy{}GGX}
+\PYG{c+cm}{*/}
+\PYG{k+kt}{float} \PYG{n}{calculateHammonSmithMaskingSpecularDenominatorAppoximation}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{nDotL}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{float} \PYG{n}{alpha} \PYG{o}{=} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{roughness} \PYG{o}{*} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{roughness}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mf}{2.0}\PYG{n}{f} \PYG{o}{*} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{nDotL}\PYG{p}{)} \PYG{o}{*} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{g\PYGZus{}dotProducts}\PYG{p}{.}\PYG{n}{nDotV}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{y} \PYG{o}{=} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{nDotL}\PYG{p}{)} \PYG{o}{+} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{g\PYGZus{}dotProducts}\PYG{p}{.}\PYG{n}{nDotV}\PYG{p}{);}
+	\PYG{k}{return} \PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mf}{2.0}\PYG{n}{f} \PYG{o}{*} \PYG{n}{mix}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{alpha}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{Use the GGX (Trowbridge\PYGZhy{}Reitz) distribution for the NDF.}
+
+\PYG{c+cm}{Also used the Disney mapping of alpha = roughness * roughness, where roughness}
+\PYG{c+cm}{then gives a perceptually linear change from [0, 1].}
+\PYG{c+cm}{*/}
+\PYG{k+kt}{float} \PYG{n}{calculateGGXDistribution}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{nDotH}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{float} \PYG{n}{alpha} \PYG{o}{=} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{roughness} \PYG{o}{*} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{roughness}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{alpha2} \PYG{o}{=} \PYG{n}{alpha} \PYG{o}{*} \PYG{n}{alpha}\PYG{p}{;}
+	\PYG{k+kt}{float} \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{p}{(}\PYG{n}{nDotH} \PYG{o}{*} \PYG{n}{nDotH} \PYG{o}{*} \PYG{p}{(}\PYG{n}{alpha2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{));}
+	\PYG{k}{return} \PYG{n}{alpha2} \PYG{o}{/} \PYG{p}{(}\PYG{n}{PI} \PYG{o}{*} \PYG{n}{x} \PYG{o}{*} \PYG{n}{x}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{vec3} \PYG{n}{getNormalisedSurfaceNormal}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{useNormalMap}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{vec4} \PYG{n}{sampleFromNormalMap} \PYG{o}{=} \PYG{n}{texture}\PYG{p}{(}\PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{normalMap}\PYG{p}{,} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{textureCoordinates}\PYG{p}{);}
+		\PYG{k+kt}{vec3} \PYG{n}{sampledNormal} \PYG{o}{=} \PYG{p}{(}\PYG{n}{sampleFromNormalMap}\PYG{p}{.}\PYG{n}{rgb} \PYG{o}{*} \PYG{l+m+mf}{2.0}\PYG{n}{f}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{;}
+		\PYG{k+kt}{vec3} \PYG{n}{sampledNormalInWorldSpace} \PYG{o}{=} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{TBN} \PYG{o}{*} \PYG{n}{sampledNormal}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n}{normalize}\PYG{p}{(}\PYG{n}{sampledNormalInWorldSpace}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{else}
+	\PYG{k}{return} \PYG{n}{normalize}\PYG{p}{(}\PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{normal}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{float} \PYG{n}{calculatePointLightAttenuationFactor}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{lightDistance}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{lightRadius}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{lightSize} \PYG{o}{=} \PYG{l+m+mf}{0.01}\PYG{n}{f}\PYG{p}{;}
+	\PYG{k}{const} \PYG{k+kt}{uint} \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{4}\PYG{p}{;}
+	
+	\PYG{c+c1}{// Restrict the minimum value of the denominator to 0.01 * 0.01 to avoid the value}
+	\PYG{c+c1}{// exploding or having divide by zero errors}
+	\PYG{k+kt}{float} \PYG{n}{inverseSquaredDistance} \PYG{o}{=} \PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{/} \PYG{n}{pow}\PYG{p}{(}\PYG{n}{max}\PYG{p}{(}\PYG{n}{lightDistance}\PYG{p}{,} \PYG{n}{lightSize}\PYG{p}{),} \PYG{l+m+mf}{2.0}\PYG{n}{f}\PYG{p}{);}
+	
+	\PYG{c+c1}{// Use a windowing function to cutoff the attenuation value to 0 at large distances}
+	
+	\PYG{k+kt}{float} \PYG{n}{lightDistanceNOverLightRadiusN} \PYG{o}{=} \PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{\PYGZhy{}} \PYG{n}{pow}\PYG{p}{(}\PYG{n}{lightDistance} \PYG{o}{/} \PYG{n}{lightRadius}\PYG{p}{,} \PYG{n}{n}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{windowingFunctionValue} \PYG{o}{=} \PYG{n}{pow}\PYG{p}{(}\PYG{n}{clamp}\PYG{p}{(}\PYG{n}{lightDistanceNOverLightRadiusN}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{),} \PYG{l+m+mf}{2.0}\PYG{n}{f}\PYG{p}{);}
+	
+	\PYG{k}{return} \PYG{n}{min}\PYG{p}{(}\PYG{n}{inverseSquaredDistance} \PYG{o}{*} \PYG{n}{windowingFunctionValue}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{vec3} \PYG{n}{calculatePointLightContribution}\PYG{p}{(}\PYG{k}{const} \PYG{n}{PointLight} \PYG{n}{pointLight}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{// Calculate the incoming radiance from the point light}
+	
+	\PYG{k+kt}{float} \PYG{n}{lightDistance} \PYG{o}{=} \PYG{n}{length}\PYG{p}{(}\PYG{n}{pointLight}\PYG{p}{.}\PYG{n}{worldPosition} \PYG{o}{\PYGZhy{}} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{worldPosition}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{lightAttenuationFactor} \PYG{o}{=} \PYG{n}{calculatePointLightAttenuationFactor}\PYG{p}{(}\PYG{n}{lightDistance}\PYG{p}{,} \PYG{n}{pointLight}\PYG{p}{.}\PYG{n}{lightRadius}\PYG{p}{);}
+	
+	\PYG{k+kt}{float} \PYG{n}{luminousIntensity} \PYG{o}{=} \PYG{n}{pointLight}\PYG{p}{.}\PYG{n}{luminousPower} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mf}{4.0}\PYG{n}{f} \PYG{o}{*} \PYG{n}{PI}\PYG{p}{);}
+	\PYG{k+kt}{vec3} \PYG{n}{lightRadiance} \PYG{o}{=} \PYG{n}{pointLight}\PYG{p}{.}\PYG{n}{lightColor} \PYG{o}{*} \PYG{n}{luminousIntensity} \PYG{o}{*} \PYG{n}{lightAttenuationFactor}\PYG{p}{;}
+	
+	\PYG{c+c1}{// Initialise values}
+	
+	\PYG{k+kt}{vec3} \PYG{n}{lightDirection} \PYG{o}{=} \PYG{n}{normalize}\PYG{p}{(}\PYG{n}{pointLight}\PYG{p}{.}\PYG{n}{worldPosition} \PYG{o}{\PYGZhy{}} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{worldPosition}\PYG{p}{);}
+	\PYG{k+kt}{vec3} \PYG{n}{halfVector} \PYG{o}{=} \PYG{n}{normalize}\PYG{p}{(}\PYG{n}{g\PYGZus{}directions}\PYG{p}{.}\PYG{n}{viewDirection} \PYG{o}{+} \PYG{n}{lightDirection}\PYG{p}{);}
+	
+	\PYG{k+kt}{float} \PYG{n}{nDotL} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{g\PYGZus{}directions}\PYG{p}{.}\PYG{n}{normal}\PYG{p}{,} \PYG{n}{lightDirection}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{hDotL} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{halfVector}\PYG{p}{,} \PYG{n}{lightDirection}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{nDotH} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{g\PYGZus{}directions}\PYG{p}{.}\PYG{n}{normal}\PYG{p}{,} \PYG{n}{halfVector}\PYG{p}{);}
+	
+	\PYG{c+c1}{// Specular (surface reflection) term}
+	
+	\PYG{c+c1}{// fresnelReflectance is also the specularTermContribution}
+	\PYG{k+kt}{vec3} \PYG{n}{fresnelReflectance} \PYG{o}{=} \PYG{n}{calculateFresnelSchlickApproximation}\PYG{p}{(}\PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{f0}\PYG{p}{,} \PYG{n}{max}\PYG{p}{(}\PYG{n}{hDotL}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{));}
+	\PYG{k+kt}{float} \PYG{n}{hammonSmithMaskingSpecularDenominatorApproximation} \PYG{o}{=} \PYG{n}{calculateHammonSmithMaskingSpecularDenominatorAppoximation}\PYG{p}{(}\PYG{n}{nDotL}\PYG{p}{);}
+	\PYG{k+kt}{float} \PYG{n}{NDF} \PYG{o}{=} \PYG{n}{calculateGGXDistribution}\PYG{p}{(}\PYG{n}{nDotH}\PYG{p}{);}
+	
+	\PYG{k+kt}{vec3} \PYG{n}{specularTerm} \PYG{o}{=} \PYG{n}{fresnelReflectance} \PYG{o}{*} \PYG{n}{hammonSmithMaskingSpecularDenominatorApproximation} \PYG{o}{*} \PYG{n}{NDF}\PYG{p}{;}
+	
+	\PYG{c+c1}{// Diffuse (sub\PYGZhy{}surface reflection) term}
+	
+	\PYG{k+kt}{vec3} \PYG{n}{diffuseTermContribution} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{vec3}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{fresnelReflectance}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{n}{f} \PYG{o}{\PYGZhy{}} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{metalness}\PYG{p}{);}
+	\PYG{k+kt}{vec3} \PYG{n}{diffuseTerm} \PYG{o}{=} \PYG{n}{diffuseTermContribution} \PYG{o}{*} \PYG{p}{(}\PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{baseColor} \PYG{o}{/} \PYG{n}{PI}\PYG{p}{);}
+	
+	\PYG{c+c1}{// Integrate the reflectance equation with respect to this light}
+	
+	\PYG{k+kt}{vec3} \PYG{n}{BRDFValue} \PYG{o}{=} \PYG{n}{diffuseTerm} \PYG{o}{+} \PYG{n}{specularTerm}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n}{BRDFValue} \PYG{o}{*} \PYG{n}{lightRadiance} \PYG{o}{*} \PYG{n}{max}\PYG{p}{(}\PYG{n}{nDotL}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{main}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{// Initialise global values}
+	
+	\PYG{n}{g\PYGZus{}directions}\PYG{p}{.}\PYG{n}{normal} \PYG{o}{=} \PYG{n}{getNormalisedSurfaceNormal}\PYG{p}{();}
+	\PYG{n}{g\PYGZus{}directions}\PYG{p}{.}\PYG{n}{viewDirection} \PYG{o}{=} \PYG{n}{normalize}\PYG{p}{(}\PYG{n}{u\PYGZus{}viewPosition} \PYG{o}{\PYGZhy{}} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{worldPosition}\PYG{p}{);}
+	
+	\PYG{n}{g\PYGZus{}dotProducts}\PYG{p}{.}\PYG{n}{nDotV} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{g\PYGZus{}directions}\PYG{p}{.}\PYG{n}{normal}\PYG{p}{,} \PYG{n}{g\PYGZus{}directions}\PYG{p}{.}\PYG{n}{viewDirection}\PYG{p}{);}
+	
+	\PYG{k+kt}{vec4} \PYG{n}{baseColorWithAlpha} \PYG{o}{=} \PYG{n}{texture}\PYG{p}{(}\PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{baseColorMap}\PYG{p}{,} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{textureCoordinates}\PYG{p}{)} \PYG{o}{*} \PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{baseColor}\PYG{p}{;}
+	\PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{baseColor} \PYG{o}{=} \PYG{n}{baseColorWithAlpha}\PYG{p}{.}\PYG{n}{rgb}\PYG{p}{;}
+	\PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{alpha} \PYG{o}{=} \PYG{n}{baseColorWithAlpha}\PYG{p}{.}\PYG{n}{a}\PYG{p}{;}
+	\PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{roughness} \PYG{o}{=} \PYG{n}{texture}\PYG{p}{(}\PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{roughnessMap}\PYG{p}{,} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{textureCoordinates}\PYG{p}{).}\PYG{n}{r} \PYG{o}{*} \PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{roughness}\PYG{p}{;}
+	\PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{metalness} \PYG{o}{=} \PYG{n}{texture}\PYG{p}{(}\PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{metalnessMap}\PYG{p}{,} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{textureCoordinates}\PYG{p}{).}\PYG{n}{r} \PYG{o}{*} \PYG{n}{u\PYGZus{}material}\PYG{p}{.}\PYG{n}{metalness}\PYG{p}{;}
+	\PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{f0} \PYG{o}{=} \PYG{n}{mix}\PYG{p}{(}\PYG{n}{F0\PYGZus{}FOR\PYGZus{}DIELECTRICS}\PYG{p}{,} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{baseColor}\PYG{p}{,} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{metalness}\PYG{p}{);}
+	
+	\PYG{c+c1}{// Solve the reflectance equation by evaluating the contribution of each point light}
+	
+	\PYG{k+kt}{vec3} \PYG{n}{fragmentColor} \PYG{o}{=} \PYG{k+kt}{vec3}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{);}
+	
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{uint} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mo}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{u\PYGZus{}pointLightNumber}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+	\PYG{n}{fragmentColor} \PYG{o}{+=} \PYG{n}{calculatePointLightContribution}\PYG{p}{(}\PYG{n}{u\PYGZus{}pointLights}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+	
+	\PYG{c+c1}{// Apply a rudimentary ambient term}
+	
+	\PYG{k+kt}{vec3} \PYG{n}{ambientTerm} \PYG{o}{=} \PYG{k+kt}{vec3}\PYG{p}{(}\PYG{l+m+mf}{0.05}\PYG{n}{f}\PYG{p}{)} \PYG{o}{*} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{baseColor}\PYG{p}{;}
+	\PYG{n}{fragmentColor} \PYG{o}{+=} \PYG{n}{ambientTerm}\PYG{p}{;}
+	
+	\PYG{c+c1}{// Output the shaded color}
+	
+	\PYG{n}{o\PYGZus{}fragColor} \PYG{o}{=} \PYG{k+kt}{vec4}\PYG{p}{(}\PYG{n}{fragmentColor}\PYG{p}{,} \PYG{n}{g\PYGZus{}materialProperties}\PYG{p}{.}\PYG{n}{alpha}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

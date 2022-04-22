@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  22 APR 2022 00:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  22 APR 2022 13:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1745,7 +1745,7 @@ Appendix B.
 \openout5 = `finalReport.pyg'.
 
 
-(_minted-finalReport/26D0941B221682D2031A01121E27F883B5EFDD063A51395055F507CF57
+(_minted-finalReport/4DF8F245696948C8281CF84168A96B0CB5EFDD063A51395055F507CF57
 BEBB0A.pygtex)
 Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []|\T1/cmr/bx/n/10.95 Library
@@ -1830,10 +1830,48 @@ Overfull \hbox (37.45093pt too wide) in paragraph at lines 72--86
 
 ]
 Appendix D.
-) [48
+\openout5 = `finalReport.pyg'.
 
-] (finalReport.aux (prelude.aux) (chapters/chapter1.aux)
-(chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
+
+(_minted-finalReport/17C9D80A337470A7836C86F48D5003EEB5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex [48
+
+])
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/2D847447D825880329132664C1A001A8F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex [49] [50] [51])
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex [52])
+\openout4 = `finalReport.pyg'.
+
+runsystem(pygmentize -l glsl -f latex -P commandprefix=PYG -F tokenmerge -P str
+ipnl=False -o _minted-finalReport/CA59CEE7B7F13D8FEFBF78B0AC4B703FF5FE15BF9A1C0
+F9C0DC0D913C2D26F1F.pygtex finalReport.pyg)...executed.
+
+
+(_minted-finalReport/CA59CEE7B7F13D8FEFBF78B0AC4B703FF5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex [53] [54] [55] [56])
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/3F2A3092C4931BED813677D54683FC8EF5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex [57])
+\openout4 = `finalReport.pyg'.
+
+
+(_minted-finalReport/0B0AFC964ED1939E4E5BEFD28B908FB8F5FE15BF9A1C0F9C0DC0D913C2
+D26F1F.pygtex [58])) [59] (finalReport.aux (prelude.aux) (chapters/chapter1.aux
+) (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
 (appendices.aux))
 
 LaTeX Warning: There were undefined references.
@@ -1850,50 +1888,51 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19923 strings out of 478584
- 430105 string characters out of 2844402
- 1187487 words of memory out of 3000000
- 37508 multiletter control sequences out of 15000+600000
- 492744 words of font info for 76 fonts, out of 8000000 for 9000
+ 19963 strings out of 478584
+ 434159 string characters out of 2844402
+ 1189998 words of memory out of 3000000
+ 37527 multiletter control sequences out of 15000+600000
+ 493059 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc
-1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ectt0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users\ej200\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\ej200\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\
-ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\
-Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk
+ <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit
+0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\eccc1095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ectt0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm1000.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\ej200\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ej200\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ej200\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users\ej200\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\
+ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\
+Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk
 > <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
-200.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\ecbx2074.pk>{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base
-/8r.enc} <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecbx1440.pk><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmbx8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ej200/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Us
-ers/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb
-><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Programs
-/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (54 pages, 6868017 bytes).
+095.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecbx1200.pk> <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
+dpi600\ecbx2074.pk>{C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvip
+s/base/8r.enc} <C:\Users\ej200\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecbx1440.pk><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmbx10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/ej200/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ej200/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ej200/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ej200/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
+s/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+<C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ej200/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ej200/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ej200/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
+Output written on finalReport.pdf (65 pages, 6912428 bytes).
 PDF statistics:
- 958 PDF objects out of 1000 (max. 8388607)
+ 1069 PDF objects out of 1200 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

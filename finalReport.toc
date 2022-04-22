@@ -69,6 +69,7 @@
 \contentsline {subsection}{\numberline {3.4.3}Analysis}{37}{}%
 \contentsline {chapter}{\numberline {4}Discussion}{38}{}%
 \contentsline {section}{\numberline {4.1}Conclusions}{38}{}%
+\contentsline {section}{\numberline {4.2}Future Work}{38}{}%
 \contentsline {chapter}{References}{39}{}%
 \contentsline {chapter}{Appendices}{44}{}%
 \contentsline {chapter}{\numberline {A}Self-appraisal}{44}{}%
@@ -87,9 +88,9 @@
 \contentsline {chapter}{\numberline {D}Shader Code}{48}{}%
 \contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{48}{}%
 \contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{48}{}%
-\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{48}{}%
-\contentsline {section}{\numberline {D.2}Physically Based Shaders}{48}{}%
-\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{48}{}%
-\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{48}{}%
-\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{48}{}%
-\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{48}{}%
+\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{49}{}%
+\contentsline {section}{\numberline {D.2}Physically Based Shaders}{52}{}%
+\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{52}{}%
+\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{53}{}%
+\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{57}{}%
+\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{58}{}%

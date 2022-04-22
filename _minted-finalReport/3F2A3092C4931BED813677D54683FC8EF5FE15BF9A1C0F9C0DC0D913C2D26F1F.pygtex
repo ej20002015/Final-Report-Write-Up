@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}version 460 core}
+
+\PYG{c+c1}{// ATTRIBUTES}
+
+\PYG{k}{layout} \PYG{p}{(}\PYG{n}{location} \PYG{o}{=} \PYG{l+m+mo}{0}\PYG{p}{)} \PYG{k}{in} \PYG{k+kt}{vec2} \PYG{n}{a\PYGZus{}position}\PYG{p}{;}
+\PYG{k}{layout} \PYG{p}{(}\PYG{n}{location} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{in} \PYG{k+kt}{vec2} \PYG{n}{a\PYGZus{}textureCoordinates}\PYG{p}{;}
+
+\PYG{c+c1}{// OUTPUTS}
+
+\PYG{k}{struct} \PYG{n}{VertexOutput}
+\PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{vec2} \PYG{n}{textureCoordinates}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{k}{out} \PYG{n}{VertexOutput} \PYG{n}{vertex\PYGZus{}output}\PYG{p}{;}
+
+\PYG{c+c1}{// FUNCTIONS}
+
+\PYG{k+kt}{void} \PYG{n}{main}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{n}{vertex\PYGZus{}output}\PYG{p}{.}\PYG{n}{textureCoordinates} \PYG{o}{=} \PYG{n}{a\PYGZus{}textureCoordinates}\PYG{p}{;}
+	\PYG{n+nb}{gl\PYGZus{}Position} \PYG{o}{=} \PYG{k+kt}{vec4}\PYG{p}{(}\PYG{n}{a\PYGZus{}position}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{n}{f}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{n}{f}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
