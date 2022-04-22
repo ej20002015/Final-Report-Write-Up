@@ -7,9 +7,9 @@ As outlined in the introduction, the focus of this report is on showing how PBS 
 
 The first phenomena is the Fresnel effect. Mentioned in section \ref{FresnelReflectance}, the Fresnel effect is the observation that a surface becomes more specular at glancing incident light angles. Faul shows that the Fresnel effect is a key contributor to the appearance of specular materials~\cite{FaulInfluenceOfFresnelEffect}. This suggests that the realism of a shading model is influenced by the degree to which it models the impact of the Fresnel effect. Therefore, it forms a suitable candidate for comparison. In an effort to further build on Faul's investigation, comparing the presence of the Fresnel effect is done by considering the impact it has on the appearance of diffuse materials, rather than specular.
 
-The second physical phenomena is the effect that multiple incoming lights have on the appearance of an object. In the real world, the more lights that are incident to an object, the brighter the object will appear. A comparison is performed between the two shading models to ascertain how accurately they depict how a varying number of point lights influence the appearance of an object.
+The second physical phenomena is the effect that multiple incident lights have on the appearance of an object. In the real world, the more lights that are incident to an object, the brighter the object will appear. A comparison is performed between the two shading models to ascertain how accurately they depict how a varying number of point lights influence the appearance of an object.
 
-The evaluation is also supplemented with an analysis of frame times. This assesses whether the implemented shading models are indeed sufficiently performant to be used in real time rendering.
+The evaluation is also supplemented with an analysis of FPS. This assesses whether the implemented shading models are indeed sufficiently performant to be used in real time rendering.
 
 \section{Fresnel Effect Comparison}
 
@@ -47,7 +47,7 @@ In contrast, the physically based shading model is clearly exhibiting the Fresne
 
 The Fresnel effect is a physical phenomena that is accurately modelled in frames rendered by the physically based shading model, and is completely absent in frames rendered by the Blinn-Phong shading model.
 
-\section{Multiple Lights Comparison}
+\section{Multiple Lights Comparison} \label{MultipleLightsComparison}
 
 \subsection{Testing Method}
 
@@ -99,17 +99,21 @@ Overall, it is clear that the physically based shading model renders the effects
 
 \section{Real Time}
 
-\begin{itemize}
-	\item How it's tested
-	\begin{itemize}
-		\item Perhaps increasing complexities of scenes
-	\end{itemize}
-	\item Results of those tests (table of frame times)
-	\item Discussion of results
-\end{itemize}
-
 \subsection{Testing Method}
+
+The real time capabilities of the Blinn-Phong and physically based shading models are assessed by measuring the FPS produced by their respective renderers. Average FPS is gathered for varying scene complexities. Three test scenes are constructed for each renderer. All of them contain 100 point lights, and the only 3D model used is the light fixture introduced in Section \ref{MultipleLightsComparison}. The scenes only differ by the amount of light fixtures that are present. By increasing the number of light fixtures, the number of triangles in the scene increases, thereby increasing the complexity. Over a 10 second period, the average FPS is calculated for each test scene, and each renderer.
 
 \subsection{Results}
 
+The average FPS for both renderers is given in Figure \ref{fig:RealTimeFPSResults}\footnote{All FPS captures were done with the entire scene in view of the camera. The hardware of the test device consisted of an NVIDIA GeForce RTX 3070 GPU, and an AMD Ryzen 3700X CPU.}. The scene complexity is expressed using triangle count as that is more expressive than giving the number of light fixture models.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=18cm]{RealTimeFPSResults}
+	\caption{Measuring the performance of the Blinn-Phong and physically based renderers for varying scene complexities.}
+	\label{fig:RealTimeFPSResults}
+\end{figure}
+
 \subsection{Analysis}
+
+In all scenes, the two renderers reported average FPS values that were well above the real time minimum of 30 to 60. This shows that both shading models are suitable for use in real time rendering. Making any further conclusions than this would be unwise, as FPS data is by nature dependent on lots of variables, not just the shading model.
