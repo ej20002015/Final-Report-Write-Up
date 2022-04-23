@@ -2452,5 +2452,45 @@
     \field{title}{COMP5822M – High Perf. Graphics - Lecture 11: Shading}
     \field{year}{2021/2022}
   \endentry
+
+  \entry{MERL}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MW}{%
+         family={Matusik},
+         familyi={M\bibinitperiod},
+         given={Wojciech},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=PH}{%
+         family={Pfister},
+         familyi={P\bibinitperiod},
+         given={Hanspeter},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Brand},
+         familyi={B\bibinitperiod},
+         given={Matt},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={McMillan},
+         familyi={M\bibinitperiod},
+         given={Leonard},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MW+1}
+    \strng{fullhash}{MWPHBMML1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{759\bibrangedash 769}
+    \field{title}{A Data-Driven Reflectance Model}
+    \field{volume}{22}
+    \field{journaltitle}{ACM Transactions on Graphics}
+    \field{year}{2003}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 \enddatalist
 \endinput

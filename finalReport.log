@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  22 APR 2022 20:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  23 APR 2022 22:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -986,6 +986,11 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'ComparingToneMappingOperators':
 (biblatex)                - Invalid format of field 'month'.
 
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'MERL':
+(biblatex)                - Invalid format of field 'month'.
+
 )
 Package biblatex Info: Reference section=0 on input line 6.
 Package biblatex Info: Reference segment=0 on input line 6.
@@ -1871,21 +1876,16 @@ Overfull \hbox (56.90549pt too wide) in paragraph at lines 112--113
 
  (chapters/chapter4.tex
 Chapter 4.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-3.
-(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [38
+[38
 
 
 
 
-]
-[39
+]) [39] [40
 
 
 
-] [40] [41] [42]
+] [41] [42] [43]
 Overfull \hbox (2.02393pt too wide) in paragraph at lines 23--23
 []\T1/lmr/m/n/10.95 (-20) Unreal En-gine. \T1/lmr/m/it/10.95 (-20) Color Grad-i
 ng and Filmic Tonemap-per\T1/lmr/m/n/10.95 (-20) . \T1/lmr/m/sc/10.95/100ls (-2
@@ -1893,12 +1893,12 @@ ng and Filmic Tonemap-per\T1/lmr/m/n/10.95 (-20) . \T1/lmr/m/sc/10.95/100ls (-2
 gine .
  []
 
-[43]
+[44]
 \openout2 = `appendices.aux'.
 
  (appendices.tex
 Appendix A.
-[44
+[45
 
 
 
@@ -1973,16 +1973,16 @@ Overfull \hbox (31.30574pt too wide) in paragraph at lines 41--58
 [] 
  []
 
-[45
+[46
 
-] [46]
+] [47]
 Appendix C.
 
 Overfull \hbox (37.84282pt too wide) in paragraph at lines 72--86
  [] 
  []
 
-[47
+[48
 
 ]
 Appendix D.
@@ -1995,34 +1995,34 @@ BEBB0A.pygtex)
 
 
 (_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [48
+D26F1F.pygtex [49
 
 ])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/2D847447D825880329132664C1A001A8F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [49] [50] [51])
+D26F1F.pygtex [50] [51] [52])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [52])
+D26F1F.pygtex [53])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/CA59CEE7B7F13D8FEFBF78B0AC4B703FF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [53] [54] [55] [56])
+D26F1F.pygtex [54] [55] [56] [57])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/3F2A3092C4931BED813677D54683FC8EF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [57])
+D26F1F.pygtex [58])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/0B0AFC964ED1939E4E5BEFD28B908FB8F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [58])) [59] (finalReport.aux (prelude.aux) (chapters/chapter1.aux
+D26F1F.pygtex [59])) [60] (finalReport.aux (prelude.aux) (chapters/chapter1.aux
 ) (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
 (appendices.aux))
 
@@ -2040,46 +2040,45 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22441 strings out of 478584
- 480531 string characters out of 2844402
- 1251418 words of memory out of 3000000
- 39593 multiletter control sequences out of 15000+600000
- 590428 words of font info for 268 fonts, out of 8000000 for 9000
+ 22411 strings out of 478584
+ 479731 string characters out of 2844402
+ 1251458 words of memory out of 3000000
+ 39565 multiletter control sequences out of 15000+600000
+ 590182 words of font info for 268 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
-:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/U
-sers/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/U
-sers/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users
-/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users
-/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users
-/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/ej200
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/ej20
-0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/ej200
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/ej200/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/ej200/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/ej200/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/ej200/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/ej200/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/ej200/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users/ej200/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/ej200/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/ej200/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/ej200/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/ej200/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/ej200/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/ej200/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/ej200/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/ej200/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (65 pages, 7059922 bytes).
+:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
+:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
+ers/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Us
+ers/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Us
+ers/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/e
+j200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/e
+j200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/e
+j200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/ej
+200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/e
+j200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/e
+j200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/e
+j200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/ej
+200/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/ej2
+00/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/ej20
+0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/ej200/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/ej200/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/ej200/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/ej200/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users/ej200/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/ej200/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/ej200/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/ej200/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/ej200/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/ej200/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/ej200/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/ej200/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/ej200/AppData
+/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
+Output written on finalReport.pdf (66 pages, 7064145 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
+ 372 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 69196 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 67148 words of extra memory for PDF output out of 74296 (max. 10000000)
 
