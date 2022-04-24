@@ -73,24 +73,26 @@
 \contentsline {chapter}{References}{40}{}%
 \contentsline {chapter}{Appendices}{45}{}%
 \contentsline {chapter}{\numberline {A}Self-appraisal}{45}{}%
-\contentsline {section}{\numberline {A.1}Critical self-evaluation}{45}{}%
-\contentsline {section}{\numberline {A.2}Personal reflection and lessons learned}{45}{}%
-\contentsline {section}{\numberline {A.3}Legal, social, ethical and professional issues}{45}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal issues}{45}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social issues}{45}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical issues}{45}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional issues}{45}{}%
-\contentsline {chapter}{\numberline {B}External Material}{46}{}%
-\contentsline {section}{\numberline {B.1}Software Libraries}{46}{}%
-\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{47}{}%
-\contentsline {section}{\numberline {B.3}3D Models}{47}{}%
-\contentsline {chapter}{\numberline {C}Mathematical Notation}{48}{}%
-\contentsline {chapter}{\numberline {D}Shader Code}{49}{}%
-\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{49}{}%
-\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{49}{}%
-\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{50}{}%
-\contentsline {section}{\numberline {D.2}Physically Based Shaders}{53}{}%
-\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{53}{}%
-\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{54}{}%
-\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{58}{}%
-\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{59}{}%
+\contentsline {section}{\numberline {A.1}Critical Self-Evaluation}{45}{}%
+\contentsline {subsection}{\numberline {A.1.1}Positives}{45}{}%
+\contentsline {subsection}{\numberline {A.1.2}Areas for Improvement}{45}{}%
+\contentsline {section}{\numberline {A.2}Personal Reflection and Lessons Learned}{46}{}%
+\contentsline {section}{\numberline {A.3}Legal, Social, Ethical and Professional Issues}{46}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal Issues}{46}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social Issues}{46}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical Issues}{46}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional Issues}{46}{}%
+\contentsline {chapter}{\numberline {B}External Material}{47}{}%
+\contentsline {section}{\numberline {B.1}Software Libraries}{47}{}%
+\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{48}{}%
+\contentsline {section}{\numberline {B.3}3D Models}{48}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{49}{}%
+\contentsline {chapter}{\numberline {D}Shader Code}{50}{}%
+\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{50}{}%
+\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{50}{}%
+\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{51}{}%
+\contentsline {section}{\numberline {D.2}Physically Based Shaders}{54}{}%
+\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{54}{}%
+\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{55}{}%
+\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{59}{}%
+\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{60}{}%

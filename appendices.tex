@@ -5,23 +5,58 @@
 %
 \chapter{Self-appraisal}
 
-<This appendix should contain everything covered by the 'self-appraisal' criterion in the mark scheme. Although there is no length limit for this section, 2---4 pages will normally be sufficient. The format of this section is not prescribed, but you may like to organise your discussion into the following sections and subsections.>
+\section{Critical Self-Evaluation}
 
-\section{Critical self-evaluation}
+Overall, I am extremely satisfied with the quality of my project. Highlighted below are several positive aspects in which my project excels, as well as a few areas for improvement.
 
-\section{Personal reflection and lessons learned}
+\subsection{Positives}
 
-\section{Legal, social, ethical and professional issues}
+Perhaps the strongest part of my report is the Background Research. This section provides an extremely thorough review of Blinn-Phong and Physically Based Shading. Of particular achievement is the way in which the theory behind PBS is successively built up, starting from the foundational physics of light-matter interaction, and culminating in the examination of specific physically based shading models. This research equips the reader with a rigorous understanding of the subject matter, which pays dividends in the later chapters. Crucially, the Background Research is informed by an excellent set of literature that includes many of the major pioneering papers within the realms of real time rendering and shading models. Furthermore, where appropriate, papers from other disciplines were utilised, such as those from optics and spectroscopy.
+
+Another strong facet of my project is the implementation. The code base is clean and well designed. All function and variable identifies are given meaningful names, and comments are used where necessary, and never as a substitute for good code. Special care is given to each of the functions and methods to ensure that they only fulfil one purpose, and operate at a single level of abstraction. Errors are handled appropriately using a combination of asserts and exceptions. As is good practice with C++, smart pointers are employed throughout, which help to eliminate any memory leaks and segmentation faults. Notable aspects of the architecture are the rendering API, and the APIs for creating scenes. Despite two distinct renderers operating in the background, a client can access all the rendering commands through a single unified interface. Furthermore, the APIs for creating models and point lights, and then adding them to a scene, are all very intuitive.
+
+As my project progressed, it became clear that there were not many physical phenomena that could be objectively measured and used in my Results chapter. With this in mind, the fact that I was able to identify and systematically investigate two phenomena is positive.
+
+My report features a high quality of writing throughout. Figures and tables are used correctly, and referenced in the relevant parts of the main text, and the language is of standard that is suitable for academic papers and technical reports. Particular focus is placed on having the report progress along a consistent narrative. By utilising section introductions, cross referencing, and a coherent structure, the reader is guided through the text. There is no ambiguity about the content of each section, and the purpose it serves in the overall report.
+
+\subsection{Areas for Improvement}
+
+\begin{itemize}
+	\item What went badly?
+	\begin{itemize}
+		\item Big thing was not getting a good indirect illumination thing in place. As talked about in the future work, this would have allowed me to certianly improve my evaluation with other physical phenomena.
+		\item Whilst I'm pretty happy with my evaluation procedure (best I could do), I do think it is probably the weakest point of my report. I would have liked to employ a more scientific approach to comparing the shading models. Could have used something like MERL, although that would have meant I spent less time on really understanding physically based shading models and also the implementation might have been very different - I like that it could easily be used in an actual real time application, not just specific to some case study.
+	\end{itemize}
+\end{itemize}
+
+\section{Personal Reflection and Lessons Learned}
+
+\begin{itemize}
+	\item personal reflection: happy about how much I learnt
+	\item Learnt about not trying to be so anal about the language - wasted time on the introduction
+	\item How good latex is! (didn't known any - now I do)
+	\item The skills of writing a technical report
+	\item got much better at reading and understanding reports - skimming over the details that were not relevant
+	\item Development process was good
+	\item Time management - how to split up 
+\end{itemize}
+
+\section{Legal, Social, Ethical and Professional Issues}
 
 <Refer to each of these issues in turn. If one or more is not relevant to your project, you should still explain {\em why} you think it was not relevant.>
 
-\subsection{Legal issues}
+\subsection{Legal Issues}
 
-\subsection{Social issues}
+[Licenses]
 
-\subsection{Ethical issues}
 
-\subsection{Professional issues}
+\subsection{Social Issues}
+
+
+
+\subsection{Ethical Issues}
+
+\subsection{Professional Issues}
 
 
 %
@@ -696,16 +731,16 @@ vec3 applyToneMapping(vec3 color)
 {
 	mat3 inputMatrix = mat3
 	(
-	0.59719f,  0.07600f,  0.02840f,
-	0.35458f,  0.90834f,  0.13383f,
-	0.04823f,  0.01566f,  0.83777f
+		0.59719f,  0.07600f,  0.02840f,
+		0.35458f,  0.90834f,  0.13383f,
+		0.04823f,  0.01566f,  0.83777f
 	);
 	
 	mat3 outputMatrix = mat3
 	(
-	1.60475f, -0.10208f, -0.00327f,
-	-0.53108f,  1.10813f, -0.07276f,
-	-0.07367f, -0.00605f,  1.07602f
+		1.60475f, -0.10208f, -0.00327f,
+		-0.53108f,  1.10813f, -0.07276f,
+		-0.07367f, -0.00605f,  1.07602f
 	);
 	
 	color = inputMatrix * color;
