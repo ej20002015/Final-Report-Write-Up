@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  25 APR 2022 20:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  25 APR 2022 20:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1128,18 +1128,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 []|\T1/lmr/m/n/10.95 (+20) Uploaded to Min-erva
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-[]|\T1/lmr/m/n/10.95 (+20) Uploaded to Min-erva
- []
-
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 4
-9.
+5.
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 49.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 45.
  [1
 
 
@@ -2076,7 +2071,7 @@ a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/ej200/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/ej200/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/ej200/AppData
 /Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (68 pages, 7073741 bytes).
+Output written on finalReport.pdf (68 pages, 7073429 bytes).
 PDF statistics:
  379 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
