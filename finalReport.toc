@@ -85,7 +85,7 @@
 \contentsline {chapter}{\numberline {B}External Material}{48}{}%
 \contentsline {section}{\numberline {B.1}Software Libraries}{48}{}%
 \contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{49}{}%
-\contentsline {section}{\numberline {B.3}3D Models}{49}{}%
+\contentsline {section}{\numberline {B.3}Assets}{49}{}%
 \contentsline {chapter}{\numberline {C}Mathematical Notation}{50}{}%
 \contentsline {chapter}{\numberline {D}Shader Code}{51}{}%
 \contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{51}{}%
