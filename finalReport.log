@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  24 APR 2022 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  25 APR 2022 15:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1898,34 +1898,40 @@ gine .
 
  (appendices.tex
 Appendix A.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-5.
-(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [45
+[45
 
 
 
 ]
-[46]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+3.
+ (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+[46] [47]
 Appendix B.
 \openout5 = `finalReport.pyg'.
 
 
 (_minted-finalReport/4DF8F245696948C8281CF84168A96B0CB5EFDD063A51395055F507CF57
 BEBB0A.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|\T1/lmr/bx/n/10.95 (+20) Library
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 []|$\T1/lmtt/m/n/10.95 https : / / www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 []|$\T1/lmtt/m/n/10.95 https : / / glad .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+[]|$\T1/lmtt/m/n/10.95 https : / / github .
  []
 
 
@@ -1934,60 +1940,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-[]|$\T1/lmtt/m/n/10.95 https : / / github .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 \T1/lmtt/m/n/10.95 com / gabime /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 []|$\T1/lmtt/m/n/10.95 https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 \T1/lmtt/m/n/10.95 com / nothings /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 \T1/lmtt/m/n/10.95 stb / blob /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 \T1/lmtt/m/n/10.95 master / stb _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 []|$\T1/lmtt/m/n/10.95 https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 \T1/lmtt/m/n/10.95 com / assimp /
  []
 
 
-Overfull \hbox (31.30574pt too wide) in paragraph at lines 76--93
+Overfull \hbox (31.30574pt too wide) in paragraph at lines 74--91
 [] 
  []
 
-[47
+[48
 
-] [48]
+] [49]
 Appendix C.
 
-Overfull \hbox (37.84282pt too wide) in paragraph at lines 107--121
+Overfull \hbox (37.84282pt too wide) in paragraph at lines 105--119
  [] 
  []
 
-[49
+[50
 
 ]
 Appendix D.
@@ -2000,34 +2001,34 @@ BEBB0A.pygtex)
 
 
 (_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [50
+D26F1F.pygtex [51
 
 ])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/2D847447D825880329132664C1A001A8F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [51] [52] [53])
+D26F1F.pygtex [52] [53] [54])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [54])
+D26F1F.pygtex [55])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/CA59CEE7B7F13D8FEFBF78B0AC4B703FF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [55] [56] [57] [58])
+D26F1F.pygtex [56] [57] [58] [59])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/3F2A3092C4931BED813677D54683FC8EF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [59])
+D26F1F.pygtex [60])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/8E36BB61E14AA0D702DAF604F934EF2EF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [60])) [61] (finalReport.aux (prelude.aux) (chapters/chapter1.aux
+D26F1F.pygtex [61])) [62] (finalReport.aux (prelude.aux) (chapters/chapter1.aux
 ) (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
 (appendices.aux))
 
@@ -2082,9 +2083,9 @@ cal/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/ej200/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/ej200/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/ej200/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (67 pages, 7070490 bytes).
+Output written on finalReport.pdf (68 pages, 7072393 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
+ 383 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  69196 words of extra memory for PDF output out of 74296 (max. 10000000)
 
