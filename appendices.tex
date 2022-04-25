@@ -61,33 +61,34 @@ There are no ethical issues to be considered for my project. The subject matter 
 There are no professional issues that need to be considered for my project. All work undertaken is completely personal, and is not intended to be used by a company or anybody else. That being said, I still wrote code of a professional level.
 
 \chapter{External Material} \label{ExternalMaterial}
-<This appendix should provide a brief record of materials used in the solution that are not the student's own work. Such materials might be pieces of codes made available from a research group/company or from the internet, datasets prepared by external users or any preliminary materials/drafts/notes provided by a supervisor. It should be clear what was used as ready-made components and what was developed as part of the project. This appendix should be included even if no external materials were used, in which case a statement to that effect is all that is required.>
 
 Three types of external material were used in my solution: software libraries, an implementation of the ACES tone mapping operator, and graphical assets.
 
 \section{Software Libraries} \label{SoftwareLibraries}
 
-The libraries used in my renderer are listed below. For each one, a description is provided, along with a link. Note that the separation between my code and the external libraries is very clear in the code base, with all libraries being present under the \mintinline{bash}|Application/Vendor| directory.
+The libraries used in my renderer are listed in Table \ref{tb:Libraries}. For each one, a description is provided, along with a link. Note that the separation between my code and the external libraries is very clear in the code base, with all libraries being present under the \mintinline{bash}|Application/Vendor| directory.
 
-\vspace{20pt}
-
-\noindent\begin{tabular}{|m{5em}|m{28em}|m{8em}|}
-	\hline
-	\textbf{Library Name} & \textbf{Description} & \textbf{Link} \\
-	\hline\hline
-	GLFW & A cross-platform utility library that provides windowing, OpenGL contexts and retrieves input events & \url{https://www.glfw.org/} \\
-	\hline
-	Glad & A library for loading pointers to the OpenGL functions & \url{https://glad.dav1d.de/} \\
-	\hline
-	GLM	& A maths library specifically designed for use with OpenGL & \url{https://github.com/g-truc/glm} \\
-	\hline
-	spdlog & A fast logging library & \url{https://github.com/gabime/spdlog} \\
-	\hline
-	stb\_image & An image loading library that is used when creating textures & \url{https://github.com/nothings/stb/blob/master/stb_image.h} \\
-	\hline
-	assimp & A library to import 3D models of various different file types & \url{https://github.com/assimp/assimp} \\
-	\hline
-\end{tabular}
+\begin{table}[ht!]
+	\begin{tabular}{|m{5em}|m{25em}|m{8em}|}
+		\hline
+		\textbf{Library Name} & \textbf{Description} & \textbf{Link} \\
+		\hline\hline
+		GLFW & A cross-platform utility library that provides windowing, OpenGL contexts and retrieves input events & \url{https://www.glfw.org/} \\
+		\hline
+		Glad & A library for loading pointers to the OpenGL functions & \url{https://glad.dav1d.de/} \\
+		\hline
+		GLM	& A maths library specifically designed for use with OpenGL & \url{https://github.com/g-truc/glm} \\
+		\hline
+		spdlog & A fast logging library & \url{https://github.com/gabime/spdlog} \\
+		\hline
+		stb\_image & An image loading library that is used when creating textures & \url{https://github.com/nothings/stb/blob/master/stb_image.h} \\
+		\hline
+		assimp & A library to import 3D models of various different file types & \url{https://github.com/assimp/assimp} \\
+		\hline
+	\end{tabular}
+	\caption{Libraries used in the implementation}
+	\label{tb:Libraries}
+\end{table}
 
 \section{ACES Tone Mapping Operator} \label{ACESExternalMaterial}
 
@@ -95,10 +96,22 @@ The implementation of the ACES tone mapping operator, which is given in Listing 
 
 \section{Assets} \label{AssetsUsed}
 
+The only external graphical assets used in my project are a couple of textures. These are listed in Table \ref{tb:AssetsUsed}, with each entry giving a location of the asset in the code base, as well as a link to where it was taken from.
 
-%
-% Other appendices can be added here following the same pattern as above.
-%
+\begin{table}
+	\begin{tabular}{|m{19em}|m{19em}|}
+		\hline
+		\textbf{Asset Path} & \textbf{Link} \\
+		\hline\hline
+		\url{Application/Assets/Textures/ParticleBoard/ParticleBoardBaseColor.jpg} & \url{https://3dtextures.me/2021/08/11/wood-particle-board-003/} \\
+		\hline
+		\url{Application/Assets/Textures/WoodenFloor/WoodenFloorBaseColor.jpg} & \url{https://3dtextures.me/2018/02/14/wood-floor-007/} \\
+		\hline
+	\end{tabular}
+	\caption{Graphical assets used in the implementation}
+	\label{tb:AssetsUsed}
+\end{table}
+
 \chapter{Mathematical Notation} \label{MathematicalNotation}
 
 \begin{center}

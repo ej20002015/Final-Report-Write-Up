@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  25 APR 2022 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  26 APR 2022 00:42
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1128,6 +1128,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 []|\T1/lmr/m/n/10.95 (+20) Uploaded to Min-erva
  []
 
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+1.
+(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|$\T1/lmtt/m/n/10.95 https : / / dev . azure .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/lmtt/m/n/10.95 com / ej20002011 / _git /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/lmtt/m/n/10.95 University \ %20Final \
+ []
+
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 4
 5.
 (C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
@@ -1166,14 +1190,14 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ] [2] [3]
-<./images//PrincipleVectors.png, id=48, 602.85225pt x 257.16075pt>
+<./images//PrincipleVectors.png, id=49, 602.85225pt x 257.16075pt>
 File: ./images//PrincipleVectors.png Graphic file (type png)
 <use ./images//PrincipleVectors.png>
 Package pdftex.def Info: ./images//PrincipleVectors.png  used on input line 84.
 
 (pdftex.def)             Requested size: 227.62204pt x 97.09818pt.
  [4 <./images//PrincipleVectors.png (PNG copy)>]
-<./images//PhongIssue.png, id=53, 1134.639pt x 315.579pt>
+<./images//PhongIssue.png, id=54, 1134.639pt x 315.579pt>
 File: ./images//PhongIssue.png Graphic file (type png)
 <use ./images//PhongIssue.png>
 Package pdftex.def Info: ./images//PhongIssue.png  used on input line 103.
@@ -1182,26 +1206,26 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 104.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 104.
-<./images//BlinnFix.png, id=54, 1121.99174pt x 301.125pt>
+<./images//BlinnFix.png, id=55, 1121.99174pt x 301.125pt>
 File: ./images//BlinnFix.png Graphic file (type png)
 <use ./images//BlinnFix.png>
 Package pdftex.def Info: ./images//BlinnFix.png  used on input line 109.
 (pdftex.def)             Requested size: 218.51521pt x 58.64331pt.
  [5 <./images//PhongIssue.png> <./images//BlinnFix.png>] [6]
-<./images//BoundaryScattering.png, id=65, 389.65575pt x 390.258pt>
+<./images//BoundaryScattering.png, id=66, 389.65575pt x 390.258pt>
 File: ./images//BoundaryScattering.png Graphic file (type png)
 <use ./images//BoundaryScattering.png>
 Package pdftex.def Info: ./images//BoundaryScattering.png  used on input line 1
 62.
 (pdftex.def)             Requested size: 142.26378pt x 142.48764pt.
  [7 <./images//BoundaryScattering.png>]
-<./images//SubsurfaceScattering.png, id=71, 605.26125pt x 237.2865pt>
+<./images//SubsurfaceScattering.png, id=72, 605.26125pt x 237.2865pt>
 File: ./images//SubsurfaceScattering.png Graphic file (type png)
 <use ./images//SubsurfaceScattering.png>
 Package pdftex.def Info: ./images//SubsurfaceScattering.png  used on input line
  177.
 (pdftex.def)             Requested size: 218.51521pt x 85.66565pt.
-<./images//SpecularAndDiffuse.png, id=72, 391.4625pt x 143.78719pt>
+<./images//SpecularAndDiffuse.png, id=73, 391.4625pt x 143.78719pt>
 File: ./images//SpecularAndDiffuse.png Graphic file (type png)
 <use ./images//SpecularAndDiffuse.png>
 Package pdftex.def Info: ./images//SpecularAndDiffuse.png  used on input line 1
@@ -1212,7 +1236,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8] [9 <./images//SubsurfaceScattering.png (PNG copy)> <./images//SpecularAndDi
 ffuse.png>]
-<./images//ExampleBRDF.png, id=81, 405.76593pt x 336.50719pt>
+<./images//ExampleBRDF.png, id=82, 405.76593pt x 336.50719pt>
 File: ./images//ExampleBRDF.png Graphic file (type png)
 <use ./images//ExampleBRDF.png>
 Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 224.
@@ -1222,12 +1246,12 @@ Package pdftex.def Info: ./images//ExampleBRDF.png  used on input line 224.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10] [11 <./images//ExampleBRDF.png>]
-<./images//Masking.png, id=88, 498.36188pt x 185.19188pt>
+<./images//Masking.png, id=89, 498.36188pt x 185.19188pt>
 File: ./images//Masking.png Graphic file (type png)
 <use ./images//Masking.png>
 Package pdftex.def Info: ./images//Masking.png  used on input line 261.
 (pdftex.def)             Requested size: 218.51521pt x 81.19926pt.
-<./images//Shadowing.png, id=89, 502.12593pt x 237.13594pt>
+<./images//Shadowing.png, id=90, 502.12593pt x 237.13594pt>
 File: ./images//Shadowing.png Graphic file (type png)
 <use ./images//Shadowing.png>
 Package pdftex.def Info: ./images//Shadowing.png  used on input line 266.
@@ -1237,7 +1261,7 @@ Package pdftex.def Info: ./images//Shadowing.png  used on input line 266.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12] [13 <./images//Masking.png> <./images//Shadowing.png>]
-<./images//SchlickApproximation.png, id=99, 759.58781pt x 202.50656pt>
+<./images//SchlickApproximation.png, id=100, 759.58781pt x 202.50656pt>
 File: ./images//SchlickApproximation.png Graphic file (type png)
 <use ./images//SchlickApproximation.png>
 Package pdftex.def Info: ./images//SchlickApproximation.png  used on input line
@@ -1252,18 +1276,7 @@ Chapter 2.
 
 (_minted-finalReport/default.pygstyle)
 (_minted-finalReport/9D771FD61AD69A9431314C9880572A53DC72E4E7528F6BB38F64819853
-936090.pygtex
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-.
-
-(C:\Users\ej200\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-)
+936090.pygtex)
 \openout5 = `finalReport.pyg'.
 
 
@@ -1904,18 +1917,23 @@ Appendix B.
 
 (_minted-finalReport/4DF8F245696948C8281CF84168A96B0CB5EFDD063A51395055F507CF57
 BEBB0A.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 []|\T1/lmr/bx/n/10.95 (+20) Library
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 []|$\T1/lmtt/m/n/10.95 https : / / www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 []|$\T1/lmtt/m/n/10.95 https : / / glad .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+[]|$\T1/lmtt/m/n/10.95 https : / / github .
  []
 
 
@@ -1924,48 +1942,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
-[]|$\T1/lmtt/m/n/10.95 https : / / github .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 \T1/lmtt/m/n/10.95 com / gabime /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 []|$\T1/lmtt/m/n/10.95 https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 \T1/lmtt/m/n/10.95 com / nothings /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 \T1/lmtt/m/n/10.95 stb / blob /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 \T1/lmtt/m/n/10.95 master / stb _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 []|$\T1/lmtt/m/n/10.95 https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 \T1/lmtt/m/n/10.95 com / assimp /
  []
 
 
-Overfull \hbox (31.30574pt too wide) in paragraph at lines 74--91
-[] 
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+[]|$\T1/lmtt/m/n/10.95 Application / Assets /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+\T1/lmtt/m/n/10.95 Textures / ParticleBoard /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+[]|$\T1/lmtt/m/n/10.95 https : / / 3dtextures . me / 2021 / 08 / 11 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
+[]|$\T1/lmtt/m/n/10.95 Application / Assets / Textures /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+[]|$\T1/lmtt/m/n/10.95 https : / / 3dtextures . me / 2018 / 02 / 14 /
  []
 
 [48
@@ -1973,7 +2006,7 @@ Overfull \hbox (31.30574pt too wide) in paragraph at lines 74--91
 ] [49]
 Appendix C.
 
-Overfull \hbox (37.84282pt too wide) in paragraph at lines 105--119
+Overfull \hbox (37.84282pt too wide) in paragraph at lines 118--132
  [] 
  []
 
@@ -2035,10 +2068,10 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22410 strings out of 478584
- 479723 string characters out of 2844402
- 1251469 words of memory out of 3000000
- 39566 multiletter control sequences out of 15000+600000
+ 22412 strings out of 478584
+ 479752 string characters out of 2844402
+ 1251491 words of memory out of 3000000
+ 39568 multiletter control sequences out of 15000+600000
  590093 words of font info for 267 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,134p,2256b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2071,7 +2104,7 @@ a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/ej200/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/ej200/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/ej200/AppData
 /Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (68 pages, 7073442 bytes).
+Output written on finalReport.pdf (68 pages, 7073524 bytes).
 PDF statistics:
  379 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
