@@ -5,62 +5,60 @@ This chapter documents the design and implementation of the renderer. Details of
 
 \section{Design and Implementation}
 
-This section provides a general overview of the design and implementation of the renderer. We begin by discussing the language, technologies and libraries used to develop the program. This is followed by an explanation of the architecture, which has particular focus on how the two different shading models were supported in the same application. Finally, we detail how the development was carried out, providing information on the development tools used and the software engineering methodology adopted.
+This section presents a general overview of the design and implementation of the renderer. First, the language, technologies and libraries used in the program are discussed. This is followed by an explanation of the architecture, which has particular focus on how the two different shading models were supported in the same application. Finally, the development process is detailed, providing information on the tools used and the software engineering methodology adopted.
 
 \subsection{Technologies Used}
 
-The renderer is written in C++. This choice was made for a number of reasons. First and foremost, C++ is a language I'm familiar and proficient with, having used it extensively for my own personal projects. Furthermore, real-time rendering is by it's very definition, highly performance orientated, which excludes all but the fastest programming languages. Finally, C++ is the most widely used language in the graphics industry, and as such is widely supported by graphics APIs, and a multitude of useful libraries. The C++17 standard is used as it is modern, supported by many compilers and offers helpful features like the \mintinline{C++}|std::filesystem| library and structured bindings.
+The renderer is written in C++. This choice is made for a couple of reasons. Firstly, real-time rendering is by its very definition, highly performance orientated, which excludes all but the fastest programming languages. Secondly, C++ is the de facto standard language in the graphics industry, and as such is widely supported by graphics APIs (including as all those discussed below), and a multitude of useful libraries. C++17 is used as it is modern, supported by many compilers and offers helpful features like the \mintinline{C++}|std::filesystem| library and structured bindings.
 
-Like any renderer, the program utilises a graphics API. OpenGL was chosen for its simplicity, and again, due to my familiarity with it. Although Vulkan and Direct3D boast a much richer and more low-level API, this enhanced control was superfluous to requirements so would have been more of a hindrance than a benefit. Version 4.6 of OpenGL is used.
+Due to its simplicity, the graphics API utilised is OpenGL. Although Vulkan and Direct3D boast a much richer and more low-level API, this enhanced control is superfluous to requirements, so would be more of a hindrance than a benefit. Version 4.6 of OpenGL is used.
 
 The renderer is supplemented with several libraries, all of which are listed and described in Appendix \ref{SoftwareLibraries}.
 
 \subsection{General Architecture}
 
-The renderer is split into a few main components. The \mintinline{cpp}|Application| class manages the whole program. It is concerned with initialising and shutting down the various subsystems, and also performs the main render loop. The class creates and maintains a \mintinline{cpp}|Window| object, registering callback functions with it to capture pertinent events. The \mintinline{cpp}|Application| class can be regarded as providing the necessary framework for any type of interactive application to be created. The specifics are then left up to the \mintinline{cpp}|Workspace| class. This class acts as a sandbox environment in which resources can be loaded, scenes created and commands given to the renderer. It also holds an instance of the \mintinline{cpp}|Camera| class. This camera is designed to emulate the Unity Engine style of editor camera. The \mintinline{cpp}|Scene| class is a simple way of assembling together models and lights into a 3D scene. Models can be imported using the \mintinline{cpp}|Model| class, or more simplistic meshes, including cubes and spheres, can be created using the \mintinline{cpp}|ModelFactory| class.
+The renderer is split into a few main components. The \mintinline{cpp}|Application| class manages the whole program. It is concerned with initialising and shutting down the various subsystems, and also performing the main render loop. The class creates and maintains a \mintinline{cpp}|Window| object, registering callback functions with it to capture pertinent events. The \mintinline{cpp}|Application| class can be regarded as providing the necessary framework for any type of interactive application to be created. The specifics are then left up to the \mintinline{cpp}|Workspace| class. This class acts as a sandbox environment in which resources can be loaded, scenes created and commands given to the renderer. The \mintinline{cpp}|Scene| class is a simple way of assembling together models and lights into a 3D scene. Models can be imported using the \mintinline{cpp}|Model| class, or more simplistic meshes, including cubes and spheres, can be created using the \mintinline{cpp}|ModelFactory| class.
 
-The rendering API is exposed by the \mintinline{cpp}|Renderer| class. This includes methods for common utility commands, like setting the clear colour, and drawing commands, such as those for rendering individual models and others for rendering entire scenes. However, the \mintinline{cpp}|Renderer| class doesn't perform any of the actual rendering itself. Instead, depending on the active renderer type, it forwards any rendering calls onto one of the two renderer implementations: either the \mintinline{cpp}|BlinnPhongRendererImplementation| is invoked, or the \mintinline{cpp}|PBRRendererImplementation|. Both feature the same API because both derive from the \mintinline{cpp}|RendererImplementation| pure virtual class, but they behave very differently. As the names would suggest, the \mintinline{cpp}|BlinnPhongRendererImplementation| is a renderer that makes use of the Blinn-Phong shading model, whilst the \mintinline{cpp}|PBRRendererImplementation| is a physically based renderer. The Blinn-Phong renderer is covered in section \ref{BlinnPhongImplementation}, and the details of the physically based renderer, including the specific physically based shading model that is used, is given in section \ref{PBRImplementation}. The whole program is designed so that the renderer implementation being used can be swapped during runtime, making it easy to compare the two approaches.
+The rendering API is exposed by the \mintinline{cpp}|Renderer| class. This includes methods for common utility commands, like setting the clear colour, and drawing commands, such as those for rendering individual models and entire scenes. However, the \mintinline{cpp}|Renderer| class doesn't perform any of the actual rendering itself. Instead, depending on the active renderer type, it forwards any rendering calls onto one of the two renderer implementations: either the \mintinline{cpp}|BlinnPhongRendererImplementation| is invoked, or the \mintinline{cpp}|PBRRendererImplementation|. Both feature the same API because both derive from the \mintinline{cpp}|RendererImplementation| pure virtual class, but they behave very differently. As the names would suggest, the \mintinline{cpp}|BlinnPhongRendererImplementation| is a renderer that makes use of the Blinn-Phong shading model, whilst the \mintinline{cpp}|PBRRendererImplementation| is a physically based renderer. The Blinn-Phong renderer is covered in Section \ref{BlinnPhongImplementation}, and the details of the physically based renderer, including the specific physically based shading model that is used, is given in Section \ref{PBRImplementation}. The whole program is designed so that the renderer implementation being used can be swapped during runtime, making it easy to compare the two approaches.
 
-The two renderer implementations, as well as other parts of the program, make extensive use of the constructs provided by OpenGL. To this end, considerable time was spent abstracting away elements of the OpenGL API behind coherent, clear interfaces. These interfaces include provisions for creating and manipulating vertex buffers, index buffers, framebuffers, textures and shaders. Not only do they serve to create cleaner code, but the interfaces also have the added benefit of hiding the notoriously confusing, state machine nature of OpenGL, behind the more standard OOP paradigm.
+The two renderer implementations, as well as other parts of the program, make extensive use of OpenGL constructs. Therefore, a substantial amount of the OpenGL API is abstracted away behind coherent, clear interfaces. These interfaces include provisions for creating and manipulating vertex buffers, index buffers, framebuffers, textures and shaders. Not only do they serve to create cleaner code, but the interfaces also have the added benefit of hiding the notoriously confusing, state machine nature of OpenGL, behind the more standard OOP paradigm.
 
 \subsection{Development Process}
 
-Development was undertaken in an agile manner, being driven by a Kanban board hosted on an Azure DevOps project. A number of days at the start of development were dedicated to assessing the required work, and packaging that into a set of clear, actionable work items. These were arranged hierarchically so that overarching milestones could be identified. Throughout development, new work items were added, old ones were removed when they fell out of scope, and invaluable documentation was accumulated in the items that remained.
+Development was undertaken in an agile manner, being driven by a Kanban board hosted on an Azure DevOps project. A number of days at the start of development were dedicated to assessing the required work, and packaging that into a set of clear, actionable work items. These were arranged hierarchically so that overarching milestones could be identified. Throughout development, new work items were added, old ones were removed when they fell out of scope, and valuable documentation was accumulated in the items that remained.
 
-Git version control was used and the repo was hosted on the same Azure DevOps project. For each modification I made to the program, I checked out a new branch, and when finished with development, created a pull request. Although I only worked on my own, I found the pull request feature in Azure DevOps to be extremely useful. It allowed me to easily and thoroughly review my changes before I merged them in, which on many occasions meant I identified and solved a bug which otherwise would have made its way into the code base. Had I been simply committing my changes to the main branch, I don't think I would have found it as easy to do that due diligence.
+Git version control was used, with the repo being hosted on the same Azure DevOps project. For each feature added to the program, a new branch was checked out, and when finished with development, a pull request created. Although work was only done by a singular developer, the pull request feature was found to be extremely useful. It forced a thorough review of each change to be performed before it was merged in, which on many occasions led to the resolution of a bug which otherwise would have made its way into the code base. If changes were made by simply committing to the main branch, it would have been more difficult to do that due diligence.
 
-Visual Studio was my IDE of choice. It's an application I have lots of experience with, and one that provides an impressive suite of debugging tools. However, I decided not to directly use the Visual Studio build system, instead opting for Premake. Premake allows for the specification of projects to be done in an intuitive, and build system agnostic way. I found building with Premake to be much easier, and if I choose to migrate the program to other platforms in the future, it should make that process simpler.
+Visual Studio was the chosen IDE. It is a powerful application that offers a mature suit of debugging tools. However, direct use of the Visual Studio build system was avoided in favour of Premake. Premake allows for the specification of projects to be done in an intuitive, build system agnostic way. Building with Premake was easy, and, if pursued in the future, it will simplify the migration of the program to other platforms.
 
-Debugging graphics applications is incredibly difficult since most of the important stuff happens on the GPU. Therefore, I also utilised RenderDoc, which is a tool that allows one to inspect an application as it moves through all the stages of the graphics pipeline.
+Debugging graphics applications is incredibly difficult since most of the important stuff happens on the GPU. Therefore, RenderDoc was also utilised, which is a tool that allows one to inspect an application as it moves through all the stages of the graphics rendering pipeline.
 
-The testing process for the application was greatly aided by being able to draw on two renderer implementations. When developing the physically based renderer, I often compared its renders to that of the Blinn-Phong renderer to ensure that nothing was fundamentally incorrect\footnote{The more specific aspects of the physically based renderer obviously could not be tested in this way since the two implementations still use very different shading models}.
+The testing process for the application was greatly aided by being able to draw on two renderer implementations. When developing the physically based renderer, comparing its output to that of the Blinn-Phong renderer was often done to ensure nothing was fundamentally incorrect\footnote{The more specific aspects of the physically based renderer obviously could not be tested in this way since the two implementations still use very different shading models}.
 
 \section{Blinn-Phong Renderer Implementation} \label{BlinnPhongImplementation}
 
-As previously discussed, the Blinn-Phong renderer is responsible for rendering scenes using the Blinn-Phong shading model.
-
 \subsection{Operation of the Renderer}
 
-Upon program initialisation, the Blinn-Phong renderer creates a few notable items. A framebuffer is created which stores the output fragment colours of the shader program. It is configured to perform \textit{multisampling}, which is a simple anti-aliasing technique~\cite{RealityEngine}. The visual enhancements this yields are judged to be well worth the performance costs it incurs. The key feature that distinguishes this framebuffer from the one used in the physically based renderer, is that it can only store LDR RGB triplets. This is realised in practice by specifying the framebuffer's colour attachment format as \mintinline{cpp}|GL_RGBA8|. Restricting the renderer in this manner is consistent with the description given in section \ref{DynamicRangeAndDisplays}, on how tone mapping is dealt with in non-physically based renderers.
+Upon program initialisation, the Blinn-Phong renderer creates a few notable items. A framebuffer is created which stores the output fragment colours of the shader program. It is configured to perform \textit{multisampling}, which is a simple anti-aliasing technique~\cite{RealityEngine}. The visual enhancements this yields are judged to be well worth the performance costs it incurs. The key feature that distinguishes this framebuffer from those used in the physically based renderer, is that it can only store LDR RGB triplets. This is realised in practice by specifying the framebuffer's colour attachment format as \mintinline{cpp}|GL_RGBA8|. Restricting the renderer in this manner is consistent with the description given in Section \ref{DynamicRangeAndDisplays}, on how tone mapping is done in non-physically based renderers.
 
-The actual shader program that implements the Blinn-Phong shading model is also created. The program is specified in the OpenGL Shader Language (GLSL), and the source code is read in from external files. This shader program is explored in detail in section \ref{BlinnPhongRendererShaderProgram}.
+The actual shader program that implements the Blinn-Phong shading model is also created. The program is specified in the OpenGL Shader Language (GLSL), and the source code is read in from external files. This shader program is explored in detail in Section \ref{BlinnPhongRendererShaderProgram}.
 
-Following initialisation, the renderer is ready to draw scenes to the screen. When a scene is submitted, several actions take place. First, all the uniforms (modifiable variables within the shader program) that are constant over the whole scene are set. These include details of all the point lights, as well as camera transforms. Secondly, all the models in the scene are iterated through and a draw call, which invokes the shader program, is submitted for each. During this process, uniforms that specify materials and model transforms will be be constantly changing. Following this, all that is left to do is to output the contents of the framebuffer to the display. This is accomplished by 'blitting' the Blinn-Phong framebuffer to the default framebuffer that is used by the windowing system.
+Following initialisation, the renderer is ready to draw scenes to the screen. When a scene is submitted, several actions take place. First, all the uniforms (modifiable variables within the shader program) that are constant over the whole scene are set. These include details of all the point lights, as well as camera transforms. Secondly, all the models in the scene are iterated through and a draw call, which invokes the shader program, is submitted for each. During this process, uniforms that specify materials and model transforms are constantly changing. Following this, the contents of the framebuffer is outputted to the display. This is accomplished by 'blitting' the Blinn-Phong framebuffer to the default framebuffer that is used by the windowing system.
 
 \subsection{Shader Program} \label{BlinnPhongRendererShaderProgram}
 
 The shader program begins by calculating variables that will be used throughout the shading process. Of particular interest is how the surface normal \begin{math}\vect{n}\end{math} is obtained. In both this shader program and that used in the physically based renderer, the normal is either taken from vertex attributes, or, if specified, from a \textit{normal map}. The normal map is a modern method of \textit{bump mapping}, which was first introduced by Blinn in 1978~\cite{BlinnBumpMapping}. The normal map is used to specify \begin{math}\vect{n}\end{math} per pixel, which greatly increases the amount of surface detail that can be rendered.
 
-The Blinn-Phong shading model is then utilised. The ambient lighting component is calculated using equation \ref{eq:BlinnPhongAmbient} with \begin{math}x = 0.02\end{math}. Then for each point light in the scene, the diffuse and specular terms that are set out in equation \ref{eq:BlinnPhong} are evaluated. These values are all summed to get the colour of the fragment. Since the code that implements the Blinn-Phong shading model is so similar to the equations given previously, no further discussion is given here. However, all the shader code used for both the Blinn-Phong and physically based renderers can be viewed in Appendix \ref{ShaderCode}.
+The Blinn-Phong shading model is then utilised. The ambient lighting component is calculated using Equation \ref{eq:BlinnPhongAmbient} with \begin{math}x = 0.02\end{math}. Then for each point light in the scene, the diffuse and specular terms that are set out in Equation \ref{eq:BlinnPhong} are evaluated. These values are all summed to get the colour of the fragment. Since the code that implements the Blinn-Phong shading model is so similar to the equations given previously, no further discussion is provided here. However, all the shader code used in the Blinn-Phong and physically based renderers is viewable in Appendix \ref{ShaderCode}.
 
-Prior to that colour being outputted to the framebuffer, gamma correction is performed, which was discussed in section \ref{DynamicRangeAndDisplays}. Lagarde and de Rousiers outline the two common ways in which gamma correction is carried out, and warn against using the approximate approach since it errors significantly in darker colours~\cite{MovingFrostbitetoPBR}. Heading this advice, both the Blinn-Phong and physically based shader programs perform gamma correction using the exact inverse of the sRGB display transfer function. The code for this is given in Listing \ref{ls:GammaCorrection}.
+Prior to that colour being outputted to the framebuffer, gamma correction is performed, which was discussed in Section \ref{DynamicRangeAndDisplays}. Lagarde and de Rousiers outline the two common ways in which gamma correction is carried out, and warn against using the approximate approach since it errors significantly in darker colours~\cite{MovingFrostbitetoPBR}. Heading this advice, both the Blinn-Phong and physically based shader programs perform gamma correction using the exact inverse of the sRGB display transfer function. The code for this is given in Listing \ref{ls:GammaCorrection}.
 
 \begin{listing}[!ht]
 \begin{minted}
 [
-	frame=lines,
+	bgcolor=LightGray,
 	framesep=2mm,
-	baselinestretch=1.2,
+	baselinestretch=1,
 	fontsize=\footnotesize,
 	linenos,
 	breaklines
@@ -76,30 +74,33 @@ vec3 gammaCorrectColor(vec3 color)
 	return vec3(rSRGBEncoded, gSRGBEncoded, bSRGBEncoded);
 }
 \end{minted}
+\vspace{-0.8cm}
 \caption{Shader code for performing gamma correction}
 \label{ls:GammaCorrection}
 \end{listing}
+
+\vspace{-0.4cm}
 
 \subsection{Material Specification} \label{BlinnPhongRendererMaterialSpecification}
 
 As was explained in detail in chapter \ref{chapter1}, the appearance of an object depends heavily on the properties of its surface. These properties are encapsulated within a material. The 3D models that make up a scene are formed from multiple meshes, with each mesh being associated with a material. Materials that are supplied to the Blinn-Phong renderer are of the form given in Table \ref{tb:BlinnPhongMaterial}. The global and per pixel variants of the same attributes are not intended to be used in conjunction. For example, either a \mintinline{cpp}|diffuseColor| or \mintinline{cpp}|diffuseMap| is specified - not both.
 
-\vspace{20pt}
+\vspace{10pt}
 
-\begin{table}
-\noindent\begin{tabular}{|m{7em}|m{5em}|m{29em}|}
+\begin{table}[ht!]
+\noindent\begin{tabular}{|m{7em}|m{6em}|m{28em}|}
 	\hline
 	\textbf{Attribute} & \textbf{Data Type} & \textbf{Description} \\
 	\hline\hline
-	\mintinline{cpp}|diffuseColor| & \mintinline{cpp}|glm::vec4| & Specifies the diffuse colour globally over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{diff}}\end{math} variable in equation \ref{eq:BlinnPhong}. The fourth component in the vector represents transparency. \\
+	\mintinline{cpp}|diffuseColor| & \mintinline{cpp}|glm::vec4| & Specifies the diffuse colour globally over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{diff}}\end{math} variable in Equation \ref{eq:BlinnPhong}. The fourth component in the vector represents transparency. \\
 	\hline
 	\mintinline{cpp}|diffuseMap| & \mintinline{cpp}|Texture| & Specifies the diffuse colour per pixel. \\
 	\hline
-	\mintinline{cpp}|specularColor| & \mintinline{cpp}|glm::vec3| & Specifies the specular colour globally over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{spec}}\end{math} variable in equation \ref{eq:BlinnPhong}. \\
+	\mintinline{cpp}|specularColor| & \mintinline{cpp}|glm::vec3| & Specifies the specular colour globally over the whole mesh. Maps directly to the \begin{math}\vect{c}_{surface_{spec}}\end{math} variable in Equation \ref{eq:BlinnPhong}. \\
 	\hline
 	\mintinline{cpp}|specularMap| & \mintinline{cpp}|Texture| & Specifies the specular colour per pixel. \\
 	\hline
-	\mintinline{cpp}|shininess| & \mintinline{cpp}|float| & Specifies the shininess of the mesh. Maps directly to the \begin{math}surface_{shininess}\end{math} variable in equation \ref{eq:BlinnPhong}. \\
+	\mintinline{cpp}|shininess| & \mintinline{cpp}|float| & Specifies the shininess of the mesh. Maps directly to the \begin{math}surface_{shininess}\end{math} variable in Equation \ref{eq:BlinnPhong}. \\
 	\hline
 	\mintinline{cpp}|normalMap| & \mintinline{cpp}|Texture| & Optional attribute for specifying surface normals per pixel. \\
 	\hline
@@ -108,13 +109,15 @@ As was explained in detail in chapter \ref{chapter1}, the appearance of an objec
 \label{tb:BlinnPhongMaterial}
 \end{table}
 
+\vspace{-0.4cm}
+
 \subsection{Lighting}
 
-Scenes submitted to the Blinn-Phong renderer contain point lights. Each point light is defined by the following attributes: \mintinline{cpp}|worldPosition|, \mintinline{cpp}|diffuseComponent|, \mintinline{cpp}|specularComponent| and \mintinline{cpp}|lightRadius|. As discussed in section \ref{Illumination}, point lights are a type of punctual light, so have a location, hence \mintinline{cpp}|worldPosition|. The \mintinline{cpp}|diffuseComponent| attribute maps to the \begin{math}\vect{c}_{light_{diff}}\end{math} variable in equation \ref{eq:BlinnPhong}, and similarly, the \mintinline{cpp}|specularComponent| maps to \begin{math}\vect{c}_{light_{spec}}\end{math}. Note that these two values are LDR RGB triplets so are limited to 1 for each channel, unlike the physically-based point lights described in section \ref{Illumination}. Finally there is the \mintinline{cpp}|lightRadius| attribute, which is used when calculating how much a light is attenuated with distance. Both the Blinn-Phong and physically based shader programs use the same attenuation code, and the nature of it is much more physically based than what is typical for use in a non-physically based shader. With this in mind, discussion of how light attenuation is implemented is deferred to section \ref{PBRLighting}.
+Scenes submitted to the Blinn-Phong renderer contain point lights. Each point light is defined by the following attributes: \mintinline{cpp}|worldPosition|, \mintinline{cpp}|diffuseComponent|, \mintinline{cpp}|specularComponent| and \mintinline{cpp}|lightRadius|. As discussed in Section \ref{Illumination}, point lights are a type of punctual light, so have a location, hence \mintinline{cpp}|worldPosition|. The \mintinline{cpp}|diffuseComponent| attribute maps to the \begin{math}\vect{c}_{light_{diff}}\end{math} variable in Equation \ref{eq:BlinnPhong}, and similarly, the \mintinline{cpp}|specularComponent| maps to \begin{math}\vect{c}_{light_{spec}}\end{math}. Note that these two values are LDR RGB triplets so are limited to 1 for each channel, unlike the physically-based point lights described in Section \ref{Illumination}. Finally there is the \mintinline{cpp}|lightRadius| attribute, which is used when calculating how much a light is attenuated with distance. Both the Blinn-Phong and physically based shader programs use the same attenuation code, and the nature of it is much more physically based than what is typical for use in a non-physically based shader. With this in mind, discussion of how light attenuation is implemented is deferred to Section \ref{PBRLighting}.
 
 \section{Physically Based Renderer Implementation} \label{PBRImplementation}
 
-The physically based renderer makes use of a physically based shading model. Its behaviour is defined by the specific model that is employed. As explained in section \ref{PrinciplesOfShading}, a physically based shading model computes the reflectance equation with a physically based BRDF and a physically based incoming radiance function. Section \ref{BRDFChoiceAndImplementation} deals with the choice of BRDF, outlining the details of its construction, justifying design decisions made, and explaining how it is implemented in the shader program. The choice of BRDF then informs the material specification, which is covered in section \ref{PBRMaterialSpecification}. The specifics of the lighting model, and how it yields physically based values for the incoming radiance, is discussed in section \ref{PBRLighting}. Section \ref{ToneMappingImplementation} explains how tone mapping is implemented, and the specific operator that is used. However, before all that, a description of how the renderer operates is given.
+The physically based renderer makes use of a physically based shading model. Its behaviour is defined by the specific model that is employed. As explained in Section \ref{PrinciplesOfShading}, a physically based shading model computes the reflectance equation with a physically based BRDF and a physically based incoming radiance function. Section \ref{BRDFChoiceAndImplementation} deals with the choice of BRDF, outlining the details of its construction, justifying design decisions made, and explaining how it is implemented in the shader program. This choice informs the material specification, which is covered in Section \ref{PBRMaterialSpecification}. The specifics of the lighting model, and how it yields physically based values for the incoming radiance, is discussed in Section \ref{PBRLighting}. Section \ref{ToneMappingImplementation} explains how tone mapping is implemented, and the specific operator that is used. However, before all that, a description of how the renderer operates is given.
 
 \subsection{Operation of the Renderer}
 
@@ -128,16 +131,16 @@ Sections \ref{SpecularBRDFs} and \ref{DiffuseBRDFs} enumerated several options f
 
 \subsubsection{Specular BRDF}
 
-The specular BRDF is built upon equation \ref{eq:SpecularBRDF}, so the specific choice of Fresnel reflectance, NDF and masking-shadowing function are explained below.
+The specular BRDF is built upon Equation \ref{eq:SpecularBRDF}, so the specific choice of Fresnel reflectance, NDF and masking-shadowing function are explained below.
 
-The Fresnel reflectance is calculated using the Schlick approximation, which is given by equation \ref{eq:SchlickAppoximation}. It has the benefits of being simple to compute, and accurate. Using the more flexible variant of the Schlick approximation (equation \ref{eq:FlexibleSchlickApproximation}) would serve to slightly increase the variety of substances that can be represented. However, it would also greatly increase the complexity of the material model, hence why the more basic variant is favoured. Due to my unfamiliarity with the theory behind Spherical Gaussian approximations, Lagarde's optimised version of the Schlick approximation (equation \ref{eq:SphericalGaussian}) is not used. The implementation of the Schlick approximation is given in Listing \ref{ls:SchlickApproximation}.
+The Fresnel reflectance is calculated using the Schlick approximation, which is given by Equation \ref{eq:SchlickAppoximation}. It has the benefits of being simple to compute, and accurate. Using the more flexible variant of the Schlick approximation (Equation \ref{eq:FlexibleSchlickApproximation}) would serve to slightly increase the variety of substances that can be represented. However, it would also greatly increase the complexity of the material model, hence why the more basic variant is favoured. Lagarde points out that his approximation (Equation \ref{eq:SphericalGaussian}) can visibly error, so it is not used~\cite{LagardeSphericalGaussian}. The implementation of the Schlick approximation is given in Listing \ref{ls:SchlickApproximation}.
 
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -148,18 +151,19 @@ vec3 calculateFresnelSchlickApproximation(vec3 f0, float u)
 	return f0 + (1 - f0) * pow((1 - u), 5.0f);
 }
 \end{minted}
+\vspace{-0.8cm}
 \caption{Shader code for calculating the Fresnel reflectance using the Schlick approximation}
 \label{ls:SchlickApproximation}
 \end{listing}
 
-In Burley's observations of real world materials, he points out that most surfaces exhibit specular lobes with long tails~\cite{Burley2012Physically}. Furthermore, he notes that traditional NDFs, such as the Beckmann distribution, do not model these tails well, whereas the GGX NDF is much more accurate. Therefore, knowing it to be more representative of the real world, the GGX distribution is chosen as the Normal Distribution Function. The implementation of the GGX NDF is based of equation \ref{eq:GGX} and can be seen in Listing \ref{ls:GGX}. Two things are noteworthy. The first is that the Burley's mapping of \begin{math}\alpha\end{math} to a linear roughness value is being employed. The second is that the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term has not been carried over to the implementation. This is because that term will only evaluate to 0 when the half vector \begin{math}\vect{h}\end{math} points below the surface (recall that \begin{math}\vect{m} = \vect{h}\end{math} in a microfacet based specular BRDF). This only happens when \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} point below the surface. When \begin{math}\vect{l}\end{math} points below the surface, the whole reflectance equation is set to 0 (due to the \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} term), and when \begin{math}\vect{v}\end{math} points below the surface, the depth testing stage of the graphics pipeline will discard the shaded fragment \footnote{normal mapping can cause issues with this assumption but we ignore such cases for simplicity}. Therefore, the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term is redundant in practice and consequently omitted.
+In Burley's observations of real world materials, he points out that most surfaces exhibit specular lobes with long tails~\cite{Burley2012Physically}. Furthermore, he notes that traditional NDFs, such as the Beckmann distribution, do not model these tails well, whereas the GGX NDF is much more accurate. Therefore, knowing it to be more representative of the real world, the GGX distribution is chosen as the Normal Distribution Function. The implementation of the GGX NDF is based of Equation \ref{eq:GGX} and can be seen in Listing \ref{ls:GGX}. Two things are noteworthy. The first is that the Burley's mapping of \begin{math}\alpha\end{math} to a linear roughness value is being employed. The second is that the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term has not been carried over to the implementation. This is because that term only evaluates to 0 when the half vector \begin{math}\vect{h}\end{math} points below the surface (recall that \begin{math}\vect{m} = \vect{h}\end{math} in a microfacet based specular BRDF). This only happens when \begin{math}\vect{l}\end{math} or \begin{math}\vect{v}\end{math} point below the surface. When \begin{math}\vect{l}\end{math} points below the surface, the whole reflectance equation is set to 0 (due to the \begin{math}(\vect{n}\cdot\vect{l})^+\end{math} term), and when \begin{math}\vect{v}\end{math} points below the surface, the depth testing stage of the graphics pipeline will discard the shaded fragment \footnote{normal mapping can cause issues with this assumption but such cases are ignored for simplicity}. Therefore, the \begin{math}\mathcal{X}^+(\vect{m}\cdot\vect{n})\end{math} term is redundant in practice and consequently omitted.
 
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -173,11 +177,16 @@ float calculateGGXDistribution(float nDotH)
 	return alpha2 / (PI * x * x);
 }
 \end{minted}
+\vspace{-0.8cm}
 \caption{Shader code for the GGX NDF}
 \label{ls:GGX}
 \end{listing}
 
-As previously discussed, Heitz proved that the Smith masking-shadowing function is more accurate than the Torrance and Sparrow function. Therefore, the Smith height-correlated masking-shadowing function is used. However, instead of directly implementing the GGX form of the function given in equation \ref{eq:SmithGGXFunction}, an optimisation is utilised. Karis presents an approximation for the Smith masking function (a less accurate version of the Smith function that only accounts for masking)~\cite{RealShadingInUnreal}. Hammon observed that when using this approximation, the Smith height-correlated function for the GGX distribution has terms that cancel out with the denominator of the general specular BRDF formula (equation \ref{eq:SpecularBRDF})~\cite{HammonBRDF}. He gives the following equation:
+\vspace{-0.3cm}
+
+As previously discussed, Heitz proved that the Smith masking-shadowing function is more accurate than the Torrance and Sparrow function. Therefore, the Smith height-correlated masking-shadowing function is used. However, instead of directly implementing the GGX form of the function given in Equation \ref{eq:SmithGGXFunction}, an optimisation is utilised. Karis presents an approximation for the Smith masking function (a less accurate version of the Smith function that only accounts for masking)~\cite{RealShadingInUnreal}. Hammon observed that when using this approximation, the Smith height-correlated function for the GGX distribution has terms that cancel out with the denominator of the general specular BRDF formula (Equation \ref{eq:SpecularBRDF})~\cite{HammonBRDF}. He gives the following equation:
+
+\vspace{-0.2cm}
 
 \begin{equation} \label{eq:HammonApproximation}
 	\frac{G(\vect{l}, \vect{v}, \vect{h})}{4\abs{\vect{n}\cdot\vect{v}}\abs{\vect{n}\cdot\vect{l}}} \approx \frac{1}{2 * lerp(2\abs{\vect{n}\cdot\vect{l}}\abs{\vect{n}\cdot\vect{l}}, \abs{\vect{n}\cdot\vect{l}} + \abs{\vect{n}\cdot\vect{l}}, \alpha_g)}
@@ -190,9 +199,9 @@ Because of the inclusion of the specular BRDF's denominator, using the Hammon ap
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -206,6 +215,7 @@ float calculateHammonSmithMaskingSpecularDenominatorAppoximation(float nDotL)
 	return 1.0f / (2.0f * mix(x, y, alpha));
 }
 \end{minted}
+\vspace{-0.8cm}
 \caption{Shader code for the Hammon approximation of the Smith height-correlated masking-shadowing function}
 \label{ls:HammonMasking}
 \end{listing}
@@ -213,9 +223,9 @@ float calculateHammonSmithMaskingSpecularDenominatorAppoximation(float nDotL)
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -223,20 +233,21 @@ breaklines
 {glsl}
 vec3 specularTerm = fresnelReflectance * hammonSmithMaskingSpecularDenominatorApproximation * NDF;
 \end{minted}
+\vspace{-0.8cm}
 \caption{Shader code for the Specular BRDF}
 \label{ls:SpecularBRDF}
 \end{listing}
 
 \subsubsection{Diffuse BRDF}
 
-The diffuse BRDF used is the Lambertian BRDF with the Fresnel reflectance term, which is given by equation \ref{eq:LambertianDiffuse}. Although BRDF's that take into account surface roughness, such as the Burley diffuse BRDF, are technically more accurate to the real world, the visual differences with the Lambertian BRDF are often subtle~\cite{RealShadingInUnreal}. Couple this with the simplicity of the Lambertian BRDF, and it becomes an attractive choice. The implementation of the diffuse BRDF is given in Listing \ref{ls:DiffuseBRDF}. The only difference between this and equation \ref{eq:LambertianDiffuse}, is the additional multiplication by \mintinline{glsl}|(1.0f - g_materialProperties.metalness)|. This term is required to account for the fact that metals absorb all transmitted light so have no diffuse component - when \mintinline{glsl}|g_materialProperties.metalness| is set to 1, the diffuse component will have no effect. The metalness material property is explained in section \ref{PBRMaterialSpecification}.
+The diffuse BRDF used is the Lambertian BRDF with the Fresnel reflectance term, which is given by Equation \ref{eq:LambertianDiffuse}. Although BRDF's that take into account surface roughness, such as the Burley diffuse BRDF, are technically more accurate to the real world, the visual differences with the Lambertian BRDF are often subtle~\cite{RealShadingInUnreal}. Couple this with the simplicity of the Lambertian BRDF, and it becomes an attractive choice. The implementation of the diffuse BRDF is given in Listing \ref{ls:DiffuseBRDF}. The only difference between this and Equation \ref{eq:LambertianDiffuse}, is the additional multiplication by \mintinline{glsl}|(1.0f - g_materialProperties.metalness)|. This term is required to account for the fact that metals absorb all transmitted light so have no diffuse component - when \mintinline{glsl}|g_materialProperties.metalness| is set to 1, the diffuse component will have no effect. The metalness material property is explained in Section \ref{PBRMaterialSpecification}.
 
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -245,22 +256,25 @@ breaklines
 vec3 diffuseTermContribution = (vec3(1.0f) - fresnelReflectance) * (1.0f - g_materialProperties.metalness);
 vec3 diffuseTerm = diffuseTermContribution * (g_materialProperties.baseColor / PI);
 \end{minted}
+\vspace{-0.8cm}
 \caption{Shader code for the diffuse BRDF}
 \label{ls:DiffuseBRDF}
 \end{listing}
 
+%\vspace{-0.52cm}
+
 \subsection{Material Specification} \label{PBRMaterialSpecification}
 
-The shading model detailed above requires the presence of some material properties. These properties are encapsulated within the material specification for the physically based renderer, which is described in Table \ref{tb:PBRMaterial}. Again, the global and per pixel variants of the same attribute are not used together. This material specification is a subset of that used in the Disney Principled model~\cite{Burley2012Physically}.
+The shading model detailed above requires the presence of some material properties. These are encapsulated within the material specification for the physically based renderer, which is described in Table \ref{tb:PBRMaterial}. Again, the global and per pixel variants of the same attribute are not used together. This material specification is a subset of that used in the Disney Principled model~\cite{Burley2012Physically}.
 
-The motivation for representing both the \begin{math}\rho_{ss}\end{math} and \begin{math}F_0\end{math} values through the one \mintinline{cpp}|baseColor| attribute is that is saves memory. This is particularity the case when the texture variants are used.  However, using this representation does necessitate extra processing to retrieve the two values, and also an additional material parameter to be present, \mintinline{cpp}|metalness|. \mintinline{cpp}|metalness| only makes physical sense when it is either set to 0 or 1 - it is not possible for a material to be partially a metal. Most materials stick to this convention. However, permitting \mintinline{cpp}|metalness| to roam in between these limits can help to smooth transitions from metals to dielectrics. This could be utilised when, for example, representing the boundary between metal and rust.
+The motivation for representing both the \begin{math}\rho_{ss}\end{math} and \begin{math}F_0\end{math} values through the one \mintinline{cpp}|baseColor| attribute is that is saves memory. This is particularity the case when the texture variants are used.  However, using this representation does necessitate extra processing to retrieve the two values, and also an additional material parameter to be present, \mintinline{cpp}|metalness|. This parameter only makes physical sense when it is either set to 0 or 1 - it is not possible for a material to be partially a metal. Most materials stick to this convention. However, permitting \mintinline{cpp}|metalness| to roam in between these limits can help to smooth transitions from metals to dielectrics. This could be utilised when, for example, representing the boundary between metal and rust.
 
-Section \ref{BRDFChoiceAndImplementation} and Listing \ref{ls:DiffuseBRDF} already outlined how \begin{math}\rho_{ss}\end{math} is retrieved from the \mintinline{cpp}|baseColor| using \mintinline{cpp}|metalness|. Listing \ref{ls:F0} shows how the retrieval of \begin{math}F_0\end{math} is implemented. As discussed in section \ref{FresnelReflectance}, \begin{math}F_0 = (0.04, 0.04, 0.04)\end{math} is a suitable assignment for dielectrics.
+Section \ref{BRDFChoiceAndImplementation} and Listing \ref{ls:DiffuseBRDF} already outlined how \begin{math}\rho_{ss}\end{math} is retrieved from the \mintinline{cpp}|baseColor| using \mintinline{cpp}|metalness|. Listing \ref{ls:F0} shows how the retrieval of \begin{math}F_0\end{math} is implemented. As discussed in Section \ref{FresnelReflectance}, \begin{math}F_0 = (0.04, 0.04, 0.04)\end{math} is a suitable assignment for dielectrics.
 
 Further optimisations could be made to this material specification. A popular option is to pack the \mintinline{cpp}|roughnessMap| and \mintinline{cpp}|metalnessMap| into the same texture, but at separate channels. The \textit{glTF} 3D model format makes use of this~\cite{glTFTexture}. However, importing 3D models of a different format is then made more difficult, so packing is not used in the material specification.
 
-\begin{table}
-	\noindent\begin{tabular}{|m{7em}|m{5em}|m{29em}|}
+\begin{table} [ht!]
+	\noindent\begin{tabular}{|m{7em}|m{6em}|m{28em}|}
 		\hline
 		\textbf{Attribute} & \textbf{Data Type} & \textbf{Description} \\
 		\hline\hline
@@ -283,12 +297,14 @@ Further optimisations could be made to this material specification. A popular op
 	\label{tb:PBRMaterial}
 \end{table}
 
+\vspace{-0.5cm}
+
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -298,24 +314,29 @@ const vec3 F0_FOR_DIELECTRICS = vec3(0.04f);
 ...
 g_materialProperties.f0 = mix(F0_FOR_DIELECTRICS, g_materialProperties.baseColor, g_materialProperties.metalness);
 \end{minted}
+\vspace{-0.8cm}
 \caption{Extracting \begin{math}F_0\end{math} from \mintinline{cpp}|baseColor| using \mintinline{cpp}|metalness|}
 \label{ls:F0}
 \end{listing}
 
+\vspace{-0.2cm}
+
 \subsection{Lighting} \label{PBRLighting}
 
-As discussed in section \ref{Illumination}, evaluating the reflectance equation can be done separately for indirect and direct illumination. Unfortunately, due to time constraints, indirect illumination is only evaluated using a simple ambient term. This term does a basic job of ensuring no shaded areas are completely black, but it is much more empirically based than physically based, and also violates the law of conservation of energy. A much more physically based and accurate solution would have been to use Image Based Lighting and Irradiance Mapping.
+As discussed in Section \ref{Illumination}, evaluating the reflectance equation can be done separately for indirect and direct illumination. Unfortunately, due to time constraints, indirect illumination is only evaluated using a simple ambient term. This term does a basic job of ensuring no shaded areas are completely black, but it is much more empirically based than physically based, and also violates the law of conservation of energy. A much more physically based and accurate solution would have been to use Image Based Lighting and Irradiance Mapping.
 
-Direct illumination is evaluated with the restriction that all light sources are point lights. Although supporting area light sources would be more physically accurate, and avoid the material-light coupling that was detailed in section \ref{Illumination}, dispensing with them allows for the implementation to be greatly simplified.
+Direct illumination is evaluated with the restriction that all light sources are point lights. Although supporting area light sources would be more physically accurate, and avoid the material-light coupling that was detailed in Section \ref{Illumination}, dispensing with them allows for the implementation to be greatly simplified.
 
-Computing the reflectance equation is implemented by summing over all the contributions of the point lights in the scene, and then adding on the ambient term. The code for doing this mostly follows equation \ref{eq:PointLightsReflectanceEquation}. The main difference is that the multiplication by \begin{math}\pi\end{math} is not done. This is because \begin{math}\pi\end{math} is implicitly embedded in the \mintinline{cpp}|luminousPower| attribute of the point light, which is a common practice~\cite{LagardePi}. The code that calculates the contribution of a single point light is given by Listing \ref{ls:SinglePointLightOutgoingRadiance}. \mintinline{cpp}|lightRadiance| is the product of two things: an \textit{attenuation factor}, and the point light's radiance when unaffected by attenuation.
+Computing the reflectance equation is implemented by summing over all the contributions of the point lights in the scene, and then adding on the ambient term. The code for doing this mostly follows Equation \ref{eq:PointLightsReflectanceEquation}. The main difference is that the multiplication by \begin{math}\pi\end{math} is not done. This is because \begin{math}\pi\end{math} is implicitly embedded in the \mintinline{cpp}|luminousPower| attribute of the point light, which is a common practice~\cite{LagardePi}. The code that calculates the contribution of a single point light is given by Listing \ref{ls:SinglePointLightOutgoingRadiance}. \mintinline{cpp}|lightRadiance| is the product of two things: an attenuation factor, and the point light's radiance when unaffected by attenuation.
+
+\vspace{-0.1cm}
 
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -324,22 +345,27 @@ breaklines
 vec3 BRDFValue = diffuseTerm + specularTerm;
 return BRDFValue * lightRadiance * max(nDotL, 0.0f);
 \end{minted}
+\vspace{-0.8cm}
 \caption{Calculating the reflectance equation for a single point light}
 \label{ls:SinglePointLightOutgoingRadiance}
 \end{listing}
 
+\vspace{-0.3cm}
+
 \subsubsection{Point Light Specification}
 
-A point light that is submitted to the physically based renderer is specified with the following attributes: \mintinline{cpp}|worldPosition|, \mintinline{cpp}|lightRadius|, \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower|. The \begin{math}\vect{c}_{PL_i}\end{math} variable in equation \ref{eq:PointLightsReflectanceEquation} is calculated in the shader as a function of \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower|. \mintinline{cpp}|lightColor| is an RGB triplet that limited to 1 for each channel, and defines the hue of the point light. \mintinline{cpp}|luminousPower| is a float that represents the power of the point light. Together, they allow the radiance value of the point light to take on values in the HDR space.
+A point light that is submitted to the physically based renderer is specified with the following attributes: \mintinline{cpp}|worldPosition|, \mintinline{cpp}|lightRadius|, \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower|. The \begin{math}\vect{c}_{PL_i}\end{math} variable in Equation \ref{eq:PointLightsReflectanceEquation} is calculated in the shader as a function of \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower|. \mintinline{cpp}|lightColor| is an RGB triplet that limited to 1 for each channel, and defines the hue of the point light. \mintinline{cpp}|luminousPower| is a float that represents the power of the point light. Together, they allow the radiance value of the point light to take on values in the HDR space.
 
-The use of \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower| is based of the point light model used by the Frostbite Engine. Lagarde and De Rousiers show that by defining a point light in terms of its luminous power, it is easier to model real-world lights, as this measurement is often given by the manufacturer~\cite{MovingFrostbitetoPBR}. From luminous power, an equation for luminous intensity can be derived by integrating over the unit sphere: \begin{math}luminousIntensity = luminousPower / 4\pi\end{math}. We then multiply the light colour by the luminous intensity to obtain the light's radiance when unaffected by attenuation. Although we are suddenly using \textit{photometric} rather than radiometric quantities, Lagarde and De Rousiers specify that the calculations are the same for both. See Listing \ref{ls:LightRadiance} for the code that calculates \mintinline{cpp}|lightRadiance|. The way in which \mintinline{cpp}|lightAttenuationFactor| is determined is explained below.
+The use of \mintinline{cpp}|lightColor| and \mintinline{cpp}|luminousPower| is based on the point light model used by the Frostbite Engine. Lagarde and De Rousiers show that by defining a point light in terms of its luminous power, it is easier to model real world lights, as this measurement is often given by the manufacturer~\cite{MovingFrostbitetoPBR}. From luminous power, an equation for luminous intensity is derived by integrating over the unit sphere: \begin{math}luminousIntensity = luminousPower / 4\pi\end{math}. The light's unattenuated radiance is then obtained by multiplying the light colour by the luminous intensity. Although \textit{photometric} units are suddenly being used rather than radiometric quantities, Lagarde and De Rousiers specify that the calculations are the same for both. See Listing \ref{ls:LightRadiance} for the code that calculates \mintinline{cpp}|lightRadiance|. The \mintinline{cpp}|lightAttenuationFactor| variable is explained below.
+
+\vspace{-0.1cm}
 
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -348,22 +374,25 @@ breaklines
 float luminousIntensity = pointLight.luminousPower / (4.0f * PI);
 vec3 lightRadiance = pointLight.lightColor * luminousIntensity * lightAttenuationFactor;
 \end{minted}
+\vspace{-0.8cm}
 \caption{Calculating incoming radiance for a point light}
 \label{ls:LightRadiance}
 \end{listing}
 
+\vspace{-0.3cm}
+
 \subsubsection{Attenuation Factor}
 
-As stipulated previously, light intensity attenuates over distance, and for point lights, this attenuation is inversely proportional to the square of the distance between light source and shaded point. However, just calculating the attenuation factor as \begin{math}1 / distance^2\end{math} has three problems. The first is that when the distance is 0, division will cause an error. The second is that as the denominator tends to 0, the attenuation factor will explode to massive values - it should only take on values between 0 and 1. The third is that the attenuation factor will approach 0 asymptotically, never actually reaching it. It is desirable for a light to be fully attenuated at some finite distance, as such lights can be culled, improving performance.
+As stipulated previously, a point light's radiance is attenuated in inverse proportion to the square of the distance between light source and shaded point. However, just calculating the attenuation factor as \begin{math}1 / distance^2\end{math} has three problems. The first is that when the distance is 0, division will cause an error. The second is that as the denominator tends to 0, the attenuation factor will explode to massive values - it should only have values between 0 and 1. The third is that the attenuation factor will approach 0 asymptotically, never actually reaching it. It is desirable for a light to be fully attenuated at some finite distance, as it can be culled, improving performance.
 
 The Unreal and Frostbite Engines give solutions that solve all three of these problems~\cite{RealShadingInUnreal}\cite{MovingFrostbitetoPBR}. Both of them accomplish this using a similar approach: they offset the denominator, clamp return values, and make use of a windowing function. Frostbite's equation for the attenuation factor is employed in the shader program. It is used over Unreal's because it features a more physical interpretation for the denominator offset. Listing \ref{ls:AttenuationFactor} shows how it is implemented. \mintinline{cpp}|lightRadius| is a float that is specified per point light, and gives the maximum distance of a light's reach.
 
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -382,13 +411,14 @@ float calculatePointLightAttenuationFactor(float lightDistance, float lightRadiu
 	return min(inverseSquaredDistance * windowingFunctionValue, 1.0f);
 }
 \end{minted}
+\vspace{-0.8cm}
 \caption{Calculating attenuation factor for a point light}
 \label{ls:AttenuationFactor}
 \end{listing}
 
 \subsection{Tone Mapping} \label{ToneMappingImplementation}
 
-As previously mentioned, tone mapping is applied in the post processing shader program. As shown by Cerda-Company et al, the Reinhard operator is very effective at image reproduction~\cite{ComparingToneMappingOperators}. However, ACES still excels at image reproduction and we find its filmic response to be more aesthetically pleasing. Therefore, the ACES tone mapping operator is used, and its implementation can be seen in Listing \ref{ls:ACES}. This code utilises some external material that is discussed in Appendix \ref{ACESExternalMaterial}.
+As previously mentioned, tone mapping is applied in the post processing shader program. As shown by Cerda-Company et al., the Reinhard operator is very effective at image reproduction~\cite{ComparingToneMappingOperators}. However, ACES still excels at image reproduction, and its filmic response is judged to be more aesthetically pleasing. Therefore, the ACES tone mapping operator is used, and its implementation can be seen in Listing \ref{ls:ACES}. This code utilises external material that is discussed in Appendix \ref{ACESExternalMaterial}.
 
 Just before tone mapping, exposure is used to scale all the radiance values. This exposure is set as a static value over the scene. Dynamically calculating the exposure is unnecessary here; that is only required in interactive games, where the overall light level can change drastically as the player moves around a scene.
 
@@ -397,9 +427,9 @@ As explained before, the final step of the post processing shader program is to 
 \begin{listing}[!ht]
 \begin{minted}
 [
-frame=lines,
+bgcolor=LightGray,
 framesep=2mm,
-baselinestretch=1.2,
+baselinestretch=1,
 fontsize=\footnotesize,
 linenos,
 breaklines
@@ -429,6 +459,7 @@ vec3 applyToneMapping(vec3 color)
 	return clamp(outputMatrix * color, 0.0f, 1.0f);
 }
 \end{minted}
+\vspace{-0.8cm}
 \caption{The ACES tone mapping operator}
 \label{ls:ACES}
 \end{listing}

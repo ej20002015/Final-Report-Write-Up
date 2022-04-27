@@ -3,96 +3,96 @@
 \contentsline {section}{\numberline {1.2}Background Research}{2}{}%
 \contentsline {subsection}{\numberline {1.2.1}Blinn-Phong Shading}{3}{}%
 \contentsline {subsubsection}{Phong Model}{3}{}%
-\contentsline {subsubsection}{Blinn-Phong Model}{5}{}%
-\contentsline {subsection}{\numberline {1.2.2}Physics of Light-Matter Interaction}{6}{}%
-\contentsline {subsubsection}{Visible Light}{6}{}%
+\contentsline {subsubsection}{Blinn-Phong Model}{4}{}%
+\contentsline {subsection}{\numberline {1.2.2}Physics of Light-Matter Interaction}{5}{}%
+\contentsline {subsubsection}{Visible Light}{5}{}%
 \contentsline {subsubsection}{Light Interaction with Matter}{6}{}%
-\contentsline {subsubsection}{Light Incident to Surfaces}{7}{}%
+\contentsline {subsubsection}{Light Incident to Surfaces}{6}{}%
 \contentsline {subsubsection}{Transmitted Light Interaction}{8}{}%
 \contentsline {subsubsection}{Metals and Dielectrics}{8}{}%
-\contentsline {subsection}{\numberline {1.2.3}Principles of Shading}{9}{}%
-\contentsline {subsubsection}{The Reflectance Equation}{9}{}%
-\contentsline {subsubsection}{The BRDF}{10}{}%
+\contentsline {subsection}{\numberline {1.2.3}Principles of Shading}{8}{}%
+\contentsline {subsubsection}{The Reflectance Equation}{8}{}%
+\contentsline {subsubsection}{The BRDF}{9}{}%
 \contentsline {subsubsection}{Incoming Radiance}{10}{}%
-\contentsline {subsubsection}{Dot Product Term}{11}{}%
-\contentsline {subsection}{\numberline {1.2.4}BRDF Building Blocks}{11}{}%
+\contentsline {subsubsection}{Dot Product Term}{10}{}%
+\contentsline {subsection}{\numberline {1.2.4}BRDF Building Blocks}{10}{}%
 \contentsline {subsubsection}{Fresnel Reflectance}{11}{}%
-\contentsline {subsubsection}{Microfacet Theory}{12}{}%
-\contentsline {subsection}{\numberline {1.2.5}Specular BRDFs}{13}{}%
+\contentsline {subsubsection}{Microfacet Theory}{11}{}%
+\contentsline {subsection}{\numberline {1.2.5}Specular BRDFs}{12}{}%
 \contentsline {subsubsection}{Fresnel Reflectance Implementations}{13}{}%
-\contentsline {subsubsection}{NDF Implementations}{14}{}%
-\contentsline {subsubsection}{Masking-shadowing Function Implementations}{15}{}%
-\contentsline {subsection}{\numberline {1.2.6}Diffuse BRDFs}{16}{}%
-\contentsline {subsubsection}{Flat-surface Diffuse BRDFs}{16}{}%
-\contentsline {subsubsection}{Rough-surface Diffuse BRDFs}{16}{}%
-\contentsline {subsection}{\numberline {1.2.7}Illumination}{17}{}%
-\contentsline {subsubsection}{Indirect Illumination}{17}{}%
-\contentsline {subsubsection}{Direct illumination}{17}{}%
-\contentsline {subsubsection}{Point Lights}{18}{}%
-\contentsline {subsection}{\numberline {1.2.8}Dynamic Range and Displays}{18}{}%
-\contentsline {subsubsection}{Tone Mapping}{19}{}%
-\contentsline {subsubsection}{Exposure}{19}{}%
-\contentsline {subsubsection}{Gamma Correction}{19}{}%
-\contentsline {chapter}{\numberline {2}Methods}{21}{}%
-\contentsline {section}{\numberline {2.1}Design and Implementation}{21}{}%
-\contentsline {subsection}{\numberline {2.1.1}Technologies Used}{21}{}%
-\contentsline {subsection}{\numberline {2.1.2}General Architecture}{21}{}%
-\contentsline {subsection}{\numberline {2.1.3}Development Process}{22}{}%
-\contentsline {section}{\numberline {2.2}Blinn-Phong Renderer Implementation}{23}{}%
-\contentsline {subsection}{\numberline {2.2.1}Operation of the Renderer}{23}{}%
-\contentsline {subsection}{\numberline {2.2.2}Shader Program}{23}{}%
-\contentsline {subsection}{\numberline {2.2.3}Material Specification}{24}{}%
-\contentsline {subsection}{\numberline {2.2.4}Lighting}{24}{}%
-\contentsline {section}{\numberline {2.3}Physically Based Renderer Implementation}{25}{}%
-\contentsline {subsection}{\numberline {2.3.1}Operation of the Renderer}{25}{}%
-\contentsline {subsection}{\numberline {2.3.2}BRDF Choice and Implementation}{26}{}%
-\contentsline {subsubsection}{Specular BRDF}{26}{}%
-\contentsline {subsubsection}{Diffuse BRDF}{28}{}%
-\contentsline {subsection}{\numberline {2.3.3}Material Specification}{28}{}%
-\contentsline {subsection}{\numberline {2.3.4}Lighting}{29}{}%
-\contentsline {subsubsection}{Point Light Specification}{30}{}%
-\contentsline {subsubsection}{Attenuation Factor}{30}{}%
-\contentsline {subsection}{\numberline {2.3.5}Tone Mapping}{31}{}%
-\contentsline {chapter}{\numberline {3}Results}{33}{}%
-\contentsline {section}{\numberline {3.1}Evaluation Strategy}{33}{}%
-\contentsline {section}{\numberline {3.2}Fresnel Effect Comparison}{33}{}%
-\contentsline {subsection}{\numberline {3.2.1}Testing Method}{33}{}%
-\contentsline {subsection}{\numberline {3.2.2}Results}{34}{}%
-\contentsline {subsection}{\numberline {3.2.3}Analysis}{34}{}%
-\contentsline {section}{\numberline {3.3}Multiple Lights Comparison}{35}{}%
-\contentsline {subsection}{\numberline {3.3.1}Testing Method}{35}{}%
-\contentsline {subsection}{\numberline {3.3.2}Results}{35}{}%
-\contentsline {subsection}{\numberline {3.3.3}Analysis}{35}{}%
-\contentsline {section}{\numberline {3.4}Real Time}{37}{}%
-\contentsline {subsection}{\numberline {3.4.1}Testing Method}{37}{}%
-\contentsline {subsection}{\numberline {3.4.2}Results}{37}{}%
-\contentsline {subsection}{\numberline {3.4.3}Analysis}{37}{}%
-\contentsline {chapter}{\numberline {4}Discussion}{38}{}%
-\contentsline {section}{\numberline {4.1}Conclusions}{38}{}%
-\contentsline {section}{\numberline {4.2}Future Work}{38}{}%
-\contentsline {chapter}{References}{40}{}%
-\contentsline {chapter}{Appendices}{45}{}%
-\contentsline {chapter}{\numberline {A}Self-appraisal}{45}{}%
-\contentsline {section}{\numberline {A.1}Critical Self-Evaluation}{45}{}%
-\contentsline {subsection}{\numberline {A.1.1}Positives}{45}{}%
-\contentsline {subsection}{\numberline {A.1.2}Areas for Improvement}{46}{}%
-\contentsline {section}{\numberline {A.2}Personal Reflection and Lessons Learned}{46}{}%
-\contentsline {section}{\numberline {A.3}Legal, Social, Ethical and Professional Issues}{47}{}%
-\contentsline {subsection}{\numberline {A.3.1}Legal Issues}{47}{}%
-\contentsline {subsection}{\numberline {A.3.2}Social Issues}{47}{}%
-\contentsline {subsection}{\numberline {A.3.3}Ethical Issues}{47}{}%
-\contentsline {subsection}{\numberline {A.3.4}Professional Issues}{47}{}%
-\contentsline {chapter}{\numberline {B}External Material}{48}{}%
-\contentsline {section}{\numberline {B.1}Software Libraries}{48}{}%
-\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{48}{}%
-\contentsline {section}{\numberline {B.3}Assets}{48}{}%
-\contentsline {chapter}{\numberline {C}Mathematical Notation}{50}{}%
-\contentsline {chapter}{\numberline {D}Shader Code}{51}{}%
-\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{51}{}%
-\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{51}{}%
-\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{52}{}%
-\contentsline {section}{\numberline {D.2}Physically Based Shaders}{55}{}%
-\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{55}{}%
-\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{56}{}%
-\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{60}{}%
-\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{61}{}%
+\contentsline {subsubsection}{NDF Implementations}{13}{}%
+\contentsline {subsubsection}{Masking-shadowing Function Implementations}{14}{}%
+\contentsline {subsection}{\numberline {1.2.6}Diffuse BRDFs}{15}{}%
+\contentsline {subsubsection}{Flat-surface Diffuse BRDFs}{15}{}%
+\contentsline {subsubsection}{Rough-surface Diffuse BRDFs}{15}{}%
+\contentsline {subsection}{\numberline {1.2.7}Illumination}{16}{}%
+\contentsline {subsubsection}{Indirect Illumination}{16}{}%
+\contentsline {subsubsection}{Direct illumination}{16}{}%
+\contentsline {subsubsection}{Point Lights}{17}{}%
+\contentsline {subsection}{\numberline {1.2.8}Dynamic Range and Displays}{17}{}%
+\contentsline {subsubsection}{Tone Mapping}{17}{}%
+\contentsline {subsubsection}{Exposure}{18}{}%
+\contentsline {subsubsection}{Gamma Correction}{18}{}%
+\contentsline {chapter}{\numberline {2}Methods}{19}{}%
+\contentsline {section}{\numberline {2.1}Design and Implementation}{19}{}%
+\contentsline {subsection}{\numberline {2.1.1}Technologies Used}{19}{}%
+\contentsline {subsection}{\numberline {2.1.2}General Architecture}{19}{}%
+\contentsline {subsection}{\numberline {2.1.3}Development Process}{20}{}%
+\contentsline {section}{\numberline {2.2}Blinn-Phong Renderer Implementation}{21}{}%
+\contentsline {subsection}{\numberline {2.2.1}Operation of the Renderer}{21}{}%
+\contentsline {subsection}{\numberline {2.2.2}Shader Program}{21}{}%
+\contentsline {subsection}{\numberline {2.2.3}Material Specification}{22}{}%
+\contentsline {subsection}{\numberline {2.2.4}Lighting}{22}{}%
+\contentsline {section}{\numberline {2.3}Physically Based Renderer Implementation}{23}{}%
+\contentsline {subsection}{\numberline {2.3.1}Operation of the Renderer}{23}{}%
+\contentsline {subsection}{\numberline {2.3.2}BRDF Choice and Implementation}{23}{}%
+\contentsline {subsubsection}{Specular BRDF}{23}{}%
+\contentsline {subsubsection}{Diffuse BRDF}{25}{}%
+\contentsline {subsection}{\numberline {2.3.3}Material Specification}{25}{}%
+\contentsline {subsection}{\numberline {2.3.4}Lighting}{26}{}%
+\contentsline {subsubsection}{Point Light Specification}{27}{}%
+\contentsline {subsubsection}{Attenuation Factor}{27}{}%
+\contentsline {subsection}{\numberline {2.3.5}Tone Mapping}{28}{}%
+\contentsline {chapter}{\numberline {3}Results}{29}{}%
+\contentsline {section}{\numberline {3.1}Evaluation Strategy}{29}{}%
+\contentsline {section}{\numberline {3.2}Fresnel Effect Comparison}{29}{}%
+\contentsline {subsection}{\numberline {3.2.1}Testing Method}{29}{}%
+\contentsline {subsection}{\numberline {3.2.2}Results}{30}{}%
+\contentsline {subsection}{\numberline {3.2.3}Analysis}{30}{}%
+\contentsline {section}{\numberline {3.3}Multiple Lights Comparison}{31}{}%
+\contentsline {subsection}{\numberline {3.3.1}Testing Method}{31}{}%
+\contentsline {subsection}{\numberline {3.3.2}Results}{31}{}%
+\contentsline {subsection}{\numberline {3.3.3}Analysis}{31}{}%
+\contentsline {section}{\numberline {3.4}Real-Time}{33}{}%
+\contentsline {subsection}{\numberline {3.4.1}Testing Method}{33}{}%
+\contentsline {subsection}{\numberline {3.4.2}Results}{33}{}%
+\contentsline {subsection}{\numberline {3.4.3}Analysis}{33}{}%
+\contentsline {chapter}{\numberline {4}Discussion}{34}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{34}{}%
+\contentsline {section}{\numberline {4.2}Future Work}{34}{}%
+\contentsline {chapter}{References}{36}{}%
+\contentsline {chapter}{Appendices}{41}{}%
+\contentsline {chapter}{\numberline {A}Self-appraisal}{41}{}%
+\contentsline {section}{\numberline {A.1}Critical Self-Evaluation}{41}{}%
+\contentsline {subsection}{\numberline {A.1.1}Positives}{41}{}%
+\contentsline {subsection}{\numberline {A.1.2}Areas for Improvement}{42}{}%
+\contentsline {section}{\numberline {A.2}Personal Reflection and Lessons Learned}{42}{}%
+\contentsline {section}{\numberline {A.3}Legal, Social, Ethical and Professional Issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.1}Legal Issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.2}Social Issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.3}Ethical Issues}{43}{}%
+\contentsline {subsection}{\numberline {A.3.4}Professional Issues}{43}{}%
+\contentsline {chapter}{\numberline {B}External Material}{44}{}%
+\contentsline {section}{\numberline {B.1}Software Libraries}{44}{}%
+\contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{44}{}%
+\contentsline {section}{\numberline {B.3}Assets}{44}{}%
+\contentsline {chapter}{\numberline {C}Mathematical Notation}{46}{}%
+\contentsline {chapter}{\numberline {D}Shader Code}{47}{}%
+\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{47}{}%
+\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{47}{}%
+\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{48}{}%
+\contentsline {section}{\numberline {D.2}Physically Based Shaders}{51}{}%
+\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{51}{}%
+\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{52}{}%
+\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{56}{}%
+\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{57}{}%
