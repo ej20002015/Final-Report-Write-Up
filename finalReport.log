@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  27 APR 2022 02:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.6)  27 APR 2022 14:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1505,10 +1505,6 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 
 (_minted-finalReport/91544A009CC183E7C99F875F1FBDE72233249DB7EFE3D431BCE80BC665
 353FA9.pygtex)
-Overfull \hbox (31.30574pt too wide) in paragraph at lines 91--108
-[] 
- []
-
 \openout5 = `finalReport.pyg'.
 
 
@@ -1564,7 +1560,7 @@ D26F1F.pygtex) [23]
 
 (_minted-finalReport/7170E9235A93E0B3F82C08D77FB4CAFEF5FE15BF9A1C0F9C0DC0D913C2
 D26F1F.pygtex)
-Overfull \hbox (1.61319pt too wide) in paragraph at lines 195--196
+Overfull \hbox (1.61319pt too wide) in paragraph at lines 197--198
 []\T1/lmr/m/n/10.95 (-20) Hammon com-pares this ap-prox-i-ma-tion to the ex-act
  Smith height-correlated masking-shadowing
  []
@@ -1699,10 +1695,6 @@ D26F1F.pygtex)
 
 (_minted-finalReport/91544A009CC183E7C99F875F1FBDE72233249DB7EFE3D431BCE80BC665
 353FA9.pygtex)
-Overfull \hbox (31.30574pt too wide) in paragraph at lines 277--296
-[] 
- []
-
 \openout4 = `finalReport.pyg'.
 
 
@@ -1836,19 +1828,14 @@ Chapter 3.
 <./images//FresnelRealLife.png, id=155, 929.72343pt x 314.67563pt>
 File: ./images//FresnelRealLife.png Graphic file (type png)
 <use ./images//FresnelRealLife.png>
-Package pdftex.def Info: ./images//FresnelRealLife.png  used on input line 26.
-(pdftex.def)             Requested size: 341.43306pt x 115.55907pt.
+Package pdftex.def Info: ./images//FresnelRealLife.png  used on input line 28.
+(pdftex.def)             Requested size: 284.52756pt x 96.30002pt.
 <./images//FresnelResults.png, id=156, 1858.69406pt x 647.41875pt>
 File: ./images//FresnelResults.png Graphic file (type png)
 <use ./images//FresnelResults.png>
-Package pdftex.def Info: ./images//FresnelResults.png  used on input line 37.
+Package pdftex.def Info: ./images//FresnelResults.png  used on input line 43.
 (pdftex.def)             Requested size: 512.1496pt x 178.3914pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 37--38
- [][] 
- []
-
-[30 <./images//FresnelRealLife.png> <./images//FresnelResults.png>]
+ [30 <./images//FresnelRealLife.png> <./images//FresnelResults.png>]
 \openout5 = `finalReport.pyg'.
 
 
@@ -1889,12 +1876,8 @@ Overfull \hbox (56.90549pt too wide) in paragraph at lines 37--38
 File: ./images//MultipleLightsResultsFrames.png Graphic file (type png)
 <use ./images//MultipleLightsResultsFrames.png>
 Package pdftex.def Info: ./images//MultipleLightsResultsFrames.png  used on inp
-ut line 66.
+ut line 76.
 (pdftex.def)             Requested size: 512.1496pt x 179.90147pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 66--67
- [][] 
- []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1904,13 +1887,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./images//RealTimeFPSResults.png Graphic file (type png)
 <use ./images//RealTimeFPSResults.png>
 Package pdftex.def Info: ./images//RealTimeFPSResults.png  used on input line 1
-12.
-(pdftex.def)             Requested size: 512.1496pt x 147.83337pt.
-
-Overfull \hbox (56.90549pt too wide) in paragraph at lines 112--113
- [][] 
- []
-
+25.
+(pdftex.def)             Requested size: 398.33858pt x 114.98376pt.
 ) [33 <./images//RealTimeFPSResults.png>]
 \openout2 = `./chapters/chapter4.aux'.
 
@@ -2037,15 +2015,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
 ] [45]
 Appendix C.
-
-Overfull \hbox (37.84282pt too wide) in paragraph at lines 118--132
- [] 
- []
-
 [46
 
 ]
 Appendix D.
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/BA4A051A186F163EB167A8521315CE2DB5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/0D037D0A57C5D1189CDC3E83FCD42494B5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/9318A15AAB88BFB05C76E207D349480DB5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 1--153
+[]|[]
+ []
+
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/DDAE3AC51FFC0619449C5A743D4FAA68B5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/C74D8412364034F9DE029148AFAB55A1B5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 1--153
+[]|[]
+ []
+
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/89DF2695AF2872B84CD899278A4CBA92B5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+\openout5 = `finalReport.pyg'.
+
+
+(_minted-finalReport/D79160EE2D7D4D61A77363D39725D35DB5EFDD063A51395055F507CF57
+BEBB0A.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 1--153
+[]|[]
+ []
+
+[47
+
+]
+Appendix E.
 \openout5 = `finalReport.pyg'.
 
 
@@ -2055,34 +2079,34 @@ BEBB0A.pygtex)
 
 
 (_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [47
+D26F1F.pygtex [48
 
 ])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/2D847447D825880329132664C1A001A8F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [48] [49] [50])
+D26F1F.pygtex [49] [50] [51])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/09B06AD2F97462BEEE648978E5A45439F5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [51])
+D26F1F.pygtex [52])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/CA59CEE7B7F13D8FEFBF78B0AC4B703FF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [52] [53] [54] [55])
+D26F1F.pygtex [53] [54] [55] [56])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/3F2A3092C4931BED813677D54683FC8EF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [56])
+D26F1F.pygtex [57])
 \openout4 = `finalReport.pyg'.
 
 
 (_minted-finalReport/8E36BB61E14AA0D702DAF604F934EF2EF5FE15BF9A1C0F9C0DC0D913C2
-D26F1F.pygtex [57])) [58] (finalReport.aux (prelude.aux) (chapters/chapter1.aux
+D26F1F.pygtex [58])) [59] (finalReport.aux (prelude.aux) (chapters/chapter1.aux
 ) (chapters/chapter2.aux) (chapters/chapter3.aux) (chapters/chapter4.aux)
 (appendices.aux))
 
@@ -2100,13 +2124,13 @@ Package logreq Info: Writing requests to 'finalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22521 strings out of 478584
- 481017 string characters out of 2844402
- 1257157 words of memory out of 3000000
- 39703 multiletter control sequences out of 15000+600000
- 589069 words of font info for 255 fonts, out of 8000000 for 9000
+ 22565 strings out of 478584
+ 485433 string characters out of 2844402
+ 1257688 words of memory out of 3000000
+ 39726 multiletter control sequences out of 15000+600000
+ 589116 words of font info for 255 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,13n,134p,2235b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,14n,134p,2235b,1494s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
 :/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
 :/Users/ej200/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
@@ -2136,9 +2160,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/ej200/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/ej200/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/ej200/AppData
 /Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on finalReport.pdf (64 pages, 7064822 bytes).
+Output written on finalReport.pdf (65 pages, 7066684 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
+ 369 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  67148 words of extra memory for PDF output out of 74296 (max. 10000000)
 

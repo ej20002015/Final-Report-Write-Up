@@ -62,7 +62,7 @@
 \contentsline {section}{\numberline {3.3}Multiple Lights Comparison}{31}{}%
 \contentsline {subsection}{\numberline {3.3.1}Testing Method}{31}{}%
 \contentsline {subsection}{\numberline {3.3.2}Results}{31}{}%
-\contentsline {subsection}{\numberline {3.3.3}Analysis}{31}{}%
+\contentsline {subsection}{\numberline {3.3.3}Analysis}{32}{}%
 \contentsline {section}{\numberline {3.4}Real-Time}{33}{}%
 \contentsline {subsection}{\numberline {3.4.1}Testing Method}{33}{}%
 \contentsline {subsection}{\numberline {3.4.2}Results}{33}{}%
@@ -87,12 +87,13 @@
 \contentsline {section}{\numberline {B.2}ACES Tone Mapping Operator}{44}{}%
 \contentsline {section}{\numberline {B.3}Assets}{44}{}%
 \contentsline {chapter}{\numberline {C}Mathematical Notation}{46}{}%
-\contentsline {chapter}{\numberline {D}Shader Code}{47}{}%
-\contentsline {section}{\numberline {D.1}Blinn-Phong Shader}{47}{}%
-\contentsline {subsection}{\numberline {D.1.1}Vertex Shader}{47}{}%
-\contentsline {subsection}{\numberline {D.1.2}Fragment Shader}{48}{}%
-\contentsline {section}{\numberline {D.2}Physically Based Shaders}{51}{}%
-\contentsline {subsection}{\numberline {D.2.1}PBS Vertex Shader}{51}{}%
-\contentsline {subsection}{\numberline {D.2.2}PBS Fragment Shader}{52}{}%
-\contentsline {subsection}{\numberline {D.2.3}Post Processing Vertex Shader}{56}{}%
-\contentsline {subsection}{\numberline {D.2.4}Post Processing Fragment Shader}{57}{}%
+\contentsline {chapter}{\numberline {D}Test Scenes}{47}{}%
+\contentsline {chapter}{\numberline {E}Shader Code}{48}{}%
+\contentsline {section}{\numberline {E.1}Blinn-Phong Shader}{48}{}%
+\contentsline {subsection}{\numberline {E.1.1}Vertex Shader}{48}{}%
+\contentsline {subsection}{\numberline {E.1.2}Fragment Shader}{49}{}%
+\contentsline {section}{\numberline {E.2}Physically Based Shaders}{52}{}%
+\contentsline {subsection}{\numberline {E.2.1}PBS Vertex Shader}{52}{}%
+\contentsline {subsection}{\numberline {E.2.2}PBS Fragment Shader}{53}{}%
+\contentsline {subsection}{\numberline {E.2.3}Post Processing Vertex Shader}{57}{}%
+\contentsline {subsection}{\numberline {E.2.4}Post Processing Fragment Shader}{58}{}%

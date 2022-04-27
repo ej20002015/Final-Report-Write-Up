@@ -88,6 +88,7 @@ As was explained in detail in chapter \ref{chapter1}, the appearance of an objec
 \vspace{10pt}
 
 \begin{table}[ht!]
+\makebox[\textwidth][c]{
 \noindent\begin{tabular}{|m{7em}|m{6em}|m{28em}|}
 	\hline
 	\textbf{Attribute} & \textbf{Data Type} & \textbf{Description} \\
@@ -105,6 +106,7 @@ As was explained in detail in chapter \ref{chapter1}, the appearance of an objec
 	\mintinline{cpp}|normalMap| & \mintinline{cpp}|Texture| & Optional attribute for specifying surface normals per pixel. \\
 	\hline
 \end{tabular}
+}
 \caption{The specification of a Blinn-Phong material}
 \label{tb:BlinnPhongMaterial}
 \end{table}
@@ -274,6 +276,7 @@ Section \ref{BRDFChoiceAndImplementation} and Listing \ref{ls:DiffuseBRDF} alrea
 Further optimisations could be made to this material specification. A popular option is to pack the \mintinline{cpp}|roughnessMap| and \mintinline{cpp}|metalnessMap| into the same texture, but at separate channels. The \textit{glTF} 3D model format makes use of this~\cite{glTFTexture}. However, importing 3D models of a different format is then made more difficult, so packing is not used in the material specification.
 
 \begin{table} [ht!]
+	\makebox[\textwidth][c]{
 	\noindent\begin{tabular}{|m{7em}|m{6em}|m{28em}|}
 		\hline
 		\textbf{Attribute} & \textbf{Data Type} & \textbf{Description} \\
@@ -293,6 +296,7 @@ Further optimisations could be made to this material specification. A popular op
 		\mintinline{cpp}|normalMap| & \mintinline{cpp}|Texture| & Optional attribute for specifying surface normals per pixel. \\
 		\hline
 	\end{tabular}
+	}
 	\caption{The specification of a physically based material}
 	\label{tb:PBRMaterial}
 \end{table}

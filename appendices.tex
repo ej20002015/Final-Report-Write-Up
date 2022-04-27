@@ -17,7 +17,7 @@ My report also boasts a well thought out Methods chapter. Sections \ref{BlinnPho
 
 Another strong facet of my project is the implementation. The code base is clean and well designed. All function and variable identifies are given meaningful names, and comments are used where necessary, and never as a substitute for good code. Special care is given to each of the functions and methods to ensure that they only fulfil one purpose, and operate at a single level of abstraction. Errors are handled appropriately using a combination of asserts and exceptions. As is good practice with C++, smart pointers are employed throughout, which help to eliminate any memory leaks and segmentation faults. Notable aspects of the architecture are the rendering API, and the APIs for creating scenes. Despite two distinct renderers operating in the background, a client can access all the rendering commands through a single unified interface. Furthermore, the APIs for creating models and point lights, and then adding them to a scene, are all very intuitive.
 
-As my project progressed, it became clear that there were not many physical phenomena that could be objectively measured and used in my Results chapter. With this in mind, the fact that I was able to identify and systematically investigate two phenomena is positive. Moreover, the evidence gathered in the Results chapter is indicative of the realities of using the two shading models, since either of the renderers developed could be used as the basis for a real 3D interactive application, such as a game engine or piece of modelling software.
+As my project progressed, it became clear that there were not many physical phenomena that could be objectively measured and used in my Results chapter. With this in mind, the fact that I was able to identify and systematically investigate two phenomena is positive. Moreover, the evidence gathered in the Results chapter is indicative of the realities of using the two shading models, since either of the renderers developed could be easily migrated into a real 3D interactive application, such as a game engine or piece of modelling software.
 
 My report features a high quality of writing throughout. Figures and tables are used correctly, and referenced in the relevant parts of the main text, and the language is of standard that is suitable for academic papers and technical reports. Particular focus is placed on having the report progress along a consistent narrative. By utilising section introductions, cross referencing, and a coherent structure, the reader is guided through the text. There is no ambiguity about the content of each section, and the purpose it serves in the overall report.
 
@@ -29,11 +29,11 @@ Another significant shortcoming of my project is the lack of a sophisticated met
 
 \section{Personal Reflection and Lessons Learned}
 
-Reflecting back on the project process, I am very happy with how everything went, and am especially pleased with the knowledge I accrued. Real-time rendering was already an area of computer science I was passionate about prior to beginning the project. Being able to build on this by exploring cutting edge technologies like physically based shading, was incredibly rewarding.
+Reflecting back on the project process, I am very happy with how everything went, and am especially pleased with the knowledge I accrued. Real-time rendering was already an area of computer science I was passionate about prior to beginning the project; being able to build on this by exploring cutting edge technologies like physically based shading, was incredibly rewarding.
 
-The most demanding part of the entire project process was the write up. Although I consider myself to be a component writer, albeit it slow, I had never undertaken a technical report of this manner. Thankfully, after many hours and re-writes, I've been able to produce a report that I'm proud of. As part of this process, I learnt about many aspects that contribute to a good technical report. These include: how to structure the text; the language and grammar that is appropriate; the correct way to cross-reference, and reference figures and tables; and finally, how to cite external sources.
+The most demanding part of the entire project process was the write up. Although I consider myself to be a component writer, albeit it slow, I had never undertaken a technical report of this manner. Thankfully, after countless hours and many re-writes, I've been able to produce a report that I'm proud of. As part of this process, I learnt about many aspects that contribute to a good technical report. These include: how to structure the text; the language and grammar that is appropriate; the correct way to cross-reference, and reference figures and tables; and finally, how to cite external sources.
 
-Writing the project was made substantially easier by employing Latex. Initially, I was reluctant to use it, since I had no previous experience; the last thing I wanted to be doing whilst completing the project was also learning a new tool. However, due to the complex mathematical equations that I needed to write, I decided it was my best option. Fortunately, I found Latex to be quite intuitive, and the professional look of the outputted text easily outweighed the slight learning curve. Suffice to say, Latex will be my first choice when creating documents in the future.
+Writing the project was made substantially easier by employing Latex. Initially, I was reluctant to use it, since I had no previous experience - the last thing I wanted to be doing whilst completing the project was also learning a new tool. However, due to the complex mathematical equations that I needed to write, I decided it was my best option. Fortunately, I found Latex to be quite intuitive, and the professional look of the outputted text easily outweighed the slight learning curve. Suffice to say, Latex will be my first choice when creating documents in the future.
 
 Another key skill I developed over the course of the project was how to read academic papers. Interpreting the content of the papers became easier as I grew accustom to the subject matter, but more significantly, I learnt how to skim the papers to find the items relevant to my project. This helped greatly when I was compiling my bibliography.
 
@@ -46,7 +46,7 @@ The legal issues that need to be considered for my project are purely centred ar
 
 As previously mentioned, I've made use of a number of libraries in my implementation, all of which are given in Appendix \ref{SoftwareLibraries}. In order to comply with licensing requirements, the licenses for each library are included in the code base, and it is made clear that these are not my own work.
 
-Appendix \ref{AssetsUsed} lists graphical assets, like textures, that are used in this project. All assets are licensed under CC0, meaning they are owned by the public. As such, there is no need to link to any licenses or the original author, although this is still done in Appendix \ref{AssetsUsed} as a courtesy. The only 'restriction' CC0 places, is to make it clear that these assets are not owned by myself - this has been done.
+Appendix \ref{AssetsUsed} lists graphical assets, like textures, that are used in this project. All assets are licensed under CC0, meaning they are owned by the public. As such, there is no need to link to any licenses or the original author, although this is still done in Appendix \ref{AssetsUsed} as a courtesy. The only 'restriction' CC0 places, is to make it clear that these assets are not owned by myself: they are not.
 
 \subsection{Social Issues}
 
@@ -81,7 +81,7 @@ The libraries used in my renderer are listed in Table \ref{tb:Libraries}. For ea
 		\hline
 		spdlog & A fast logging library & \url{https://github.com/gabime/spdlog} \\
 		\hline
-		stb\_image & An image loading library that is used when creating textures & \url{https://github.com/nothings/stb/blob/master/stb_image.h} \\
+		stb\_image & An image loading library used when creating textures & \url{https://github.com/nothings/stb/blob/master/stb_image.h} \\
 		\hline
 		assimp & A library to import 3D models of various different file types & \url{https://github.com/assimp/assimp} \\
 		\hline
@@ -115,6 +115,7 @@ The only external graphical assets used in my project are a couple of textures. 
 \chapter{Mathematical Notation} \label{MathematicalNotation}
 
 \begin{center}
+	\makebox[\textwidth][c]{
 	\begin{tabular}{ c c }
 		\hline
 		\begin{math}\vect{n}\end{math} & Normal vector \\
@@ -129,11 +130,34 @@ The only external graphical assets used in my project are a couple of textures. 
 		\begin{math}lerp(x, y, t)\end{math} & Linearly interpolates between \begin{math}x\end{math} and \begin{math}y\end{math} by the interpolant \begin{math}t\end{math}: \begin{math}lerp(x, y, t) = x(1 - t) + yt\end{math} \\
 		\hline
 	\end{tabular}
+	}
 \end{center}
+
+\chapter{Test Scenes} \label{TestScenesInfo}
+
+Each of the three tests carried out in Chapter \ref{chapter3} has corresponding code for creation of their scenes. All of this code is located in the \mintinline{bash}|Application/src/TestScenes| directory. Table \ref{tb:TestSceneMapping} maps each test to files in that directory that contain the associated code.
+
+\begin{table}[ht!]
+	\makebox[\textwidth][c]{
+	\begin{tabular}{|m{15.5em}|m{15.5em}|}
+		\hline
+		\textbf{Test} & \textbf{Associated Files} \\
+		\hline\hline
+		Fresnel Effect Comparison & \mintinline{bash}|FresnelTestScene.h| \mintinline{bash}|FresnelTestScene.cpp| \\
+		\hline
+		Multiple Lights Comparison & \mintinline{bash}|HDRTestScene.h| \mintinline{bash}|HDRTestScene.cpp| \\
+		\hline
+		Real-Time & \mintinline{bash}|FrameTimeTestScene.h| \mintinline{bash}|FrameTimeTestScene.cpp| \\
+		\hline
+	\end{tabular}
+	}
+	\caption{Code for test scene creation}
+	\label{tb:TestSceneMapping}
+\end{table}
 
 \chapter{Shader Code} \label{ShaderCode}
 
-All the shader code can be accessed in the code base under the \mintinline{bash}|Application/Assets/Shaders| directory. The code is also given below as it is useful to be able to view the end-to-end process of shading. As is required by most graphics APIs, each shader program given below is split into a vertex and fragment shader.
+All the shader code can be accessed in the code base under the \mintinline{bash}|Application/Assets/Shaders| directory. The code is also given below as it is useful to be able to view the end-to-end process of shading. As is required by most graphics APIs, each shader program given below is split into a vertex and fragment shader (also known as a pixel shader).
 
 \section{Blinn-Phong Shader}
 
